@@ -185,10 +185,10 @@
     <p class="lede">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
     <div class="byline">
       <b>Artur Araújo</b> · Jornalismo e Mídia Digital, PUC-Campinas<br>
-      Atualizado em junho de 2026 · revisão 2
+      Atualizado em junho de 2026 · revisão 3
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">15</div><div class="l">Seções temáticas</div></div>
+      <div class="stat"><div class="n">16</div><div class="l">Seções temáticas</div></div>
       <div class="stat"><div class="n" id="stat-sources">—</div><div class="l">Fontes catalogadas</div></div>
       <div class="stat"><div class="n">20</div><div class="l">Municípios da RMC</div></div>
     </div>
@@ -215,6 +215,7 @@
       <li><a href="#s13"><span class="num">13</span>Região Metropolitana</a></li>
       <li><a href="#s14"><span class="num">14</span>Acesso Programático</a></li>
       <li><a href="#s15"><span class="num">15</span>Infográficos em Python</a></li>
+      <li><a href="#s16"><span class="num">16</span>Percursos Investigativos</a></li>
     </ol>
   </nav>
 
@@ -694,13 +695,143 @@ print('PNG gerado.')</code></pre></div>
       </ul>
     </section>
 
+
+    <!-- 16 -->
+    <section class="section" id="s16">
+      <div class="sec-head"><div class="sec-num">16</div><h2 class="sec-title">Percursos Investigativos</h2></div>
+      <div class="prose">
+        <p>As seções anteriores catalogam <b>onde</b> estão os dados. Esta reúne <b>como</b> ir deles a uma reportagem verificável. Cada percurso parte de uma pergunta, lista os passos na ordem em que foram percorridos e aponta as fontes usadas, com remissão às seções deste guia. Uma fonte é potencial; um percurso é método. Documentar a trilha permite citá-la na matéria e permite que outra pessoa a repita.</p>
+        <p>Todos os percursos abaixo já foram usados em apurações reais, próprias ou de orientação. O arcabouço de base é o de sempre: Luiz Costa Pereira Jr. (<i>A Apuração da Notícia</i>), Nilson Lage (<i>A Reportagem</i>) e o <i>Manual do Foca</i>, de Thaïs de Mendonça Jorge. Sobre eles, as técnicas clássicas de apuração: observação, pesquisa, banco de dados, escuta e entrevista.</p>
+      </div>
+
+      <div class="subgroup">16.1 · Preço contra inflação (série reprodutível)</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> Um preço subiu quanto acima ou abaixo da inflação no período?</p>
+        <p><b>Exemplo real.</b> O reajuste de 75% no pacote de figurinhas da Copa, confrontado com um IPCA acumulado de 18,89% entre o lançamento do álbum, em setembro de 2022, e o dado mais recente. O aumento superou em quase quatro vezes o custo de vida. O dólar em queda no mesmo intervalo entrou como provocação: se o insumo importado e os royalties ficaram mais baratos, o reajuste reflete margem, e não repasse de custo.</p>
+      </div>
+      <ul class="tips">
+        <li>Delimite o período: do marco inicial (lançamento, contrato, fato gerador) ao último dado fechado.</li>
+        <li>Puxe o IPCA pela série <code>PRECOS12_IPCA12</code> (Seção 14.1) ou faça a conta rápida na Calculadora do Cidadão do BCB.</li>
+        <li>Compare a variação do preço observado com a inflação acumulada do período.</li>
+        <li>Quando houver insumo importado ou royalties, cruze com o câmbio (<code>BM12_ERV12</code>) para testar margem contra repasse de custo.</li>
+        <li>Feche com um economista, que valida a leitura, e humanize com fonte de campo (jornaleiro, consumidor).</li>
+        <li><b>Cite:</b> IPCA/IBGE e período; câmbio do Ipeadata. Ferramentas nas Seções 4, 14 e 15.</li>
+      </ul>
+
+      <div class="subgroup">16.2 · Contagem por atividade e município (RAIS no BigQuery)</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> Quantos estabelecimentos de um tipo existem numa cidade, e como esse número evoluiu?</p>
+        <p><b>Exemplo real.</b> A série histórica de bancas de jornal em Campinas, levantada na RAIS pela CNAE 4761-0/02. É a contagem que dá lastro a uma reportagem sobre o encolhimento do setor com fonte primária, em vez de número de entidade de classe.</p>
+      </div>
+      <ul class="tips">
+        <li>Descubra a subclasse CNAE da atividade no buscador da Concla/IBGE.</li>
+        <li>Consulte <code>basedosdados.br_me_rais.microdados_estabelecimentos</code> no BigQuery (passo a passo na Seção 14.2), filtrando por <code>id_municipio</code>, <code>cnae_2_subclasse</code> e <code>indicador_atividade_ano = 1</code>.</li>
+        <li>Lembre da defasagem da RAIS: use <code>ano &gt;= XXXX</code> e veja qual é a última linha que retorna.</li>
+        <li>Ao comparar com números de entidades de classe, confira o recorte: elas às vezes somam subclasses vizinhas.</li>
+        <li><b>Cite:</b> RAIS/Ministério do Trabalho, código CNAE, município e anos. Repositório na Seção 6.</li>
+      </ul>
+
+      <div class="subgroup">16.3 · Triangulação de duas séries (verificação por divergência)</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> O número oficial se sustenta diante de uma série independente que mede a mesma coisa?</p>
+        <p><b>Exemplo real.</b> As emissões de gases de efeito estufa de Campinas. O inventário da secretaria municipal apontou queda de 18% e cerca de 3 milhões de toneladas; a série do SEEG, do Observatório do Clima, marcou 2,93 milhões para o mesmo ano. Quando as fontes divergem, a divergência vira pauta.</p>
+      </div>
+      <ul class="tips">
+        <li>Localize a fonte oficial e uma série independente que meça o mesmo fenômeno.</li>
+        <li>Compare os números e o ano de referência de cada uma.</li>
+        <li>Se divergirem, peça a cada lado que explique o método; a diferença de metodologia costuma ser a história.</li>
+        <li>Apresente as duas, sempre dizendo o recorte de cada uma. Não escolha a que confirma a hipótese.</li>
+        <li><b>Cite:</b> os dois levantamentos, com órgão, ano e método. Fontes nas Seções 2, 3 e 13.</li>
+      </ul>
+
+      <div class="subgroup">16.4 · Censo e demografia por recorte territorial (SIDRA)</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> Qual é o perfil demográfico de um bairro ou cidade que ancora a abertura da reportagem?</p>
+        <p><b>Exemplo real.</b> O recorte do Censo 2022 de Campinas extraído do SIDRA, base do painel populacional e dos números de abertura usados em pautas locais.</p>
+      </div>
+      <ul class="tips">
+        <li>Identifique a tabela no SIDRA (Seção 4) e filtre por município ou setor censitário.</li>
+        <li>Exporte para planilha; para repetir o levantamento, use a API do SIDRA.</li>
+        <li>Anote o número da tabela e o período: é isso que vai na citação.</li>
+        <li>Para o cruzamento estadual, complemente com os painéis da Fundação Seade (Seção 13).</li>
+        <li><b>Cite:</b> Censo 2022/IBGE, número da tabela SIDRA, recorte territorial.</li>
+      </ul>
+
+      <div class="subgroup">16.5 · Lei de Acesso à Informação como percurso</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> O dado não está publicado. Como obtê-lo por via oficial?</p>
+        <p><b>Observação de quem responde a pedidos.</b> Um pedido bem delimitado é respondido mais rápido do que um pedido vago. Pedir o documento certo, com período certo, encurta o prazo e fecha a porta para a negativa por pedido genérico.</p>
+      </div>
+      <ul class="tips">
+        <li>Antes de pedir, confira se o dado já está no Portal da Transparência, no Diário Oficial ou em painel público. Não se pede o que já é público.</li>
+        <li>Escreva o pedido objetivo: cite a LAI, nomeie o documento ou a série e delimite o período.</li>
+        <li>Protocole no e-SIC do ente certo (municipal, estadual ou federal). As três portas estão nas Seções 1, 2 e 3.</li>
+        <li>Se houver negativa ou silêncio no prazo, entre com recurso. Guarde protocolo e datas.</li>
+        <li>Quando for preciso preservar a autoria do pedido, use a via anônima do Queremos Saber (Seção 3).</li>
+        <li><b>Cite:</b> órgão, número do protocolo e data da resposta.</li>
+      </ul>
+
+      <div class="subgroup">16.6 · Diário Oficial e atos administrativos</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> Como rastrear nomeações, contratos, decretos e aditivos ao longo do tempo?</p>
+        <p><b>Exemplo real.</b> O acompanhamento de atos pela busca do Diário Oficial do município, cruzado com o Portal da Transparência para o lado financeiro.</p>
+      </div>
+      <ul class="tips">
+        <li>Use a busca do Diário Oficial (Seções 1 e 13) com o termo e o intervalo de datas.</li>
+        <li>Para varredura nacional, o DOINET (Seção 6) faz busca integrada, em serviço pago.</li>
+        <li>Cruze o ato com a execução financeira no Portal da Transparência para fechar o circuito.</li>
+        <li>Arquive a página com a Wayback Machine (Seção 8): atos publicados podem ser retificados depois.</li>
+        <li><b>Cite:</b> Diário Oficial, data e número da edição; ato e órgão.</li>
+      </ul>
+
+      <div class="subgroup">16.7 · Verificação de conteúdo que circula</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> Esta imagem, este vídeo ou esta declaração são reais e estão em contexto?</p>
+      </div>
+      <ul class="tips">
+        <li>Para foto, faça a busca reversa no Google Imagens e no TinEye e procure a primeira aparição.</li>
+        <li>Para vídeo, use o InVID/WeVerify, que fragmenta e rastreia os quadros.</li>
+        <li>Para página alterada ou apagada, recupere a versão na Wayback Machine.</li>
+        <li>Para declaração pública, veja se uma verificadora certificada pelo IFCN já a checou.</li>
+        <li><b>Cite:</b> a origem encontrada e a data da publicação original. Ferramentas nas Seções 7 e 8.</li>
+      </ul>
+
+      <div class="subgroup">16.8 · Serviço público e infraestrutura</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> Por que um problema persiste apesar do investimento anunciado?</p>
+        <p><b>Exemplo real.</b> A falta de água em Vinhedo. Reservatórios a 27% da capacidade, chuvas em queda de até 49% em 2024, novos reservatórios entregues, e ainda assim interrupções na região da Capela. A apuração não parte de que a obra falhou; separa o que ela resolveu do que não resolveu.</p>
+      </div>
+      <ul class="tips">
+        <li>Reúna o dado oficial: níveis, investimento, cobertura, obras entregues.</li>
+        <li>Enquadre sem pressupor fracasso: o que a obra resolveu e o que ainda não resolveu.</li>
+        <li>Ouça o operador como fonte principal e um especialista técnico independente (no caso da seca, um meteorologista) para pesar o fator externo.</li>
+        <li>Feche com o morador afetado, que dá a medida concreta do impacto na rotina.</li>
+        <li><b>Cite:</b> operador do serviço, série de dados oficiais e período. Fontes nas Seções 2 e 13.</li>
+      </ul>
+
+      <div class="subgroup">16.9 · Discurso oficial contra o indicador</div>
+      <div class="prose">
+        <p><b>Pergunta.</b> A narrativa oficial bate com o que os dados mostram?</p>
+        <p><b>Exemplo real.</b> O discurso de Campinas como polo de inovação, captado em evento institucional, posto lado a lado com a pressão no custo de vida das periferias. PIB municipal, tarifa do transporte e índice imobiliário sustentam o contraste; a distância entre o discurso e o indicador conduz a matéria.</p>
+      </div>
+      <ul class="tips">
+        <li>Capture o discurso oficial na fonte: fala em evento, release, peça de campanha.</li>
+        <li>Levante os indicadores duros que testam esse discurso: PIB municipal, custo de vida, tarifa, índice de preços imobiliários.</li>
+        <li>Ponha discurso e indicador lado a lado e deixe a diferença carregar a reportagem.</li>
+        <li>Dê ao poder público o direito de resposta sobre a divergência.</li>
+        <li><b>Cite:</b> a fonte do discurso e cada indicador, com órgão e período. Fontes nas Seções 1, 4 e 13.</li>
+      </ul>
+
+      <div class="note"><b>A régua dos percursos.</b> Quatro constantes valem para todos. Delimite o período antes de comparar qualquer número. Prefira a fonte primária ao número de segunda mão. Quando duas fontes divergem, a divergência é pauta, não erro a esconder. E documente fonte, período e método junto com o resultado, para que a apuração seja reprodutível e citável.</div>
+    </section>
+
   </main>
 </div>
 
 <footer>
   <div class="foot-inner">
     <span>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas</span>
-    <span>Atualizado em junho de 2026 · revisão 2</span>
+    <span>Atualizado em junho de 2026 · revisão 3</span>
   </div>
 </footer>
 
