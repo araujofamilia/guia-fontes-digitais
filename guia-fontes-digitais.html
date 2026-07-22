@@ -1,577 +1,1328 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guia de Fontes Digitais para Jornalismo</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#F2F2EE;
-    --card:#FFFFFF;
-    --ink:#17171C;
-    --muted:#6A6A72;
-    --faint:#9A9AA0;
-    --line:#E2E1DA;
-    --line-soft:#ECEBE4;
-    --blue:#1C3F6E;
-    --blue-hover:#122c4f;
-    --mark:#BF3A2B;
-    --code-bg:#191A20;
-    --code-fg:#E9E8E4;
-    --code-dim:#8C8E98;
-    --display:'Fraunces',Georgia,serif;
-    --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
-    --mono:'IBM Plex Mono',ui-monospace,monospace;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation:none!important;transition:none!important;}}
-  body{
-    margin:0;background:var(--paper);color:var(--ink);
-    font-family:var(--sans);font-size:16px;line-height:1.55;
-    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  }
-  a{color:var(--blue);text-decoration:none;}
-  a:hover{color:var(--blue-hover);}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Fontes Digitais para Jornalismo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    border-bottom:1px solid var(--line);
-    background:
-      linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,0));
-    padding:64px 28px 40px;
-  }
-  .hero-inner{max-width:1180px;margin:0 auto;}
-  .eyebrow{
-    font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;
-    text-transform:uppercase;color:var(--mark);font-weight:600;
-    display:flex;align-items:center;gap:10px;
-  }
-  .eyebrow::before{content:"";width:26px;height:2px;background:var(--mark);display:inline-block;}
-  h1.title{
-    font-family:var(--display);font-weight:900;font-size:clamp(38px,6.4vw,76px);
-    line-height:.98;letter-spacing:-.02em;margin:18px 0 0;max-width:14ch;
-  }
-  .lede{
-    font-family:var(--display);font-weight:400;font-style:italic;
-    font-size:clamp(17px,2.2vw,22px);color:#3a3a42;margin:16px 0 0;max-width:48ch;
-  }
-  .byline{
-    font-family:var(--mono);font-size:12.5px;color:var(--muted);
-    margin-top:22px;line-height:1.9;
-  }
-  .byline b{color:var(--ink);font-weight:600;}
-  .stats{
-    display:flex;flex-wrap:wrap;gap:34px;margin-top:30px;
-    padding-top:24px;border-top:1px solid var(--line);
-  }
-  .stat .n{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;}
-  .stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+        :root {
+            --bg: #F2F2EE;
+            --card: #FFFFFF;
+            --text: #17171C;
+            --red: #BF3A2B;
+            --blue: #1C3F6E;
+            --code-bg: #191A20;
+        }
 
-  /* ---------- LAYOUT ---------- */
-  .shell{max-width:1180px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:236px 1fr;gap:46px;align-items:start;}
-  @media (max-width:980px){.shell{grid-template-columns:1fr;gap:0;}}
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
 
-  /* ---------- SIDEBAR / TOC ---------- */
-  .toc{position:sticky;top:0;align-self:start;padding:34px 0;max-height:100vh;overflow:auto;}
-  .toc h2{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:0 0 14px;font-weight:600;}
-  .toc ol{list-style:none;margin:0;padding:0;}
-  .toc li{margin:1px 0;}
-  .toc a{
-    display:flex;gap:10px;align-items:baseline;padding:6px 10px;border-radius:6px;
-    font-size:13.5px;color:var(--muted);line-height:1.3;border-left:2px solid transparent;
-  }
-  .toc a .num{font-family:var(--mono);font-size:11px;color:var(--faint);min-width:18px;}
-  .toc a:hover{background:rgba(0,0,0,.035);color:var(--ink);}
-  .toc a.active{color:var(--mark);border-left-color:var(--mark);background:rgba(191,58,43,.06);font-weight:500;}
-  .toc a.active .num{color:var(--mark);}
-  @media (max-width:980px){
-    .toc{position:static;max-height:none;border-bottom:1px solid var(--line);padding:18px 0;}
-    .toc ol{display:flex;flex-wrap:wrap;gap:4px;}
-    .toc a{border-left:none;border:1px solid var(--line);background:var(--card);}
-    .toc a.active{border-color:var(--mark);}
-  }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-  /* ---------- SEARCH ---------- */
-  .searchbar{
-    position:sticky;top:0;z-index:20;background:var(--paper);
-    padding:22px 0 16px;margin-bottom:6px;
-  }
-  .search-wrap{position:relative;}
-  .search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.45;}
-  #search{
-    width:100%;padding:13px 16px 13px 42px;font-family:var(--mono);font-size:14px;
-    border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);
-    outline:none;transition:border-color .15s,box-shadow .15s;
-  }
-  #search:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(28,63,110,.12);}
-  .search-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:9px;height:14px;}
+        header {
+            margin-bottom: 4rem;
+        }
 
-  /* ---------- SECTIONS ---------- */
-  main{padding:8px 0 40px;min-width:0;}
-  .section{padding:30px 0 14px;border-top:1px solid var(--line);scroll-margin-top:84px;}
-  .section:first-of-type{border-top:none;}
-  .sec-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:22px;}
-  .sec-num{
-    font-family:var(--display);font-weight:900;font-size:clamp(30px,4vw,46px);
-    line-height:.85;color:var(--mark);font-variant-numeric:lining-nums;flex-shrink:0;
-  }
-  .sec-title{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,30px);line-height:1.08;letter-spacing:-.01em;margin:0;padding-top:2px;}
-  .subgroup{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:26px 0 12px;display:flex;align-items:center;gap:12px;}
-  .subgroup::after{content:"";flex:1;height:1px;background:var(--line-soft);}
+        .tagline {
+            font-family: 'Fraunces', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 1rem;
+        }
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
 
-  .card{
-    display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;
-    padding:15px 16px;transition:border-color .15s,transform .12s,box-shadow .15s;position:relative;
-  }
-  .card:hover{border-color:var(--blue);box-shadow:0 6px 18px -10px rgba(20,30,60,.35);transform:translateY(-1px);}
-  .card .name{font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.3;padding-right:18px;}
-  .card .arrow{position:absolute;top:15px;right:14px;opacity:0;transition:opacity .15s,transform .15s;color:var(--blue);}
-  .card:hover .arrow{opacity:1;transform:translate(2px,-2px);}
-  .card .url{font-family:var(--mono);font-size:11px;color:var(--blue);margin-top:6px;word-break:break-all;line-height:1.45;opacity:.9;}
-  .card .desc{font-size:13px;color:var(--muted);margin-top:9px;line-height:1.5;}
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
 
-  .note{
-    background:rgba(28,63,110,.05);border:1px solid rgba(28,63,110,.16);border-radius:9px;
-    padding:14px 16px;font-size:13.5px;color:#33414f;margin:14px 0;line-height:1.55;
-  }
-  .prose p{font-size:15px;color:#36363d;margin:0 0 14px;max-width:74ch;}
-  .prose p b{color:var(--ink);}
+        .meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
 
-  /* ---------- CODE ---------- */
-  .codeblock{margin:16px 0;border-radius:10px;overflow:hidden;border:1px solid #2a2b33;}
-  .code-label{
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    background:#23242c;color:var(--code-dim);padding:8px 16px;display:flex;align-items:center;gap:9px;
-  }
-  .code-label .dot{width:7px;height:7px;border-radius:50%;background:var(--mark);}
-  .code-label .dot.py{background:#4B8BBE;}
-  .code-label .dot.sql{background:#E8A33D;}
-  pre{margin:0;background:var(--code-bg);color:var(--code-fg);padding:16px;overflow-x:auto;
-    font-family:var(--mono);font-size:12.5px;line-height:1.65;}
-  code{font-family:var(--mono);}
-  p code,li code{background:rgba(0,0,0,.06);padding:1px 6px;border-radius:4px;font-size:12.5px;color:#2a2a30;}
-  ul.tips{list-style:none;padding:0;margin:14px 0;max-width:78ch;}
-  ul.tips li{position:relative;padding-left:22px;margin:9px 0;font-size:14px;color:#36363d;line-height:1.55;}
-  ul.tips li::before{content:"›";position:absolute;left:4px;color:var(--mark);font-weight:700;font-family:var(--mono);}
-  ul.tips li b{color:var(--ink);}
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
 
-  .rmc-cities{font-family:var(--mono);font-size:12.5px;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:9px;padding:14px 16px;margin:0 0 18px;line-height:1.7;}
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-  /* ---------- FOOTER ---------- */
-  footer{border-top:1px solid var(--line);margin-top:30px;padding:34px 28px 60px;}
-  .foot-inner{max-width:1180px;margin:0 auto;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+        .stat-number {
+            font-family: 'Fraunces', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--red);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
 
-  .totop{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;
-    background:var(--ink);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
-    opacity:0;pointer-events:none;transition:opacity .2s;z-index:30;box-shadow:0 6px 16px -4px rgba(0,0,0,.4);}
-  .totop.show{opacity:1;pointer-events:auto;}
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
 
-  .empty{display:none;font-family:var(--mono);font-size:13px;color:var(--muted);padding:40px 0;text-align:center;}
-  .section.hidden,.subgroup.hidden,.card.hidden{display:none;}
-</style>
+        .toc-wrapper {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        #toc-sidebar {
+            position: sticky;
+            top: 20px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--red);
+        }
+
+        #toc-list {
+            list-style: none;
+        }
+
+        #toc-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        #toc-list a {
+            font-size: 0.9rem;
+            color: var(--blue);
+            text-decoration: none;
+            display: block;
+            padding: 0.3rem 0;
+        }
+
+        #toc-list a:hover {
+            text-decoration: underline;
+        }
+
+        #toc-list a.active {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 0.8rem;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        #search-input::placeholder {
+            color: #999;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+
+        .section-number {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--red);
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .source-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--red);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            break-inside: avoid;
+        }
+
+        .source-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .source-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .source-url {
+            font-size: 0.8rem;
+            color: var(--blue);
+            text-decoration: none;
+            word-break: break-all;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .source-url::after {
+            content: "↗";
+            margin-left: 0.3rem;
+        }
+
+        .source-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .subsection {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--card);
+            border-radius: 4px;
+            border-left: 3px solid #999;
+        }
+
+        .subsection h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .subsection ol, .subsection ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subsection li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        code {
+            background: var(--code-bg);
+            color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        pre {
+            background: var(--code-bg);
+            color: #e8e8e8;
+            padding: 1.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .code-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.75rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--red);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+        }
+
+        .back-to-top:hover {
+            opacity: 0.8;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .toc-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            #toc-sidebar {
+                display: none;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .sources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        .method-step {
+            background: var(--card);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--blue);
+            border-radius: 4px;
+        }
+
+        .method-step h4 {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .method-step p, .method-step li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: #fff9f0;
+            border-left: 3px solid var(--red);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 3px;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="tagline">Pesquisa · Dados · Verificação</div>
+            <h1>Guia de Fontes Digitais para Jornalismo</h1>
+            <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
+            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em junho de 2026 · revisão 3</div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">17</div>
+                    <div class="stat-label">Seções temáticas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number stat-sources">—</div>
+                    <div class="stat-label">Fontes catalogadas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">Municípios da RMC</div>
+                </div>
+            </div>
+        </header>
 
-<header class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Pesquisa · Dados · Verificação</div>
-    <h1 class="title">Guia de Fontes Digitais para Jornalismo</h1>
-    <p class="lede">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-    <div class="byline">
-      <b>Artur Araújo</b> · Jornalismo e Mídia Digital, PUC-Campinas<br>
-      Atualizado em junho de 2026 · revisão 3
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="n">16</div><div class="l">Seções temáticas</div></div>
-      <div class="stat"><div class="n" id="stat-sources">—</div><div class="l">Fontes catalogadas</div></div>
-      <div class="stat"><div class="n">20</div><div class="l">Municípios da RMC</div></div>
-    </div>
-  </div>
-</header>
+        <div class="toc-wrapper">
+            <aside id="toc-sidebar">
+                <h3 style="margin-bottom: 1rem; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Índice</h3>
+                <ul id="toc-list">
+                    <li><a href="#s1">01Dados Locais — Campinas</a></li>
+                    <li><a href="#s2">02Dados Estaduais — SP</a></li>
+                    <li><a href="#s3">03Dados Federais e Nacionais</a></li>
+                    <li><a href="#s4">04Jornalismo Econômico</a></li>
+                    <li><a href="#s5">05Imigração</a></li>
+                    <li><a href="#s6">06Jornalismo de Dados</a></li>
+                    <li><a href="#s7">07Fact-Checking</a></li>
+                    <li><a href="#s8">08Redes e Comportamento</a></li>
+                    <li><a href="#s9">09Pesquisa Acadêmica</a></li>
+                    <li><a href="#s10">10Cultura e Arte</a></li>
+                    <li><a href="#s11">11Pesquisa e Texto</a></li>
+                    <li><a href="#s12">12Organizações</a></li>
+                    <li><a href="#s13">13Região Metropolitana</a></li>
+                    <li><a href="#s14">14Acesso Programático</a></li>
+                    <li><a href="#s15">15Infográficos em Python</a></li>
+                    <li><a href="#s16">16Percursos Investigativos</a></li>
+                    <li><a href="#s17">17Metodologia: Dados Territorializados</a></li>
+                </ul>
+            </aside>
 
-<div class="shell">
-  <!-- SIDEBAR -->
-  <nav class="toc" aria-label="Índice de seções">
-    <h2>Índice</h2>
-    <ol id="toc-list">
-      <li><a href="#s1"><span class="num">01</span>Dados Locais — Campinas</a></li>
-      <li><a href="#s2"><span class="num">02</span>Dados Estaduais — SP</a></li>
-      <li><a href="#s3"><span class="num">03</span>Dados Federais e Nacionais</a></li>
-      <li><a href="#s4"><span class="num">04</span>Jornalismo Econômico</a></li>
-      <li><a href="#s5"><span class="num">05</span>Imigração</a></li>
-      <li><a href="#s6"><span class="num">06</span>Jornalismo de Dados</a></li>
-      <li><a href="#s7"><span class="num">07</span>Fact-Checking</a></li>
-      <li><a href="#s8"><span class="num">08</span>Redes e Comportamento</a></li>
-      <li><a href="#s9"><span class="num">09</span>Pesquisa Acadêmica</a></li>
-      <li><a href="#s10"><span class="num">10</span>Cultura e Arte</a></li>
-      <li><a href="#s11"><span class="num">11</span>Pesquisa e Texto</a></li>
-      <li><a href="#s12"><span class="num">12</span>Organizações</a></li>
-      <li><a href="#s13"><span class="num">13</span>Região Metropolitana</a></li>
-      <li><a href="#s14"><span class="num">14</span>Acesso Programático</a></li>
-      <li><a href="#s15"><span class="num">15</span>Infográficos em Python</a></li>
-      <li><a href="#s16"><span class="num">16</span>Percursos Investigativos</a></li>
-    </ol>
-  </nav>
+            <main class="main-content">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar fonte por nome ou descrição...">
+                </div>
 
-  <!-- MAIN -->
-  <main>
-    <div class="searchbar">
-      <div class="search-wrap">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input id="search" type="search" placeholder="Filtrar fontes por nome, órgão ou tema…" autocomplete="off" aria-label="Buscar fontes">
-      </div>
-      <div class="search-meta" id="search-meta"></div>
-    </div>
+                <div id="no-results" class="no-results hidden">Nenhuma fonte corresponde à busca.</div>
 
-    <div class="empty" id="empty">Nenhuma fonte corresponde à busca.</div>
+                <!-- Seção 1 -->
+                <section id="s1">
+                    <div class="section-number">01</div>
+                    <h2>Dados Locais — Campinas e Região</h2>
 
-    <!-- 1 -->
-    <section class="section" id="s1">
-      <div class="sec-head"><div class="sec-num">01</div><h2 class="sec-title">Dados Locais — Campinas e Região</h2></div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Censo e Demografia</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://campinas.sp.gov.br/sites/censo_2022/painel" class="source-url">campinas.sp.gov.br/sites/censo_2022/painel</a>
+                            <div class="source-name">IBGE — Painel Censo 2022 Campinas</div>
+                            <div class="source-desc">Painel interativo com dados populacionais do Censo 2022 para Campinas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.ibge.gov.br/cidades-e-estados/sp/campinas.html" class="source-url">ibge.gov.br/cidades-e-estados/sp/campinas.html</a>
+                            <div class="source-name">IBGE — Cidades do Brasil</div>
+                            <div class="source-desc">Fichas completas de municípios com indicadores sociais, econômicos e demográficos.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Censo e Demografia</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://campinas.sp.gov.br/sites/censo_2022/painel"><div class="name">IBGE — Painel Censo 2022 Campinas<span class="arrow">↗</span></div><div class="url">campinas.sp.gov.br/sites/censo_2022/painel</div><div class="desc">Painel interativo com dados populacionais do Censo 2022 para Campinas.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.ibge.gov.br/cidades-e-estados/sp/campinas.html"><div class="name">IBGE — Cidades do Brasil<span class="arrow">↗</span></div><div class="url">ibge.gov.br/cidades-e-estados/sp/campinas.html</div><div class="desc">Fichas completas de municípios com indicadores sociais, econômicos e demográficos.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Vulnerabilidade Social e Assistência</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://campinas.sp.gov.br/sites/painel_cadunico/painel-cadunico" class="source-url">campinas.sp.gov.br/sites/painel_cadunico</a>
+                            <div class="source-name">Cadastro Único — Painel Campinas</div>
+                            <div class="source-desc">Dados locais do CadÚnico: famílias cadastradas, perfil socioeconômico.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://cecad.cidadania.gov.br/painel03.php" class="source-url">cecad.cidadania.gov.br/painel03.php</a>
+                            <div class="source-name">Cadastro Único — Brasil (CeCad)</div>
+                            <div class="source-desc">Painel nacional do Cadastro Único, gerido pelo Ministério do Desenvolvimento e Assistência Social.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://cecad.cidadania.gov.br/agregado/index.php" class="source-url">cecad.cidadania.gov.br/agregado/index.php</a>
+                            <div class="source-name">CeCad — Indicadores de Vulnerabilidade</div>
+                            <div class="source-desc">Indicadores consolidados de vulnerabilidade social por município.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiNjkzNjg2ZWYtYmUwYi00MTExLWI4Y2UtNTRhNGQ0NmJhMTNkIiwidCI6ImE0ZTA2MDVjLWUzOTUtNDZlYS1iMmE4LThlNjE1NGM5MGUwNyJ9" class="source-url">app.powerbi.com · dashboard</a>
+                            <div class="source-name">População em Situação de Rua — Campinas (Censo)</div>
+                            <div class="source-desc">Dashboard Power BI com o último censo da população em situação de rua de Campinas.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Vulnerabilidade Social e Assistência</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://campinas.sp.gov.br/sites/painel_cadunico/painel-cadunico"><div class="name">Cadastro Único — Painel Campinas<span class="arrow">↗</span></div><div class="url">campinas.sp.gov.br/sites/painel_cadunico</div><div class="desc">Dados locais do CadÚnico: famílias cadastradas, perfil socioeconômico.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://cecad.cidadania.gov.br/painel03.php"><div class="name">Cadastro Único — Brasil (CeCad)<span class="arrow">↗</span></div><div class="url">cecad.cidadania.gov.br/painel03.php</div><div class="desc">Painel nacional do Cadastro Único, gerido pelo Ministério do Desenvolvimento e Assistência Social.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://cecad.cidadania.gov.br/agregado/index.php"><div class="name">CeCad — Indicadores de Vulnerabilidade<span class="arrow">↗</span></div><div class="url">cecad.cidadania.gov.br/agregado/index.php</div><div class="desc">Indicadores consolidados de vulnerabilidade social por município.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://app.powerbi.com/view?r=eyJrIjoiNjkzNjg2ZWYtYmUwYi00MTExLWI4Y2UtNTRhNGQ0NmJhMTNkIiwidCI6ImE0ZTA2MDVjLWUzOTUtNDZlYS1iMmE4LThlNjE1NGM5MGUwNyJ9"><div class="name">População em Situação de Rua — Campinas (Censo)<span class="arrow">↗</span></div><div class="url">app.powerbi.com · dashboard</div><div class="desc">Dashboard Power BI com o último censo da população em situação de rua de Campinas.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Transparência e Acesso à Informação — Campinas</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://portal.campinas.sp.gov.br/secretaria/gestao-e-controle/pagina/portal-da-transparencia" class="source-url">portal.campinas.sp.gov.br · transparência</a>
+                            <div class="source-name">Portal da Transparência — Campinas</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.campinas.sp.gov.br/servico-ao-cidadao/portal-da-transparencia/lei-acesso.php" class="source-url">campinas.sp.gov.br · lei-acesso</a>
+                            <div class="source-name">Lei de Acesso à Informação — Campinas</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.campinas.sp.gov.br/diario-oficial/busca-diario.php" class="source-url">campinas.sp.gov.br/diario-oficial</a>
+                            <div class="source-name">Diário Oficial — Prefeitura de Campinas</div>
+                            <div class="source-desc">Ferramenta de busca no Diário Oficial do Município.</div>
+                        </div>
+                    </div>
+                </section>
 
-      <div class="subgroup">Transparência e Acesso à Informação — Campinas</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://portal.campinas.sp.gov.br/secretaria/gestao-e-controle/pagina/portal-da-transparencia"><div class="name">Portal da Transparência — Campinas<span class="arrow">↗</span></div><div class="url">portal.campinas.sp.gov.br · transparência</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.campinas.sp.gov.br/servico-ao-cidadao/portal-da-transparencia/lei-acesso.php"><div class="name">Lei de Acesso à Informação — Campinas<span class="arrow">↗</span></div><div class="url">campinas.sp.gov.br · lei-acesso</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.campinas.sp.gov.br/diario-oficial/busca-diario.php"><div class="name">Diário Oficial — Prefeitura de Campinas<span class="arrow">↗</span></div><div class="url">campinas.sp.gov.br/diario-oficial</div><div class="desc">Ferramenta de busca no Diário Oficial do Município.</div></a>
-      </div>
-    </section>
+                <!-- Seção 2 -->
+                <section id="s2">
+                    <div class="section-number">02</div>
+                    <h2>Dados Estaduais — São Paulo</h2>
 
-    <!-- 2 -->
-    <section class="section" id="s2">
-      <div class="sec-head"><div class="sec-num">02</div><h2 class="sec-title">Dados Estaduais — São Paulo</h2></div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.transparencia.sp.gov.br/"><div class="name">Portal da Transparência — Estado de SP<span class="arrow">↗</span></div><div class="url">transparencia.sp.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.sic.sp.gov.br/"><div class="name">Lei de Acesso à Informação — Estado de SP<span class="arrow">↗</span></div><div class="url">sic.sp.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.ssp.sp.gov.br/estatistica/painel-estatistico"><div class="name">Segurança Pública — SSP/SP (Painel)<span class="arrow">↗</span></div><div class="url">ssp.sp.gov.br/estatistica/painel-estatistico</div><div class="desc">Ocorrências policiais por município, período e natureza do delito.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.tce.sp.gov.br/"><div class="name">Tribunal de Contas do Estado de SP (TCE-SP)<span class="arrow">↗</span></div><div class="url">tce.sp.gov.br</div><div class="desc">Fiscalização das contas públicas de municípios e do estado.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.cve.saude.sp.gov.br/"><div class="name">Centro de Vigilância Epidemiológica (CVE)<span class="arrow">↗</span></div><div class="url">cve.saude.sp.gov.br</div></a>
-      </div>
-    </section>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.transparencia.sp.gov.br/" class="source-url">transparencia.sp.gov.br</a>
+                            <div class="source-name">Portal da Transparência — Estado de SP</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.sic.sp.gov.br/" class="source-url">sic.sp.gov.br</a>
+                            <div class="source-name">Lei de Acesso à Informação — Estado de SP</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.ssp.sp.gov.br/estatistica/painel-estatistico" class="source-url">ssp.sp.gov.br/estatistica/painel-estatistico</a>
+                            <div class="source-name">Segurança Pública — SSP/SP (Painel)</div>
+                            <div class="source-desc">Ocorrências policiais por município, período e natureza do delito.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.tce.sp.gov.br/" class="source-url">tce.sp.gov.br</a>
+                            <div class="source-name">Tribunal de Contas do Estado de SP (TCE-SP)</div>
+                            <div class="source-desc">Fiscalização das contas públicas de municípios e do estado.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.cve.saude.sp.gov.br/" class="source-url">cve.saude.sp.gov.br</a>
+                            <div class="source-name">Centro de Vigilância Epidemiológica (CVE)</div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- 3 -->
-    <section class="section" id="s3">
-      <div class="sec-head"><div class="sec-num">03</div><h2 class="sec-title">Dados Federais e Nacionais</h2></div>
+                <!-- Seção 3 -->
+                <section id="s3">
+                    <div class="section-number">03</div>
+                    <h2>Dados Federais e Nacionais</h2>
 
-      <div class="subgroup">Transparência e Acesso à Informação</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://portaldatransparencia.gov.br/"><div class="name">Portal da Transparência — Governo Federal<span class="arrow">↗</span></div><div class="url">portaldatransparencia.gov.br</div><div class="desc">Gastos, contratos, servidores, benefícios sociais, convênios e muito mais.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.gov.br/acessoainformacao/pt-br/assuntos"><div class="name">Lei de Acesso à Informação — Federal<span class="arrow">↗</span></div><div class="url">gov.br/acessoainformacao</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://ok.org.br/projetos/queremos-saber/"><div class="name">Queremos Saber (Open Knowledge Brasil)<span class="arrow">↗</span></div><div class="url">ok.org.br/projetos/queremos-saber</div><div class="desc">Plataforma para solicitar informações anonimamente via LAI a órgãos públicos.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://informacaopublica.org.br/"><div class="name">Informação Pública — Fórum de Acesso<span class="arrow">↗</span></div><div class="url">informacaopublica.org.br</div><div class="desc">Fórum de Direito de Acesso a Informações Públicas; dados de governos estaduais e municipais.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.transparencia.org.br/"><div class="name">Transparência Brasil (ONG)<span class="arrow">↗</span></div><div class="url">transparencia.org.br</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Transparência e Acesso à Informação</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://portaldatransparencia.gov.br/" class="source-url">portaldatransparencia.gov.br</a>
+                            <div class="source-name">Portal da Transparência — Governo Federal</div>
+                            <div class="source-desc">Gastos, contratos, servidores, benefícios sociais, convênios e muito mais.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.gov.br/acessoainformacao/pt-br/assuntos" class="source-url">gov.br/acessoainformacao</a>
+                            <div class="source-name">Lei de Acesso à Informação — Federal</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://ok.org.br/projetos/queremos-saber/" class="source-url">ok.org.br/projetos/queremos-saber</a>
+                            <div class="source-name">Queremos Saber (Open Knowledge Brasil)</div>
+                            <div class="source-desc">Plataforma para solicitar informações anonimamente via LAI a órgãos públicos.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://informacaopublica.org.br/" class="source-url">informacaopublica.org.br</a>
+                            <div class="source-name">Informação Pública — Fórum de Acesso</div>
+                            <div class="source-desc">Fórum de Direito de Acesso a Informações Públicas; dados de governos estaduais e municipais.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.transparencia.org.br/" class="source-url">transparencia.org.br</a>
+                            <div class="source-name">Transparência Brasil (ONG)</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">IBGE — Estatísticas Nacionais</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.ibge.gov.br/cidades-e-estados"><div class="name">IBGE — Estados<span class="arrow">↗</span></div><div class="url">ibge.gov.br/cidades-e-estados</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.ibge.gov.br/cidadesat/default.php"><div class="name">IBGE — Cidades e Estados<span class="arrow">↗</span></div><div class="url">ibge.gov.br/cidadesat</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.ibge.gov.br/paisesat/"><div class="name">IBGE — Países<span class="arrow">↗</span></div><div class="url">ibge.gov.br/paisesat</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html"><div class="name">PNAD Contínua (IBGE)<span class="arrow">↗</span></div><div class="url">ibge.gov.br · pnad-continua</div><div class="desc">Principal pesquisa sobre mercado de trabalho: emprego, desemprego, renda, informalidade.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">IBGE — Estatísticas Nacionais</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.ibge.gov.br/cidades-e-estados" class="source-url">ibge.gov.br/cidades-e-estados</a>
+                            <div class="source-name">IBGE — Estados</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.ibge.gov.br/cidadesat/default.php" class="source-url">ibge.gov.br/cidadesat</a>
+                            <div class="source-name">IBGE — Cidades e Estados</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.ibge.gov.br/paisesat/" class="source-url">ibge.gov.br/paisesat</a>
+                            <div class="source-name">IBGE — Países</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html" class="source-url">ibge.gov.br · pnad-continua</a>
+                            <div class="source-name">PNAD Contínua (IBGE)</div>
+                            <div class="source-desc">Principal pesquisa sobre mercado de trabalho: emprego, desemprego, renda, informalidade.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Trabalho e Emprego</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="http://pdet.mte.gov.br/novo-caged"><div class="name">Novo CAGED — Ministério do Trabalho<span class="arrow">↗</span></div><div class="url">pdet.mte.gov.br/novo-caged</div><div class="desc">Dados mensais do emprego formal (carteira assinada). A partir de 2020, substitui o CAGED clássico.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://app.powerbi.com/view?r=eyJrIjoiNWI5NWI0ODEtYmZiYy00Mjg3LTkzNWUtY2UyYjIwMDE1YWI2IiwidCI6IjNlYzkyOTY5LTVhNTEtNGYxOC04YWM5LWVmOThmYmFmYTk3OCJ9"><div class="name">Painel Novo CAGED (Power BI)<span class="arrow">↗</span></div><div class="url">app.powerbi.com · dashboard</div><div class="desc">Dashboard interativo com visualização dos dados do Novo CAGED.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www2.camara.leg.br/orcamento-da-uniao"><div class="name">Orçamento da União — Câmara dos Deputados<span class="arrow">↗</span></div><div class="url">camara.leg.br/orcamento-da-uniao</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Trabalho e Emprego</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="http://pdet.mte.gov.br/novo-caged" class="source-url">pdet.mte.gov.br/novo-caged</a>
+                            <div class="source-name">Novo CAGED — Ministério do Trabalho</div>
+                            <div class="source-desc">Dados mensais do emprego formal (carteira assinada). A partir de 2020, substitui o CAGED clássico.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiNWI5NWI0ODEtYmZiYy00Mjg3LTkzNWUtY2UyYjIwMDE1YWI2IiwidCI6IjNlYzkyOTY5LTVhNTEtNGYxOC04YWM5LWVmOThmYmFmYTk3OCJ9" class="source-url">app.powerbi.com · dashboard</a>
+                            <div class="source-name">Painel Novo CAGED (Power BI)</div>
+                            <div class="source-desc">Dashboard interativo com visualização dos dados do Novo CAGED.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www2.camara.leg.br/orcamento-da-uniao" class="source-url">camara.leg.br/orcamento-da-uniao</a>
+                            <div class="source-name">Orçamento da União — Câmara dos Deputados</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Saúde</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://datasus.saude.gov.br/"><div class="name">DataSUS — Sistema Único de Saúde<span class="arrow">↗</span></div><div class="url">datasus.saude.gov.br</div><div class="desc">Base de dados do SUS: mortalidade, internações, procedimentos, estabelecimentos.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://datasus.saude.gov.br/transferencia-de-arquivos/"><div class="name">DataSUS — FTP de Microdados<span class="arrow">↗</span></div><div class="url">datasus.saude.gov.br/transferencia-de-arquivos</div><div class="desc">Acesso direto aos microdados brutos do SUS. FTP: ftp.datasus.gov.br/dissemin/publicos — requer cliente FTP (ex.: FileZilla).</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://covid19.who.int/"><div class="name">Dados de Covid-19 — OMS<span class="arrow">↗</span></div><div class="url">covid19.who.int</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Saúde</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://datasus.saude.gov.br/" class="source-url">datasus.saude.gov.br</a>
+                            <div class="source-name">DataSUS — Sistema Único de Saúde</div>
+                            <div class="source-desc">Base de dados do SUS: mortalidade, internações, procedimentos, estabelecimentos.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://datasus.saude.gov.br/transferencia-de-arquivos/" class="source-url">datasus.saude.gov.br/transferencia-de-arquivos</a>
+                            <div class="source-name">DataSUS — FTP de Microdados</div>
+                            <div class="source-desc">Acesso direto aos microdados brutos do SUS. FTP: ftp.datasus.gov.br/dissemin/publicos — requer cliente FTP (ex.: FileZilla).</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://covid19.who.int/" class="source-url">covid19.who.int</a>
+                            <div class="source-name">Dados de Covid-19 — OMS</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Registro Civil · Segurança · Benefícios Tributários</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://transparencia.registrocivil.org.br/inicio"><div class="name">Portal da Transparência do Registro Civil<span class="arrow">↗</span></div><div class="url">transparencia.registrocivil.org.br</div><div class="desc">Dados nacionais de nascimentos, óbitos, casamentos, divórcios.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.unodc.org/southerncone/"><div class="name">UNODC — Estatísticas de Crime (ONU)<span class="arrow">↗</span></div><div class="url">unodc.org/southerncone</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://sites.tcu.gov.br/observatorio-beneficios-tributarios/requisitos-criacao-beneficio-tributario.html"><div class="name">Observatório de Benefícios Tributários — TCU<span class="arrow">↗</span></div><div class="url">tcu.gov.br · observatório</div><div class="desc">Requisitos e impacto dos benefícios fiscais concedidos pelo poder público.</div></a>
-      </div>
-    </section>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Registro Civil · Segurança · Benefícios Tributários</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://transparencia.registrocivil.org.br/inicio" class="source-url">transparencia.registrocivil.org.br</a>
+                            <div class="source-name">Portal da Transparência do Registro Civil</div>
+                            <div class="source-desc">Dados nacionais de nascimentos, óbitos, casamentos, divórcios.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.unodc.org/southerncone/" class="source-url">unodc.org/southerncone</a>
+                            <div class="source-name">UNODC — Estatísticas de Crime (ONU)</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://sites.tcu.gov.br/observatorio-beneficios-tributarios/requisitos-criacao-beneficio-tributario.html" class="source-url">tcu.gov.br · observatório</a>
+                            <div class="source-name">Observatório de Benefícios Tributários — TCU</div>
+                            <div class="source-desc">Requisitos e impacto dos benefícios fiscais concedidos pelo poder público.</div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- 4 -->
-    <section class="section" id="s4">
-      <div class="sec-head"><div class="sec-num">04</div><h2 class="sec-title">Jornalismo Econômico</h2></div>
+                <!-- Seção 4 -->
+                <section id="s4">
+                    <div class="section-number">04</div>
+                    <h2>Jornalismo Econômico</h2>
 
-      <div class="subgroup">Banco Central do Brasil</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.bcb.gov.br/publicacoes/focus"><div class="name">Focus — Relatório de Mercado (BCB)<span class="arrow">↗</span></div><div class="url">bcb.gov.br/publicacoes/focus</div><div class="desc">Boletim semanal com expectativas do mercado para IPCA, PIB, Selic e câmbio. Publicado toda segunda-feira.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.bcb.gov.br/estatisticas/tabelaespecial"><div class="name">SGS — Séries Temporais (BCB)<span class="arrow">↗</span></div><div class="url">bcb.gov.br/estatisticas/tabelaespecial</div><div class="desc">Séries históricas de juros, câmbio, crédito e inflação. Exportável para Excel.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://dadosabertos.bcb.gov.br/"><div class="name">Dados Abertos — Banco Central<span class="arrow">↗</span></div><div class="url">dadosabertos.bcb.gov.br</div><div class="desc">API e datasets do BCB: câmbio, juros, crédito, PIX e muito mais.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.bcb.gov.br/publicacoes/ri"><div class="name">Relatório de Inflação (BCB, trimestral)<span class="arrow">↗</span></div><div class="url">bcb.gov.br/publicacoes/ri</div><div class="desc">Análise do cenário macroeconômico e projeções do próprio Banco Central.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.bcb.gov.br/publicacoes/notacopom"><div class="name">Notas do Copom (BCB)<span class="arrow">↗</span></div><div class="url">bcb.gov.br/publicacoes/notacopom</div><div class="desc">Comunicados e atas das reuniões do Comitê de Política Monetária.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Banco Central do Brasil</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.bcb.gov.br/publicacoes/focus" class="source-url">bcb.gov.br/publicacoes/focus</a>
+                            <div class="source-name">Focus — Relatório de Mercado (BCB)</div>
+                            <div class="source-desc">Boletim semanal com expectativas do mercado para IPCA, PIB, Selic e câmbio. Publicado toda segunda-feira.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.bcb.gov.br/estatisticas/tabelaespecial" class="source-url">bcb.gov.br/estatisticas/tabelaespecial</a>
+                            <div class="source-name">SGS — Séries Temporais (BCB)</div>
+                            <div class="source-desc">Séries históricas de juros, câmbio, crédito e inflação. Exportável para Excel.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://dadosabertos.bcb.gov.br/" class="source-url">dadosabertos.bcb.gov.br</a>
+                            <div class="source-name">Dados Abertos — Banco Central</div>
+                            <div class="source-desc">API e datasets do BCB: câmbio, juros, crédito, PIX e muito mais.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.bcb.gov.br/publicacoes/ri" class="source-url">bcb.gov.br/publicacoes/ri</a>
+                            <div class="source-name">Relatório de Inflação (BCB, trimestral)</div>
+                            <div class="source-desc">Análise do cenário macroeconômico e projeções do próprio Banco Central.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.bcb.gov.br/publicacoes/notacopom" class="source-url">bcb.gov.br/publicacoes/notacopom</a>
+                            <div class="source-name">Notas do Copom (BCB)</div>
+                            <div class="source-desc">Comunicados e atas das reuniões do Comitê de Política Monetária.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Indicadores de Preços e Atividade</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://portal-da-inflacao-ibre.fgv.br/"><div class="name">Portal da Inflação — FGV/IBRE<span class="arrow">↗</span></div><div class="url">portal-da-inflacao-ibre.fgv.br</div><div class="desc">Índices de preços FGV: IGP-M, IGP-DI, IPA, IPC, INCC.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.ibge.gov.br/explica/inflacao.php"><div class="name">IBGE — Inflação (IPCA e INPC)<span class="arrow">↗</span></div><div class="url">ibge.gov.br/explica/inflacao.php</div><div class="desc">Página explicativa com histórico e metodologia do IPCA e do INPC.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://sidra.ibge.gov.br/"><div class="name">SIDRA — Recuperação Automática IBGE<span class="arrow">↗</span></div><div class="url">sidra.ibge.gov.br</div><div class="desc">Acesso estruturado a todas as pesquisas do IBGE: PIB, PNAD, Censo, IPCA, produção industrial.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.ipeadata.gov.br/"><div class="name">IPEA Data<span class="arrow">↗</span></div><div class="url">ipeadata.gov.br</div><div class="desc">Base macroeconômica, social e regional do IPEA. Acesso via Python na Seção 14.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais.html"><div class="name">Contas Nacionais — IBGE (PIB)<span class="arrow">↗</span></div><div class="url">ibge.gov.br · contas-nacionais</div><div class="desc">Dados do PIB trimestral e anual, por setor e componente de demanda.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Indicadores de Preços e Atividade</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://portal-da-inflacao-ibre.fgv.br/" class="source-url">portal-da-inflacao-ibre.fgv.br</a>
+                            <div class="source-name">Portal da Inflação — FGV/IBRE</div>
+                            <div class="source-desc">Índices de preços FGV: IGP-M, IGP-DI, IPA, IPC, INCC.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.ibge.gov.br/explica/inflacao.php" class="source-url">ibge.gov.br/explica/inflacao.php</a>
+                            <div class="source-name">IBGE — Inflação (IPCA e INPC)</div>
+                            <div class="source-desc">Página explicativa com histórico e metodologia do IPCA e do INPC.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://sidra.ibge.gov.br/" class="source-url">sidra.ibge.gov.br</a>
+                            <div class="source-name">SIDRA — Recuperação Automática IBGE</div>
+                            <div class="source-desc">Acesso estruturado a todas as pesquisas do IBGE: PIB, PNAD, Censo, IPCA, produção industrial.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.ipeadata.gov.br/" class="source-url">ipeadata.gov.br</a>
+                            <div class="source-name">IPEA Data</div>
+                            <div class="source-desc">Base macroeconômica, social e regional do IPEA. Acesso via Python na Seção 14.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais.html" class="source-url">ibge.gov.br · contas-nacionais</a>
+                            <div class="source-name">Contas Nacionais — IBGE (PIB)</div>
+                            <div class="source-desc">Dados do PIB trimestral e anual, por setor e componente de demanda.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Mercado de Trabalho e Emprego Formal</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html"><div class="name">PNAD Contínua — Mercado de Trabalho<span class="arrow">↗</span></div><div class="url">ibge.gov.br · pnad-continua</div><div class="desc">Emprego, desemprego, renda e informalidade. Divulgada mensalmente.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://pdet.mte.gov.br/novo-caged"><div class="name">Novo CAGED — Ministério do Trabalho<span class="arrow">↗</span></div><div class="url">pdet.mte.gov.br/novo-caged</div><div class="desc">Dados mensais do emprego formal. Série a partir de jan/2020.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Mercado de Trabalho e Emprego Formal</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html" class="source-url">ibge.gov.br · pnad-continua</a>
+                            <div class="source-name">PNAD Contínua — Mercado de Trabalho</div>
+                            <div class="source-desc">Emprego, desemprego, renda e informalidade. Divulgada mensalmente.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://pdet.mte.gov.br/novo-caged" class="source-url">pdet.mte.gov.br/novo-caged</a>
+                            <div class="source-name">Novo CAGED — Ministério do Trabalho</div>
+                            <div class="source-desc">Dados mensais do emprego formal. Série a partir de jan/2020.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Finanças Públicas e Orçamento</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.gov.br/tesouronacional/pt-br/estatisticas-fiscais-e-planejamento/resultado-do-tesouro-nacional-rtn"><div class="name">Resultado do Tesouro Nacional<span class="arrow">↗</span></div><div class="url">gov.br/tesouronacional · RTN</div><div class="desc">Resultado primário e nominal do setor público; dívida bruta e líquida.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www2.camara.leg.br/orcamento-da-uniao"><div class="name">Orçamento da União — Câmara<span class="arrow">↗</span></div><div class="url">camara.leg.br/orcamento-da-uniao</div><div class="desc">LOA, LDO, PPA: documentos e execução orçamentária.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://portaldatransparencia.gov.br/"><div class="name">SIAFI / Transparência Federal<span class="arrow">↗</span></div><div class="url">portaldatransparencia.gov.br</div><div class="desc">Gastos federais por programa, órgão, beneficiário e contrato.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Finanças Públicas e Orçamento</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.gov.br/tesouronacional/pt-br/estatisticas-fiscais-e-planejamento/resultado-do-tesouro-nacional-rtn" class="source-url">gov.br/tesouronacional · RTN</a>
+                            <div class="source-name">Resultado do Tesouro Nacional</div>
+                            <div class="source-desc">Resultado primário e nominal do setor público; dívida bruta e líquida.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www2.camara.leg.br/orcamento-da-uniao" class="source-url">camara.leg.br/orcamento-da-uniao</a>
+                            <div class="source-name">Orçamento da União — Câmara</div>
+                            <div class="source-desc">LOA, LDO, PPA: documentos e execução orçamentária.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://portaldatransparencia.gov.br/" class="source-url">portaldatransparencia.gov.br</a>
+                            <div class="source-name">SIAFI / Transparência Federal</div>
+                            <div class="source-desc">Gastos federais por programa, órgão, beneficiário e contrato.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Comércio Exterior · Bolsa e Mercado de Capitais</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://comexstat.mdic.gov.br/"><div class="name">ComexStat — MDIC<span class="arrow">↗</span></div><div class="url">comexstat.mdic.gov.br</div><div class="desc">Comércio exterior por produto (NCM), destino/origem, modal e período.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.b3.com.br/pt_br/market-data-e-indices/"><div class="name">B3 — Dados de Mercado<span class="arrow">↗</span></div><div class="url">b3.com.br/market-data-e-indices</div><div class="desc">Índices (Ibovespa, IFIX, IDIV), cotações e dados históricos da bolsa.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.gov.br/cvm/pt-br"><div class="name">CVM — Comissão de Valores Mobiliários<span class="arrow">↗</span></div><div class="url">gov.br/cvm</div><div class="desc">Reguladora do mercado de capitais; publica fatos relevantes e demonstrações financeiras.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://dados.cvm.gov.br/"><div class="name">CVM — Portal de Dados Abertos<span class="arrow">↗</span></div><div class="url">dados.cvm.gov.br</div><div class="desc">Datasets da CVM: fundos de investimento, companhias abertas, administradores.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Comércio Exterior · Bolsa e Mercado de Capitais</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://comexstat.mdic.gov.br/" class="source-url">comexstat.mdic.gov.br</a>
+                            <div class="source-name">ComexStat — MDIC</div>
+                            <div class="source-desc">Comércio exterior por produto (NCM), destino/origem, modal e período.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.b3.com.br/pt_br/market-data-e-indices/" class="source-url">b3.com.br/market-data-e-indices</a>
+                            <div class="source-name">B3 — Dados de Mercado</div>
+                            <div class="source-desc">Índices (Ibovespa, IFIX, IDIV), cotações e dados históricos da bolsa.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.gov.br/cvm/pt-br" class="source-url">gov.br/cvm</a>
+                            <div class="source-name">CVM — Comissão de Valores Mobiliários</div>
+                            <div class="source-desc">Reguladora do mercado de capitais; publica fatos relevantes e demonstrações financeiras.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://dados.cvm.gov.br/" class="source-url">dados.cvm.gov.br</a>
+                            <div class="source-name">CVM — Portal de Dados Abertos</div>
+                            <div class="source-desc">Datasets da CVM: fundos de investimento, companhias abertas, administradores.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Referências Internacionais de Economia</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://data.worldbank.org/"><div class="name">Banco Mundial — Open Data<span class="arrow">↗</span></div><div class="url">data.worldbank.org</div><div class="desc">Indicadores econômicos e sociais de todos os países.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.imf.org/en/Data"><div class="name">FMI — Data (IMF)<span class="arrow">↗</span></div><div class="url">imf.org/en/Data</div><div class="desc">World Economic Outlook, balanço de pagamentos.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://stats.oecd.org/"><div class="name">OCDE — Statistics<span class="arrow">↗</span></div><div class="url">stats.oecd.org</div><div class="desc">Indicadores dos países-membros e associados da OCDE.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.google.com/publicdata/home"><div class="name">Google Public Data<span class="arrow">↗</span></div><div class="url">google.com/publicdata</div><div class="desc">Dados do Banco Mundial e outras fontes internacionais com visualização gráfica.</div></a>
-      </div>
-    </section>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Referências Internacionais de Economia</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://data.worldbank.org/" class="source-url">data.worldbank.org</a>
+                            <div class="source-name">Banco Mundial — Open Data</div>
+                            <div class="source-desc">Indicadores econômicos e sociais de todos os países.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.imf.org/en/Data" class="source-url">imf.org/en/Data</a>
+                            <div class="source-name">FMI — Data (IMF)</div>
+                            <div class="source-desc">World Economic Outlook, balanço de pagamentos.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://stats.oecd.org/" class="source-url">stats.oecd.org</a>
+                            <div class="source-name">OCDE — Statistics</div>
+                            <div class="source-desc">Indicadores dos países-membros e associados da OCDE.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.google.com/publicdata/home" class="source-url">google.com/publicdata</a>
+                            <div class="source-name">Google Public Data</div>
+                            <div class="source-desc">Dados do Banco Mundial e outras fontes internacionais com visualização gráfica.</div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- 5 -->
-    <section class="section" id="s5">
-      <div class="sec-head"><div class="sec-num">05</div><h2 class="sec-title">Imigração</h2></div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://app.powerbi.com/view?r=eyJrIjoiMzE0M2M1MDUtYTJmYi00NWE0LWEzZWMtNDc1ZDA3OGE5MjljIiwidCI6ImVjMzU5YmExLTYzMGItNGQyYi1iODMzLWM4ZTZkNDhmODA1OSJ9&pageName=c47451134a39e637d708"><div class="name">BI Sismigra (Power BI — Min. da Justiça)<span class="arrow">↗</span></div><div class="url">app.powerbi.com · Sismigra</div><div class="desc">Painel interativo sobre registros de imigrantes no Brasil.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://datamigra.mj.gov.br/#/public"><div class="name">DataMigra — Tabulação com Excel<span class="arrow">↗</span></div><div class="url">datamigra.mj.gov.br</div><div class="desc">Exportação de dados de imigração (Sismigra) para planilha.</div></a>
-      </div>
-    </section>
+                <!-- Seção 5 -->
+                <section id="s5">
+                    <div class="section-number">05</div>
+                    <h2>Imigração</h2>
 
-    <!-- 6 -->
-    <section class="section" id="s6">
-      <div class="sec-head"><div class="sec-num">06</div><h2 class="sec-title">Bases de Dados e Ferramentas para Jornalismo de Dados</h2></div>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiMzE0M2M1MDUtYTJmYi00NWE0LWEzZWMtNDc1ZDA3OGE5MjljIiwidCI6ImVjMzU5YmExLTYzMGItNGQyYi1iODMzLWM4ZTZkNDhmODA1OSJ9&pageName=c47451134a39e637d708" class="source-url">app.powerbi.com · Sismigra</a>
+                            <div class="source-name">BI Sismigra (Power BI — Min. da Justiça)</div>
+                            <div class="source-desc">Painel interativo sobre registros de imigrantes no Brasil.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://datamigra.mj.gov.br/#/public" class="source-url">datamigra.mj.gov.br</a>
+                            <div class="source-name">DataMigra — Tabulação com Excel</div>
+                            <div class="source-desc">Exportação de dados de imigração (Sismigra) para planilha.</div>
+                        </div>
+                    </div>
+                </section>
 
-      <div class="subgroup">Repositórios Nacionais</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://basedosdados.org"><div class="name">Base dos Dados (BD)<span class="arrow">↗</span></div><div class="url">basedosdados.org</div><div class="desc">Repositório de dados públicos já tratados, acessíveis via SQL no BigQuery ou Python. Passo a passo na Seção 14.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://dados.gov.br/"><div class="name">Dados Abertos — Governo Federal<span class="arrow">↗</span></div><div class="url">dados.gov.br</div><div class="desc">Portal oficial de dados abertos do governo federal.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.doinet.com.br/"><div class="name">DOINET — Diários Oficiais do Brasil<span class="arrow">↗</span></div><div class="url">doinet.com.br</div><div class="desc">Serviço pago. Busca integrada em diários oficiais de todo o país.</div></a>
-      </div>
+                <!-- Seção 6 -->
+                <section id="s6">
+                    <div class="section-number">06</div>
+                    <h2>Bases de Dados e Ferramentas para Jornalismo de Dados</h2>
 
-      <div class="subgroup">Repositórios Internacionais</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://datasetsearch.research.google.com/"><div class="name">Google Dataset Search<span class="arrow">↗</span></div><div class="url">datasetsearch.research.google.com</div><div class="desc">Ferramenta do Google para encontrar datasets públicos de todo o mundo.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://worldatlas.com/"><div class="name">Atlas Mundial (World Atlas)<span class="arrow">↗</span></div><div class="url">worldatlas.com</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://data.worldbank.org/"><div class="name">Banco Mundial — Open Data<span class="arrow">↗</span></div><div class="url">data.worldbank.org</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Repositórios Nacionais</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://basedosdados.org" class="source-url">basedosdados.org</a>
+                            <div class="source-name">Base dos Dados (BD)</div>
+                            <div class="source-desc">Repositório de dados públicos já tratados, acessíveis via SQL no BigQuery ou Python. Passo a passo na Seção 14.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://dados.gov.br/" class="source-url">dados.gov.br</a>
+                            <div class="source-name">Dados Abertos — Governo Federal</div>
+                            <div class="source-desc">Portal oficial de dados abertos do governo federal.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.doinet.com.br/" class="source-url">doinet.com.br</a>
+                            <div class="source-name">DOINET — Diários Oficiais do Brasil</div>
+                            <div class="source-desc">Serviço pago. Busca integrada em diários oficiais de todo o país.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Visualização de Dados</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://flourish.studio/"><div class="name">Flourish<span class="arrow">↗</span></div><div class="url">flourish.studio</div><div class="desc">Gráficos interativos e apresentações visuais sem programação. Muito usada em jornalismo de dados.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.datawrapper.de/"><div class="name">Datawrapper<span class="arrow">↗</span></div><div class="url">datawrapper.de</div><div class="desc">Ferramenta gratuita para criar gráficos, mapas e tabelas interativas para publicação.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://trends.google.com/trends/?geo=BR"><div class="name">Google Trends<span class="arrow">↗</span></div><div class="url">trends.google.com</div><div class="desc">Tendências de pesquisa na web; útil para identificar pautas em alta. Geração de PNG via Python na Seção 15.</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Repositórios Internacionais</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://datasetsearch.research.google.com/" class="source-url">datasetsearch.research.google.com</a>
+                            <div class="source-name">Google Dataset Search</div>
+                            <div class="source-desc">Ferramenta do Google para encontrar datasets públicos de todo o mundo.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://worldatlas.com/" class="source-url">worldatlas.com</a>
+                            <div class="source-name">Atlas Mundial (World Atlas)</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://data.worldbank.org/" class="source-url">data.worldbank.org</a>
+                            <div class="source-name">Banco Mundial — Open Data</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Pesquisa em Documentos</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.documentcloud.org/"><div class="name">DocumentCloud<span class="arrow">↗</span></div><div class="url">documentcloud.org</div><div class="desc">Publicar, anotar e pesquisar documentos. Integra OCR e busca textual.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://tabula.technology/"><div class="name">Tabula (PDF para planilha)<span class="arrow">↗</span></div><div class="url">tabula.technology</div><div class="desc">Extrai tabelas de PDFs e converte em planilha. Gratuito e de código aberto.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://opencorporates.com/"><div class="name">OpenCorporates — Empresas do Mundo<span class="arrow">↗</span></div><div class="url">opencorporates.com</div><div class="desc">Base de dados de empresas registradas em dezenas de países.</div></a>
-      </div>
-    </section>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Visualização de Dados</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://flourish.studio/" class="source-url">flourish.studio</a>
+                            <div class="source-name">Flourish</div>
+                            <div class="source-desc">Gráficos interativos e apresentações visuais sem programação. Muito usada em jornalismo de dados.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.datawrapper.de/" class="source-url">datawrapper.de</a>
+                            <div class="source-name">Datawrapper</div>
+                            <div class="source-desc">Ferramenta gratuita para criar gráficos, mapas e tabelas interativas para publicação.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://trends.google.com/trends/?geo=BR" class="source-url">trends.google.com</a>
+                            <div class="source-name">Google Trends</div>
+                            <div class="source-desc">Tendências de pesquisa na web; útil para identificar pautas em alta. Geração de PNG via Python na Seção 15.</div>
+                        </div>
+                    </div>
 
-    <!-- 7 -->
-    <section class="section" id="s7">
-      <div class="sec-head"><div class="sec-num">07</div><h2 class="sec-title">Verificação de Informações e Fact-Checking</h2></div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://lupa.uol.com.br/"><div class="name">Agência Lupa<span class="arrow">↗</span></div><div class="url">lupa.uol.com.br</div><div class="desc">Agência pioneira de fact-checking no Brasil.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://aosfatos.org/"><div class="name">Aos Fatos<span class="arrow">↗</span></div><div class="url">aosfatos.org</div><div class="desc">Checagem independente de declarações públicas e desinformação.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://g1.globo.com/fato-ou-fake/"><div class="name">G1 Fato ou Fake<span class="arrow">↗</span></div><div class="url">g1.globo.com/fato-ou-fake</div><div class="desc">Serviço de verificação do grupo Globo.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.poynter.org/ifcn/"><div class="name">IFCN — Código de Princípios<span class="arrow">↗</span></div><div class="url">poynter.org/ifcn</div><div class="desc">Lista internacional de verificadoras certificadas.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://tineye.com/"><div class="name">TinEye — Pesquisa Reversa de Imagens<span class="arrow">↗</span></div><div class="url">tineye.com</div><div class="desc">Verifica a origem de imagens; útil para identificar fotos fora de contexto.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://images.google.com/"><div class="name">Google Imagens (pesquisa reversa)<span class="arrow">↗</span></div><div class="url">images.google.com</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.invid-project.eu/"><div class="name">InVID / WeVerify (vídeo)<span class="arrow">↗</span></div><div class="url">invid-project.eu</div><div class="desc">Extensão e plataforma para verificar a autenticidade de vídeos e imagens em redes sociais.</div></a>
-      </div>
-    </section>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Pesquisa em Documentos</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.documentcloud.org/" class="source-url">documentcloud.org</a>
+                            <div class="source-name">DocumentCloud</div>
+                            <div class="source-desc">Publicar, anotar e pesquisar documentos. Integra OCR e busca textual.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://tabula.technology/" class="source-url">tabula.technology</a>
+                            <div class="source-name">Tabula (PDF para planilha)</div>
+                            <div class="source-desc">Extrai tabelas de PDFs e converte em planilha. Gratuito e de código aberto.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://opencorporates.com/" class="source-url">opencorporates.com</a>
+                            <div class="source-name">OpenCorporates — Empresas do Mundo</div>
+                            <div class="source-desc">Base de dados de empresas registradas em dezenas de países.</div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- 8 -->
-    <section class="section" id="s8">
-      <div class="sec-head"><div class="sec-num">08</div><h2 class="sec-title">Redes Sociais e Comportamento Digital</h2></div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="http://trendsmap.com/"><div class="name">TrendsMap<span class="arrow">↗</span></div><div class="url">trendsmap.com</div><div class="desc">Mapa global dos assuntos em alta no Twitter/X, por localização.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.crowdtangle.com/"><div class="name">CrowdTangle (Meta)<span class="arrow">↗</span></div><div class="url">crowdtangle.com</div><div class="desc">Monitoramento de conteúdo em Facebook e Instagram. Acesso mediante solicitação.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.google.com/advanced_search"><div class="name">Busca Avançada Google<span class="arrow">↗</span></div><div class="url">google.com/advanced_search</div><div class="desc">Filtra resultados por data, idioma, formato e domínio.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.google.com/cse/"><div class="name">Busca Customizada Google (CSE)<span class="arrow">↗</span></div><div class="url">google.com/cse</div><div class="desc">Crie um mecanismo de busca restrito a sites específicos.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://web.archive.org/"><div class="name">Wayback Machine (Internet Archive)<span class="arrow">↗</span></div><div class="url">web.archive.org</div><div class="desc">Versões arquivadas de páginas web; fundamental para verificar conteúdo apagado.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.similarweb.com/"><div class="name">ComScore / SimilarWeb<span class="arrow">↗</span></div><div class="url">similarweb.com</div><div class="desc">Dados de audiência de sites.</div></a>
-      </div>
-    </section>
+                <!-- Seção 7 -->
+                <section id="s7">
+                    <div class="section-number">07</div>
+                    <h2>Verificação de Informações e Fact-Checking</h2>
 
-    <!-- 9 -->
-    <section class="section" id="s9">
-      <div class="sec-head"><div class="sec-num">09</div><h2 class="sec-title">Pesquisa Acadêmica</h2></div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://scholar.google.com.br/"><div class="name">Google Acadêmico (Scholar)<span class="arrow">↗</span></div><div class="url">scholar.google.com.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.scielo.br/"><div class="name">SciELO — Artigos em português<span class="arrow">↗</span></div><div class="url">scielo.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://journals.sagepub.com/"><div class="name">SAGE Journals — Internacionais<span class="arrow">↗</span></div><div class="url">journals.sagepub.com</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://bdtd.ibict.br/"><div class="name">Teses e Dissertações (BDTD)<span class="arrow">↗</span></div><div class="url">bdtd.ibict.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://catalogodeteses.capes.gov.br/catalogo-teses/#!/"><div class="name">Catálogo de Teses — CAPES<span class="arrow">↗</span></div><div class="url">catalogodeteses.capes.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.perplexity.ai/"><div class="name">Perplexity AI<span class="arrow">↗</span></div><div class="url">perplexity.ai</div><div class="desc">IA de busca que sintetiza fontes e as cita; útil para levantar literatura rapidamente.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://consensus.app/"><div class="name">Consensus (IA)<span class="arrow">↗</span></div><div class="url">consensus.app</div><div class="desc">Busca em papers acadêmicos com síntese por inteligência artificial.</div></a>
-      </div>
-    </section>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://lupa.uol.com.br/" class="source-url">lupa.uol.com.br</a>
+                            <div class="source-name">Agência Lupa</div>
+                            <div class="source-desc">Agência pioneira de fact-checking no Brasil.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://aosfatos.org/" class="source-url">aosfatos.org</a>
+                            <div class="source-name">Aos Fatos</div>
+                            <div class="source-desc">Checagem independente de declarações públicas e desinformação.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://g1.globo.com/fato-ou-fake/" class="source-url">g1.globo.com/fato-ou-fake</a>
+                            <div class="source-name">G1 Fato ou Fake</div>
+                            <div class="source-desc">Serviço de verificação do grupo Globo.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.poynter.org/ifcn/" class="source-url">poynter.org/ifcn</a>
+                            <div class="source-name">IFCN — Código de Princípios</div>
+                            <div class="source-desc">Lista internacional de verificadoras certificadas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://tineye.com/" class="source-url">tineye.com</a>
+                            <div class="source-name">TinEye — Pesquisa Reversa de Imagens</div>
+                            <div class="source-desc">Verifica a origem de imagens; útil para identificar fotos fora de contexto.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://images.google.com/" class="source-url">images.google.com</a>
+                            <div class="source-name">Google Imagens (pesquisa reversa)</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.invid-project.eu/" class="source-url">invid-project.eu</a>
+                            <div class="source-name">InVID / WeVerify (vídeo)</div>
+                            <div class="source-desc">Extensão e plataforma para verificar a autenticidade de vídeos e imagens em redes sociais.</div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- 10 -->
-    <section class="section" id="s10">
-      <div class="sec-head"><div class="sec-num">10</div><h2 class="sec-title">Cultura, Arte e Entretenimento</h2></div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.itaucultural.org.br/"><div class="name">Itaú Cultural<span class="arrow">↗</span></div><div class="url">itaucultural.org.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://sistemas.cultura.gov.br/salicnet/Salicnet/Salicnet.php"><div class="name">SalicNet — Projetos do Min. da Cultura<span class="arrow">↗</span></div><div class="url">sistemas.cultura.gov.br/salicnet</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://artsandculture.google.com/"><div class="name">Google Arts &amp; Culture<span class="arrow">↗</span></div><div class="url">artsandculture.google.com</div><div class="desc">Galeria virtual com obras de museus do mundo inteiro.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.imdb.com/"><div class="name">IMDB — Internet Movie Database<span class="arrow">↗</span></div><div class="url">imdb.com</div><div class="desc">Enciclopédia de filmes, séries, atores e equipe técnica.</div></a>
-      </div>
-    </section>
+                <!-- Seção 8 -->
+                <section id="s8">
+                    <div class="section-number">08</div>
+                    <h2>Redes Sociais e Comportamento Digital</h2>
 
-    <!-- 11 -->
-    <section class="section" id="s11">
-      <div class="sec-head"><div class="sec-num">11</div><h2 class="sec-title">Ferramentas de Pesquisa e Produção Textual</h2></div>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="http://trendsmap.com/" class="source-url">trendsmap.com</a>
+                            <div class="source-name">TrendsMap</div>
+                            <div class="source-desc">Mapa global dos assuntos em alta no Twitter/X, por localização.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.crowdtangle.com/" class="source-url">crowdtangle.com</a>
+                            <div class="source-name">CrowdTangle (Meta)</div>
+                            <div class="source-desc">Monitoramento de conteúdo em Facebook e Instagram. Acesso mediante solicitação.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.google.com/advanced_search" class="source-url">google.com/advanced_search</a>
+                            <div class="source-name">Busca Avançada Google</div>
+                            <div class="source-desc">Filtra resultados por data, idioma, formato e domínio.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.google.com/cse/" class="source-url">google.com/cse</a>
+                            <div class="source-name">Busca Customizada Google (CSE)</div>
+                            <div class="source-desc">Crie um mecanismo de busca restrito a sites específicos.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://web.archive.org/" class="source-url">web.archive.org</a>
+                            <div class="source-name">Wayback Machine (Internet Archive)</div>
+                            <div class="source-desc">Versões arquivadas de páginas web; fundamental para verificar conteúdo apagado.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.similarweb.com/" class="source-url">similarweb.com</a>
+                            <div class="source-name">ComScore / SimilarWeb</div>
+                            <div class="source-desc">Dados de audiência de sites.</div>
+                        </div>
+                    </div>
+                </section>
 
-      <div class="subgroup">Língua Portuguesa</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://dicionario.priberam.org/"><div class="name">Priberam — Dicionário<span class="arrow">↗</span></div><div class="url">dicionario.priberam.org</div><div class="desc">Dicionário gratuito com conjugação de verbos.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.academia.org.br/"><div class="name">ABL — Dicionário Ortográfico<span class="arrow">↗</span></div><div class="url">academia.org.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.visuwords.com/"><div class="name">VisuWords — Sinônimos (inglês)<span class="arrow">↗</span></div><div class="url">visuwords.com</div><div class="desc">Dicionário visual de sinônimos.</div></a>
-      </div>
+                <!-- Seção 9 -->
+                <section id="s9">
+                    <div class="section-number">09</div>
+                    <h2>Pesquisa Acadêmica</h2>
 
-      <div class="subgroup">Mapas e Medição</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.calcmaps.com/pt/map-area/"><div class="name">CalcMaps — Medir áreas no mapa<span class="arrow">↗</span></div><div class="url">calcmaps.com/pt/map-area</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.convertworld.com/pt/"><div class="name">Conversor de Medidas<span class="arrow">↗</span></div><div class="url">convertworld.com/pt</div></a>
-      </div>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://scholar.google.com.br/" class="source-url">scholar.google.com.br</a>
+                            <div class="source-name">Google Acadêmico (Scholar)</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.scielo.br/" class="source-url">scielo.br</a>
+                            <div class="source-name">SciELO — Artigos em português</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://journals.sagepub.com/" class="source-url">journals.sagepub.com</a>
+                            <div class="source-name">SAGE Journals — Internacionais</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://bdtd.ibict.br/" class="source-url">bdtd.ibict.br</a>
+                            <div class="source-name">Teses e Dissertações (BDTD)</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://catalogodeteses.capes.gov.br/catalogo-teses/#!/" class="source-url">catalogodeteses.capes.gov.br</a>
+                            <div class="source-name">Catálogo de Teses — CAPES</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.perplexity.ai/" class="source-url">perplexity.ai</a>
+                            <div class="source-name">Perplexity AI</div>
+                            <div class="source-desc">IA de busca que sintetiza fontes e as cita; útil para levantar literatura rapidamente.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://consensus.app/" class="source-url">consensus.app</a>
+                            <div class="source-name">Consensus (IA)</div>
+                            <div class="source-desc">Busca em papers acadêmicos com síntese por inteligência artificial.</div>
+                        </div>
+                    </div>
+                </section>
 
-      <div class="subgroup">Outros</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="http://www.cg.org.br/"><div class="name">Comitê Gestor da Internet (CGI.br)<span class="arrow">↗</span></div><div class="url">cg.org.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://notebooklm.google.com/"><div class="name">NotebookLM (Google)<span class="arrow">↗</span></div><div class="url">notebooklm.google.com</div><div class="desc">IA do Google para análise e síntese de documentos; útil para revisar fontes extensas.</div></a>
-      </div>
-    </section>
+                <!-- Seção 10 -->
+                <section id="s10">
+                    <div class="section-number">10</div>
+                    <h2>Cultura, Arte e Entretenimento</h2>
 
-    <!-- 12 -->
-    <section class="section" id="s12">
-      <div class="sec-head"><div class="sec-num">12</div><h2 class="sec-title">Organizações de Referência em Jornalismo</h2></div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://abraji.org.br/"><div class="name">ABRAJI<span class="arrow">↗</span></div><div class="url">abraji.org.br</div><div class="desc">Referência em jornalismo investigativo no Brasil; cursos, bases de dados e ferramentas.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.voltdata.info/"><div class="name">Volt Data Lab<span class="arrow">↗</span></div><div class="url">voltdata.info</div><div class="desc">Organização especializada em jornalismo de dados no Brasil.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://apublica.org/"><div class="name">Agência Pública<span class="arrow">↗</span></div><div class="url">apublica.org</div><div class="desc">Agência de jornalismo investigativo e de dados sem fins lucrativos.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://theintercept.com/brasil/"><div class="name">The Intercept Brasil<span class="arrow">↗</span></div><div class="url">theintercept.com/brasil</div><div class="desc">Jornalismo investigativo independente.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.icfj.org/"><div class="name">ICFJ — Int. Center for Journalists<span class="arrow">↗</span></div><div class="url">icfj.org</div><div class="desc">Cursos, bolsas e ferramentas para jornalistas.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://knightcenter.utexas.edu/pt-br/"><div class="name">Knight Center (UT Austin)<span class="arrow">↗</span></div><div class="url">knightcenter.utexas.edu/pt-br</div><div class="desc">Cursos gratuitos e pagos de jornalismo digital, dados e investigação.</div></a>
-      </div>
-    </section>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.itaucultural.org.br/" class="source-url">itaucultural.org.br</a>
+                            <div class="source-name">Itaú Cultural</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://sistemas.cultura.gov.br/salicnet/Salicnet/Salicnet.php" class="source-url">sistemas.cultura.gov.br/salicnet</a>
+                            <div class="source-name">SalicNet — Projetos do Min. da Cultura</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://artsandculture.google.com/" class="source-url">artsandculture.google.com</a>
+                            <div class="source-name">Google Arts & Culture</div>
+                            <div class="source-desc">Galeria virtual com obras de museus do mundo inteiro.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.imdb.com/" class="source-url">imdb.com</a>
+                            <div class="source-name">IMDB — Internet Movie Database</div>
+                            <div class="source-desc">Enciclopédia de filmes, séries, atores e equipe técnica.</div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- 13 -->
-    <section class="section" id="s13">
-      <div class="sec-head"><div class="sec-num">13</div><h2 class="sec-title">Região Metropolitana de Campinas (RMC)</h2></div>
-      <div class="rmc-cities">A RMC reúne 20 municípios: Americana, Artur Nogueira, Campinas, Cosmópolis, Engenheiro Coelho, Holambra, Hortolândia, Indaiatuba, Itatiba, Jaguariúna, Monte Mor, Morungaba, Nova Odessa, Paulínia, Pedreira, Santa Bárbara d'Oeste, Santo Antônio de Posse, Sumaré, Valinhos e Vinhedo. População: cerca de 3,2 milhões de habitantes (Censo 2022/Seade).</div>
+                <!-- Seção 11 -->
+                <section id="s11">
+                    <div class="section-number">11</div>
+                    <h2>Ferramentas de Pesquisa e Produção Textual</h2>
 
-      <div class="subgroup">Órgão Gestor da RMC</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://www.agemcamp.sp.gov.br/"><div class="name">Agemcamp — Agência Metropolitana<span class="arrow">↗</span></div><div class="url">agemcamp.sp.gov.br</div><div class="desc">Autarquia estadual responsável pelo planejamento e gestão da RMC.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.agemcamp.sp.gov.br/habit_ag_campinas/regiao-metropolitana-de-campinas/dados-e-indicadores"><div class="name">Agemcamp — Dados e Indicadores<span class="arrow">↗</span></div><div class="url">agemcamp.sp.gov.br · indicadores</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.agemcamp.sp.gov.br/habit_ag_campinas/regiao-metropolitana-de-campinas/rmc"><div class="name">Agemcamp — Perfil da RMC<span class="arrow">↗</span></div><div class="url">agemcamp.sp.gov.br · rmc</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://rmc.pdui.sp.gov.br/"><div class="name">PDUI-RMC — Desenvolvimento Urbano<span class="arrow">↗</span></div><div class="url">rmc.pdui.sp.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://dadosabertos.sp.gov.br/dataset/cd-rmc"><div class="name">Dados Abertos SP — Agemcamp (CD-RMC)<span class="arrow">↗</span></div><div class="url">dadosabertos.sp.gov.br/dataset/cd-rmc</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Língua Portuguesa</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://dicionario.priberam.org/" class="source-url">dicionario.priberam.org</a>
+                            <div class="source-name">Priberam — Dicionário</div>
+                            <div class="source-desc">Dicionário gratuito com conjugação de verbos.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.academia.org.br/" class="source-url">academia.org.br</a>
+                            <div class="source-name">ABL — Dicionário Ortográfico</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.visuwords.com/" class="source-url">visuwords.com</a>
+                            <div class="source-name">VisuWords — Sinônimos (inglês)</div>
+                            <div class="source-desc">Dicionário visual de sinônimos.</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Fundação Seade — Municípios Paulistas</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://municipios.seade.gov.br/"><div class="name">Seade Municípios (painéis temáticos)<span class="arrow">↗</span></div><div class="url">municipios.seade.gov.br</div><div class="desc">População, economia, emprego, saúde e educação para os 645 municípios paulistas.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://perfil.seade.gov.br/"><div class="name">Seade — Perfil dos Municípios<span class="arrow">↗</span></div><div class="url">perfil.seade.gov.br</div><div class="desc">Indicadores em ficha por município, com gráficos e mapas.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://pib.seade.gov.br/analise/"><div class="name">Seade — PIB Regional e Municipal<span class="arrow">↗</span></div><div class="url">pib.seade.gov.br/analise</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://populacao.seade.gov.br/nova-analise/"><div class="name">Seade — Projeções Populacionais<span class="arrow">↗</span></div><div class="url">populacao.seade.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://ipvs.seade.gov.br/"><div class="name">IPVS — Índice de Vulnerabilidade<span class="arrow">↗</span></div><div class="url">ipvs.seade.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://dadosabertos.sp.gov.br/organization/fundacao-sistema-estadual-de-analise-de-dados-seade"><div class="name">Seade — Repositório de Dados Abertos<span class="arrow">↗</span></div><div class="url">dadosabertos.sp.gov.br · seade</div></a>
-      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Mapas e Medição</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.calcmaps.com/pt/map-area/" class="source-url">calcmaps.com/pt/map-area</a>
+                            <div class="source-name">CalcMaps — Medir áreas no mapa</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.convertworld.com/pt/" class="source-url">convertworld.com/pt</a>
+                            <div class="source-name">Conversor de Medidas</div>
+                        </div>
+                    </div>
 
-      <div class="subgroup">Transparência dos Municípios da RMC</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="https://portal.campinas.sp.gov.br/secretaria/gestao-e-controle/pagina/portal-da-transparencia"><div class="name">Transparência — Campinas<span class="arrow">↗</span></div><div class="url">portal.campinas.sp.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.campinas.sp.gov.br/diario-oficial/busca-diario.php"><div class="name">Diário Oficial — Campinas<span class="arrow">↗</span></div><div class="url">campinas.sp.gov.br/diario-oficial</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.americana.sp.gov.br/transparencia"><div class="name">Transparência — Americana<span class="arrow">↗</span></div><div class="url">americana.sp.gov.br/transparencia</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.indaiatuba.sp.gov.br/transparencia"><div class="name">Transparência — Indaiatuba<span class="arrow">↗</span></div><div class="url">indaiatuba.sp.gov.br/transparencia</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.sumare.sp.gov.br/transparencia"><div class="name">Transparência — Sumaré<span class="arrow">↗</span></div><div class="url">sumare.sp.gov.br/transparencia</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.hortolandia.sp.gov.br/transparencia"><div class="name">Transparência — Hortolândia<span class="arrow">↗</span></div><div class="url">hortolandia.sp.gov.br/transparencia</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.santabarbara.sp.gov.br/transparencia"><div class="name">Transparência — Santa Bárbara d'Oeste<span class="arrow">↗</span></div><div class="url">santabarbara.sp.gov.br/transparencia</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.paulinia.sp.gov.br/transparencia"><div class="name">Transparência — Paulínia<span class="arrow">↗</span></div><div class="url">paulinia.sp.gov.br/transparencia</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.valinhos.sp.gov.br/transparencia"><div class="name">Transparência — Valinhos<span class="arrow">↗</span></div><div class="url">valinhos.sp.gov.br/transparencia</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.vinhedo.sp.gov.br/transparencia"><div class="name">Transparência — Vinhedo<span class="arrow">↗</span></div><div class="url">vinhedo.sp.gov.br/transparencia</div></a>
-      </div>
-      <div class="note">Para os demais municípios da RMC, acesse o portal da prefeitura respectiva e procure pelo link Transparência. Todos são obrigados por lei a manter o portal atualizado.</div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Outros</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="http://www.cg.org.br/" class="source-url">cg.org.br</a>
+                            <div class="source-name">Comitê Gestor da Internet (CGI.br)</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://notebooklm.google.com/" class="source-url">notebooklm.google.com</a>
+                            <div class="source-name">NotebookLM (Google)</div>
+                            <div class="source-desc">IA do Google para análise e síntese de documentos; útil para revisar fontes extensas.</div>
+                        </div>
+                    </div>
+                </section>
 
-      <div class="subgroup">Economia · Saúde · Segurança · Universidades</div>
-      <div class="grid">
-        <a class="card" target="_blank" rel="noopener" href="http://pdet.mte.gov.br/novo-caged"><div class="name">Novo CAGED por Município<span class="arrow">↗</span></div><div class="url">pdet.mte.gov.br/novo-caged</div><div class="desc">Filtre por município: admissões, desligamentos e saldo de empregos formais.</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://municipios.seade.gov.br/"><div class="name">Seade — Emprego na Região de Campinas<span class="arrow">↗</span></div><div class="url">municipios.seade.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://comexstat.mdic.gov.br/"><div class="name">ComexStat — Exportações por Município<span class="arrow">↗</span></div><div class="url">comexstat.mdic.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://datasus.saude.gov.br/informacoes-de-saude-tabnet/"><div class="name">DataSUS — TabNet (por município SP)<span class="arrow">↗</span></div><div class="url">datasus.saude.gov.br · tabnet</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://campinas.sp.gov.br/sites/painel_cadunico/painel-cadunico"><div class="name">Cadastro Único — Painel Campinas<span class="arrow">↗</span></div><div class="url">campinas.sp.gov.br · cadunico</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://cecad.cidadania.gov.br/painel03.php"><div class="name">CeCad — Filtro por Município<span class="arrow">↗</span></div><div class="url">cecad.cidadania.gov.br/painel03.php</div></a>
-        <a class="card" target="_blank" rel="noopener" href="http://www.cve.saude.sp.gov.br/"><div class="name">CVE/SP — Vigilância Epidemiológica<span class="arrow">↗</span></div><div class="url">cve.saude.sp.gov.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.ssp.sp.gov.br/estatistica/painel-estatistico"><div class="name">SSP/SP — Painel de Segurança<span class="arrow">↗</span></div><div class="url">ssp.sp.gov.br/estatistica</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://repositorio.unicamp.br/"><div class="name">UNICAMP — Repositório Científico<span class="arrow">↗</span></div><div class="url">repositorio.unicamp.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://repositorio.sis.puc-campinas.edu.br/"><div class="name">PUC-Campinas — Repositório<span class="arrow">↗</span></div><div class="url">repositorio.sis.puc-campinas.edu.br</div></a>
-        <a class="card" target="_blank" rel="noopener" href="https://www.nepo.unicamp.br/"><div class="name">NEPO/UNICAMP — Estudos de População<span class="arrow">↗</span></div><div class="url">nepo.unicamp.br</div></a>
-      </div>
-    </section>
+                <!-- Seção 12 -->
+                <section id="s12">
+                    <div class="section-number">12</div>
+                    <h2>Organizações de Referência em Jornalismo</h2>
 
-    <!-- 14 -->
-    <section class="section" id="s14">
-      <div class="sec-head"><div class="sec-num">14</div><h2 class="sec-title">Acesso Programático a Dados (Python e SQL)</h2></div>
-      <div class="prose">
-        <p>Séries econômicas e microdados podem ser puxados de forma reprodutível, com fonte e período documentados automaticamente. Isso é mais rigoroso do que ler painel a painel e permite citar o método na matéria. Dois caminhos principais: <b>Python</b> (biblioteca <code>ipeadatapy</code>) para séries macro do Ipea, BCB e IBGE; e <b>BigQuery com SQL</b> (via Base dos Dados) para microdados, como a contagem de estabelecimentos da RAIS por CNAE e município.</p>
-      </div>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://abraji.org.br/" class="source-url">abraji.org.br</a>
+                            <div class="source-name">ABRAJI</div>
+                            <div class="source-desc">Referência em jornalismo investigativo no Brasil; cursos, bases de dados e ferramentas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.voltdata.info/" class="source-url">voltdata.info</a>
+                            <div class="source-name">Volt Data Lab</div>
+                            <div class="source-desc">Organização especializada em jornalismo de dados no Brasil.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://apublica.org/" class="source-url">apublica.org</a>
+                            <div class="source-name">Agência Pública</div>
+                            <div class="source-desc">Agência de jornalismo investigativo e de dados sem fins lucrativos.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://theintercept.com/brasil/" class="source-url">theintercept.com/brasil</a>
+                            <div class="source-name">The Intercept Brasil</div>
+                            <div class="source-desc">Jornalismo investigativo independente.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.icfj.org/" class="source-url">icfj.org</a>
+                            <div class="source-name">ICFJ — Int. Center for Journalists</div>
+                            <div class="source-desc">Cursos, bolsas e ferramentas para jornalistas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://knightcenter.utexas.edu/pt-br/" class="source-url">knightcenter.utexas.edu/pt-br</a>
+                            <div class="source-name">Knight Center (UT Austin)</div>
+                            <div class="source-desc">Cursos gratuitos e pagos de jornalismo digital, dados e investigação.</div>
+                        </div>
+                    </div>
+                </section>
 
-      <div class="subgroup">14.1 · Python — ipeadatapy (séries do Ipea, BCB e IBGE)</div>
-      <div class="prose">
-        <p>A biblioteca <code>ipeadatapy</code> lê as séries do IPEA Data, que reúne câmbio, inflação, juros, emprego e renda.</p>
-        <p><b>Instalação</b> (uma vez só). No Prompt de Comando do Windows, não na janela do Python que mostra <code>&gt;&gt;&gt;</code>:</p>
-      </div>
-      <div class="codeblock"><div class="code-label"><span class="dot"></span>Prompt de Comando</div><pre><code>python -m pip install ipeadatapy</code></pre></div>
-      <div class="note">O comando <code>pip</code> é do sistema: vai no Prompt de Comando. Código Python, como <code>import</code>, vai na janela do Python. Não misture os dois.</div>
-      <div class="prose"><p><b>Descobrir o código da série.</b> Os códigos têm nomes técnicos. Para encontrar o certo, filtre a lista por uma palavra do nome:</p></div>
-      <div class="codeblock"><div class="code-label"><span class="dot py"></span>Python</div><pre><code>import ipeadatapy as ip
+                <!-- Seção 13 -->
+                <section id="s13">
+                    <div class="section-number">13</div>
+                    <h2>Região Metropolitana de Campinas (RMC)</h2>
+
+                    <div class="subsection">
+                        <p>A RMC reúne 20 municípios: Americana, Artur Nogueira, Campinas, Cosmópolis, Engenheiro Coelho, Holambra, Hortolândia, Indaiatuba, Itatiba, Jaguariúna, Monte Mor, Morungaba, Nova Odessa, Paulínia, Pedreira, Santa Bárbara d'Oeste, Santo Antônio de Posse, Sumaré, Valinhos e Vinhedo. População: cerca de 3,2 milhões de habitantes (Censo 2022/Seade).</p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Órgão Gestor da RMC</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://www.agemcamp.sp.gov.br/" class="source-url">agemcamp.sp.gov.br</a>
+                            <div class="source-name">Agemcamp — Agência Metropolitana</div>
+                            <div class="source-desc">Autarquia estadual responsável pelo planejamento e gestão da RMC.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.agemcamp.sp.gov.br/habit_ag_campinas/regiao-metropolitana-de-campinas/dados-e-indicadores" class="source-url">agemcamp.sp.gov.br · indicadores</a>
+                            <div class="source-name">Agemcamp — Dados e Indicadores</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.agemcamp.sp.gov.br/habit_ag_campinas/regiao-metropolitana-de-campinas/rmc" class="source-url">agemcamp.sp.gov.br · rmc</a>
+                            <div class="source-name">Agemcamp — Perfil da RMC</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://rmc.pdui.sp.gov.br/" class="source-url">rmc.pdui.sp.gov.br</a>
+                            <div class="source-name">PDUI-RMC — Desenvolvimento Urbano</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://dadosabertos.sp.gov.br/dataset/cd-rmc" class="source-url">dadosabertos.sp.gov.br/dataset/cd-rmc</a>
+                            <div class="source-name">Dados Abertos SP — Agemcamp (CD-RMC)</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Fundação Seade — Municípios Paulistas</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://municipios.seade.gov.br/" class="source-url">municipios.seade.gov.br</a>
+                            <div class="source-name">Seade Municípios (painéis temáticos)</div>
+                            <div class="source-desc">População, economia, emprego, saúde e educação para os 645 municípios paulistas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://perfil.seade.gov.br/" class="source-url">perfil.seade.gov.br</a>
+                            <div class="source-name">Seade — Perfil dos Municípios</div>
+                            <div class="source-desc">Indicadores em ficha por município, com gráficos e mapas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://pib.seade.gov.br/analise/" class="source-url">pib.seade.gov.br/analise</a>
+                            <div class="source-name">Seade — PIB Regional e Municipal</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://populacao.seade.gov.br/nova-analise/" class="source-url">populacao.seade.gov.br</a>
+                            <div class="source-name">Seade — Projeções Populacionais</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://ipvs.seade.gov.br/" class="source-url">ipvs.seade.gov.br</a>
+                            <div class="source-name">IPVS — Índice de Vulnerabilidade</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://dadosabertos.sp.gov.br/organization/fundacao-sistema-estadual-de-analise-de-dados-seade" class="source-url">dadosabertos.sp.gov.br · seade</a>
+                            <div class="source-name">Seade — Repositório de Dados Abertos</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Transparência dos Municípios da RMC</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="https://portal.campinas.sp.gov.br/secretaria/gestao-e-controle/pagina/portal-da-transparencia" class="source-url">portal.campinas.sp.gov.br</a>
+                            <div class="source-name">Transparência — Campinas</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.campinas.sp.gov.br/diario-oficial/busca-diario.php" class="source-url">campinas.sp.gov.br/diario-oficial</a>
+                            <div class="source-name">Diário Oficial — Campinas</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.americana.sp.gov.br/transparencia" class="source-url">americana.sp.gov.br/transparencia</a>
+                            <div class="source-name">Transparência — Americana</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.indaiatuba.sp.gov.br/transparencia" class="source-url">indaiatuba.sp.gov.br/transparencia</a>
+                            <div class="source-name">Transparência — Indaiatuba</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.sumare.sp.gov.br/transparencia" class="source-url">sumare.sp.gov.br/transparencia</a>
+                            <div class="source-name">Transparência — Sumaré</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.hortolandia.sp.gov.br/transparencia" class="source-url">hortolandia.sp.gov.br/transparencia</a>
+                            <div class="source-name">Transparência — Hortolândia</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.santabarbara.sp.gov.br/transparencia" class="source-url">santabarbara.sp.gov.br/transparencia</a>
+                            <div class="source-name">Transparência — Santa Bárbara d'Oeste</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.paulinia.sp.gov.br/transparencia" class="source-url">paulinia.sp.gov.br/transparencia</a>
+                            <div class="source-name">Transparência — Paulínia</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.valinhos.sp.gov.br/transparencia" class="source-url">valinhos.sp.gov.br/transparencia</a>
+                            <div class="source-name">Transparência — Valinhos</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.vinhedo.sp.gov.br/transparencia" class="source-url">vinhedo.sp.gov.br/transparencia</a>
+                            <div class="source-name">Transparência — Vinhedo</div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <p>Para os demais municípios da RMC, acesse o portal da prefeitura respectiva e procure pelo link Transparência. Todos são obrigados por lei a manter o portal atualizado.</p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Economia · Saúde · Segurança · Universidades</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a href="http://pdet.mte.gov.br/novo-caged" class="source-url">pdet.mte.gov.br/novo-caged</a>
+                            <div class="source-name">Novo CAGED por Município</div>
+                            <div class="source-desc">Filtre por município: admissões, desligamentos e saldo de empregos formais.</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://municipios.seade.gov.br/" class="source-url">municipios.seade.gov.br</a>
+                            <div class="source-name">Seade — Emprego na Região de Campinas</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://comexstat.mdic.gov.br/" class="source-url">comexstat.mdic.gov.br</a>
+                            <div class="source-name">ComexStat — Exportações por Município</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://datasus.saude.gov.br/informacoes-de-saude-tabnet/" class="source-url">datasus.saude.gov.br · tabnet</a>
+                            <div class="source-name">DataSUS — TabNet (por município SP)</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://campinas.sp.gov.br/sites/painel_cadunico/painel-cadunico" class="source-url">campinas.sp.gov.br · cadunico</a>
+                            <div class="source-name">Cadastro Único — Painel Campinas</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://cecad.cidadania.gov.br/painel03.php" class="source-url">cecad.cidadania.gov.br/painel03.php</a>
+                            <div class="source-name">CeCad — Filtro por Município</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="http://www.cve.saude.sp.gov.br/" class="source-url">cve.saude.sp.gov.br</a>
+                            <div class="source-name">CVE/SP — Vigilância Epidemiológica</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.ssp.sp.gov.br/estatistica/painel-estatistico" class="source-url">ssp.sp.gov.br/estatistica</a>
+                            <div class="source-name">SSP/SP — Painel de Segurança</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://repositorio.unicamp.br/" class="source-url">repositorio.unicamp.br</a>
+                            <div class="source-name">UNICAMP — Repositório Científico</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://repositorio.sis.puc-campinas.edu.br/" class="source-url">repositorio.sis.puc-campinas.edu.br</a>
+                            <div class="source-name">PUC-Campinas — Repositório</div>
+                        </div>
+                        <div class="source-card">
+                            <a href="https://www.nepo.unicamp.br/" class="source-url">nepo.unicamp.br</a>
+                            <div class="source-name">NEPO/UNICAMP — Estudos de População</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 14 -->
+                <section id="s14">
+                    <div class="section-number">14</div>
+                    <h2>Acesso Programático a Dados (Python e SQL)</h2>
+
+                    <div class="subsection">
+                        <p>Séries econômicas e microdados podem ser puxados de forma reprodutível, com fonte e período documentados automaticamente. Isso é mais rigoroso do que ler painel a painel e permite citar o método na matéria. Dois caminhos principais: <strong>Python</strong> (biblioteca <code>ipeadatapy</code>) para séries macro do Ipea, BCB e IBGE; e <strong>BigQuery com SQL</strong> (via Base dos Dados) para microdados, como a contagem de estabelecimentos da RAIS por CNAE e município.</p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">14.1 · Python — ipeadatapy (séries do Ipea, BCB e IBGE)</h3>
+
+                    <div class="method-step">
+                        <p>A biblioteca <code>ipeadatapy</code> lê as séries do IPEA Data, que reúne câmbio, inflação, juros, emprego e renda.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Instalação (uma vez só)</h4>
+                        <p>No Prompt de Comando do Windows, não na janela do Python que mostra <code>>>:</code></p>
+                        <span class="code-label">Prompt de Comando</span>
+                        <pre>python -m pip install ipeadatapy</pre>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">O comando <code>pip</code> é do sistema: vai no Prompt de Comando. Código Python, como <code>import</code>, vai na janela do Python. Não misture os dois.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Descobrir o código da série</h4>
+                        <p>Os códigos têm nomes técnicos. Para encontrar o certo, filtre a lista por uma palavra do nome:</p>
+                        <span class="code-label">Python</span>
+                        <pre>import ipeadatapy as ip
 
 todas = ip.list_series()
-print(todas[todas['NAME'].str.contains('câmbio', case=False, na=False)].to_string())</code></pre></div>
-      <div class="prose"><p>Troque <code>'câmbio'</code> por <code>'IPCA'</code>, <code>'Selic'</code> ou o que precisar.</p>
-      <p><b>Puxar a série e calcular a variação.</b> Salve o trecho abaixo como arquivo <code>.py</code> (no Bloco de Notas, em Salvar como, escolha Todos os arquivos e ponha o nome entre aspas, por exemplo <code>"serie.py"</code>) e rode no Prompt de Comando com <code>python serie.py</code>:</p></div>
-      <div class="codeblock"><div class="code-label"><span class="dot py"></span>Python · serie.py</div><pre><code>import ipeadatapy as ip
+print(todas[todas['NAME'].str.contains('câmbio', case=False, na=False)].to_string())</pre>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Troque <code>'câmbio'</code> por <code>'IPCA'</code>, <code>'Selic'</code> ou o que precisar.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Puxar a série e calcular a variação</h4>
+                        <p>Salve o trecho abaixo como arquivo <code>.py</code> (no Bloco de Notas, em Salvar como, escolha Todos os arquivos e ponha o nome entre aspas, por exemplo <code>"serie.py"</code>) e rode no Prompt de Comando com <code>python serie.py</code>:</p>
+                        <span class="code-label">Python · serie.py</span>
+                        <pre>import ipeadatapy as ip
 
 def serie(codigo):
     df = ip.timeseries(codigo)
@@ -579,7 +1330,7 @@ def serie(codigo):
     return df[['YEAR', 'MONTH', col]].rename(columns={col: 'valor'})
 
 def valor_mes(s, ano, mes):
-    linha = s[(s['YEAR'] == ano) &amp; (s['MONTH'] == mes)]
+    linha = s[(s['YEAR'] == ano) & (s['MONTH'] == mes)]
     return float(linha['valor'].iloc[0])
 
 s = serie('BM12_ERV12')
@@ -587,62 +1338,100 @@ ini = valor_mes(s, 2022, 8)
 fim = valor_mes(s, 2026, 3)
 print('inicial:', round(ini, 4))
 print('final:', round(fim, 4))
-print('variacao %:', round((fim / ini - 1) * 100, 2))</code></pre></div>
-      <div class="prose"><p><b>Códigos úteis</b> (confirmados em junho/2026):</p></div>
-      <ul class="tips">
-        <li><code>BM12_ERV12</code> — Taxa de câmbio, R$/US$, comercial, venda, média mensal.</li>
-        <li><code>PRECOS12_IPCA12</code> — IPCA geral, número-índice (dez/1993 = 100). Para inflação acumulada entre dois meses: <code>(índice final / índice inicial - 1) × 100</code>.</li>
-      </ul>
-      <div class="note"><b>Dica.</b> Sempre rode como arquivo <code>.py</code>. Colar um bloco grande direto no Prompt ou no <code>&gt;&gt;&gt;</code> costuma dar erro de sintaxe, porque cada janela entende uma linguagem diferente.</div>
-      <div class="prose"><p><b>Alternativa oficial pelo BCB</b> (sem instalar nada além do pandas):</p></div>
-      <div class="codeblock"><div class="code-label"><span class="dot py"></span>Python · API do BCB</div><pre><code>import pandas as pd
+print('variacao %:', round((fim / ini - 1) * 100, 2))</pre>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Códigos úteis (confirmados em junho/2026)</h4>
+                        <ul>
+                            <li><code>BM12_ERV12</code> — Taxa de câmbio, R$/US$, comercial, venda, média mensal.</li>
+                            <li><code>PRECOS12_IPCA12</code> — IPCA geral, número-índice (dez/1993 = 100). Para inflação acumulada entre dois meses: <code>(índice final / índice inicial - 1) × 100</code>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Dica</h4>
+                        <p>Sempre rode como arquivo <code>.py</code>. Colar um bloco grande direto no Prompt ou no <code>>></code> costuma dar erro de sintaxe, porque cada janela entende uma linguagem diferente.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Alternativa oficial pelo BCB (sem instalar nada além do pandas)</h4>
+                        <span class="code-label">Python · API do BCB</span>
+                        <pre>import pandas as pd
 
 url = ('https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados'
-       '?formato=json&amp;dataInicial=01/08/2022&amp;dataFinal=31/03/2026')
+       '?formato=json&dataInicial=01/08/2022&dataFinal=31/03/2026')
 ptax = pd.read_json(url)
-print(ptax.head(), ptax.tail())</code></pre></div>
+print(ptax.head(), ptax.tail())</pre>
+                    </div>
 
-      <div class="subgroup">14.2 · BigQuery e SQL — microdados da RAIS (Base dos Dados)</div>
-      <div class="prose">
-        <p>Para contagens precisas por CNAE e município, e séries históricas de estabelecimentos, o caminho é a RAIS tratada pela Base dos Dados, consultada no BigQuery do Google. É o que permite, por exemplo, levantar o número de bancas de jornal de uma cidade ano a ano com fonte primária.</p>
-        <p><b>Acesso.</b> Entre em <a href="https://console.cloud.google.com/bigquery" target="_blank" rel="noopener">console.cloud.google.com/bigquery</a> logado em uma conta Google. Na primeira vez, crie um projeto (nome qualquer). O modo <b>Sandbox</b>, indicado no topo, é gratuito e não pede cartão, dentro do limite de processamento gratuito.</p>
-        <p><b>Tabela.</b> <code>basedosdados.br_me_rais.microdados_estabelecimentos</code> (cobertura de 1985 ao ano mais recente fechado).</p>
-        <p><b>Campos-chave para filtrar:</b></p>
-      </div>
-      <ul class="tips">
-        <li><code>ano</code> — ano de referência.</li>
-        <li><code>sigla_uf</code> — UF, por exemplo <code>'SP'</code>.</li>
-        <li><code>id_municipio</code> — código IBGE de 7 dígitos. Campinas = <code>'3509502'</code>.</li>
-        <li><code>cnae_2_subclasse</code> — subclasse CNAE, sem pontuação. Bancas de jornal e revista = <code>'4761002'</code> (CNAE 4761-0/02). Confirme outros códigos no buscador da CNAE (IBGE/Concla).</li>
-        <li><code>indicador_atividade_ano</code> — use <code>= 1</code> para contar apenas estabelecimentos ativos no ano.</li>
-      </ul>
-      <div class="prose"><p><b>Consulta de série histórica</b> (exemplo real, bancas em Campinas):</p></div>
-      <div class="codeblock"><div class="code-label"><span class="dot sql"></span>SQL · BigQuery</div><pre><code>SELECT ano, COUNT(*) AS total_estabelecimentos
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">14.2 · BigQuery e SQL — microdados da RAIS (Base dos Dados)</h3>
+
+                    <div class="method-step">
+                        <p>Para contagens precisas por CNAE e município, e séries históricas de estabelecimentos, o caminho é a RAIS tratada pela Base dos Dados, consultada no BigQuery do Google. É o que permite, por exemplo, levantar o número de bancas de jornal de uma cidade ano a ano com fonte primária.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Acesso</h4>
+                        <p>Entre em <a href="https://console.cloud.google.com/bigquery" style="color: var(--blue);">console.cloud.google.com/bigquery</a> logado em uma conta Google. Na primeira vez, crie um projeto (nome qualquer). O modo <strong>Sandbox</strong>, indicado no topo, é gratuito e não pede cartão, dentro do limite de processamento gratuito.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Tabela</h4>
+                        <p><code>basedosdados.br_me_rais.microdados_estabelecimentos</code> (cobertura de 1985 ao ano mais recente fechado).</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Campos-chave para filtrar</h4>
+                        <ul>
+                            <li><code>ano</code> — ano de referência.</li>
+                            <li><code>sigla_uf</code> — UF, por exemplo <code>'SP'</code>.</li>
+                            <li><code>id_municipio</code> — código IBGE de 7 dígitos. Campinas = <code>'3509502'</code>.</li>
+                            <li><code>cnae_2_subclasse</code> — subclasse CNAE, sem pontuação. Bancas de jornal e revista = <code>'4761002'</code> (CNAE 4761-0/02). Confirme outros códigos no buscador da CNAE (IBGE/Concla).</li>
+                            <li><code>indicador_atividade_ano</code> — use <code>= 1</code> para contar apenas estabelecimentos ativos no ano.</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Consulta de série histórica (exemplo real, bancas em Campinas)</h4>
+                        <span class="code-label">SQL · BigQuery</span>
+                        <pre>SELECT ano, COUNT(*) AS total_estabelecimentos
 FROM `basedosdados.br_me_rais.microdados_estabelecimentos`
 WHERE sigla_uf = 'SP'
   AND id_municipio = '3509502'
   AND cnae_2_subclasse = '4761002'
   AND indicador_atividade_ano = 1
-  AND ano &gt;= 2015
+  AND ano >= 2015
 GROUP BY ano
-ORDER BY ano</code></pre></div>
-      <ul class="tips">
-        <li><b>A RAIS tem defasagem.</b> O ano mais recente costuma ser o anterior ou o retrasado; use <code>ano &gt;= XXXX</code> em vez de fixar o ano de hoje e olhe qual é a última linha que retorna.</li>
-        <li>O número de uma CNAE específica pode divergir de levantamentos de entidades de classe, que às vezes somam subclasses vizinhas (livrarias, papelarias). Ao comparar, confira sempre qual recorte cada fonte usou.</li>
-        <li><b>Cite na matéria:</b> RAIS/Ministério do Trabalho, CNAE 4761-0/02, município, anos.</li>
-      </ul>
-    </section>
+ORDER BY ano</pre>
+                    </div>
 
-    <!-- 15 -->
-    <section class="section" id="s15">
-      <div class="sec-head"><div class="sec-num">15</div><h2 class="sec-title">Geração de Infográficos em PNG (Python e matplotlib)</h2></div>
-      <div class="prose">
-        <p>Infográficos gerados a partir dos próprios dados verificados têm uma vantagem sobre os criados manualmente em ferramentas online: o script documenta a fonte, o período e o método de cálculo junto com o gráfico, tornando a verificação reprodutível. A biblioteca <code>matplotlib</code>, padrão em Python, gera PNGs prontos para publicação.</p>
-        <p><b>Instalação</b> (uma vez só). No Prompt de Comando:</p>
-      </div>
-      <div class="codeblock"><div class="code-label"><span class="dot"></span>Prompt de Comando</div><pre><code>python -m pip install matplotlib</code></pre></div>
-      <div class="prose"><p><b>Estrutura básica de um script de infográfico.</b> Salve como arquivo <code>.py</code> e rode com <code>python nome_do_arquivo.py</code>:</p></div>
-      <div class="codeblock"><div class="code-label"><span class="dot py"></span>Python · infografico.py</div><pre><code># -*- coding: utf-8 -*-
+                    <div class="warning-box">
+                        <strong>Nota:</strong> A RAIS tem defasagem. O ano mais recente costuma ser o anterior ou o retrasado; use <code>ano >= XXXX</code> em vez de fixar o ano de hoje e olhe qual é a última linha que retorna. O número de uma CNAE específica pode divergir de levantamentos de entidades de classe, que às vezes somam subclasses vizinhas (livrarias, papelarias). Ao comparar, confira sempre qual recorte cada fonte usou. <strong>Cite na matéria:</strong> RAIS/Ministério do Trabalho, CNAE 4761-0/02, município, anos.
+                    </div>
+                </section>
+
+                <!-- Seção 15 -->
+                <section id="s15">
+                    <div class="section-number">15</div>
+                    <h2>Geração de Infográficos em PNG (Python e matplotlib)</h2>
+
+                    <div class="subsection">
+                        <p>Infográficos gerados a partir dos próprios dados verificados têm uma vantagem sobre os criados manualmente em ferramentas online: o script documenta a fonte, o período e o método de cálculo junto com o gráfico, tornando a verificação reprodutível. A biblioteca <code>matplotlib</code>, padrão em Python, gera PNGs prontos para publicação.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Instalação (uma vez só)</h4>
+                        <p>No Prompt de Comando:</p>
+                        <span class="code-label">Prompt de Comando</span>
+                        <pre>python -m pip install matplotlib</pre>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Estrutura básica de um script de infográfico</h4>
+                        <p>Salve como arquivo <code>.py</code> e rode com <code>python nome_do_arquivo.py</code>:</p>
+                        <span class="code-label">Python · infografico.py</span>
+                        <pre># -*- coding: utf-8 -*-
 import matplotlib
 matplotlib.use('Agg')           # modo sem janela, gera arquivo direto
 import matplotlib.pyplot as plt
@@ -671,245 +1460,421 @@ ax.text(0.0, -0.16, 'Fonte: IBGE/IPCA e InfoMoney. Período: jan/2002 a mar/2026
 
 fig.savefig('infografico.png', dpi=200, bbox_inches='tight', facecolor='white')
 plt.close(fig)
-print('PNG gerado.')</code></pre></div>
-      <div class="prose"><p><b>Tipos de gráfico comuns e quando usar:</b></p></div>
-      <ul class="tips">
-        <li><code>ax.bar()</code> — comparações entre categorias (ex.: figurinha vs. inflação).</li>
-        <li><code>ax.plot()</code> com <code>marker='o'</code> — séries históricas (ex.: bancas por ano).</li>
-        <li><code>ax.barh()</code> — ranking horizontal (ex.: municípios por índice).</li>
-        <li><code>ax.pie()</code> — composição percentual (use com parcimônia; evite com mais de cinco fatias).</li>
-      </ul>
-      <div class="prose"><p><b>Boas práticas editoriais para infográficos:</b></p></div>
-      <ul class="tips">
-        <li>Sempre incluir fonte e período no rodapé do gráfico, como nota de texto (<code>ax.text</code> com <code>transform=ax.transAxes</code>).</li>
-        <li>Nunca usar <code>parse_math=True</code> quando os textos contêm R$, %, ou letras isoladas: o matplotlib pode interpretar como fórmula e gerar erro ou símbolo errado.</li>
-        <li>Usar <code>dpi=200</code> ou superior para resolução adequada à publicação impressa ou digital.</li>
-        <li>Cores: evite paletas semafóricas (vermelho/verde) para comparações neutras. Reserve o vermelho para alertar e o azul/cinza para contexto.</li>
-        <li>O título do gráfico deve enunciar a conclusão, não apenas o tema. Correto: "Figurinha dispara acima da inflação (2002 a 2026)". Incorreto: "Comparação de preços".</li>
-      </ul>
-      <div class="prose"><p><b>Atenção ao fluxo de arquivos:</b></p></div>
-      <ul class="tips">
-        <li>O script gera os PNGs na mesma pasta de onde é rodado.</li>
-        <li>Para manter o C: limpo, baixe o script do Drive, rode, salve os PNGs onde precisar, e apague o script do C: em seguida. O original permanece no Drive.</li>
-        <li>Scripts de infográfico devem ser guardados no Drive junto com a matéria a que correspondem, para permitir atualização futura dos dados sem reescrever o código.</li>
-      </ul>
-    </section>
+print('PNG gerado.')</pre>
+                    </div>
 
+                    <div class="method-step">
+                        <h4>Tipos de gráfico comuns e quando usar</h4>
+                        <ul>
+                            <li><code>ax.bar()</code> — comparações entre categorias (ex.: figurinha vs. inflação).</li>
+                            <li><code>ax.plot()</code> com <code>marker='o'</code> — séries históricas (ex.: bancas por ano).</li>
+                            <li><code>ax.barh()</code> — ranking horizontal (ex.: municípios por índice).</li>
+                            <li><code>ax.pie()</code> — composição percentual (use com parcimônia; evite com mais de cinco fatias).</li>
+                        </ul>
+                    </div>
 
-    <!-- 16 -->
-    <section class="section" id="s16">
-      <div class="sec-head"><div class="sec-num">16</div><h2 class="sec-title">Percursos Investigativos</h2></div>
-      <div class="prose">
-        <p>As seções anteriores catalogam <b>onde</b> estão os dados. Esta reúne <b>como</b> ir deles a uma reportagem verificável. Cada percurso parte de uma pergunta, lista os passos na ordem em que foram percorridos e aponta as fontes usadas, com remissão às seções deste guia. Uma fonte é potencial; um percurso é método. Documentar a trilha permite citá-la na matéria e permite que outra pessoa a repita.</p>
-        <p>Todos os percursos abaixo já foram usados em apurações reais, próprias ou de orientação. O arcabouço de base é o de sempre: Luiz Costa Pereira Jr. (<i>A Apuração da Notícia</i>), Nilson Lage (<i>A Reportagem</i>) e o <i>Manual do Foca</i>, de Thaïs de Mendonça Jorge. Sobre eles, as técnicas clássicas de apuração: observação, pesquisa, banco de dados, escuta e entrevista.</p>
-      </div>
+                    <div class="method-step">
+                        <h4>Boas práticas editoriais para infográficos</h4>
+                        <ul>
+                            <li>Sempre incluir fonte e período no rodapé do gráfico, como nota de texto (<code>ax.text</code> com <code>transform=ax.transAxes</code>).</li>
+                            <li>Nunca usar <code>parse_math=True</code> quando os textos contêm R$, %, ou letras isoladas: o matplotlib pode interpretar como fórmula e gerar erro ou símbolo errado.</li>
+                            <li>Usar <code>dpi=200</code> ou superior para resolução adequada à publicação impressa ou digital.</li>
+                            <li>Cores: evite paletas semafóricas (vermelho/verde) para comparações neutras. Reserve o vermelho para alertar e o azul/cinza para contexto.</li>
+                            <li>O título do gráfico deve enunciar a conclusão, não apenas o tema. Correto: "Figurinha dispara acima da inflação (2002 a 2026)". Incorreto: "Comparação de preços".</li>
+                        </ul>
+                    </div>
 
-      <div class="subgroup">16.1 · Preço contra inflação (série reprodutível)</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> Um preço subiu quanto acima ou abaixo da inflação no período?</p>
-        <p><b>Exemplo real.</b> O reajuste de 75% no pacote de figurinhas da Copa, confrontado com um IPCA acumulado de 18,89% entre o lançamento do álbum, em setembro de 2022, e o dado mais recente. O aumento superou em quase quatro vezes o custo de vida. O dólar em queda no mesmo intervalo entrou como provocação: se o insumo importado e os royalties ficaram mais baratos, o reajuste reflete margem, e não repasse de custo.</p>
-      </div>
-      <ul class="tips">
-        <li>Delimite o período: do marco inicial (lançamento, contrato, fato gerador) ao último dado fechado.</li>
-        <li>Puxe o IPCA pela série <code>PRECOS12_IPCA12</code> (Seção 14.1) ou faça a conta rápida na Calculadora do Cidadão do BCB.</li>
-        <li>Compare a variação do preço observado com a inflação acumulada do período.</li>
-        <li>Quando houver insumo importado ou royalties, cruze com o câmbio (<code>BM12_ERV12</code>) para testar margem contra repasse de custo.</li>
-        <li>Feche com um economista, que valida a leitura, e humanize com fonte de campo (jornaleiro, consumidor).</li>
-        <li><b>Cite:</b> IPCA/IBGE e período; câmbio do Ipeadata. Ferramentas nas Seções 4, 14 e 15.</li>
-      </ul>
+                    <div class="method-step">
+                        <h4>Atenção ao fluxo de arquivos</h4>
+                        <ul>
+                            <li>O script gera os PNGs na mesma pasta de onde é rodado.</li>
+                            <li>Para manter o C: limpo, baixe o script do Drive, rode, salve os PNGs onde precisar, e apague o script do C: em seguida. O original permanece no Drive.</li>
+                            <li>Scripts de infográfico devem ser guardados no Drive junto com a matéria a que correspondem, para permitir atualização futura dos dados sem reescrever o código.</li>
+                        </ul>
+                    </div>
+                </section>
 
-      <div class="subgroup">16.2 · Contagem por atividade e município (RAIS no BigQuery)</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> Quantos estabelecimentos de um tipo existem numa cidade, e como esse número evoluiu?</p>
-        <p><b>Exemplo real.</b> A série histórica de bancas de jornal em Campinas, levantada na RAIS pela CNAE 4761-0/02. É a contagem que dá lastro a uma reportagem sobre o encolhimento do setor com fonte primária, em vez de número de entidade de classe.</p>
-      </div>
-      <ul class="tips">
-        <li>Descubra a subclasse CNAE da atividade no buscador da Concla/IBGE.</li>
-        <li>Consulte <code>basedosdados.br_me_rais.microdados_estabelecimentos</code> no BigQuery (passo a passo na Seção 14.2), filtrando por <code>id_municipio</code>, <code>cnae_2_subclasse</code> e <code>indicador_atividade_ano = 1</code>.</li>
-        <li>Lembre da defasagem da RAIS: use <code>ano &gt;= XXXX</code> e veja qual é a última linha que retorna.</li>
-        <li>Ao comparar com números de entidades de classe, confira o recorte: elas às vezes somam subclasses vizinhas.</li>
-        <li><b>Cite:</b> RAIS/Ministério do Trabalho, código CNAE, município e anos. Repositório na Seção 6.</li>
-      </ul>
+                <!-- Seção 16 -->
+                <section id="s16">
+                    <div class="section-number">16</div>
+                    <h2>Percursos Investigativos</h2>
 
-      <div class="subgroup">16.3 · Triangulação de duas séries (verificação por divergência)</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> O número oficial se sustenta diante de uma série independente que mede a mesma coisa?</p>
-        <p><b>Exemplo real.</b> As emissões de gases de efeito estufa de Campinas. O inventário da secretaria municipal apontou queda de 18% e cerca de 3 milhões de toneladas; a série do SEEG, do Observatório do Clima, marcou 2,93 milhões para o mesmo ano. Quando as fontes divergem, a divergência vira pauta.</p>
-      </div>
-      <ul class="tips">
-        <li>Localize a fonte oficial e uma série independente que meça o mesmo fenômeno.</li>
-        <li>Compare os números e o ano de referência de cada uma.</li>
-        <li>Se divergirem, peça a cada lado que explique o método; a diferença de metodologia costuma ser a história.</li>
-        <li>Apresente as duas, sempre dizendo o recorte de cada uma. Não escolha a que confirma a hipótese.</li>
-        <li><b>Cite:</b> os dois levantamentos, com órgão, ano e método. Fontes nas Seções 2, 3 e 13.</li>
-      </ul>
+                    <div class="subsection">
+                        <p>As seções anteriores catalogam <strong>onde</strong> estão os dados. Esta reúne <strong>como</strong> ir deles a uma reportagem verificável. Cada percurso parte de uma pergunta, lista os passos na ordem em que foram percorridos e aponta as fontes usadas, com remissão às seções deste guia. Uma fonte é potencial; um percurso é método. Documentar a trilha permite citá-la na matéria e permite que outra pessoa a repita.</p>
+                        <p style="margin-top: 1rem;">Todos os percursos abaixo já foram usados em apurações reais, próprias ou de orientação. O arcabouço de base é o de sempre: Luiz Costa Pereira Jr. (<em>A Apuração da Notícia</em>), Nilson Lage (<em>A Reportagem</em>) e o <em>Manual do Foca</em>, de Thaïs de Mendonça Jorge. Sobre eles, as técnicas clássicas de apuração: observação, pesquisa, banco de dados, escuta e entrevista.</p>
+                    </div>
 
-      <div class="subgroup">16.4 · Censo e demografia por recorte territorial (SIDRA)</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> Qual é o perfil demográfico de um bairro ou cidade que ancora a abertura da reportagem?</p>
-        <p><b>Exemplo real.</b> O recorte do Censo 2022 de Campinas extraído do SIDRA, base do painel populacional e dos números de abertura usados em pautas locais.</p>
-      </div>
-      <ul class="tips">
-        <li>Identifique a tabela no SIDRA (Seção 4) e filtre por município ou setor censitário.</li>
-        <li>Exporte para planilha; para repetir o levantamento, use a API do SIDRA.</li>
-        <li>Anote o número da tabela e o período: é isso que vai na citação.</li>
-        <li>Para o cruzamento estadual, complemente com os painéis da Fundação Seade (Seção 13).</li>
-        <li><b>Cite:</b> Censo 2022/IBGE, número da tabela SIDRA, recorte territorial.</li>
-      </ul>
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.1 · Preço contra inflação (série reprodutível)</h3>
 
-      <div class="subgroup">16.5 · Lei de Acesso à Informação como percurso</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> O dado não está publicado. Como obtê-lo por via oficial?</p>
-        <p><b>Observação de quem responde a pedidos.</b> Um pedido bem delimitado é respondido mais rápido do que um pedido vago. Pedir o documento certo, com período certo, encurta o prazo e fecha a porta para a negativa por pedido genérico.</p>
-      </div>
-      <ul class="tips">
-        <li>Antes de pedir, confira se o dado já está no Portal da Transparência, no Diário Oficial ou em painel público. Não se pede o que já é público.</li>
-        <li>Escreva o pedido objetivo: cite a LAI, nomeie o documento ou a série e delimite o período.</li>
-        <li>Protocole no e-SIC do ente certo (municipal, estadual ou federal). As três portas estão nas Seções 1, 2 e 3.</li>
-        <li>Se houver negativa ou silêncio no prazo, entre com recurso. Guarde protocolo e datas.</li>
-        <li>Quando for preciso preservar a autoria do pedido, use a via anônima do Queremos Saber (Seção 3).</li>
-        <li><b>Cite:</b> órgão, número do protocolo e data da resposta.</li>
-      </ul>
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>Um preço subiu quanto acima ou abaixo da inflação no período?</p>
+                    </div>
 
-      <div class="subgroup">16.6 · Diário Oficial e atos administrativos</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> Como rastrear nomeações, contratos, decretos e aditivos ao longo do tempo?</p>
-        <p><b>Exemplo real.</b> O acompanhamento de atos pela busca do Diário Oficial do município, cruzado com o Portal da Transparência para o lado financeiro.</p>
-      </div>
-      <ul class="tips">
-        <li>Use a busca do Diário Oficial (Seções 1 e 13) com o termo e o intervalo de datas.</li>
-        <li>Para varredura nacional, o DOINET (Seção 6) faz busca integrada, em serviço pago.</li>
-        <li>Cruze o ato com a execução financeira no Portal da Transparência para fechar o circuito.</li>
-        <li>Arquive a página com a Wayback Machine (Seção 8): atos publicados podem ser retificados depois.</li>
-        <li><b>Cite:</b> Diário Oficial, data e número da edição; ato e órgão.</li>
-      </ul>
+                    <div class="method-step">
+                        <h4>Exemplo real</h4>
+                        <p>O reajuste de 75% no pacote de figurinhas da Copa, confrontado com um IPCA acumulado de 18,89% entre o lançamento do álbum, em setembro de 2022, e o dado mais recente. O aumento superou em quase quatro vezes o custo de vida. O dólar em queda no mesmo intervalo entrou como provocação: se o insumo importado e os royalties ficaram mais baratos, o reajuste reflete margem, e não repasse de custo.</p>
+                    </div>
 
-      <div class="subgroup">16.7 · Verificação de conteúdo que circula</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> Esta imagem, este vídeo ou esta declaração são reais e estão em contexto?</p>
-      </div>
-      <ul class="tips">
-        <li>Para foto, faça a busca reversa no Google Imagens e no TinEye e procure a primeira aparição.</li>
-        <li>Para vídeo, use o InVID/WeVerify, que fragmenta e rastreia os quadros.</li>
-        <li>Para página alterada ou apagada, recupere a versão na Wayback Machine.</li>
-        <li>Para declaração pública, veja se uma verificadora certificada pelo IFCN já a checou.</li>
-        <li><b>Cite:</b> a origem encontrada e a data da publicação original. Ferramentas nas Seções 7 e 8.</li>
-      </ul>
+                    <div class="method-step">
+                        <ul>
+                            <li>Delimite o período: do marco inicial (lançamento, contrato, fato gerador) ao último dado fechado.</li>
+                            <li>Puxe o IPCA pela série <code>PRECOS12_IPCA12</code> (Seção 14.1) ou faça a conta rápida na Calculadora do Cidadão do BCB.</li>
+                            <li>Compare a variação do preço observado com a inflação acumulada do período.</li>
+                            <li>Quando houver insumo importado ou royalties, cruze com o câmbio (<code>BM12_ERV12</code>) para testar margem contra repasse de custo.</li>
+                            <li>Feche com um economista, que valida a leitura, e humanize com fonte de campo (jornaleiro, consumidor).</li>
+                            <li><strong>Cite:</strong> IPCA/IBGE e período; câmbio do Ipeadata. Ferramentas nas Seções 4, 14 e 15.</li>
+                        </ul>
+                    </div>
 
-      <div class="subgroup">16.8 · Serviço público e infraestrutura</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> Por que um problema persiste apesar do investimento anunciado?</p>
-        <p><b>Exemplo real.</b> A falta de água em Vinhedo. Reservatórios a 27% da capacidade, chuvas em queda de até 49% em 2024, novos reservatórios entregues, e ainda assim interrupções na região da Capela. A apuração não parte de que a obra falhou; separa o que ela resolveu do que não resolveu.</p>
-      </div>
-      <ul class="tips">
-        <li>Reúna o dado oficial: níveis, investimento, cobertura, obras entregues.</li>
-        <li>Enquadre sem pressupor fracasso: o que a obra resolveu e o que ainda não resolveu.</li>
-        <li>Ouça o operador como fonte principal e um especialista técnico independente (no caso da seca, um meteorologista) para pesar o fator externo.</li>
-        <li>Feche com o morador afetado, que dá a medida concreta do impacto na rotina.</li>
-        <li><b>Cite:</b> operador do serviço, série de dados oficiais e período. Fontes nas Seções 2 e 13.</li>
-      </ul>
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.2 · Contagem por atividade e município (RAIS no BigQuery)</h3>
 
-      <div class="subgroup">16.9 · Discurso oficial contra o indicador</div>
-      <div class="prose">
-        <p><b>Pergunta.</b> A narrativa oficial bate com o que os dados mostram?</p>
-        <p><b>Exemplo real.</b> O discurso de Campinas como polo de inovação, captado em evento institucional, posto lado a lado com a pressão no custo de vida das periferias. PIB municipal, tarifa do transporte e índice imobiliário sustentam o contraste; a distância entre o discurso e o indicador conduz a matéria.</p>
-      </div>
-      <ul class="tips">
-        <li>Capture o discurso oficial na fonte: fala em evento, release, peça de campanha.</li>
-        <li>Levante os indicadores duros que testam esse discurso: PIB municipal, custo de vida, tarifa, índice de preços imobiliários.</li>
-        <li>Ponha discurso e indicador lado a lado e deixe a diferença carregar a reportagem.</li>
-        <li>Dê ao poder público o direito de resposta sobre a divergência.</li>
-        <li><b>Cite:</b> a fonte do discurso e cada indicador, com órgão e período. Fontes nas Seções 1, 4 e 13.</li>
-      </ul>
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>Quantos estabelecimentos de um tipo existem numa cidade, e como esse número evoluiu?</p>
+                    </div>
 
-      <div class="note"><b>A régua dos percursos.</b> Quatro constantes valem para todos. Delimite o período antes de comparar qualquer número. Prefira a fonte primária ao número de segunda mão. Quando duas fontes divergem, a divergência é pauta, não erro a esconder. E documente fonte, período e método junto com o resultado, para que a apuração seja reprodutível e citável.</div>
-    </section>
+                    <div class="method-step">
+                        <h4>Exemplo real</h4>
+                        <p>A série histórica de bancas de jornal em Campinas, levantada na RAIS pela CNAE 4761-0/02. É a contagem que dá lastro a uma reportagem sobre o encolhimento do setor com fonte primária, em vez de número de entidade de classe.</p>
+                    </div>
 
-  </main>
-</div>
+                    <div class="method-step">
+                        <ul>
+                            <li>Descubra a subclasse CNAE da atividade no buscador da Concla/IBGE.</li>
+                            <li>Consulte <code>basedosdados.br_me_rais.microdados_estabelecimentos</code> no BigQuery (passo a passo na Seção 14.2), filtrando por <code>id_municipio</code>, <code>cnae_2_subclasse</code> e <code>indicador_atividade_ano = 1</code>.</li>
+                            <li>Lembre da defasagem da RAIS: use <code>ano >= XXXX</code> e veja qual é a última linha que retorna.</li>
+                            <li>Ao comparar com números de entidades de classe, confira o recorte: elas às vezes somam subclasses vizinhas.</li>
+                            <li><strong>Cite:</strong> RAIS/Ministério do Trabalho, código CNAE, município e anos. Repositório na Seção 6.</li>
+                        </ul>
+                    </div>
 
-<footer>
-  <div class="foot-inner">
-    <span>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas</span>
-    <span>Atualizado em junho de 2026 · revisão 3</span>
-  </div>
-</footer>
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.3 · Triangulação de duas séries (verificação por divergência)</h3>
 
-<button class="totop" id="totop" aria-label="Voltar ao topo">↑</button>
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>O número oficial se sustenta diante de uma série independente que mede a mesma coisa?</p>
+                    </div>
 
-<script>
-(function(){
-  // contagem real de fontes
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
-  document.getElementById('stat-sources').textContent = cards.length;
+                    <div class="method-step">
+                        <h4>Exemplo real</h4>
+                        <p>As emissões de gases de efeito estufa de Campinas. O inventário da secretaria municipal apontou queda de 18% e cerca de 3 milhões de toneladas; a série do SEEG, do Observatório do Clima, marcou 2,93 milhões para o mesmo ano. Quando as fontes divergem, a divergência vira pauta.</p>
+                    </div>
 
-  // indexar texto de cada card para busca
-  cards.forEach(function(c){ c.dataset.text = c.textContent.toLowerCase(); });
+                    <div class="method-step">
+                        <ul>
+                            <li>Localize a fonte oficial e uma série independente que meça o mesmo fenômeno.</li>
+                            <li>Compare os números e o ano de referência de cada uma.</li>
+                            <li>Se divergirem, peça a cada lado que explique o método; a diferença de metodologia costuma ser a história.</li>
+                            <li>Apresente as duas, sempre dizendo o recorte de cada uma. Não escolha a que confirma a hipótese.</li>
+                            <li><strong>Cite:</strong> os dois levantamentos, com órgão, ano e método. Fontes nas Seções 2, 3 e 13.</li>
+                        </ul>
+                    </div>
 
-  // busca em tempo real
-  var search = document.getElementById('search');
-  var meta = document.getElementById('search-meta');
-  var empty = document.getElementById('empty');
-  var sections = Array.prototype.slice.call(document.querySelectorAll('.section'));
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.4 · Censo e demografia por recorte territorial (SIDRA)</h3>
 
-  function norm(s){ return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(); }
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>Qual é o perfil demográfico de um bairro ou cidade que ancora a abertura da reportagem?</p>
+                    </div>
 
-  function runFilter(){
-    var q = norm(search.value.trim());
-    if(!q){
-      cards.forEach(function(c){c.classList.remove('hidden');});
-      document.querySelectorAll('.subgroup,.section,.note,.rmc-cities,.prose,.codeblock,.tips').forEach(function(e){e.classList.remove('hidden');});
-      sections.forEach(function(s){s.classList.remove('hidden');});
-      meta.textContent='';
-      empty.style.display='none';
-      return;
-    }
-    var visible=0;
-    cards.forEach(function(c){
-      var hit = norm(c.dataset.text).indexOf(q) > -1;
-      c.classList.toggle('hidden', !hit);
-      if(hit) visible++;
-    });
-    // esconder seções 14/15 (texto) durante busca, e seções sem cards visíveis
-    sections.forEach(function(s){
-      var anyCard = s.querySelector('.card:not(.hidden)');
-      s.classList.toggle('hidden', !anyCard);
-    });
-    // esconder subgrupos sem cards visíveis
-    document.querySelectorAll('.subgroup').forEach(function(sg){
-      var sib = sg.nextElementSibling;
-      var has = sib && sib.classList.contains('grid') && sib.querySelector('.card:not(.hidden)');
-      sg.classList.toggle('hidden', !has);
-    });
-    meta.textContent = visible + (visible===1?' fonte encontrada':' fontes encontradas');
-    empty.style.display = visible===0 ? 'block' : 'none';
-  }
-  search.addEventListener('input', runFilter);
+                    <div class="method-step">
+                        <h4>Exemplo real</h4>
+                        <p>O recorte do Censo 2022 de Campinas extraído do SIDRA, base do painel populacional e dos números de abertura usados em pautas locais.</p>
+                    </div>
 
-  // scroll-spy no índice
-  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
-  var map = {};
-  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
-  if('IntersectionObserver' in window){
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){
-          links.forEach(function(l){l.classList.remove('active');});
-          var a = map[en.target.id];
-          if(a) a.classList.add('active');
+                    <div class="method-step">
+                        <ul>
+                            <li>Identifique a tabela no SIDRA (Seção 4) e filtre por município ou setor censitário.</li>
+                            <li>Exporte para planilha; para repetir o levantamento, use a API do SIDRA.</li>
+                            <li>Anote o número da tabela e o período: é isso que vai na citação.</li>
+                            <li>Para o cruzamento estadual, complemente com os painéis da Fundação Seade (Seção 13).</li>
+                            <li><strong>Cite:</strong> Censo 2022/IBGE, número da tabela SIDRA, recorte territorial.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.5 · Lei de Acesso à Informação como percurso</h3>
+
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>O dado não está publicado. Como obtê-lo por via oficial?</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Observação de quem responde a pedidos</h4>
+                        <p>Um pedido bem delimitado é respondido mais rápido do que um pedido vago. Pedir o documento certo, com período certo, encurta o prazo e fecha a porta para a negativa por pedido genérico.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <ul>
+                            <li>Antes de pedir, confira se o dado já está no Portal da Transparência, no Diário Oficial ou em painel público. Não se pede o que já é público.</li>
+                            <li>Escreva o pedido objetivo: cite a LAI, nomeie o documento ou a série e delimite o período.</li>
+                            <li>Protocole no e-SIC do ente certo (municipal, estadual ou federal). As três portas estão nas Seções 1, 2 e 3.</li>
+                            <li>Se houver negativa ou silêncio no prazo, entre com recurso. Guarde protocolo e datas.</li>
+                            <li>Quando for preciso preservar a autoria do pedido, use a via anônima do Queremos Saber (Seção 3).</li>
+                            <li><strong>Cite:</strong> órgão, número do protocolo e data da resposta.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.6 · Diário Oficial e atos administrativos</h3>
+
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>Como rastrear nomeações, contratos, decretos e aditivos ao longo do tempo?</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Exemplo real</h4>
+                        <p>O acompanhamento de atos pela busca do Diário Oficial do município, cruzado com o Portal da Transparência para o lado financeiro.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <ul>
+                            <li>Use a busca do Diário Oficial (Seções 1 e 13) com o termo e o intervalo de datas.</li>
+                            <li>Para varredura nacional, o DOINET (Seção 6) faz busca integrada, em serviço pago.</li>
+                            <li>Cruze o ato com a execução financeira no Portal da Transparência para fechar o circuito.</li>
+                            <li>Arquive a página com a Wayback Machine (Seção 8): atos publicados podem ser retificados depois.</li>
+                            <li><strong>Cite:</strong> Diário Oficial, data e número da edição; ato e órgão.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.7 · Verificação de conteúdo que circula</h3>
+
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>Esta imagem, este vídeo ou esta declaração são reais e estão em contexto?</p>
+                    </div>
+
+                    <div class="method-step">
+                        <ul>
+                            <li>Para foto, faça a busca reversa no Google Imagens e no TinEye e procure a primeira aparição.</li>
+                            <li>Para vídeo, use o InVID/WeVerify, que fragmenta e rastreia os quadros.</li>
+                            <li>Para página alterada ou apagada, recupere a versão na Wayback Machine.</li>
+                            <li>Para declaração pública, veja se uma verificadora certificada pelo IFCN já a checou.</li>
+                            <li><strong>Cite:</strong> a origem encontrada e a data da publicação original. Ferramentas nas Seções 7 e 8.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.8 · Serviço público e infraestrutura</h3>
+
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>Por que um problema persiste apesar do investimento anunciado?</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Exemplo real</h4>
+                        <p>A falta de água em Vinhedo. Reservatórios a 27% da capacidade, chuvas em queda de até 49% em 2024, novos reservatórios entregues, e ainda assim interrupções na região da Capela. A apuração não parte de que a obra falhou; separa o que ela resolveu do que não resolveu.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <ul>
+                            <li>Reúna o dado oficial: níveis, investimento, cobertura, obras entregues.</li>
+                            <li>Enquadre sem pressupor fracasso: o que a obra resolveu e o que ainda não resolveu.</li>
+                            <li>Ouça o operador como fonte principal e um especialista técnico independente (no caso da seca, um meteorologista) para pesar o fator externo.</li>
+                            <li>Feche com o morador afetado, que dá a medida concreta do impacto na rotina.</li>
+                            <li><strong>Cite:</strong> operador do serviço, série de dados oficiais e período. Fontes nas Seções 2 e 13.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.9 · Discurso oficial contra o indicador</h3>
+
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>A narrativa oficial bate com o que os dados mostram?</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Exemplo real</h4>
+                        <p>O discurso de Campinas como polo de inovação, captado em evento institucional, posto lado a lado com a pressão no custo de vida das periferias. PIB municipal, tarifa do transporte e índice imobiliário sustentam o contraste; a distância entre o discurso e o indicador conduz a matéria.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <ul>
+                            <li>Capture o discurso oficial na fonte: fala em evento, release, peça de campanha.</li>
+                            <li>Levante os indicadores duros que testam esse discurso: PIB municipal, custo de vida, tarifa, índice de preços imobiliários.</li>
+                            <li>Ponha discurso e indicador lado a lado e deixe a diferença carregar a reportagem.</li>
+                            <li>Dê ao poder público o direito de resposta sobre a divergência.</li>
+                            <li><strong>Cite:</strong> a fonte do discurso e cada indicador, com órgão e período. Fontes nas Seções 1, 4 e 13.</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection" style="margin-top: 2rem;">
+                        <h4 style="margin-bottom: 1rem;"><strong>A régua dos percursos</strong></h4>
+                        <p>Quatro constantes valem para todos. Delimite o período antes de comparar qualquer número. Prefira a fonte primária ao número de segunda mão. Quando duas fontes divergem, a divergência é pauta, não erro a esconder. E documente fonte, período e método junto com o resultado, para que a apuração seja reprodutível e citável.</p>
+                    </div>
+                </section>
+
+                <!-- Seção 17 - NOVA -->
+                <section id="s17">
+                    <div class="section-number">17</div>
+                    <h2>Metodologia: Dados Territorializados (GIS + Estatística Oficial)</h2>
+
+                    <div class="subsection">
+                        <p><strong>Quando usar:</strong> Use este método sempre que precisar de um indicador (educação, renda, domicílio, demografia, saúde etc.) para um <strong>endereço, obra, bairro ou ponto específico</strong>, e a fonte estatística oficial só divulgar esse indicador em uma unidade territorial maior (município, distrito) ou não divulgar recorte territorial nenhum.</p>
+                        <p style="margin-top: 1rem;">O problema que este método resolve: censos e pesquisas oficiais quase sempre têm o dado fino que você precisa, mas não o publicam pronto para consulta por endereço. É preciso descobrir a que unidade territorial mínima (setor censitário, zona, distrito) aquele ponto pertence, e só então buscar o indicador para essa unidade nos arquivos brutos.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Mapeie os caminhos disponíveis</h3>
+
+                    <div class="subsection">
+                        <p>Nem toda fonte é acessível do mesmo jeito. Antes de se comprometer com um caminho, teste rapidamente:</p>
+                        <ol style="margin-left: 1.5rem; margin-top: 1rem;">
+                            <li><strong>API oficial com geocodificação por ponto</strong> (o ideal, quando existe): recebe coordenadas, devolve a unidade territorial diretamente. Nem sempre existe ou está acessível a ferramentas automatizadas (robots.txt bloqueia acesso automatizado com frequência).</li>
+                            <li><strong>API de consulta agregada</strong> (tipo SIDRA/IBGE): geralmente acessível, mas verifique o nível territorial mínimo disponível antes de assumir que serve — é comum publicarem só até nível de município, mesmo quando o dado fino existe em outro lugar.</li>
+                            <li><strong>Painel interativo público</strong> (dashboards tipo Power BI): muitas vezes tem exatamente o recorte fino que falta em outros lugares, mas exige navegação manual; não é consultável por scraping ou API.</li>
+                            <li><strong>Arquivos brutos por unidade territorial mínima:</strong> a fonte mais granular e mais confiável, mas a mais trabalhosa. É o caminho descrito abaixo.</li>
+                        </ol>
+                        <p style="margin-top: 1rem;">Escolha o caminho mais simples que atenda. Só desça para os arquivos brutos se os anteriores não cobrirem o nível de detalhe necessário.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Passo a passo (arquivos brutos + GIS)</h3>
+
+                    <div class="method-step">
+                        <h4>1. Coordenadas do local</h4>
+                        <p>Obtenha latitude/longitude do endereço, obra ou ponto de interesse.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>2. Identifique a unidade territorial mínima (GIS)</h4>
+                        <p>Ferramenta recomendada: <strong>QGIS</strong> (gratuito, código aberto).</p>
+                        <ul>
+                            <li>Carregue o shapefile (ou geojson) da malha territorial mínima disponível para a fonte que você vai usar (setor censitário, zona eleitoral, distrito administrativo etc.).</li>
+                            <li>Crie uma camada de ponto a partir de um CSV simples com colunas <code>lon,lat</code>, definindo o SRC como <strong>EPSG:4326</strong> (padrão WGS 84, o mesmo de coordenadas de GPS comuns).</li>
+                            <li>Use a ferramenta <strong>"Identificar Feições"</strong> clicando no polígono onde o ponto cai.</li>
+                            <li>Anote o código da unidade territorial (ex.: <code>CD_SETOR</code> no caso do IBGE) e quaisquer campos de contexto úteis (distrito, região administrativa, município).</li>
+                        </ul>
+                        <div class="warning-box">
+                            <strong>Atenção a pontos próximos de divisa:</strong> Se o ponto estiver perto de uma linha de fronteira entre polígonos, teste mais de uma coordenada do mesmo local (ex.: os cantos de um terreno) para confirmar que todas caem na mesma unidade. Se caírem em unidades diferentes, sinalize a ambiguidade em vez de escolher uma arbitrariamente.
+                        </div>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>3. Cruze o código territorial com os dados temáticos</h4>
+                        <ul>
+                            <li>Baixe o arquivo bruto do tema desejado, organizado por unidade territorial (geralmente um CSV ou pacote de CSVs, um por tema: educação, renda, domicílio, etc.).</li>
+                            <li>Localize a linha correspondente ao código territorial encontrado no passo 2, por exemplo via Python:</li>
+                        </ul>
+                        <span class="code-label">Python</span>
+                        <pre>import csv
+with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arquivo
+    leitor = csv.DictReader(f, delimiter=";")  # confirme o delimitador
+    for linha in leitor:
+        if linha["NOME_DA_COLUNA_DE_CODIGO"] == codigo_territorial:
+            print(linha)</pre>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">O nome exato da coluna de código varia por arquivo — sempre confira o cabeçalho antes de filtrar, não assuma que é igual ao nome usado no shapefile.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>4. Decodifique as variáveis</h4>
+                        <p>Fontes estatísticas oficiais costumam nomear colunas com códigos genéricos (<code>V00644</code>, <code>Q12</code>, etc.) em vez de nomes legíveis. Praticamente sempre existe um dicionário de variáveis (PDF, planilha ou nota metodológica) na mesma fonte de distribuição — localize-o antes de interpretar qualquer coluna. <strong>Nunca</strong> infira o significado de uma variável só pelo padrão numérico ou pela posição.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>5. Checagem de consistência (obrigatória antes de publicar qualquer número)</h4>
+                        <p>Sempre que existir uma variável-resumo isolada (ex.: "total de pessoas alfabetizadas"), some as variáveis desagregadas equivalentes (por faixa etária, por exemplo) e compare com ela. As duas somas devem bater. Essa checagem cruzada é o que dá segurança para publicar um número que você mesmo calculou a partir de microdados, em vez de citar uma fonte secundária.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>6. Trate corretamente os códigos de sigilo estatístico</h4>
+                        <p>Fontes censitárias costumam usar um marcador (como "X") para indicar que uma célula foi <strong>suprimida por sigilo estatístico</strong> (contagem pequena demais para divulgar sem risco de identificação individual). Isso não é a mesma coisa que zero, e não deve ser somado, ignorado ou tratado como ausência de dado sem essa ressalva.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Limitações a ter em mente</h3>
+
+                    <div class="subsection">
+                        <ul>
+                            <li><strong>Nem todo indicador existe no nível fino desejado.</strong> Se, depois de checar todas as fontes disponíveis, um indicador (ex.: renda por setor censitário) simplesmente não é publicado em nenhum arquivo bruto disponível, não force uma aproximação sem deixar isso explícito — é melhor registrar a limitação do que substituir por um proxy sem dizer que é proxy.</li>
+                            <li><strong>Arquivos brutos costumam ser grandes</strong> (dezenas a centenas de MB). Isso pode inviabilizar processamento em ambientes com restrição de rede ou de tamanho de transferência — nesse caso, o processamento em GIS/Python pode precisar ser feito localmente, fora da ferramenta que está pesquisando.</li>
+                            <li><strong>APIs oficiais nem sempre aceitam acesso automatizado.</strong> Tenha um plano B (painel manual, arquivo bruto) quando a API mais conveniente estiver bloqueada para scraping.</li>
+                            <li><strong>Regiões administrativas e distritos estatísticos nem sempre coincidem.</strong> Um mesmo bairro pode pertencer a uma "região" para fins de gestão municipal e a um "distrito" diferente para fins de estatística oficial. Não presuma equivalência entre sistemas de classificação territorial sem verificar.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Resumo e citação</h3>
+
+                    <div class="subsection">
+                        <p><strong>Em uma frase:</strong> Transforme um ponto em um código de unidade territorial via GIS, depois transforme esse código em indicador via cruzamento com os microdados oficiais — e sempre confirme com uma soma de conferência antes de publicar.</p>
+                        <p style="margin-top: 1rem;"><strong>Cite na matéria:</strong> A fonte estatística (ex.: Censo 2022/IBGE, RAIS/Ministério do Trabalho), a unidade territorial mínima usada (ex.: setor censitário, zona eleitoral), o recorte específico (endereço, bairro, obra) e o período. Menção ao método só é necessária se relevante para a história.</p>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <footer>
+            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em junho de 2026 · revisão 3</p>
+            <button class="back-to-top" id="back-to-top">↑</button>
+        </footer>
+    </div>
+
+    <script>
+        // Contador de fontes
+        function updateSourceCount() {
+            const cards = document.querySelectorAll('.source-card');
+            document.querySelector('.stat-sources').textContent = cards.length;
         }
-      });
-    },{rootMargin:'-20% 0px -70% 0px',threshold:0});
-    sections.forEach(function(s){obs.observe(s);});
-  }
 
-  // voltar ao topo
-  var totop = document.getElementById('totop');
-  window.addEventListener('scroll', function(){
-    totop.classList.toggle('show', window.scrollY > 600);
-  });
-  totop.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
-})();
-</script>
+        // Busca
+        const searchInput = document.getElementById('search-input');
+        const noResults = document.getElementById('no-results');
+
+        function filterSources() {
+            const query = searchInput.value.toLowerCase();
+            const cards = document.querySelectorAll('.source-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const name = card.querySelector('.source-name').textContent.toLowerCase();
+                const desc = card.querySelector('.source-desc')?.textContent.toLowerCase() || '';
+                const url = card.querySelector('.source-url').textContent.toLowerCase();
+
+                const matches = name.includes(query) || desc.includes(query) || url.includes(query);
+                card.style.display = matches ? 'block' : 'none';
+                if (matches) visibleCount++;
+            });
+
+            noResults.classList.toggle('hidden', visibleCount > 0);
+        }
+
+        searchInput.addEventListener('input', filterSources);
+
+        // Scroll spy
+        const sections = document.querySelectorAll('section');
+        const tocLinks = document.querySelectorAll('#toc-list a');
+
+        function updateActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+
+        // Back to top
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.pageYOffset > 300);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Inicializa
+        updateSourceCount();
+        updateActiveLink();
+    </script>
 </body>
 </html>
