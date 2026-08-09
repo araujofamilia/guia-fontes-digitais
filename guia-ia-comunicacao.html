@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Uso de IA na Comunicação</title>
+    <!-- SEO -->
+    <meta name="description" content="Guia de Uso de IA na Comunicação: ferramentas por tarefa, verificação de conteúdo sintético, ética, transparência e método. Acesso aberto.">
+    <link rel="canonical" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html">
+
+    <!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Artur Araujo">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html">
+    <meta property="og:title" content="Guia de Uso de IA na Comunicação">
+    <meta property="og:description" content="Ferramentas de IA por tarefa, verificação de conteúdo sintético, ética e transparência no jornalismo e na comunicação — em um guia de acesso aberto.">
+    <meta property="og:image" content="https://araujofamilia.github.io/guia-fontes-digitais/og-guia-ia.png">
+    <meta property="og:image:secure_url" content="https://araujofamilia.github.io/guia-fontes-digitais/og-guia-ia.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="2400">
+    <meta property="og:image:height" content="1254">
+    <meta property="og:image:alt" content="Guia de Uso de IA na Comunicação — Artur Araujo">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guia de Uso de IA na Comunicação">
+    <meta name="twitter:description" content="Ferramentas de IA por tarefa, verificação de conteúdo sintético, ética e transparência no jornalismo e na comunicação — em um guia de acesso aberto.">
+    <meta name="twitter:image" content="https://araujofamilia.github.io/guia-fontes-digitais/og-guia-ia.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #F5F7F9;
+            --card: #FFFFFF;
+            --ink: #12141C;
+            --muted: #5A6474;
+            --accent: #00776E;
+            --accent-strong: #005B54;
+            --accent-soft: #E7F2F0;
+            --line: #D8DFE7;
+            --warn-bg: #FFF6E6;
+            --warn-border: #C77D1B;
+            --code-bg: #0E1420;
+            --code-text: #D9E2EC;
+            --code-green: #7EE0B8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(rgba(18, 20, 28, 0.08) 1px, transparent 1px);
+            background-size: 22px 22px;
+            color: var(--ink);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 4rem;
+        }
+
+        .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 0.55em;
+            height: 1em;
+            background: var(--accent);
+            margin-left: 0.35em;
+            vertical-align: text-bottom;
+            animation: blink 1.1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cursor { animation: none; }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--ink);
+            margin-bottom: 2rem;
+            max-width: 620px;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            max-width: 220px;
+        }
+
+        .toc-wrapper {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        #toc-sidebar {
+            position: sticky;
+            top: 20px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            border-top: 3px solid var(--accent);
+        }
+
+        #toc-list {
+            list-style: none;
+        }
+
+        #toc-list li {
+            margin-bottom: 0.7rem;
+        }
+
+        #toc-list a {
+            font-size: 0.9rem;
+            color: var(--ink);
+            text-decoration: none;
+            display: block;
+            padding: 0.3rem 0;
+        }
+
+        .toc-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        #toc-list a:hover {
+            color: var(--accent-strong);
+        }
+
+        #toc-list a.active {
+            color: var(--accent-strong);
+            font-weight: 600;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--bg);
+        }
+
+        #search-input::placeholder {
+            color: #9AA5B1;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 119, 110, 0.15);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+        }
+
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+
+        .section-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-number::before {
+            content: "[";
+            color: var(--muted);
+        }
+
+        .section-number::after {
+            content: "]";
+            color: var(--muted);
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .source-card {
+            background: var(--card);
+            padding: 1.4rem;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            break-inside: avoid;
+        }
+
+        .source-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: 0 6px 16px rgba(13, 32, 45, 0.08);
+        }
+
+        .source-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+
+        .source-url {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            color: var(--accent-strong);
+            text-decoration: none;
+            word-break: break-all;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .source-url::before {
+            content: "↳ ";
+            color: var(--accent);
+        }
+
+        .source-desc {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .subsection {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--card);
+            border-radius: 8px;
+            border: 1px dashed #B9C4CF;
+        }
+
+        .subsection h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+
+        .subsection ol, .subsection ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subsection li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        code {
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        pre {
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #1C2740;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        .code-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--code-green);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+        }
+
+        .back-to-top:hover {
+            opacity: 0.85;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .hit-counter {
+            margin-top: 1rem;
+            opacity: 0.85;
+        }
+
+        .hit-counter img {
+            vertical-align: middle;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .toc-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            #toc-sidebar {
+                display: none;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .sources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+        }
+
+        .method-step {
+            background: var(--card);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+        }
+
+        .method-step h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .method-step p, .method-step li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .method-step ul, .method-step ol {
+            margin-left: 1.5rem;
+        }
+
+        .warning-box {
+            background: var(--warn-bg);
+            border-left: 3px solid var(--warn-border);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="tagline">Ferramentas · Ética · Método<span class="cursor" aria-hidden="true"></span></div>
+            <h1>Guia de Uso de IA na Comunicação</h1>
+            <p class="subtitle">Como usar inteligência artificial no jornalismo e na comunicação com proveito e responsabilidade: o que cada ferramenta faz, onde ela erra, quando declarar o uso e o que nunca delegar.</p>
+            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição</div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Seções temáticas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number stat-sources">—</div>
+                    <div class="stat-label">Ferramentas e recursos</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Regra de ouro: responsabilidade humana</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="toc-wrapper">
+            <aside id="toc-sidebar">
+                <h3 style="margin-bottom: 1rem; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Índice</h3>
+                <ul id="toc-list">
+                    <li><a href="#s1"><span class="toc-num">01</span>Fundamentos da IA Generativa</a></li>
+                    <li><a href="#s2"><span class="toc-num">02</span>Ferramentas por Tarefa</a></li>
+                    <li><a href="#s3"><span class="toc-num">03</span>Verificação de Conteúdo Sintético</a></li>
+                    <li><a href="#s4"><span class="toc-num">04</span>Ética e Transparência</a></li>
+                    <li><a href="#s5"><span class="toc-num">05</span>IA na Sala de Aula</a></li>
+                    <li><a href="#s6"><span class="toc-num">06</span>Riscos e Limites</a></li>
+                    <li><a href="#s7"><span class="toc-num">07</span>Prompting para Comunicadores</a></li>
+                </ul>
+            </aside>
+
+            <main class="main-content">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar ferramenta por nome ou descrição...">
+                </div>
+
+                <div id="no-results" class="no-results hidden">Nenhuma ferramenta corresponde à busca.</div>
+
+                <!-- Seção 1 -->
+                <section id="s1">
+                    <div class="section-number">01</div>
+                    <h2>Fundamentos da IA Generativa</h2>
+
+                    <div class="method-step">
+                        <h4>1. O que é um modelo de linguagem</h4>
+                        <p>As ferramentas de IA generativa de texto (ChatGPT, Claude, Gemini e similares) são <strong>modelos de linguagem de grande escala</strong> (LLMs): sistemas treinados com volumes imensos de texto para prever, palavra a palavra, a continuação mais plausível de uma sequência. Eles não consultam um banco de fatos nem "sabem" as coisas como uma enciclopédia — produzem texto estatisticamente coerente com o que viram no treinamento.</p>
+                        <p>Essa distinção não é um detalhe técnico: ela explica ao mesmo tempo por que os modelos escrevem tão bem e por que erram com tanta confiança.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>2. O que a IA generativa faz bem</h4>
+                        <ul>
+                            <li><strong>Transformar texto em texto:</strong> resumir, reescrever, mudar de registro, adaptar formato (release em pauta, ata em resumo, entrevista em perguntas e respostas).</li>
+                            <li><strong>Organizar material bruto:</strong> estruturar anotações, agrupar temas de uma transcrição, extrair listas de nomes, datas e valores de um documento fornecido.</li>
+                            <li><strong>Primeira versão e revisão:</strong> destravar a página em branco, apontar problemas de clareza, sugerir títulos alternativos.</li>
+                            <li><strong>Explicar e traduzir:</strong> tornar acessível um conceito técnico, traduzir com qualidade crescente, criar analogias didáticas.</li>
+                            <li><strong>Código e dados:</strong> escrever e explicar scripts de análise, fórmulas de planilha e consultas a bases de dados.</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>3. Onde ela erra: a alucinação</h4>
+                        <p>Quando não há resposta segura, o modelo <strong>não fica em silêncio: ele inventa</strong> — nomes, datas, números, títulos de leis, artigos acadêmicos e URLs que nunca existiram, tudo redigido no mesmo tom confiante do que é verdadeiro. Esse fenômeno é chamado de <em>alucinação</em> e é estrutural, não um defeito que uma atualização vá eliminar.</p>
+                        <div class="warning-box">
+                            <strong>Regra prática:</strong> quanto mais específica e verificável é uma informação (nome próprio, número, data, citação literal), maior a chance de estar errada e maior a obrigação de checar em fonte primária antes de publicar. A IA pode apontar caminhos de apuração; ela nunca encerra uma apuração.
+                        </div>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>4. IA não é buscador</h4>
+                        <p>Um chatbot sem acesso à web responde a partir do que memorizou no treinamento — que tem uma <strong>data de corte</strong> e não inclui o que aconteceu depois. Algumas ferramentas hoje buscam na web antes de responder, o que reduz (mas não elimina) o problema: a busca pode trazer fontes fracas, e a síntese pode distorcê-las. Para fatos, prefira o caminho clássico: a resposta da IA indica onde procurar; a confirmação vem do portal oficial, do documento original, da fonte humana.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>5. Contexto: o modelo só vê o que está na conversa</h4>
+                        <p>Cada conversa tem uma <strong>janela de contexto</strong> limitada: o modelo considera o que foi escrito ali (e os documentos anexados), nada além. Ele não lembra de conversas anteriores por padrão, não acessa seus arquivos sozinho e, em textos muito longos, pode perder detalhes do início. Consequência prática: forneça o material relevante dentro da conversa e repita instruções importantes quando a sessão se estender.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Para se formar no assunto</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.journalismai.info/" class="source-url">journalismai.info</a>
+                            <div class="source-name">JournalismAI (LSE)</div>
+                            <div class="source-desc">Iniciativa da London School of Economics dedicada a IA no jornalismo: relatórios, estudos de caso de redações e programas de formação.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://journalismcourses.org/" class="source-url">journalismcourses.org</a>
+                            <div class="source-name">Knight Center — Cursos</div>
+                            <div class="source-desc">Cursos on-line gratuitos do Knight Center (Universidade do Texas), com edições frequentes sobre IA no jornalismo, várias em português.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.elementsofai.com/" class="source-url">elementsofai.com</a>
+                            <div class="source-name">Elements of AI</div>
+                            <div class="source-desc">Curso introdutório gratuito da Universidade de Helsinque sobre o que é (e o que não é) inteligência artificial, sem exigir base técnica.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 2 -->
+                <section id="s2">
+                    <div class="section-number">02</div>
+                    <h2>Ferramentas por Tarefa</h2>
+
+                    <div class="warning-box">
+                        <strong>Antes de usar qualquer ferramenta desta seção:</strong> não insira dados pessoais de fontes, material sigiloso, documentos vazados ou apuração sensível em serviços comerciais de IA. O que entra no prompt sai do seu controle. Veja os detalhes na seção 06.
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Assistentes de uso geral</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://claude.ai/" class="source-url">claude.ai</a>
+                            <div class="source-name">Claude (Anthropic)</div>
+                            <div class="source-desc">Assistente forte em leitura de documentos longos, escrita e análise. Aceita anexos (PDF, planilhas, imagens) e conversas extensas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" class="source-url">chatgpt.com</a>
+                            <div class="source-name">ChatGPT (OpenAI)</div>
+                            <div class="source-desc">O assistente mais difundido. Versátil para texto, análise de dados, imagem e busca na web; útil como padrão de comparação entre ferramentas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/" class="source-url">gemini.google.com</a>
+                            <div class="source-name">Gemini (Google)</div>
+                            <div class="source-desc">Assistente do Google, integrado ao ecossistema da empresa (Docs, Gmail, Drive). Bom em tarefas multimodais e em consultas ligadas à busca.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" class="source-url">copilot.microsoft.com</a>
+                            <div class="source-name">Copilot (Microsoft)</div>
+                            <div class="source-desc">Assistente da Microsoft, integrado ao Windows e ao Office. Relevante em redações e assessorias que trabalham no ambiente Microsoft 365.</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Pesquisa e apuração</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.perplexity.ai/" class="source-url">perplexity.ai</a>
+                            <div class="source-name">Perplexity</div>
+                            <div class="source-desc">Busca conversacional que responde com links para as fontes usadas. Útil como ponto de partida de apuração — desde que cada link seja aberto e conferido.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://notebooklm.google.com/" class="source-url">notebooklm.google.com</a>
+                            <div class="source-name">NotebookLM (Google)</div>
+                            <div class="source-desc">Trabalha apenas sobre os documentos que você fornece (relatórios, PDFs, transcrições), com respostas ancoradas em trechos citáveis. Ótimo para dossiês de pauta.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://consensus.app/" class="source-url">consensus.app</a>
+                            <div class="source-name">Consensus</div>
+                            <div class="source-desc">Busca em artigos científicos revisados por pares, com síntese do que os estudos dizem. Atenção: cobre mal a produção acadêmica brasileira — complemente com SciELO e CAPES.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://elicit.com/" class="source-url">elicit.com</a>
+                            <div class="source-name">Elicit</div>
+                            <div class="source-desc">Assistente de revisão de literatura: encontra artigos, extrai achados e monta tabelas comparativas de estudos. Voltado a pesquisa acadêmica.</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Transcrição de entrevistas</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/openai/whisper" class="source-url">github.com/openai/whisper</a>
+                            <div class="source-name">Whisper (OpenAI, código aberto)</div>
+                            <div class="source-desc">Modelo de transcrição gratuito e de código aberto, com bom desempenho em português. Rodando localmente, o áudio não sai da sua máquina — a opção mais segura para material sensível.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://goodtape.io/" class="source-url">goodtape.io</a>
+                            <div class="source-name">Good Tape</div>
+                            <div class="source-desc">Serviço de transcrição criado por jornalistas, com suporte a português e política de privacidade pensada para o trabalho de reportagem.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://turboscribe.ai/" class="source-url">turboscribe.ai</a>
+                            <div class="source-name">TurboScribe</div>
+                            <div class="source-desc">Transcrição on-line baseada em Whisper, com plano gratuito diário. Prática para entrevistas não sensíveis e áudios de coletivas.</div>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        <strong>Transcrição exige conferência:</strong> nomes próprios, siglas e números são os pontos onde os transcritores automáticos mais erram — exatamente as partes que não podem sair erradas numa matéria. Nunca publique aspas sem ouvir o trecho original.
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Imagem e design</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://firefly.adobe.com/" class="source-url">firefly.adobe.com</a>
+                            <div class="source-name">Adobe Firefly</div>
+                            <div class="source-desc">Gerador de imagens da Adobe, treinado com acervo licenciado e integrado ao Photoshop e ao Express. Anexa Content Credentials (rótulo de procedência) ao que produz.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.canva.com/" class="source-url">canva.com</a>
+                            <div class="source-name">Canva (Magic Studio)</div>
+                            <div class="source-desc">Suíte de design com recursos de IA (geração e edição de imagem, texto, apresentações). Comum em assessorias e redações pequenas para peças de divulgação.</div>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        <strong>Imagem gerada não é registro factual.</strong> No jornalismo, imagem sintética só cabe como ilustração conceitual claramente rotulada como tal — nunca para retratar um acontecimento, um lugar ou uma pessoa real. Publicar imagem gerada sem rótulo é, na prática, fabricar evidência visual.
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Áudio e vídeo</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.descript.com/" class="source-url">descript.com</a>
+                            <div class="source-name">Descript</div>
+                            <div class="source-desc">Edição de áudio e vídeo pelo texto da transcrição: apagar uma frase do texto corta o trecho correspondente da mídia. Popular na produção de podcasts.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://podcast.adobe.com/" class="source-url">podcast.adobe.com</a>
+                            <div class="source-name">Adobe Podcast (Enhance Speech)</div>
+                            <div class="source-desc">Limpeza gratuita de áudio de voz: remove ruído e reverberação de gravações feitas em condições ruins, como entrevistas por telefone.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://elevenlabs.io/" class="source-url">elevenlabs.io</a>
+                            <div class="source-name">ElevenLabs</div>
+                            <div class="source-desc">Síntese de voz e dublagem por IA, com qualidade próxima da fala humana. Uso legítimo exige consentimento e rotulagem — voz clonada de pessoa real sem autorização é fraude.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 3 -->
+                <section id="s3">
+                    <div class="section-number">03</div>
+                    <h2>Verificação de Conteúdo Sintético</h2>
+
+                    <p style="margin-bottom: 1.5rem;">A mesma tecnologia que ajuda a produzir conteúdo também produz deepfakes, imagens fabricadas e áudios clonados. Verificá-los virou tarefa rotineira de redação — e a primeira lição é contraintuitiva: <strong>a resposta quase nunca está num "detector de IA".</strong></p>
+
+                    <div class="method-step">
+                        <h4>1. Detectores não são prova</h4>
+                        <p>Ferramentas que prometem dizer se um texto, imagem ou áudio "foi feito por IA" erram nos dois sentidos: acusam material autêntico (falso positivo) e liberam material sintético (falso negativo). Textos de falantes não nativos e fotos editadas de forma legítima são vítimas frequentes de falso positivo. Use detectores, no máximo, como <em>um</em> indício entre vários — nunca como base única de uma acusação ou de um desmentido.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>2. Proveniência antes de forense</h4>
+                        <p>O caminho mais confiável é o clássico da checagem, não o tecnológico:</p>
+                        <ol>
+                            <li><strong>Quem publicou primeiro?</strong> Busque a origem da peça (busca reversa de imagem, busca pelo texto entre aspas, data de publicação mais antiga).</li>
+                            <li><strong>O contexto confere?</strong> Local, clima, vestimenta, idioma dos letreiros, sombras compatíveis com o horário alegado.</li>
+                            <li><strong>Alguém confiável confirma?</strong> Agências, veículos locais, autoridades, testemunhas identificáveis.</li>
+                            <li><strong>Há credenciais de conteúdo?</strong> Verifique metadados e rótulos de procedência (padrão C2PA) quando existirem.</li>
+                        </ol>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>3. Sinais clássicos de imagem gerada</h4>
+                        <p>Os modelos melhoram rápido e esses sinais desaparecem aos poucos — trate-os como pistas, não como teste definitivo: mãos e dentes irregulares, texto ilegível em placas e letreiros, padrões repetidos em multidões, joias e óculos que se fundem à pele, fundos com objetos "derretidos", iluminação inconsistente entre pessoa e cenário.</p>
+                    </div>
+
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://weverify.eu/verification-plugin/" class="source-url">weverify.eu/verification-plugin</a>
+                            <div class="source-name">InVID-WeVerify (plugin)</div>
+                            <div class="source-desc">Extensão de navegador padrão das redações de checagem: análise de vídeo quadro a quadro, busca reversa em vários buscadores, metadados e lupa forense.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://contentcredentials.org/" class="source-url">contentcredentials.org</a>
+                            <div class="source-name">Content Credentials (C2PA)</div>
+                            <div class="source-desc">Ferramenta de inspeção do padrão aberto de procedência de mídia: mostra, quando presentes, as credenciais de origem e edição embutidas em um arquivo.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://hivemoderation.com/" class="source-url">hivemoderation.com</a>
+                            <div class="source-name">Hive Moderation</div>
+                            <div class="source-desc">Classificador comercial de conteúdo sintético (imagem, vídeo, áudio), com demonstração gratuita. Útil como indício complementar — vale a ressalva do passo 1.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 4 -->
+                <section id="s4">
+                    <div class="section-number">04</div>
+                    <h2>Ética e Transparência</h2>
+
+                    <div class="method-step">
+                        <h4>1. A regra de ouro: a responsabilidade é sempre humana</h4>
+                        <p>IA não assina, não responde processo e não pede desculpas ao leitor. Tudo o que sai com o seu nome — matéria, release, post, parecer, trabalho acadêmico — é de sua responsabilidade integral, tenha a IA participado de 1% ou de 90% do processo. Esse princípio, presente em praticamente todas as diretrizes editoriais e acadêmicas já publicadas, resolve de saída a pergunta mais comum: <strong>a IA pode ser autora ou coautora? Não.</strong> Autoria pressupõe responsabilidade, e responsabilidade pressupõe alguém que responda por ela.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>2. Quando declarar o uso</h4>
+                        <p>Nem todo uso exige declaração — ninguém declara o corretor ortográfico. O critério que atravessa as boas diretrizes é o do <strong>uso substantivo</strong>: declare quando a IA participou da produção do conteúdo em si (geração de texto ou imagem, resumo que virou parágrafo, análise de dados que virou número publicado, tradução integral). Não é preciso declarar apoio trivial de bastidor (correção gramatical, sugestão de sinônimo, formatação).</p>
+                        <p>Na dúvida, declare: transparência em excesso nunca constrangeu ninguém; a descoberta posterior de uso omitido, sim.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>3. Como declarar</h4>
+                        <p>Uma boa declaração tem três elementos: <strong>a ferramenta</strong> (nome e, quando relevante, versão), <strong>a finalidade</strong> (para quê foi usada) e <strong>o alcance da revisão humana</strong>. Os verbos importam — a IA <em>auxilia</em>, <em>apoia</em>, <em>gera insumos</em>; ela não "escreve o texto" que você assina:</p>
+                        <pre><span style="color:#7EE0B8"># Exemplos de declaração</span>
+
+"A transcrição das entrevistas foi feita com auxílio da
+ferramenta X e integralmente conferida contra os áudios
+originais."
+
+"Este texto foi redigido pelo autor com apoio de ferramenta
+de IA generativa (ferramenta Y) na revisão de estilo e na
+elaboração de versões preliminares de trechos, todos
+revisados, verificados e editados pelo autor."
+
+"O gráfico foi produzido a partir de código gerado com
+auxílio de IA e validado manualmente contra a base
+original."</pre>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>4. Onde declarar</h4>
+                        <ul>
+                            <li><strong>Texto jornalístico:</strong> nota ao pé da matéria ou no expediente, conforme a política do veículo.</li>
+                            <li><strong>Trabalho acadêmico:</strong> em seção de método, quando houver; em nota introdutória ou nota de rodapé vinculada ao título, quando o gênero (ensaio, resenha) não tiver seção metodológica. No Brasil, as diretrizes da INTERCOM (2024) são a principal referência da área de comunicação.</li>
+                            <li><strong>Comunicação institucional:</strong> conforme a política interna — e, na ausência de uma, este guia recomenda adotar o mesmo critério do uso substantivo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>5. O que nunca delegar à IA</h4>
+                        <ul>
+                            <li><strong>A palavra final sobre fatos:</strong> checagem se encerra em fonte primária ou fonte humana, nunca na resposta de um modelo.</li>
+                            <li><strong>Aspas e declarações:</strong> citação de fonte é literal ou não é. IA não "reconstitui" o que alguém disse.</li>
+                            <li><strong>Decisão editorial:</strong> o que publicar, com que enquadramento, ouvindo quem — juízo humano, sempre.</li>
+                            <li><strong>Sigilo de fonte:</strong> nenhum dado que identifique fonte protegida entra em ferramenta de terceiros. Sem exceção.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Referências e diretrizes</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.portalintercom.org.br/" class="source-url">portalintercom.org.br</a>
+                            <div class="source-name">INTERCOM — Diretrizes de uso de IA (2024)</div>
+                            <div class="source-desc">Diretrizes da Sociedade Brasileira de Estudos Interdisciplinares da Comunicação para o uso de IA na produção acadêmica da área — referência nacional para declaração de uso.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://rsf.org/" class="source-url">rsf.org</a>
+                            <div class="source-name">RSF — Carta de Paris sobre IA e Jornalismo</div>
+                            <div class="source-desc">Carta internacional coordenada pela Repórteres Sem Fronteiras (2023) com princípios para o uso de IA no jornalismo, entre eles a primazia da agência humana.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.unesco.org/" class="source-url">unesco.org</a>
+                            <div class="source-name">UNESCO — Recomendação sobre a Ética da IA</div>
+                            <div class="source-desc">Primeiro instrumento normativo global sobre ética da IA (2021), adotado pelos Estados-membros, com desdobramentos para educação e comunicação. Busque "Recommendation on the Ethics of AI" no site.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://ajor.org.br/" class="source-url">ajor.org.br</a>
+                            <div class="source-name">Ajor — Associação de Jornalismo Digital</div>
+                            <div class="source-desc">Associação brasileira de veículos digitais, ativa no debate sobre IA, sustentabilidade do jornalismo e regulação de plataformas no país.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 5 -->
+                <section id="s5">
+                    <div class="section-number">05</div>
+                    <h2>IA na Sala de Aula</h2>
+
+                    <div class="method-step">
+                        <h4>1. Toda disciplina precisa de uma política explícita</h4>
+                        <p>O pior cenário é o silêncio: sem regra declarada, cada aluno inventa a sua, e o professor descobre o problema na correção. A política pode variar por atividade — proibida na prova, permitida com declaração no trabalho, obrigatória num exercício de análise crítica —, mas precisa estar escrita no plano da disciplina ou no enunciado, antes de a atividade começar.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>2. O que o aluno declara</h4>
+                        <p>Quando o uso é permitido, a declaração do aluno espelha a do pesquisador (seção 04): ferramenta utilizada, finalidade e o que foi feito com o resultado. Um formato simples que funciona em trabalho de graduação:</p>
+                        <pre><span style="color:#7EE0B8"># Modelo de declaração para trabalho de aluno</span>
+
+Declaração de uso de IA
+Ferramenta: [nome e versão]
+Uso: [ex.: brainstorm inicial de pauta; revisão
+gramatical; explicação do conceito X para estudo]
+O que foi aproveitado no trabalho: [descrever]
+Declaro que o conteúdo final foi produzido, verificado
+e é de minha responsabilidade.</pre>
+                        <p>Vale registrar: a ABNT ainda não publicou norma específica para "citar IA" — e citar não é o enquadramento certo, porque a IA não é fonte recuperável nem autora. O caminho adequado é a <strong>declaração de uso</strong>, descritiva, como acima.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>3. Usos legítimos e usos indevidos</h4>
+                        <ul>
+                            <li><strong>Legítimos (com declaração):</strong> estudar um conceito pedindo explicações e contraexemplos; gerar perguntas de autoavaliação; revisar clareza e gramática do próprio texto; explorar ângulos de pauta; pedir crítica a um rascunho.</li>
+                            <li><strong>Indevidos:</strong> entregar como seu um texto gerado; "parafrasear" a saída da IA para escapar de detecção; inventar entrevistas, dados ou referências; usar IA em avaliação onde ela foi vetada.</li>
+                        </ul>
+                        <p>A fronteira conceitual é a mesma da seção 04: a IA pode ajudar você a <em>pensar e polir</em>; ela não pode <em>pensar por você e assinar</em>.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>4. Detecção não é o caminho — o desenho da avaliação é</h4>
+                        <p>Pelas razões da seção 03, detectores de texto gerado erram demais para fundamentar acusação de fraude acadêmica. A resposta docente mais eficaz é desenhar avaliações difíceis de terceirizar: produção em sala, defesa oral do trabalho, exigência de dados e entrevistas originais, versões intermediárias com histórico, análise de material visto em aula. Avaliação boa à prova de IA costuma ser, simplesmente, avaliação boa.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Referências para docência</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://educamidia.org.br/" class="source-url">educamidia.org.br</a>
+                            <div class="source-name">EducaMídia (Instituto Palavra Aberta)</div>
+                            <div class="source-desc">Programa brasileiro de educação midiática, com materiais didáticos gratuitos para trabalhar informação, desinformação e IA em sala de aula.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.journalismai.info/" class="source-url">journalismai.info</a>
+                            <div class="source-name">JournalismAI — materiais de ensino</div>
+                            <div class="source-desc">Estudos de caso e materiais da iniciativa da LSE que funcionam bem como leitura de aula sobre IA aplicada a redações reais.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 6 -->
+                <section id="s6">
+                    <div class="section-number">06</div>
+                    <h2>Riscos e Limites</h2>
+
+                    <div class="method-step">
+                        <h4>1. Alucinação e viés de automação</h4>
+                        <p>O risco técnico (a máquina inventa) se combina com um risco humano: o <strong>viés de automação</strong>, a tendência de confiar mais numa resposta porque veio de um sistema. Texto fluente e formatado parece verificado — não é. O antídoto é de processo, não de ferramenta: tratar toda saída de IA como material bruto de apuração, no mesmo estágio de uma declaração não confirmada.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>2. Vieses do treinamento</h4>
+                        <p>Modelos reproduzem os padrões — inclusive os estereótipos — dos dados com que foram treinados. Isso aparece em associações de profissão e gênero, em representações raciais em geradores de imagem, na sub-representação de perspectivas do Sul global e no desequilíbrio de idiomas (a maior parte do treinamento é em inglês, e a qualidade em português é menor em temas locais). Para quem comunica, o efeito prático é dobrado: o viés pode contaminar o conteúdo produzido <em>e</em> pode virar pauta a ser coberta.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>3. Privacidade, LGPD e sigilo de fonte</h4>
+                        <ul>
+                            <li>Dados inseridos em serviços comerciais de IA saem do seu controle e, dependendo do plano e da configuração, <strong>podem ser usados para treinar modelos</strong>. Verifique as configurações de privacidade e desative o uso do histórico para treinamento quando a opção existir.</li>
+                            <li>Dados pessoais de terceiros (fontes, alunos, atendidos de serviços públicos) são protegidos pela <strong>LGPD</strong> — inseri-los em ferramenta externa é tratamento de dados, com todas as obrigações legais que isso implica.</li>
+                            <li>Para material sensível, prefira ferramentas que rodam localmente (como o Whisper para transcrição) ou simplesmente não use IA naquela etapa.</li>
+                        </ul>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>4. Direitos autorais</h4>
+                        <p>Duas frentes ainda em disputa jurídica, no Brasil e no mundo: o <strong>insumo</strong> (modelos treinados com obras protegidas sem licença, objeto de processos movidos por veículos e autores) e o <strong>produto</strong> (a proteção autoral de conteúdo gerado por IA é incerta — a tendência dominante exige contribuição criativa humana). Consequência prática: não trate imagem ou texto gerado como "livre de direitos", nem presuma que o que você gerou é automaticamente protegido como obra sua.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>5. Custos invisíveis: ambiente e trabalho</h4>
+                        <p>Treinar e operar grandes modelos consome energia e água em escala de data center, e parte da preparação dos dados depende de trabalhadores de anotação e moderação frequentemente precarizados. São dimensões legítimas de cobertura jornalística — e razões para usar as ferramentas com propósito, não por inércia.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>6. Dependência e atrofia</h4>
+                        <p>Habilidade que não se exercita, atrofia. Se a IA escreve todos os primeiros rascunhos, resume todas as leituras e responde todas as dúvidas, o profissional em formação perde exatamente o treino que o tornaria capaz de avaliar o que a IA produz. Regra de bolso para estudantes e redações: <strong>use IA para ir além do que você já sabe fazer, não para evitar aprender o básico.</strong></p>
+                    </div>
+
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.gov.br/anpd/" class="source-url">gov.br/anpd</a>
+                            <div class="source-name">ANPD — Autoridade Nacional de Proteção de Dados</div>
+                            <div class="source-desc">Órgão responsável por zelar pela LGPD no Brasil: guias, sanções e posicionamentos sobre tratamento de dados pessoais, inclusive por sistemas de IA.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://nucleo.jor.br/" class="source-url">nucleo.jor.br</a>
+                            <div class="source-name">Núcleo Jornalismo</div>
+                            <div class="source-desc">Veículo brasileiro especializado em tecnologia e plataformas, com cobertura constante do impacto da IA na internet e na desinformação no país.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://mittechreview.com.br/" class="source-url">mittechreview.com.br</a>
+                            <div class="source-name">MIT Technology Review Brasil</div>
+                            <div class="source-desc">Edição brasileira da revista do MIT, útil para acompanhar avanços e controvérsias da IA em linguagem acessível a não especialistas.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 7 -->
+                <section id="s7">
+                    <div class="section-number">07</div>
+                    <h2>Prompting para Comunicadores</h2>
+
+                    <p style="margin-bottom: 1.5rem;">Prompt é briefing. As mesmas habilidades de quem pauta um repórter ou encomenda uma arte — contexto, tarefa clara, formato esperado, restrições — são as que produzem boas respostas de IA. Não há fórmula mágica; há briefing bem feito.</p>
+
+                    <div class="method-step">
+                        <h4>1. A anatomia de um bom prompt</h4>
+                        <p>Quatro blocos resolvem a maioria dos casos: <strong>papel</strong> (de que perspectiva responder), <strong>contexto</strong> (o material e a situação), <strong>tarefa</strong> (o que fazer, com verbo preciso) e <strong>formato</strong> (como entregar, com limites).</p>
+                        <span class="code-label">Prompt</span>
+                        <pre>Você é um editor de jornalismo local experiente.
+
+Contexto: recebi o release abaixo da prefeitura sobre o
+novo programa habitacional. Vou apurar a matéria hoje.
+
+Tarefa: liste (1) as afirmações do release que precisam
+de verificação independente, indicando onde verificar
+cada uma; (2) três perguntas incômodas que o release
+não responde; (3) quem eu deveria ouvir além da
+prefeitura.
+
+Formato: lista numerada, direta, sem parágrafos de
+introdução.
+
+[colar o release]</pre>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>2. Itere: a primeira resposta é um rascunho</h4>
+                        <p>Tratar a primeira resposta como produto final é o erro mais comum de iniciante. Peça ajustes como pediria a um estagiário talentoso e apressado: "encurte pela metade", "o item 3 está genérico, seja específico", "refaça sem adjetivos", "agora faça o advogado do diabo contra a sua própria resposta".</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>3. Peça o que verificar, não o que acreditar</h4>
+                        <p>Prompts que pedem incerteza explícita produzem respostas mais honestas — e transformam a IA de oráculo em assistente de apuração:</p>
+                        <span class="code-label">Prompt</span>
+                        <pre>Ao responder, separe claramente:
+(a) o que você afirma com alta confiança;
+(b) o que é plausível mas você não tem certeza;
+(c) o que eu preciso verificar em fonte primária,
+indicando qual fonte.
+Não invente números, nomes ou referências: se não
+souber, diga que não sabe.</pre>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>4. Dê exemplos do resultado que você quer</h4>
+                        <p>Uma amostra vale mais que três parágrafos de instrução. Se quer títulos num certo estilo, mostre dois títulos seus e peça mais cinco "neste padrão". Se quer um resumo em formato específico, cole um resumo antigo como modelo. O modelo aprende o padrão do exemplo com mais fidelidade do que da descrição.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>5. Trabalhe sobre material fornecido, não sobre a memória do modelo</h4>
+                        <p>Para tarefas factuais, a configuração mais segura é anexar o documento (relatório, ata, base de dados, transcrição) e instruir explicitamente:</p>
+                        <span class="code-label">Prompt</span>
+                        <pre>Responda usando exclusivamente o documento anexado.
+Para cada afirmação, indique a página ou o trecho de
+onde ela vem. Se a resposta não estiver no documento,
+diga "não consta no documento" — não complete com
+conhecimento externo.</pre>
+                        <p>Isso reduz drasticamente a alucinação e deixa cada afirmação conferível — o mesmo princípio da citação com fonte no jornalismo.</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>O que nunca entra num prompt:</strong> dados que identifiquem fontes protegidas, informações pessoais de terceiros sem base legal, documentos sigilosos, senhas e credenciais. Releia a seção 06 antes de anexar qualquer material sensível.
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <footer>
+            <p>Guia de Uso de IA na Comunicação · Artur Araújo · PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição</p>
+            <p class="hit-counter">
+                <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.svg?style=flat-square&amp;label=leituras&amp;color=0e1420&amp;labelColor=00776e" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
+            </p>
+            <button class="back-to-top" id="back-to-top">↑</button>
+        </footer>
+    </div>
+
+    <script>
+        // Contador de ferramentas e recursos
+        function updateSourceCount() {
+            const cards = document.querySelectorAll('.source-card');
+            document.querySelector('.stat-sources').textContent = cards.length;
+        }
+
+        // Busca
+        const searchInput = document.getElementById('search-input');
+        const noResults = document.getElementById('no-results');
+
+        function filterSources() {
+            const query = searchInput.value.toLowerCase();
+            const cards = document.querySelectorAll('.source-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const name = card.querySelector('.source-name').textContent.toLowerCase();
+                const desc = card.querySelector('.source-desc')?.textContent.toLowerCase() || '';
+                const url = card.querySelector('.source-url').textContent.toLowerCase();
+
+                const matches = name.includes(query) || desc.includes(query) || url.includes(query);
+                card.style.display = matches ? 'block' : 'none';
+                if (matches) visibleCount++;
+            });
+
+            noResults.classList.toggle('hidden', visibleCount > 0);
+        }
+
+        searchInput.addEventListener('input', filterSources);
+
+        // Scroll spy
+        const sections = document.querySelectorAll('section');
+        const tocLinks = document.querySelectorAll('#toc-list a');
+
+        function updateActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+
+        // Back to top
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.pageYOffset > 300);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Inicializa
+        updateSourceCount();
+        updateActiveLink();
+    </script>
+</body>
+</html>
