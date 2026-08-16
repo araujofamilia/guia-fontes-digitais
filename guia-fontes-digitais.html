@@ -437,8 +437,8 @@
             <div class="tagline">Pesquisa · Dados · Verificação</div>
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 15 de agosto de 2026 · revisão 7</div>
-            <div class="revisao-nota"><strong>Nesta revisão:</strong> entram as fontes que respondem a duas perguntas que o guia ainda não cobria, quem contratou e quem é dono da empresa contratada: o PNCP, que reúne editais, contratos e aditivos de todos os entes, a consulta de CNPJ e quadro de sócios da Receita Federal, a Jucesp Online e a consulta processual do TJ-SP. Elas se juntam no percurso novo 16.11, sobre como verificar se as concorrentes de uma licitação são mesmo independentes.</div>
+            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 16 de agosto de 2026 · revisão 8</div>
+            <div class="revisao-nota"><strong>Nesta revisão:</strong> a cultura deixa de ser só acervo e passa a ter dinheiro rastreável. Entram as três portas de financiamento, o FICC no município, o painel da PNAB na União e a consulta de projetos do Fomento CultSP e do ProAC ICMS no estado, mais o Mapa da Cultura, que localiza agentes e espaços por região e serve para achar fonte, não para contar quantos existem. Fora do tema, entra a pesquisa de proposições da Câmara Municipal de Campinas: o guia cobria o Executivo inteiro e ignorava o Legislativo, onde o orçamento é discutido antes de virar lei.</div>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -620,6 +620,11 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://campinas.sp.gov.br/diario-oficial" class="source-url">campinas.sp.gov.br/diario-oficial</a>
                             <div class="source-name">Diário Oficial — Prefeitura de Campinas</div>
                             <div class="source-desc">Ferramenta de busca no Diário Oficial do Município.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.campinas.sp.leg.br/atividade-legislativa/pesquisa-de-proposicoes" class="source-url">campinas.sp.leg.br · proposições</a>
+                            <div class="source-name">Câmara Municipal de Campinas — Pesquisa de Proposições</div>
+                            <div class="source-desc">Busca de projetos de lei, requerimentos e demais proposições em tramitação ou já arquivadas. É onde o orçamento municipal é discutido antes de virar lei e onde o vereador registra por escrito a pergunta que a prefeitura não respondeu.</div>
                         </div>
                     </div>
                 </section>
@@ -1260,6 +1265,31 @@
                     <div class="section-number">10</div>
                     <h2>Cultura, Arte e Entretenimento</h2>
 
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Fomento e Financiamento Cultural</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://campinas.sp.gov.br/secretaria/cultura-e-turismo/pagina/fundo-de-investimentos-culturais-de-campinas-ficc" class="source-url">campinas.sp.gov.br · FICC</a>
+                            <div class="source-name">FICC — Fundo de Investimentos Culturais de Campinas</div>
+                            <div class="source-desc">Editais, valores, prazos e resultados do fundo municipal de cultura. Cada edição traz o total investido e o número de projetos apoiados, o que torna a comparação entre anos imediata; deflacione antes de falar em aumento.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.gov.br/cultura/pt-br/assuntos/politica-nacional-aldir-blanc/painel-de-dados" class="source-url">gov.br/cultura · painel PNAB</a>
+                            <div class="source-name">Painel de Dados da PNAB — Ministério da Cultura</div>
+                            <div class="source-desc">Quanto a União repassou de fomento cultural a cada estado e município, com a situação da adesão e dos planos de ação. É o contraponto federal ao orçamento próprio da prefeitura, e cobre qualquer município da RMC.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.cultura.sp.gov.br/sec_cultura/Fomento/Consulta_a_Projetos" class="source-url">cultura.sp.gov.br · consulta a projetos</a>
+                            <div class="source-name">Fomento CultSP / ProAC — Consulta a Projetos</div>
+                            <div class="source-desc">Projetos aprovados nos editais estaduais e no ProAC ICMS, com proponente e valor. Permite descobrir quem capta recurso público de cultura numa cidade e qual empresa banca o projeto via renúncia de imposto.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://mapa.cultura.gov.br/" class="source-url">mapa.cultura.gov.br</a>
+                            <div class="source-name">Mapa da Cultura — SNIIC / Ministério da Cultura</div>
+                            <div class="source-desc">Cadastro nacional de agentes, espaços, eventos e projetos culturais, filtrável por região e com API pública. O cadastro é voluntário e declaratório: use para achar fontes, nunca para contar quantos existem.</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Acervos e Referência</h3>
                     <div class="sources-grid">
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.itaucultural.org.br/" class="source-url">itaucultural.org.br</a>
@@ -2162,7 +2192,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
         </div>
 
         <footer>
-            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 15 de agosto de 2026 · revisão 7</p>
+            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 16 de agosto de 2026 · revisão 8</p>
             <p class="hit-counter">
                 <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
             </p>
