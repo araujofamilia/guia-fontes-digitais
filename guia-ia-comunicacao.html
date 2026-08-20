@@ -493,6 +493,43 @@
             border-radius: 6px;
             font-size: 0.95rem;
         }
+
+        .changelog {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            background: var(--accent-soft);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.82rem;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+        }
+
+        .changelog-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-strong);
+            background: var(--card);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .hit-counter-inline {
+            margin-left: 0.4rem;
+            vertical-align: middle;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .hit-counter-inline img {
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
@@ -501,11 +538,19 @@
             <div class="tagline">Ferramentas · Ética · Método<span class="cursor" aria-hidden="true"></span></div>
             <h1>Guia de Uso de IA na Comunicação</h1>
             <p class="subtitle">Como usar inteligência artificial no jornalismo e na comunicação com proveito e responsabilidade: o que cada ferramenta faz, onde ela erra, quando declarar o uso e o que nunca delegar.</p>
-            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição</div>
+            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 20 de agosto de 2026</div>
+
+            <div class="changelog">
+                <span class="changelog-label">O que mudou</span>
+20 de agosto de 2026: dicas rápidas de prompt e briefing de imagem por IA, ferramentas de vídeo (Runway), tradução e revisão (DeepL, LanguageTool) e monitoramento e redes sociais (Knewin AI, Hootsuite) na seção 02, referência da IAB para publicidade na seção 04, seção 08 nova sobre skills e agentes personalizados, seção 09 Sobre o autor, e NotebookLM atualizado para Gemini Notebook. O contador ao lado é real: conta cada carregamento da página desde a publicação em 09/08/2026.
+                <span class="hit-counter-inline">
+                    <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.svg?style=flat-square&amp;label=leituras&amp;color=0e1420&amp;labelColor=00776e" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
+                </span>
+            </div>
 
             <div class="hero-stats">
                 <div class="stat">
-                    <div class="stat-number">7</div>
+                    <div class="stat-number">9</div>
                     <div class="stat-label">Seções temáticas</div>
                 </div>
                 <div class="stat">
@@ -530,6 +575,8 @@
                     <li><a href="#s5"><span class="toc-num">05</span>IA na Sala de Aula</a></li>
                     <li><a href="#s6"><span class="toc-num">06</span>Riscos e Limites</a></li>
                     <li><a href="#s7"><span class="toc-num">07</span>Prompting para Comunicadores</a></li>
+                    <li><a href="#s8"><span class="toc-num">08</span>Construção de Skills e Agentes Personalizados</a></li>
+                    <li><a href="#s9"><span class="toc-num">09</span>Sobre o autor</a></li>
                 </ul>
             </aside>
 
@@ -642,8 +689,8 @@
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://notebooklm.google.com/" class="source-url">notebooklm.google.com</a>
-                            <div class="source-name">NotebookLM (Google)</div>
-                            <div class="source-desc">Trabalha apenas sobre os documentos que você fornece (relatórios, PDFs, transcrições), com respostas ancoradas em trechos citáveis. Ótimo para dossiês de pauta.</div>
+                            <div class="source-name">Gemini Notebook (Google), antigo NotebookLM</div>
+                            <div class="source-desc">Renomeado em julho de 2026, sem mudança de função ou de endereço. Trabalha apenas sobre os documentos que você fornece (relatórios, PDFs, transcrições), com respostas ancoradas em trechos citáveis. Ótimo para dossiês de pauta.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://consensus.app/" class="source-url">consensus.app</a>
@@ -680,6 +727,20 @@
                     </div>
 
                     <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Imagem e design</h3>
+
+                    <div class="subsection">
+                        <h3>Como briefar uma imagem gerada por IA</h3>
+                        <p>O mesmo princípio da seção 07 vale aqui: prompt de imagem também é briefing, com cinco blocos:</p>
+                        <ol>
+                            <li><strong>Assunto:</strong> o que aparece em cena, com o nível de detalhe que importa (quantas pessoas, objetos, ambiente).</li>
+                            <li><strong>Estilo:</strong> fotografia realista, ilustração plana, 3D, aquarela — nomear o estilo evita o "genérico de banco de imagem".</li>
+                            <li><strong>Composição:</strong> enquadramento (close, plano aberto), ângulo, proporção (quadrado, retrato, paisagem) e onde deve sobrar espaço para texto, se for peça de divulgação.</li>
+                            <li><strong>Luz e clima:</strong> hora do dia, tipo de luz, paleta de cores, tom emocional.</li>
+                            <li><strong>Restrições:</strong> o que não pode aparecer (marca de terceiro, rosto reconhecível, texto ilegível) e, quando a ferramenta aceitar, referência de marca (cores, fonte, logotipo) para manter identidade visual.</li>
+                        </ol>
+                        <p>Gere mais de uma variação e itere sobre a melhor, do mesmo jeito que se itera texto: "mantenha a composição, mude só a paleta para tons frios".</p>
+                    </div>
+
                     <div class="sources-grid">
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://firefly.adobe.com/" class="source-url">firefly.adobe.com</a>
@@ -690,6 +751,11 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://www.canva.com/" class="source-url">canva.com</a>
                             <div class="source-name">Canva (Magic Studio)</div>
                             <div class="source-desc">Suíte de design com recursos de IA (geração e edição de imagem, texto, apresentações). Comum em assessorias e redações pequenas para peças de divulgação.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://designer.microsoft.com/" class="source-url">designer.microsoft.com</a>
+                            <div class="source-name">Microsoft Designer</div>
+                            <div class="source-desc">Ferramenta gratuita da Microsoft para peças de divulgação (posts, banners, convites) a partir de descrição em texto, com templates prontos para redimensionar por rede social.</div>
                         </div>
                     </div>
                     <div class="warning-box">
@@ -712,6 +778,39 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://elevenlabs.io/" class="source-url">elevenlabs.io</a>
                             <div class="source-name">ElevenLabs</div>
                             <div class="source-desc">Síntese de voz e dublagem por IA, com qualidade próxima da fala humana. Uso legítimo exige consentimento e rotulagem — voz clonada de pessoa real sem autorização é fraude.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://runwayml.com/" class="source-url">runwayml.com</a>
+                            <div class="source-name">Runway</div>
+                            <div class="source-desc">Geração e edição de vídeo por IA (texto para vídeo, extensão de cena, efeitos visuais). Usado em pré-produção, storyboard animado e prototipagem de cena antes da filmagem real; mesma ressalva da seção 06 sobre direitos autorais do material de treinamento.</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Tradução e revisão de texto</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.deepl.com/pt-BR/translator" class="source-url">deepl.com</a>
+                            <div class="source-name">DeepL</div>
+                            <div class="source-desc">Tradução por IA com qualidade acima da média em português, inclusive de textos longos e documentos. Útil para cobertura internacional e para pesquisa em fonte estrangeira, sempre com conferência humana de nome próprio e termo técnico.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://languagetool.org/" class="source-url">languagetool.org</a>
+                            <div class="source-name">LanguageTool</div>
+                            <div class="source-desc">Corretor gramatical e de estilo por IA para mais de 30 idiomas, incluindo português. Aponta problema e sugere reescrita, mas a escolha final de estilo e registro continua do autor.</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Monitoramento e redes sociais</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://knewin.ai/" class="source-url">knewin.ai</a>
+                            <div class="source-name">Knewin AI</div>
+                            <div class="source-desc">Ferramenta brasileira de monitoramento de menções (portais, impressos, rádio, TV, redes sociais) que responde em linguagem natural sobre o efeito de uma cobertura na reputação de uma marca ou organização. Lançada em agosto de 2026, ainda pouco testada em uso prolongado.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.hootsuite.com/" class="source-url">hootsuite.com</a>
+                            <div class="source-name">Hootsuite</div>
+                            <div class="source-desc">Agendamento e análise de redes sociais com recursos de IA para sugestão de legenda, melhor horário de publicação e resposta a comentários. Útil para quem administra várias contas institucionais ao mesmo tempo.</div>
                         </div>
                     </div>
                 </section>
@@ -839,6 +938,11 @@ original."</pre>
                             <div class="source-name">Ajor — Associação de Jornalismo Digital</div>
                             <div class="source-desc">Associação brasileira de veículos digitais, ativa no debate sobre IA, sustentabilidade do jornalismo e regulação de plataformas no país.</div>
                         </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.iab.com/guidelines/ai-transparency-disclosure-standards-v2/" class="source-url">iab.com</a>
+                            <div class="source-name">IAB — AI Transparency & Disclosure Framework</div>
+                            <div class="source-desc">Referência do setor publicitário para decidir quando rotular peça gerada por IA: rotula imagem, voz e avatar sintéticos e "gêmeos digitais"; dispensa pós-produção rotineira e texto comum. Central para quem produz publicidade e propaganda.</div>
+                        </div>
                     </div>
                 </section>
 
@@ -961,6 +1065,18 @@ e é de minha responsabilidade.</pre>
 
                     <p style="margin-bottom: 1.5rem;">Prompt é briefing. As mesmas habilidades de quem pauta um repórter ou encomenda uma arte — contexto, tarefa clara, formato esperado, restrições — são as que produzem boas respostas de IA. Não há fórmula mágica; há briefing bem feito.</p>
 
+                    <div class="subsection">
+                        <h3>Dicas rápidas</h3>
+                        <ul>
+                            <li>Abra dando um papel à IA ("você é um editor de..."), não só a tarefa solta.</li>
+                            <li>Mostre um exemplo do resultado que você quer em vez de descrevê-lo em três parágrafos.</li>
+                            <li>Peça para separar o que é certeza do que é suposição, e o que precisa de checagem em fonte primária.</li>
+                            <li>Para tarefa factual, prenda a resposta ao documento anexado: "responda só com base no texto anexo".</li>
+                            <li>Corrija por partes ("o item 3 está genérico, refaça só ele"), nunca recomece o prompt do zero.</li>
+                            <li>Feche pedindo o contrário: "agora aponte os três pontos mais fracos desta resposta" costuma revelar o que passou batido.</li>
+                        </ul>
+                    </div>
+
                     <div class="method-step">
                         <h4>1. A anatomia de um bom prompt</h4>
                         <p>Quatro blocos resolvem a maioria dos casos: <strong>papel</strong> (de que perspectiva responder), <strong>contexto</strong> (o material e a situação), <strong>tarefa</strong> (o que fazer, com verbo preciso) e <strong>formato</strong> (como entregar, com limites).</p>
@@ -1022,14 +1138,78 @@ conhecimento externo.</pre>
                     </div>
                 </section>
 
+                <!-- Seção 8 -->
+                <section id="s8">
+                    <div class="section-number">08</div>
+                    <h2>Construção de Skills e Agentes Personalizados</h2>
+
+                    <div class="method-step">
+                        <h4>1. O que é uma "skill" personalizada</h4>
+                        <p>Nas principais ferramentas de IA dá para guardar um conjunto de instruções, exemplos e arquivos de referência sob um nome, para não reescrever o mesmo briefing toda vez que precisar da mesma tarefa. Claude chama isso de skill, o ChatGPT chama de GPT personalizado, o Gemini chama de Gem e o Copilot chama de agente. Os ingredientes se repetem em qualquer uma delas: um nome e uma descrição de quando usar; instruções de comportamento (o que fazer, como responder, o que evitar); e, quando a ferramenta permite, arquivos de referência que ela consulta antes de responder.</p>
+                        <p>Vale construir uma quando você se pega copiando e colando o mesmo bloco de instruções, para uma tarefa que se repete com frequência: corrigir prova pela mesma régua, responder pergunta de imprensa no mesmo formato, transformar release em pauta.</p>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Como criar em cada ferramenta</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" class="source-url">support.claude.com</a>
+                            <div class="source-name">Claude, Skills</div>
+                            <div class="source-desc">Um arquivo skill.md com nome, descrição de quando usar e instruções, mais arquivos de apoio opcionais, empacotados numa pasta. Dá para gravar a si mesmo executando a tarefa em vez de escrever do zero.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://help.openai.com/en/articles/8554397-creating-and-editing-gpts" class="source-url">help.openai.com</a>
+                            <div class="source-name">ChatGPT, GPTs personalizados</div>
+                            <div class="source-desc">Em "Explorar GPTs" e depois "Criar": defina instruções de comportamento, envie arquivos de conhecimento (até 20) e, se precisar, conecte a APIs externas. A criação de GPT exige conta Business, Enterprise ou Edu.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://support.google.com/gemini/answer/15235603" class="source-url">support.google.com/gemini</a>
+                            <div class="source-name">Gemini, Gems</div>
+                            <div class="source-desc">Em "Explorar Gems" e depois "Nova Gem": escreva instruções cobrindo persona, tarefa, contexto e formato, e anexe arquivos de conhecimento se precisar. O próprio Gemini reescreve suas instruções de forma mais detalhada, se pedido.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.microsoft.com/en-us/microsoft-365-copilot/microsoft-copilot-studio" class="source-url">microsoft.com/copilot-studio</a>
+                            <div class="source-name">Copilot, agentes personalizados</div>
+                            <div class="source-desc">Copilot Studio monta o agente a partir de descrição em linguagem natural, sem exigir código, e conecta a dados da organização. É voltado a ambiente corporativo Microsoft 365; para uso individual mais simples, o próprio Copilot permite criar um agente declarativo dentro da conversa.</div>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <strong>Uma skill não muda o que a IA sabe fazer, muda o que ela lembra de fazer.</strong> As regras da seção 04 continuam valendo dentro de uma skill: responsabilidade humana pelo resultado, declaração de uso quando substantivo, e nenhum dado sensível nos arquivos de referência que ela consulta.
+                    </div>
+                </section>
+
+                <!-- Seção 9 -->
+                <section id="s9">
+                    <div class="section-number">09</div>
+                    <h2>Sobre o autor</h2>
+
+                    <div class="method-step">
+                        <p>Trabalho na pergunta que hoje ocupa qualquer redação e qualquer assessoria de comunicação: o que a inteligência artificial e os dados públicos mudam no jornalismo, e o que eles não têm o direito de mudar. Uso IA generativa no fluxo de produção da comunicação institucional da Prefeitura de Campinas, sempre com validação editorial humana, e dou aula sobre isso na PUC-Campinas, onde ensino desde 2004.</p>
+                        <p>A outra metade do trabalho é dado público, Censo 2022, SINAN, sistemas do SUAS, portais de transparência: é com eles que sustento pautas e balanços de políticas sociais. Mestrado em Ciências da Comunicação pela USP, graduação em Comunicação Social pela PUC-Rio.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Recursos abertos que mantenho</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.html" class="source-url">araujofamilia.github.io/guia-fontes-digitais</a>
+                            <div class="source-name">Guia de Fontes Digitais para Jornalismo</div>
+                            <div class="source-desc">150 fontes em 17 seções para apuração com dado público, com recorte de Campinas e da Região Metropolitana. Sugestões de fontes são sempre bem-vindas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://professorarturaraujo.wordpress.com/" class="source-url">professorarturaraujo.wordpress.com</a>
+                            <div class="source-name">Blog do professor</div>
+                            <div class="source-desc">Ementas, cronogramas, textos de apoio e ensaios das disciplinas que leciono na PUC-Campinas.</div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--muted);">Se você trabalha com comunicação pública, jornalismo de dados ou ensino de jornalismo, vamos conversar.</p>
+                </section>
+
             </main>
         </div>
 
         <footer>
-            <p>Guia de Uso de IA na Comunicação · Artur Araújo · PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição</p>
-            <p class="hit-counter">
-                <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.svg?style=flat-square&amp;label=leituras&amp;color=0e1420&amp;labelColor=00776e" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
-            </p>
+            <p>Guia de Uso de IA na Comunicação · Artur Araújo · PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 20 de agosto de 2026</p>
             <button class="back-to-top" id="back-to-top">↑</button>
         </footer>
     </div>
