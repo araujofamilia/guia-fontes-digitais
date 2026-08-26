@@ -437,8 +437,8 @@
             <div class="tagline">Pesquisa · Dados · Verificação</div>
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 23 de agosto de 2026 · revisão 10</div>
-            <div class="revisao-nota"><strong>Nesta revisão:</strong> rodada de correção. O cartão do InVID apontava para o site de um projeto de pesquisa encerrado, e não para a ferramenta que existe hoje; o Trendsmap deixou de ser mapa de tendências e virou arquivo comercial; o Pinpoint abriu os recursos básicos a qualquer conta Google. Em ano eleitoral, entram na Seção 7 o Fato ou Boato, o LIE e o Comprova, e na Seção 22 a nota sobre a Portaria TSE 463/2026 e o índice que mede quanta transparência de anúncio cada plataforma oferece no Brasil.</div>
+            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 26 de agosto de 2026 · revisão 11</div>
+            <div class="revisao-nota"><strong>Nesta revisão:</strong> rodada de inclusão, aberta por uma pauta sobre candidaturas LGBT+ que expôs uma lacuna: em 255 cartões, o guia não tinha nenhuma fonte sobre o tema. Entram na Seção 3 as Estatísticas Eleitorais do TSE, que desde 2024 registram orientação sexual e identidade de gênero no pedido de candidatura, e o VoteLGBT, cujo mapeamento próprio chega a um total diferente do oficial; e, ao lado do painel do Disque 100, o dossiê da ANTRA sobre violências contra pessoas trans. As três descrições dizem o que cada base mede, porque nenhuma delas é comparável com as outras.</div>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -741,6 +741,16 @@
                             <div class="source-name">DivulgaCandContas — Candidaturas e Contas (TSE)</div>
                             <div class="source-desc">Consulta por candidato: situação do registro, bens declarados, doadores e gastos de campanha. Em ano eleitoral os dados são parciais enquanto durar o período de registro.</div>
                         </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.tse.jus.br/eleicoes/estatisticas" class="source-url">tse.jus.br/eleicoes/estatisticas</a>
+                            <div class="source-name">TSE — Estatísticas Eleitorais</div>
+                            <div class="source-desc">Perfil agregado das candidaturas, eleitorado, resultados e prestação de contas, montado por replicação diária das bases dos TREs. Desde 2024 inclui orientação sexual e identidade de gênero, campos de preenchimento opcional. Números preliminares enquanto os registros seguem em julgamento.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://vote.org.br/" class="source-url">vote.org.br</a>
+                            <div class="source-name">VoteLGBT (Instituto Plena Cidadania)</div>
+                            <div class="source-desc">Mapeamento de candidaturas LGBT+ desde 2014, com publicações, dados por eleição e o site do ciclo corrente em 2026.votelgbt.org. Base autodeclaratória e de cadastro voluntário, então o total diverge do registro do TSE: cite as duas contagens e diga o método de cada uma.</div>
+                        </div>
                     </div>
 
                     <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">IBGE — Estatísticas Nacionais</h3>
@@ -830,6 +840,11 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://www.gov.br/mdh/pt-br/ondh/paineldedadosdaondh" class="source-url">gov.br/mdh · painel da ONDH</a>
                             <div class="source-name">Painel de Dados ONDH — Disque 100 e Ligue 180</div>
                             <div class="source-desc">Denúncias de violações de direitos humanos e de violência contra a mulher, filtráveis por município, grupo vulnerável e tipo de violação. Atualização semanal; CSVs trimestrais em dados abertos. Uma denúncia pode conter mais de uma violação — não some as duas contagens.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://antrabrasil.org/assassinatos/" class="source-url">antrabrasil.org/assassinatos</a>
+                            <div class="source-name">ANTRA — Dossiê de Assassinatos e Violências contra Pessoas Trans</div>
+                            <div class="source-desc">Série anual desde 2017 sobre assassinatos e violências contra travestis e transexuais, com metodologia declarada e PDFs abertos por edição. Compila casos noticiados na imprensa, então é subnotificação por construção: não compare com base policial nem com o Disque 100 sem dizer o que cada uma mede.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.cnj.jus.br/programas-e-acoes/violencia-contra-a-mulher/painel-da-violencia-domestica/" class="source-url">cnj.jus.br · painel da violência doméstica</a>
@@ -2716,7 +2731,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
         </div>
 
         <footer>
-            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 23 de agosto de 2026 · revisão 10</p>
+            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 26 de agosto de 2026 · revisão 11</p>
             <p class="hit-counter">
                 <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
             </p>
