@@ -437,8 +437,8 @@
             <div class="tagline">Pesquisa · Dados · Verificação</div>
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 26 de agosto de 2026 · revisão 11</div>
-            <div class="revisao-nota"><strong>Nesta revisão:</strong> rodada de inclusão, aberta por uma pauta sobre candidaturas LGBT+ que expôs uma lacuna: em 255 cartões, o guia não tinha nenhuma fonte sobre o tema. Entram na Seção 3 as Estatísticas Eleitorais do TSE, que desde 2024 registram orientação sexual e identidade de gênero no pedido de candidatura, e o VoteLGBT, cujo mapeamento próprio chega a um total diferente do oficial; e, ao lado do painel do Disque 100, o dossiê da ANTRA sobre violências contra pessoas trans. As três descrições dizem o que cada base mede, porque nenhuma delas é comparável com as outras.</div>
+            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 26 de agosto de 2026 · revisão 12</div>
+            <div class="revisao-nota"><strong>Nesta revisão:</strong> duas rodadas de inclusão no mesmo dia. A primeira foi aberta por uma pauta sobre candidaturas LGBT+ que expôs uma lacuna: em 255 cartões, o guia não tinha nenhuma fonte sobre o tema. Entram na Seção 3 as Estatísticas Eleitorais do TSE, que desde 2024 registram orientação sexual e identidade de gênero no pedido de candidatura, e o VoteLGBT, cujo mapeamento próprio chega a um total diferente do oficial; e, ao lado do painel do Disque 100, o dossiê da ANTRA sobre violências contra pessoas trans. As três descrições dizem o que cada base mede, porque nenhuma delas é comparável com as outras. A segunda foi aberta pela conferência de um fundo vendido por banco: o guia trazia a CVM duas vezes — como instituição e como portal de dados abertos — e nenhum caminho para chegar a um fundo específico. Entram na Seção 4 a Consulta a Fundos de Investimento, que confirma registro, administrador e situação por nome ou CNPJ mesmo depois de o produto sair do ar no site do banco, e o Fundos.NET, onde ficam os documentos de FII, FIDC e ETF. A separação é o achado: registro e documento estão em sistemas distintos da CVM, e o documento recente migrou para um terceiro — razão pela qual a régua dos percursos (Seção 16) ganhou uma quinta constante, sobre testar o comportamento real de um sistema antes de confiar na descrição dele.</div>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -990,6 +990,16 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://dados.cvm.gov.br/" class="source-url">dados.cvm.gov.br</a>
                             <div class="source-name">CVM — Portal de Dados Abertos</div>
                             <div class="source-desc">Datasets da CVM: fundos de investimento, companhias abertas, administradores.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://sistemas.cvm.gov.br/fundos.asp" class="source-url">sistemas.cvm.gov.br/fundos.asp</a>
+                            <div class="source-name">CVM — Consulta a Fundos de Investimento</div>
+                            <div class="source-desc">Consulta cadastral de fundos registrados e cancelados por nome, CNPJ, administrador ou tipo — confirma existência, administrador e situação mesmo depois de o produto sair do ar no site do banco. Regulamento, lâmina, prospecto, composição de carteira e fatos relevantes estão em outro sistema: cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://fnet.bmfbovespa.com.br/fnet/publico/abrirGerenciadorDocumentosCVM" class="source-url">fnet.bmfbovespa.com.br/fnet/publico</a>
+                            <div class="source-name">Fundos.NET — Documentos de FII, FIDC e ETF</div>
+                            <div class="source-desc">Repositório oficial dos documentos de fundos listados: fatos relevantes, avisos aos cotistas, regulamentos, laudos de avaliação e informes trimestrais, com filtro por CNPJ, administrador e categoria. É aqui, e não no CVMWeb, que estão os documentos de FII (desde 2016), fundos de índice (2018) e FIDC (2020). Exige captcha.</div>
                         </div>
                     </div>
 
@@ -2131,7 +2141,7 @@ print('PNG gerado.')</pre>
 
                     <div class="subsection" style="margin-top: 2rem;">
                         <h4 style="margin-bottom: 1rem;"><strong>A régua dos percursos</strong></h4>
-                        <p>Quatro constantes valem para todos. Delimite o período antes de comparar qualquer número. Prefira a fonte primária ao número de segunda mão. Quando duas fontes divergem, a divergência é pauta, não erro a esconder. E documente fonte, período e método junto com o resultado, para que a apuração seja reprodutível e citável.</p>
+                        <p>Cinco constantes valem para todos. Delimite o período antes de comparar qualquer número. Prefira a fonte primária ao número de segunda mão. Quando duas fontes divergem, a divergência é pauta, não erro a esconder. Teste o comportamento real do sistema antes de confiar na descrição dele: a estatística que o órgão diz publicar pode não abrir por município, e o documento que um sistema promete guardar pode ter migrado para outro acervo. E documente fonte, período e método junto com o resultado, para que a apuração seja reprodutível e citável.</p>
                     </div>
                 </section>
 
@@ -2731,7 +2741,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
         </div>
 
         <footer>
-            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 26 de agosto de 2026 · revisão 11</p>
+            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 26 de agosto de 2026 · revisão 12</p>
             <p class="hit-counter">
                 <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
             </p>
