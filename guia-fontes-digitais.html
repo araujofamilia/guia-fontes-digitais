@@ -437,8 +437,8 @@
             <div class="tagline">Pesquisa · Dados · Verificação</div>
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 28 de agosto de 2026 · revisão 13</div>
-            <div class="revisao-nota"><strong>Nesta revisão:</strong> uma inclusão e duas descrições reescritas, todas no eixo de fiscalização e controle. A Seção 1 passa a cobrir os conselhos municipais de Campinas, ausentes do guia até aqui, pelo índice da Secretaria de Gestão e Controle, que reúne os conselhos das várias áreas com responsável e calendário de reuniões: é em ata e em resolução de conselho que repasse, credenciamento de entidade e uso de fundo municipal aparecem com voto nominal, antes de virarem contrato. Na Seção 2, o cartão do TCE-SP passa a distinguir as duas portas do tribunal: a jurisprudência, dos processos já julgados, e o e-TCESP, dos autuados ainda sem julgamento. E o Portal da Transparência de Campinas ganha a descrição que faltava, com a indicação de que a ficha por contrato fica no portal-adm.</div>
+            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 29 de agosto de 2026 · revisão 14</div>
+            <div class="revisao-nota"><strong>Nesta revisão:</strong> o guia passa a cobrir processo legislativo, lacuna estrutural até aqui. A Seção 3 ganha a subseção Legislativo e Produção de Leis, com a API de Dados Abertos da Câmara dos Deputados e os arquivos em massa de tramitações, que são o caminho das relatorias que a API não entrega. A Seção 2 incorpora as fichas de norma e o ementário das sessões da Alesp, que dizem quem propôs cada lei paulista e o que cada deputado disse em plenário. A Seção 13 registra o SAPL, o sistema padrão das câmaras municipais, replicável cidade a cidade na RMC. A Seção 6 soma o LexML, que confirma número, data e ementa de norma antiga das três esferas. E a Seção 16 fecha com o percurso 16.12, que separa autor, relator e coautor na produção de um parlamentar.</div>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -686,6 +686,11 @@
                             <div class="source-desc">Andamento de processos do primeiro grau da Justiça paulista, por número, nome da parte ou documento. Vale a ressalva de sempre: a existência de um processo não prova nada, réu não é condenado, e parte dos autos pode correr em segredo de justiça.</div>
                         </div>
                         <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.al.sp.gov.br/norma/pesquisa" class="source-url">al.sp.gov.br · normas e ementário</a>
+                            <div class="source-name">Alesp, fichas de norma e ementário das sessões</div>
+                            <div class="source-desc">A ficha de cada lei paulista informa o projeto de origem e o autor, o que permite conferir quem de fato propôs a matéria. O ementário em al.sp.gov.br/repositorio/ementario traz o registro do que cada deputado disse em plenário, sessão a sessão, e serve para datar promessas, cobranças e créditos. Ressalva: a busca por autor só funciona pelo formulário em navegador, e as páginas de ex-parlamentares estão fora do ar.</div>
+                        </div>
+                        <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="http://www.cve.saude.sp.gov.br/" class="source-url">cve.saude.sp.gov.br</a>
                             <div class="source-name">Centro de Vigilância Epidemiológica (CVE)</div>
                         </div>
@@ -756,6 +761,20 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://vote.org.br/" class="source-url">vote.org.br</a>
                             <div class="source-name">VoteLGBT (Instituto Plena Cidadania)</div>
                             <div class="source-desc">Mapeamento de candidaturas LGBT+ desde 2014, com publicações, dados por eleição e o site do ciclo corrente em 2026.votelgbt.org. Base autodeclaratória e de cadastro voluntário, então o total diverge do registro do TSE: cite as duas contagens e diga o método de cada uma.</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Legislativo e Produção de Leis</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://dadosabertos.camara.leg.br" class="source-url">dadosabertos.camara.leg.br</a>
+                            <div class="source-name">Dados Abertos da Câmara dos Deputados</div>
+                            <div class="source-desc">API pública com proposições, autores, tramitações, votações nominais com o voto de cada deputado, discursos, presenças e despesas de gabinete. É onde se confere se o parlamentar votou o que diz que votou, e o que aconteceu com o projeto depois do anúncio. Atenção: id de proposição errado devolve lista vazia, não erro, e alguns filtros combinados são ignorados sem aviso.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://dadosabertos.camara.leg.br/arquivos" class="source-url">dadosabertos.camara.leg.br/arquivos</a>
+                            <div class="source-name">Câmara dos Deputados, arquivos em massa</div>
+                            <div class="source-desc">CSVs anuais de proposições, autores, votos e tramitações. O arquivo de tramitações é o único caminho para descobrir tudo o que um parlamentar relatou, porque a designação de relator só aparece no texto do despacho, e não em campo consultável pela API.</div>
                         </div>
                     </div>
 
@@ -1154,6 +1173,11 @@
                             <div class="source-name">Cruzagrafos (Abraji)</div>
                             <div class="source-desc">Cruza bases públicas brasileiras e mostra em grafo as relações entre pessoas, empresas e órgãos. Exige cadastro, e parte dos recursos é reservada a associados da Abraji.</div>
                         </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.lexml.gov.br" class="source-url">lexml.gov.br</a>
+                            <div class="source-name">LexML Brasil</div>
+                            <div class="source-desc">Rede que indexa legislação, jurisprudência e proposições das esferas federal, estadual e municipal, com identificador padronizado por norma. Útil para confirmar número, data e ementa de uma lei antiga, inclusive municipal, quando o site do órgão não tem acervo. Ressalva: não informa autoria, e a busca livre responde mal, ao contrário das páginas de norma individual.</div>
+                        </div>
                     </div>
 
                     <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Empresas, Sócios e Vínculos Societários</h3>
@@ -1541,6 +1565,11 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://pncp.gov.br/app/contratos" class="source-url">pncp.gov.br · contratos</a>
                             <div class="source-name">PNCP — contratos dos municípios da RMC</div>
                             <div class="source-desc">Contratos, aditivos e atas de registro de preços de qualquer município da região em um só lugar. Rende mais que o portal de cada prefeitura quando a cidade é pequena e o portal próprio é precário.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://sapl.campinas.sp.leg.br/materia/pesquisar-materia" class="source-url">sapl.campinas.sp.leg.br</a>
+                            <div class="source-name">SAPL, sistema legislativo das câmaras municipais</div>
+                            <div class="source-desc">A maioria das câmaras municipais usa o SAPL, do Programa Interlegis, que permite buscar proposições por autor e acompanhar o que virou norma. O padrão de endereço se repete: sapl.&lt;cidade&gt;.sp.leg.br, com /materia/pesquisar-materia para a busca e /api/ para consulta programática. É a via para saber o que um vereador de fato apresentou e aprovou. Ressalva: nem toda instalação mantém a API aberta, e algumas recusam acesso automatizado.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://transparencia.americana.sp.gov.br/transparencia_index.php" class="source-url">transparencia.americana.sp.gov.br</a>
@@ -2142,6 +2171,31 @@ print('PNG gerado.')</pre>
                             <li>O que não estiver publicado, peça por LAI, nomeando o documento e o período (percurso 16.5).</li>
                             <li><strong>Cuidado que sustenta a matéria:</strong> coincidência de endereço não prova conluio. Ela prova que existe uma pergunta a ser feita, e essa pergunta vai ao órgão contratante e a cada empresa citada, com prazo e direito de resposta registrados.</li>
                             <li><strong>Cite:</strong> número do edital ou do contrato no PNCP, CNPJ e data da consulta ao cadastro, número do processo ou da representação.</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">16.12 · Quem relatou o projeto, e o que ele virou</h3>
+
+                    <div class="method-step">
+                        <h4>Pergunta</h4>
+                        <p>O que um parlamentar de fato produziu — o que apresentou, o que relatou e o que virou lei?</p>
+                    </div>
+
+                    <div class="method-step">
+                        <h4>Exemplo real</h4>
+                        <p>O levantamento da produção legislativa de um deputado federal (agosto/2026): a lista do que ele apresentou saiu da API em minutos, mas as dezenas de relatorias só apareceram nos arquivos anuais de tramitações, porque a designação de relator vive no texto do despacho — e parte das matérias virou lei sem um único voto nominal em plenário, por aprovação conclusiva nas comissões.</p>
+                    </div>
+
+                    <div class="method-step">
+                        <ul>
+                            <li>Comece pela API de Dados Abertos da Câmara (Seção 3): o endpoint de proposições, filtrado pelo id do parlamentar como autor, lista tudo o que ele apresentou.</li>
+                            <li>Filtre por situação para separar o que virou norma jurídica do que tramita ou foi arquivado. O anúncio do projeto e o destino dele são dois fatos diferentes, e só o segundo fecha a matéria.</li>
+                            <li>Confira a autoria no endpoint de autores de cada proposição, que distingue o proponente dos subscritores. É o que separa <strong>autor</strong> de <strong>coautor</strong>: projeto coletivo com dezenas de assinaturas não é iniciativa própria.</li>
+                            <li>Para as relatorias, a API não basta: a designação de relator só aparece no texto livre do despacho, nos arquivos em massa de tramitações (Seção 3). Baixe o CSV do ano e busque o nome do parlamentar nos despachos.</li>
+                            <li>Regra de ouro do percurso: aprovação <strong>conclusiva</strong> em comissão não gera votação em plenário nem voto nominal. É por isso que um parlamentar pode aprovar muito sem aparecer em placar nenhum — e por isso que a ausência de votos nominais não prova ausência de produção.</li>
+                            <li>Duas armadilhas verificadas da API: filtros combinados podem ser silenciosamente ignorados (confira se o retorno respeita todos os parâmetros) e id de proposição errado devolve lista vazia em vez de erro.</li>
+                            <li>Na hora de escrever, mantenha os papéis separados: o <strong>autor</strong> propõe, o <strong>relator</strong> dá o parecer que decide o destino da matéria, o <strong>coautor</strong> subscreve. Confundi-los é o erro mais comum da cobertura política.</li>
+                            <li><strong>Cite:</strong> número da proposição, endpoint ou arquivo consultado e data da consulta — os dados mudam conforme a tramitação avança.</li>
                         </ul>
                     </div>
 
@@ -2747,7 +2801,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
         </div>
 
         <footer>
-            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 28 de agosto de 2026 · revisão 13</p>
+            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 29 de agosto de 2026 · revisão 14</p>
             <p class="hit-counter">
                 <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
             </p>
