@@ -438,7 +438,7 @@
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
             <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 29 de agosto de 2026 · revisão 14</div>
-            <div class="revisao-nota"><strong>Nesta revisão:</strong> o guia passa a cobrir processo legislativo, lacuna estrutural até aqui. A Seção 3 ganha a subseção Legislativo e Produção de Leis, com a API de Dados Abertos da Câmara dos Deputados e os arquivos em massa de tramitações, que são o caminho das relatorias que a API não entrega. A Seção 2 incorpora as fichas de norma e o ementário das sessões da Alesp, que dizem quem propôs cada lei paulista e o que cada deputado disse em plenário. A Seção 13 registra o SAPL, o sistema padrão das câmaras municipais, replicável cidade a cidade na RMC. A Seção 6 soma o LexML, que confirma número, data e ementa de norma antiga das três esferas. E a Seção 16 fecha com o percurso 16.12, que separa autor, relator e coautor na produção de um parlamentar.</div>
+            <div class="revisao-nota"><strong>Nesta revisão:</strong> o guia passa a cobrir processo legislativo, lacuna estrutural até aqui. A Seção 3 ganha a subseção Legislativo e Produção de Leis, com a API de Dados Abertos da Câmara dos Deputados e os arquivos em massa de tramitações, que são o caminho das relatorias que a API não entrega. A Seção 2 incorpora as fichas de norma e o ementário das sessões da Alesp, que dizem quem propôs cada lei paulista e o que cada deputado disse em plenário. A Seção 13 registra o SAPL, o sistema padrão das câmaras municipais, replicável cidade a cidade na RMC. A Seção 6 soma o LexML, que confirma número, data e ementa de norma antiga das três esferas. E a Seção 16 fecha com o percurso 16.12, que separa autor, relator e coautor na produção de um parlamentar. Entram ainda, fora do eixo legislativo, o Mapa das OSC do Ipea, na Seção 6, que cobre as entidades sem fins lucrativos que a consulta de CNPJ sozinha não contextualiza, e o SIGTAP, na Seção 3, o dicionário oficial dos procedimentos do SUS que torna auditável qualquer tabulação do DATASUS.</div>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -840,6 +840,11 @@
                             <div class="source-desc">Acesso direto aos microdados brutos do SUS. FTP: ftp.datasus.gov.br/dissemin/publicos — requer cliente FTP (ex.: FileZilla).</div>
                         </div>
                         <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="http://sigtap.datasus.gov.br/tabela-unificada/app/sec/inicio.jsp" class="source-url">sigtap.datasus.gov.br</a>
+                            <div class="source-name">SIGTAP — Tabela de Procedimentos do SUS</div>
+                            <div class="source-desc">Dicionário oficial dos procedimentos que o SUS registra e paga, com código, complexidade e instrumento de registro, atualizado mensalmente por competência. É o que permite declarar exatamente qual procedimento foi contado ao tabular DATASUS, transformando número extraído em número auditável. Interface antiga e endereço sem HTTPS.</div>
+                        </div>
+                        <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.ibge.gov.br/estatisticas/economicas/servicos/9016-estatisticas-do-cadastro-central-de-empresas.html" class="source-url">ibge.gov.br · cempre</a>
                             <div class="source-name">CEMPRE — Cadastro Central de Empresas (IBGE)</div>
                             <div class="source-desc">Estoque anual de empresas e unidades locais formais, com pessoal ocupado e salários, por município e atividade econômica; tabulações customizadas no Sidra. Serve de contraprova ao Mapa de Empresas, que mede fluxo. Atenção às notas técnicas: houve quebra de série com a substituição gradativa da RAIS pelo eSocial.</div>
@@ -1201,6 +1206,11 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas/painel-mapa-de-empresas" class="source-url">gov.br · painel mapa de empresas</a>
                             <div class="source-name">Mapa de Empresas — abertura e fechamento por município</div>
                             <div class="source-desc">Painéis do governo federal alimentados pelas 27 juntas comerciais (Redesim), com filtros de ano, mês, município, natureza jurídica e atividade econômica, atualizados mensalmente. Responde quantas empresas de determinada atividade abriram ou fecharam numa cidade. Duas ressalvas: é painel interativo, sem link direto por consulta (descreva o caminho no texto), e o tempo de abertura teve mudança metodológica em dezembro de 2025 que quebra a comparação da série.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://mapaosc.ipea.gov.br" class="source-url">mapaosc.ipea.gov.br</a>
+                            <div class="source-name">Mapa das OSC — organizações da sociedade civil (Ipea)</div>
+                            <div class="source-desc">Plataforma do Ipea com todas as OSCs do país, ativas e baixadas: natureza jurídica, dirigentes, endereço, situação cadastral e parcerias com a administração pública. Serve para checar se uma entidade citada em contrato, edital ou pauta ainda existe, quem responde por ela e desde quando. Base completa em CSV com dicionário de variáveis.</div>
                         </div>
                     </div>
                 </section>
