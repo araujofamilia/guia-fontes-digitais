@@ -437,8 +437,8 @@
             <div class="tagline">Pesquisa · Dados · Verificação</div>
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 29 de agosto de 2026 · revisão 14</div>
-            <div class="revisao-nota"><strong>Nesta revisão:</strong> o guia passa a cobrir processo legislativo, lacuna estrutural até aqui. A Seção 3 ganha a subseção Legislativo e Produção de Leis, com a API de Dados Abertos da Câmara dos Deputados e os arquivos em massa de tramitações, que são o caminho das relatorias que a API não entrega. A Seção 2 incorpora as fichas de norma e o ementário das sessões da Alesp, que dizem quem propôs cada lei paulista e o que cada deputado disse em plenário. A Seção 13 registra o SAPL, o sistema padrão das câmaras municipais, replicável cidade a cidade na RMC. A Seção 6 soma o LexML, que confirma número, data e ementa de norma antiga das três esferas. E a Seção 16 fecha com o percurso 16.12, que separa autor, relator e coautor na produção de um parlamentar. Entram ainda, fora do eixo legislativo, o Mapa das OSC do Ipea, na Seção 6, que cobre as entidades sem fins lucrativos que a consulta de CNPJ sozinha não contextualiza, e o SIGTAP, na Seção 3, o dicionário oficial dos procedimentos do SUS que torna auditável qualquer tabulação do DATASUS.</div>
+            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 6 de setembro de 2026 · revisão 15</div>
+            <div class="revisao-nota"><strong>Nesta revisão:</strong> a Seção 3 ganha as duas fontes que faltavam para apurar registro civil. As Estatísticas do Registro Civil do IBGE trazem a pesquisa oficial por município, com séries desde 1974 e tabelas municipais para download, e as Estimativas de Sub-Registro trazem o único número oficial sobre quem ficou fora do registro, calculado pelo pareamento com o Sinasc e o SIM e pela técnica de captura-recaptura. O Portal da Transparência do Registro Civil, que já estava no guia, é dos registradores e mede o registrado; estas medem o não registrado, que é outra pergunta. As duas entram com as ressalvas que decidem o uso na descrição: o sub-registro exclui o registro tardio e não mede adulto sem documento hoje, tem um ano de defasagem, e em São Paulo a coleta do registro civil é feita pela Fundação Seade por convênio, não pelas agências do IBGE.</div>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -860,7 +860,17 @@
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://transparencia.registrocivil.org.br/inicio" class="source-url">transparencia.registrocivil.org.br</a>
                             <div class="source-name">Portal da Transparência do Registro Civil</div>
-                            <div class="source-desc">Dados nacionais de nascimentos, óbitos, casamentos, divórcios.</div>
+                            <div class="source-desc">Painel dos próprios cartórios, mantido desde 2018 pela Arpen-Brasil, a associação nacional dos registradores de pessoas naturais: nascimentos, óbitos, casamentos e emissões de CPF, com filtro por ano, mês, estado e município e atualização até o fim do dia anterior. É a fonte para o dado recente, semanas ou meses antes de o IBGE fechar o ano, e mede o ato praticado no cartório, sem crítica estatística. Para série oficial comparável e para o que ficou fora do registro, use as duas fontes do IBGE ao lado.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9110-estatisticas-do-registro-civil.html" class="source-url">ibge.gov.br · estatísticas do registro civil</a>
+                            <div class="source-name">IBGE — Estatísticas do Registro Civil</div>
+                            <div class="source-desc">A pesquisa oficial do registro civil brasileiro, a cargo do IBGE desde 1972: nascimentos, óbitos, óbitos fetais, casamentos e divórcios, com séries desde 1974, desagregação até município e tabelas municipais para download em xls, xlsx e ods, além do Sidra. Enquanto o portal dos registradores mostra o movimento dos cartórios, esta é a base tratada e crítica, e distingue lugar de registro de lugar de residência — separação decisiva em cidade com maternidade de referência, onde o registro infla com nascimento de moradores de outros municípios. Em São Paulo a coleta não é feita pelas agências do IBGE: nascidos vivos, óbitos, óbitos fetais e casamentos vêm de convênio com a Fundação Seade.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.ibge.gov.br/estatisticas/sociais/populacao/26176-estimativa-do-sub-registro.html" class="source-url">ibge.gov.br · estimativa do sub-registro</a>
+                            <div class="source-name">IBGE — Estimativas de Sub-Registro de Nascimentos e Óbitos</div>
+                            <div class="source-desc">O único número oficial sobre quem ficou fora do registro civil, obtido pelo pareamento das bases do IBGE com o Sinasc e o SIM do Ministério da Saúde e pela técnica de captura-recaptura, com painel de dados próprio. Duas ressalvas que decidem o uso: conta apenas o evento não registrado até o primeiro trimestre do ano seguinte, ou seja, exclui o registro tardio e não mede o adulto sem documento hoje; e tem um ano de defasagem em relação à pesquisa do registro civil, porque depende dos dados do Ministério da Saúde. Em 2024 o sub-registro de nascidos vivos ficou em 0,95%, abaixo de 1% pela primeira vez.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://data.unodc.org/" class="source-url">data.unodc.org</a>
@@ -2811,7 +2821,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
         </div>
 
         <footer>
-            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 29 de agosto de 2026 · revisão 14</p>
+            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 6 de setembro de 2026 · revisão 15</p>
             <p class="hit-counter">
                 <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
             </p>
