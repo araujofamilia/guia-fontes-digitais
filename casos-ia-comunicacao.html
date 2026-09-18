@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos e Experiências | IA na Comunicação</title>
+    <!-- SEO -->
+    <meta name="description" content="Arquivo de casos reais de uso, erro e disputa envolvendo IA no jornalismo e na comunicação, datados e conferidos em fonte. Complemento do Guia de Uso de IA na Comunicação.">
+    <link rel="canonical" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html">
+
+    <!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Artur Araujo">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html">
+    <meta property="og:title" content="Casos e Experiências: IA na Comunicação">
+    <meta property="og:description" content="Casos reais de uso, erro e disputa envolvendo IA no jornalismo e na comunicação, datados, conferidos em fonte e ligados ao Guia de Uso de IA na Comunicação.">
+    <meta property="og:image" content="https://araujofamilia.github.io/guia-fontes-digitais/og-guia-ia.png">
+    <meta property="og:image:secure_url" content="https://araujofamilia.github.io/guia-fontes-digitais/og-guia-ia.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="2400">
+    <meta property="og:image:height" content="1254">
+    <meta property="og:image:alt" content="Guia de Uso de IA na Comunicação, Artur Araujo">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Casos e Experiências: IA na Comunicação">
+    <meta name="twitter:description" content="Casos reais de uso, erro e disputa envolvendo IA no jornalismo e na comunicação, datados e conferidos em fonte.">
+    <meta name="twitter:image" content="https://araujofamilia.github.io/guia-fontes-digitais/og-guia-ia.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #F5F7F9;
+            --card: #FFFFFF;
+            --ink: #12141C;
+            --muted: #5A6474;
+            --accent: #00776E;
+            --accent-strong: #005B54;
+            --accent-soft: #E7F2F0;
+            --line: #D8DFE7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(rgba(18, 20, 28, 0.08) 1px, transparent 1px);
+            background-size: 22px 22px;
+            color: var(--ink);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+        }
+
+        .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 0.55em;
+            height: 1em;
+            background: var(--accent);
+            margin-left: 0.35em;
+            vertical-align: text-bottom;
+            animation: blink 1.1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cursor { animation: none; }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 660px;
+        }
+
+        .subtitle a, .intro a, footer a {
+            color: var(--accent-strong);
+            text-underline-offset: 2px;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .changelog {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            background: var(--accent-soft);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.82rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .changelog-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-strong);
+            background: var(--card);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .hit-counter-inline {
+            margin-left: 0.4rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .hit-counter-inline img {
+            vertical-align: middle;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            max-width: 200px;
+        }
+
+        .intro {
+            margin-bottom: 1.5rem;
+            max-width: 720px;
+        }
+
+        .toolbar {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--bg);
+        }
+
+        #search-input::placeholder {
+            color: #9AA5B1;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 119, 110, 0.15);
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .chip {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        .chip:hover {
+            border-color: var(--accent);
+        }
+
+        .chip[aria-pressed="true"] {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #FFFFFF;
+        }
+
+        .chip:focus-visible, a:focus-visible, .back-to-top:focus-visible {
+            outline: 3px solid rgba(0, 119, 110, 0.4);
+            outline-offset: 2px;
+        }
+
+        .grupo {
+            margin-bottom: 3rem;
+        }
+
+        .grupo h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .grupo-desc {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .caso {
+            background: var(--card);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+            scroll-margin-top: 1rem;
+        }
+
+        .caso:target {
+            box-shadow: 0 0 0 3px rgba(0, 119, 110, 0.28);
+        }
+
+        .caso h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.12rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 0.8rem;
+        }
+
+        .caso p {
+            margin-bottom: 0.8rem;
+        }
+
+        .case-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .case-meta a, .case-sources a {
+            color: var(--accent-strong);
+            text-underline-offset: 2px;
+        }
+
+        .case-meta a:hover, .case-sources a:hover, .subtitle a:hover, .intro a:hover, footer a:hover {
+            color: var(--accent);
+        }
+
+        .caso .case-sources {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+        }
+
+        .fecho {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top:hover {
+            opacity: 0.85;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="tagline">Arquivo de casos · IA na comunicação<span class="cursor" aria-hidden="true"></span></div>
+            <h1>Casos e Experiências</h1>
+            <p class="subtitle">Casos reais de uso, erro e disputa envolvendo inteligência artificial no jornalismo e na comunicação, datados e conferidos em fonte. É o arquivo que acompanha o <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html">Guia de Uso de IA na Comunicação</a>.</p>
+            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em setembro de 2026 · primeira edição · Atualizado em 18 de setembro de 2026</div>
+
+            <div class="changelog">
+                <span class="changelog-label">O que mudou</span>
+18 de setembro de 2026: primeira edição, com dez casos, três pares para ler lado a lado e quatro casos avulsos. O contador ao lado é real: conta cada carregamento da página desde a publicação.
+                <span class="hit-counter-inline">
+                    <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.svg?style=flat-square&amp;label=leituras&amp;color=0e1420&amp;labelColor=00776e" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
+                </span>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" id="stat-casos">...</div>
+                    <div class="stat-label">Casos no arquivo</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="stat-pares">...</div>
+                    <div class="stat-label">Pares para ler lado a lado</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="stat-secoes">...</div>
+                    <div class="stat-label">Seções do guia ilustradas</div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <p class="intro">Cada caso traz o que aconteceu, o que ensina, as seções do guia que ilustra e as fontes. O foco é o processo, não a culpa: interessa entender em que ponto a cadeia falhou, ou funcionou. Um caso só entra depois de conferido em fonte primária ou em mais de uma fonte independente.</p>
+
+            <div class="toolbar" role="search">
+                <input type="text" id="search-input" placeholder="Buscar por veículo, tema ou palavra" aria-label="Buscar casos">
+                <div class="chips" id="chips" aria-label="Filtrar por tipo de caso"></div>
+            </div>
+
+            <div id="no-results" class="no-results hidden">Nenhum caso corresponde à busca e ao filtro escolhidos. Apague a busca ou escolha Todos.</div>
+
+            <section class="grupo" id="pares">
+                <h2>Pares para ler lado a lado</h2>
+                <p class="grupo-desc">Cada par só mostra a lição inteira quando os dois casos são lidos juntos.</p>
+
+                <article class="caso" id="caso-falas-inventadas" data-tipo="Erro público" data-casos="2" data-secoes="01 04 06">
+                    <div class="case-meta">Erro público · fev. e jun. de 2026 · seções do guia <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s1">01</a>, <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s4">04</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s6">06</a></div>
+                    <h3>Mesma falha, duas respostas: Giro10 e Ars Technica</h3>
+                    <p>Em 26 de junho de 2026, o portal Terra publicou texto do parceiro Giro10 sobre excesso de fibras na dieta com "entrevistas simuladas" com especialistas que não existem, como um "nutricionista clínico imaginário". O próprio texto avisava do uso de IA e da simulação, e ainda assim foi ao ar como notícia. Em 1º de julho, o Giro10 publicou um "Erramos" atribuindo o caso a falhas no seu processo de checagem e liberação, e o Terra suspendeu os textos do parceiro até a revisão desse processo.</p>
+                    <p>Em fevereiro, a Ars Technica (EUA) publicou aspas que o engenheiro citado nunca disse: ao usar IA para extrair trechos de um post dele, o repórter acabou com paráfrases da máquina no lugar das palavras originais e não as conferiu. A matéria saiu em 13 de fevereiro, foi retirada dois dias depois com nota do editor-chefe classificando o episódio como falha grave dos padrões da revista, e o repórter foi demitido no início de março. O assunto da matéria, por ironia, era um agente de IA.</p>
+                    <p><strong>O que ensina:</strong> o mesmo erro, fala inventada atribuída a alguém, pode ser tratado como falha de processo ou como falha de pessoa, e uma resposta não dispensa a outra. O caso brasileiro mostra ainda que declarar o uso de IA não torna publicável o que não deveria existir: citação é literal ou não é.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://www.terra.com.br/noticias/giro10-erramos,26cdae6b16495f9b2efef0073bdb314egcwsubg7.html">Terra, nota do Giro10</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.observatoriodaimprensa.com.br/objethos/terra-e-giro10-fontes-falsas-de-ia-acendem-debate-sobre-etica-no-jornalismo/">Observatório da Imprensa (objETHOS)</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.404media.co/ars-technica-pulls-article-with-ai-fabricated-quotes-about-ai-generated-article/">404 Media</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.thewrap.com/media-platforms/journalism/ars-technica-fires-ai-reporter-fabricated-quotes/">TheWrap</a></p>
+                </article>
+                <article class="caso" id="caso-folha-openai" data-tipo="Disputa" data-casos="2" data-secoes="04 06">
+                    <div class="case-meta">Disputa · ago. de 2025 a maio de 2026 · seções do guia <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s4">04</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s6">06</a></div>
+                    <h3>O mesmo jornal dos dois lados: a Folha processa a OpenAI, depois assina com ela</h3>
+                    <p>Em agosto de 2025, a Folha de S.Paulo processou a OpenAI pedindo o fim da coleta e do uso de seus conteúdos sem autorização e sem pagamento. Em 25 de maio de 2026, Folha e UOL anunciaram com a própria OpenAI o primeiro acordo da empresa com a mídia brasileira: notícias em tempo real para o ChatGPT, que passa a exibir resumos das reportagens com link para a fonte, e acesso dos dois grupos a ferramentas corporativas da OpenAI. O acordo encerrou o processo, e os valores não foram divulgados. A Folha também tem acordo com o Google para o Gemini.</p>
+                    <p><strong>O que ensina:</strong> quando o único instrumento de barganha de um veículo é a ação judicial e o único comprador possível é o réu, o processo tende a virar contrato. Não é incoerência nem vitória, é assimetria de poder. O Observatório da Imprensa apontou o que o anúncio não respondeu, como o que o leitor ganha e se quem produziu o acervo participa da receita; e fica em aberto o que acordos individuais significam para os veículos que não têm acervo grande para negociar.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/grupo-folha-grupo-uol-partnership/">anúncio da OpenAI</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.poder360.com.br/poder-midia/openai-folha-e-uol-fecham-acordo-de-uso-de-conteudo-no-chatgpt/">Poder360</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.observatoriodaimprensa.com.br/imprensa/acordo-de-uol-e-folha-com-openai-e-boa-noticia-pra-quem/">Observatório da Imprensa</a></p>
+                </article>
+                <article class="caso" id="caso-tse-deepfake" data-tipo="Regulação" data-casos="2" data-secoes="03 04">
+                    <div class="case-meta">Regulação · mar. e set. de 2026 · seções do guia <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s3">03</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s4">04</a></div>
+                    <h3>A regra e a porta: a resolução e a tese do TSE sobre deepfake</h3>
+                    <p>Em 2 de março de 2026, a Resolução TSE nº 23.755 atualizou as regras de propaganda para as eleições de 2026: conteúdo produzido ou alterado por IA precisa ser identificado como tal, e o deepfake usado para prejudicar ou favorecer candidatura segue proibido. Em 1º de setembro, ao julgar um vídeo que recriava com IA a imagem e a voz de Jair Bolsonaro, exibido na convenção do PL e transmitido pela internet, o tribunal fixou por 5 votos a 2 o que é deepfake: conteúdo sintético com grau de realismo ou verossimilhança que cria, reproduz ou altera imagem, voz ou manifestação de pessoa viva, falecida ou fictícia. E delimitou: a proibição só incide quando o conteúdo se caracteriza como propaganda eleitoral. Por maioria, rejeitou o pedido de multa contra o candidato Flávio Bolsonaro.</p>
+                    <p><strong>O que ensina:</strong> a pergunta "isto é deepfake?" passou a ter duas etapas, a técnica e a jurídica, e a segunda pode liberar o que a primeira identifica. Para quem verifica, a definição oficial dá um ponto de apoio; para quem cobre eleição, o critério da propaganda é onde a disputa vai acontecer.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-755-de-2-de-marco-de-2026">Resolução TSE nº 23.755</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/tse-fixa-tese-sobre-deepfake-e-delimita-regra-para-as-eleicoes-2026">TSE, tese sobre deepfake</a></p>
+                </article>
+            </section>
+
+            <section class="grupo" id="casos">
+                <h2>Casos</h2>
+                <p class="grupo-desc">Do mais recente para o mais antigo.</p>
+
+                <article class="caso" id="caso-brasil-de-fato" data-tipo="Política editorial" data-casos="1" data-secoes="04 05">
+                    <div class="case-meta">Política editorial · set. de 2026 · seções do guia <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s4">04</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s5">05</a></div>
+                    <h3>Uma política que dá para fiscalizar: Brasil de Fato</h3>
+                    <p>Em 2 de setembro de 2026, o Brasil de Fato publicou sua política de uso de IA, que parte de uma frase-síntese: a IA não apura, não entrevista, não escolhe o que é notícia e não assina conteúdo. Em vez de princípios gerais, a política lista tarefas. Permite transcrição com revisão humana obrigatória, resumo de documentos longos, apoio em tradução e revisão gramatical, notas simples de repercussão e análise de grandes volumes de dados. Proíbe redigir opinião ou editorial, usar IA como fonte ou para preencher lacuna de apuração, publicar texto gerado sem verificação humana e criar deepfakes, salvo sátira ou reconstituição histórica expressamente sinalizadas. Quando a IA tem participação substancial, o leitor vê uma nota de transparência.</p>
+                    <p><strong>O que ensina:</strong> uma política que lista tarefas pode ser conferida numa matéria publicada; uma que lista princípios, dificilmente. O ponto em aberto é quem decide quando o uso foi "substancial" a ponto de exigir a nota. Serve de molde para a política de uma disciplina ou de um jornal-laboratório, como pede a seção 05 do guia.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://www.brasildefato.com.br/politica-de-uso-de-inteligencias-artificiais/">política do Brasil de Fato</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.brasildefato.com.br/2026/09/02/brasil-de-fato-lanca-politica-de-uso-de-ia-no-jornalismo/">anúncio de 02/09/2026</a></p>
+                </article>
+                <article class="caso" id="caso-redes-locais" data-tipo="Erro público" data-casos="1" data-secoes="01 06">
+                    <div class="case-meta">Erro público · abr. e ago. de 2026 · seções do guia <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s1">01</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s6">06</a></div>
+                    <h3>Jornalismo local sem jornalistas: Nota e Prism News</h3>
+                    <p>Duas redes que prometiam cobrir "desertos de notícias" com IA fecharam em 2026 nos Estados Unidos. A Nota desligou seus 11 sites locais no início de abril, depois que a Poynter encontrou mais de 70 textos com apuração, redação e fotos de jornalistas locais usadas sem crédito, material de pelo menos 29 veículos e 53 jornalistas; o Boston Globe, que usava a ferramenta da empresa em outras tarefas, mandou a redação parar. A Prism News, lançada em maio com mais de 200 publicações, reescrevia reportagens alheias sob as assinaturas de quase 40 "jornalistas" que não eram pessoas, e saiu do ar em agosto, um mês depois de uma investigação da rádio pública Interlochen, de Michigan.</p>
+                    <p><strong>O que ensina:</strong> um sistema que só reescreve depende de quem apura; não substitui o jornalismo local, apenas o consome mais depressa. Para quem verifica, fica um sinal prático e barato: autor sem nenhum rastro fora do próprio site.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://www.poynter.org/ethics-trust/2026/nota-news-local-outlets-ai-plagiarism/">Poynter</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.axios.com/local/richmond/2026/04/03/nota-ai-news-sites-shut-down-plagiarism">Axios</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.interlochenpublicradio.org/ipr-news/2026-07-16/michigans-newest-newsrooms-are-ai-machines-built-on-others-reporting">Interlochen Public Radio</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.niemanlab.org/reading/a-network-of-more-than-200-ai-generated-local-news-sites-in-michigan-has-shuttered/">Nieman Lab</a></p>
+                </article>
+                <article class="caso" id="caso-codesinfo" data-tipo="Experimento" data-casos="1" data-secoes="02 05">
+                    <div class="case-meta">Experimento · jul. de 2026 · seções do guia <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s2">02</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s5">05</a></div>
+                    <h3>Ferramentas abertas feitas por redações brasileiras: Codesinfo 2026</h3>
+                    <p>Em julho de 2026, o Codesinfo, fundo de inovação do Projor com patrocínio da Google News Initiative, apresentou cinco ferramentas de IA em código aberto desenvolvidas por redações brasileiras, com até R$ 160 mil e mentoria por projeto: leitura automatizada de Diários Oficiais com alertas de pauta (Agência Tatu), monitoramento de projetos de lei sobre gênero e raça (AzMina), acompanhamento de votações e discursos de parlamentares (Correio Sabiá), geojornalismo com IA (InfoAmazonia) e um servidor que conecta acervos de redação a ferramentas de IA com acesso controlado (Ambiental Media). Todas podem ser adaptadas por outras redações.</p>
+                    <p><strong>O que ensina:</strong> a IA mais útil numa redação costuma ser a que resolve uma tarefa específica e trabalhosa, com código que outros podem reaproveitar. É o avesso dos erros deste arquivo: a máquina organiza a informação, e a apuração continua humana.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://codesinfo.com.br/">Codesinfo</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.observatoriodaimprensa.com.br/codesinfo/codesinfo-lanca-cinco-novas-ferramentas-de-ia-em-codigo-aberto-para-redacoes/">Observatório da Imprensa</a></p>
+                </article>
+                <article class="caso" id="caso-sbt" data-tipo="Erro público" data-casos="1" data-secoes="03 06">
+                    <div class="case-meta">Erro público · abr. de 2026 · seções do guia <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s3">03</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html#s6">06</a></div>
+                    <h3>Uma placa que nunca existiu, comentada ao vivo: o SBT e a imagem gerada por IA</h3>
+                    <p>Em 13 de abril de 2026, o matinal Se Liga Brasil, do SBT, comentou ao vivo, como fato, uma imagem que circulava nas redes: um cartaz machista num calibrador de posto de gasolina em São Paulo, que teria levado uma cliente a chamar a Polícia Militar. A imagem tinha sido gerada por IA e trazia sinais visíveis, entre eles erro de português no próprio cartaz. Em nota, a emissora admitiu que a imagem não era real e que exibi-la sem apuração prévia desrespeitou suas normas de jornalismo.</p>
+                    <p><strong>O que ensina:</strong> não faltou detector, faltou o básico da seção 03 do guia: quem publicou primeiro, se o contexto confere, se alguém confiável confirma. Texto defeituoso em placa é um dos sinais clássicos de imagem gerada, e estava na tela.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://observatoriodatv.com.br/colunistas/joao-biott/sbt-exibe-fake-news-gerada-por-inteligencia-artificial-em-jornal-ao-vivo">Observatório da TV</a> · <a target="_blank" rel="noopener noreferrer" href="https://bpmoney.com.br/negocios/empresas/sbt-admite-erro-apos-exibir-noticia-falsa-criada-por-ia/">BPMoney</a></p>
+                </article>
+            </section>
+
+            <p class="fecho">O arquivo cresce à medida que novos casos são conferidos. Sugestões de caso, sempre com fonte, são bem-vindas.</p>
+        </main>
+
+        <footer>
+            <p>Casos e Experiências · arquivo do <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.html">Guia de Uso de IA na Comunicação</a> · Artur Araújo · PUC-Campinas<br>Publicado em setembro de 2026 · primeira edição · Atualizado em 18 de setembro de 2026</p>
+            <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+        </footer>
+    </div>
+
+    <script>
+        const casos = Array.from(document.querySelectorAll('.caso'));
+
+        // Contadores: somam o que está na página, então nunca ficam defasados
+        document.getElementById('stat-casos').textContent =
+            casos.reduce((total, c) => total + Number(c.dataset.casos || 1), 0);
+        document.getElementById('stat-pares').textContent =
+            document.querySelectorAll('#pares .caso').length;
+        const secoes = new Set();
+        casos.forEach(c => (c.dataset.secoes || '').split(' ').filter(Boolean).forEach(s => secoes.add(s)));
+        document.getElementById('stat-secoes').textContent = secoes.size;
+
+        // Busca sem diferenciar acentos
+        const normaliza = t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        casos.forEach(c => { c.dataset.texto = normaliza(c.textContent); });
+
+        const busca = document.getElementById('search-input');
+        const vazio = document.getElementById('no-results');
+        let tipoAtivo = 'Todos';
+
+        function filtrar() {
+            const q = normaliza(busca.value.trim());
+            let visiveis = 0;
+            casos.forEach(c => {
+                const passa = (tipoAtivo === 'Todos' || c.dataset.tipo === tipoAtivo) && (!q || c.dataset.texto.includes(q));
+                c.classList.toggle('hidden', !passa);
+                if (passa) visiveis++;
+            });
+            document.querySelectorAll('.grupo').forEach(g => {
+                g.classList.toggle('hidden', !g.querySelector('.caso:not(.hidden)'));
+            });
+            vazio.classList.toggle('hidden', visiveis > 0);
+        }
+
+        // Filtros por tipo, montados a partir dos casos existentes
+        const chips = document.getElementById('chips');
+        ['Todos', ...new Set(casos.map(c => c.dataset.tipo))].forEach(tipo => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'chip';
+            b.textContent = tipo;
+            b.setAttribute('aria-pressed', tipo === 'Todos' ? 'true' : 'false');
+            b.addEventListener('click', () => {
+                tipoAtivo = tipo;
+                chips.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+                filtrar();
+            });
+            chips.appendChild(b);
+        });
+
+        busca.addEventListener('input', filtrar);
+
+        // Voltar ao topo
+        const topo = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            topo.classList.toggle('show', window.pageYOffset > 300);
+        });
+        topo.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

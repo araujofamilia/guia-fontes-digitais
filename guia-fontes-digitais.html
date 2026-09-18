@@ -437,8 +437,8 @@
             <div class="tagline">Pesquisa · Dados · Verificação</div>
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 8 de setembro de 2026 · revisão 17</div>
-            <div class="revisao-nota"><strong>Nesta revisão:</strong> a apuração que originou estas mudanças foi uma pergunta simples que a Seção 2 não respondia: quantas mulheres foram mortas por serem mulheres em Campinas, ano a ano. A estatística mensal da SSP paulista publica o recorte por sexo sem município e o recorte por município sem sexo, e os dois nunca se encontram. Quem fecha é a base federal, que faltava inteira no guia. Entra na Seção 3 o <strong>Sinesp VDE</strong>, doze planilhas anuais de 2015 a 2026 com os indicadores que cada estado envia ao sistema federal, e que traz município e sexo da vítima na mesma linha. As ressalvas estão no cartão, porque mudam a pauta: São Paulo só municipaliza os crimes contra a vida, estupro aparece com município "NÃO INFORMADO" em todos os anos, a coluna de ocorrências vem zerada nos indicadores letais, e não há raça, idade nem vínculo com o autor. Ao lado entra a ficha do conjunto no catálogo nacional, que serve para citar metodologia, com o aviso de que os seis recursos dela apontam para endereço morto. Porque é disso que se trata: o domínio <strong>dados.mj.gov.br</strong>, portal de dados abertos do Ministério da Justiça, deixou de existir, e o navegador devolve erro de DNS, não página não encontrada. Isso derruba todo link de dado aberto do MJSP publicado até aqui, inclusive os dois dicionários de dados do Sinesp, que não têm espelho conhecido. A Seção 23 registra a queda e o caminho novo. Na Seção 2 entra o <strong>SP Dados Criminais</strong>, a planilha anual da SSP com um registro por boletim, que é onde município, sexo da vítima, idade e o marcador de violência doméstica aparecem juntos. Isso obrigou a corrigir o cartão da Transparência SSP, que dizia que as bases não trazem sexo da vítima quando quem não traz é a consulta on-line. Ainda na Seção 3 entra a <strong>API do SIDRA</strong>, com o padrão de URL e as três tabelas que resolvem denominador de taxa municipal, a 9514 do Censo 2022, a 1378 do Censo 2010 e a 6579 das estimativas anuais. E a nota do 14.3 sobre o dados.gov.br foi corrigida: ele exige token para a maior parte das rotas, mas a leitura pública de um conjunto responde sem token e ainda expõe um campo que diz se cada link de download ainda funciona, que foi como se constatou que o próprio catálogo sabia dos links quebrados. Três blocos de método nascem daí. A <strong>Seção 14.4</strong> ensina a ler um arquivo grande publicado num domínio que o seu ambiente não alcança, levando o programa até o navegador em vez de trazer o arquivo até o programa, com o código de leitura na própria página do órgão e a consulta de população na mesma aba. O <strong>percurso 16.13</strong> é o roteiro completo de feminicídio por município, com três armadilhas verificadas: feminicídio e homicídio doloso são contagens separadas e somar sem checar produz número indefensável; o primeiro mês do primeiro ano de alimentação de um indicador costuma concentrar carga retroativa; e a taxa de tentativa varia quase oito vezes entre estados, o que é critério de registro e não realidade, então só o consumado é comparável entre unidades da federação. O terceiro bloco é o que mais extrapola o tema. A <strong>Seção 17</strong> ganha "O denominador de uma taxa municipal", que vale para violência, saúde, educação, renda, qualquer indicador dividido por população. O problema é este: a estimativa do IBGE para Campinas em 2021 dava 1.223.237 habitantes e o Censo 2022 contou 1.139.047, 7,4% a menos. Quem monta a série com a estimativa até 2021 e o censo daí em diante encolhe o denominador em 7% de um ano para o outro, e todas as taxas de 2022 em diante sobem sozinhas sem que nada tenha acontecido. A regra fica escrita: as duas pontas são contagens censitárias, o miolo é interpolação geométrica entre elas, e estimativa só entra depois da última contagem.</div>
+            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 18 de setembro de 2026 · revisão 18</div>
+            <div class="revisao-nota"><strong>Nesta revisão:</strong> voltam ao guia sete fontes aprovadas em 19 de agosto a partir do radar de casos de IA. Elas foram montadas naquele dia sobre uma versão antiga do arquivo e ficaram de fora quando a revisão 9 foi publicada, então nunca chegaram ao ar; entram agora conferidas de novo, endereço por endereço. Na Seção 6, uma subseção nova, Ferramentas Abertas Feitas por Redações Brasileiras, abre com o <strong>Codesinfo</strong>, o fundo do Projor que publica em código aberto tudo o que financia; o Mamute Político, já listado em Repositórios Nacionais, é uma dessas ferramentas. Na Seção 7 entram dois acervos para achar precedente quando aparece um caso novo de erro com IA: o <strong>rastreador da Press Gazette</strong>, que reúne os episódios publicados por veículos, e o <strong>monitor de incidentes da OCDE</strong>, com a ressalva escrita no cartão de que a coleta e os resumos dele são automáticos. Na Seção 12, quatro referências para acompanhar o próprio jornalismo: <strong>Observatório da Imprensa</strong>, <strong>LatAm Journalism Review</strong>, <strong>Nieman Lab</strong> e <strong>Reuters Institute</strong>.</div>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -1382,6 +1382,15 @@
                             <div class="source-desc">Plataforma do Ipea com todas as OSCs do país, ativas e baixadas: natureza jurídica, dirigentes, endereço, situação cadastral e parcerias com a administração pública. Serve para checar se uma entidade citada em contrato, edital ou pauta ainda existe, quem responde por ela e desde quando. Base completa em CSV com dicionário de variáveis.</div>
                         </div>
                     </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Ferramentas Abertas Feitas por Redações Brasileiras</h3>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://codesinfo.com.br/" class="source-url">codesinfo.com.br</a>
+                            <div class="source-name">Codesinfo (Projor)</div>
+                            <div class="source-desc">Fundo de inovação do Projor, com patrocínio da Google News Initiative, que financia ferramentas em código aberto feitas por redações brasileiras e publica todas no site, documentadas para outras redações adaptarem. A edição de 2025 foi dedicada ao combate à desinformação; a de 2026 entregou cinco ferramentas com IA, entre elas a leitura de Diários Oficiais do Nordeste com alertas de pauta (Monitor Diário, da Agência Tatu), o monitoramento de projetos de lei sobre gênero e raça (QuitérIA, da AzMina) e o Mamute Político, já listado em Repositórios Nacionais. Ressalva: a maturidade varia de uma ferramenta para outra, e algumas exigem cadastro ou instalação própria.</div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Seção 7 -->
@@ -1439,6 +1448,16 @@
                             <a target="_blank" rel="noopener noreferrer" href="https://projetocomprova.com.br/" class="source-url">projetocomprova.com.br</a>
                             <div class="source-name">Projeto Comprova</div>
                             <div class="source-desc">Coalizão de redações brasileiras que verifica em conjunto conteúdo suspeito sobre políticas públicas e eleições. As checagens descrevem o passo a passo da apuração, o que torna o acervo útil também como modelo de método em sala de aula.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://pressgazette.co.uk/publishers/digital-journalism/ai-journalism-mistakes/" class="source-url">pressgazette.co.uk</a>
+                            <div class="source-name">Erros de IA no jornalismo: rastreador da Press Gazette</div>
+                            <div class="source-desc">Página mantida pela revista britânica Press Gazette que reúne, com link para cada episódio, os casos em que veículos publicaram erro produzido por IA: autores falsos, especialistas inventados, citações fabricadas, listas de livros que não existem. Serve para achar precedente quando surge um caso novo e comparar como cada redação corrigiu o erro. Ressalva: em inglês, concentrada em veículos de língua inglesa e sem pretensão de ser completa; cada caso deve ser conferido na nota do próprio veículo.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://oecd.ai/en/incidents" class="source-url">oecd.ai/en/incidents</a>
+                            <div class="source-name">Monitor de Incidentes e Riscos de IA (OCDE)</div>
+                            <div class="source-desc">Base da OCDE que coleta notícias do mundo inteiro sobre incidentes e riscos envolvendo IA, com mais de 17 mil registros, e permite filtrar por país, setor e tipo de dano. Serve para medir se um tipo de falha é recorrente e achar casos análogos ao que se está apurando. Ressalva: a coleta e os resumos são automáticos (os textos vêm marcados como gerados por IA), a própria OCDE avisa que o conteúdo não representa posição oficial, e cada caso deve ser conferido na reportagem de origem.</div>
                         </div>
                     </div>
                 </section>
@@ -1664,9 +1683,29 @@
                             <div class="source-desc">Cursos gratuitos e pagos de jornalismo digital, dados e investigação.</div>
                         </div>
                         <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://latamjournalismreview.org/" class="source-url">latamjournalismreview.org</a>
+                            <div class="source-name">LatAm Journalism Review (Knight Center)</div>
+                            <div class="source-desc">Revista digital do Knight Center, da Universidade do Texas, sobre jornalismo e liberdade de imprensa na América Latina e no Caribe, publicada em português, espanhol e inglês. Traz reportagens sobre inovação, sustentabilidade e uso de IA em redações da região, um monitor de notícias do setor e newsletter semanal. Serve para achar a experiência de um veículo vizinho e fonte especializada no tema.</div>
+                        </div>
+                        <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.atlas.jor.br/" class="source-url">atlas.jor.br</a>
                             <div class="source-name">Atlas da Notícia (Projor)</div>
                             <div class="source-desc">Censo dos veículos de jornalismo do Brasil, com busca por município e mapeamento de desertos de notícias. A 8ª edição (2026) passa a incluir jornalismo nativo de plataformas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.observatoriodaimprensa.com.br/" class="source-url">observatoriodaimprensa.com.br</a>
+                            <div class="source-name">Observatório da Imprensa (Projor)</div>
+                            <div class="source-desc">Crítica de mídia no Brasil desde 1996, hoje mantida pelo Projor, com artigos de pesquisadores e jornalistas, a coluna do objETHOS (UFSC) e acompanhamento constante de erros, acordos e usos de IA nas redações brasileiras. Serve para contextualizar um caso de cobertura e achar quem já o analisou. Ressalva: funciona como fórum de opiniões, e os artigos não representam necessariamente a posição do site.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.niemanlab.org/" class="source-url">niemanlab.org</a>
+                            <div class="source-name">Nieman Lab (Harvard)</div>
+                            <div class="source-desc">Publicação da Fundação Nieman, da Universidade Harvard, sobre o futuro do jornalismo: modelos de negócio, audiência, plataformas e IA nas redações, com cobertura diária e uma rodada anual de previsões para o ano seguinte. Serve para acompanhar experiências de redações de outros países e achar o estudo por trás de uma tendência. Em inglês.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://reutersinstitute.politics.ox.ac.uk/" class="source-url">reutersinstitute.politics.ox.ac.uk</a>
+                            <div class="source-name">Reuters Institute (Universidade de Oxford)</div>
+                            <div class="source-desc">Centro de pesquisa sobre jornalismo da Universidade de Oxford, responsável pelo Digital News Report, levantamento anual sobre consumo de notícias e confiança no jornalismo em dezenas de países, Brasil incluído, e por estudos sobre IA e notícias. É a referência para citar tendência de audiência com número. Ressalva: a amostra brasileira é de internautas, o que sub-representa quem está menos conectado, sobretudo os mais velhos e os de menor renda.</div>
                         </div>
                     </div>
                 </section>
@@ -3139,7 +3178,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
         </div>
 
         <footer>
-            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 8 de setembro de 2026 · revisão 17</p>
+            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 18 de setembro de 2026 · revisão 18</p>
             <p class="hit-counter">
                 <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
             </p>

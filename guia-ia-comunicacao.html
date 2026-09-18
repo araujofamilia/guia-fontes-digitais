@@ -530,6 +530,27 @@
         .hit-counter-inline img {
             vertical-align: middle;
         }
+
+        .method-step .case-ref {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-top: 0.4rem;
+            margin-bottom: 0;
+        }
+
+        .case-ref::before {
+            content: "↳ ";
+            color: var(--accent);
+        }
+
+        .case-ref a {
+            color: var(--accent-strong);
+            text-underline-offset: 2px;
+        }
+
+        .case-ref a:hover {
+            color: var(--accent);
+        }
     </style>
 </head>
 <body>
@@ -538,11 +559,11 @@
             <div class="tagline">Ferramentas · Ética · Método<span class="cursor" aria-hidden="true"></span></div>
             <h1>Guia de Uso de IA na Comunicação</h1>
             <p class="subtitle">Como usar inteligência artificial no jornalismo e na comunicação com proveito e responsabilidade: o que cada ferramenta faz, onde ela erra, quando declarar o uso e o que nunca delegar.</p>
-            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 20 de agosto de 2026</div>
+            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 18 de setembro de 2026</div>
 
             <div class="changelog">
                 <span class="changelog-label">O que mudou</span>
-20 de agosto de 2026: dicas rápidas de prompt e briefing de imagem por IA, ferramentas de vídeo (Runway), tradução e revisão (DeepL, LanguageTool) e monitoramento e redes sociais (Knewin AI, Hootsuite) na seção 02, referência da IAB para publicidade na seção 04, seção 08 nova sobre skills e agentes personalizados, seção 09 Sobre o autor, e NotebookLM atualizado para Gemini Notebook. O contador ao lado é real: conta cada carregamento da página desde a publicação em 09/08/2026.
+18 de setembro de 2026: na seção 02, ferramentas de IA em código aberto feitas por redações brasileiras (Codesinfo, Monitor Diário e Mamute Político); na seção 04, um roteiro do que uma política editorial de IA precisa dizer, com a do Brasil de Fato como exemplo; e seção 09 nova, Casos e Experiências, que leva ao arquivo de casos, página própria com erros, disputas e decisões envolvendo IA no jornalismo, com remissões a partir das seções 01, 03, 04 e 06. Sobre o autor passou a ser a seção 10. O contador ao lado é real: conta cada carregamento da página desde a publicação em 09/08/2026.
                 <span class="hit-counter-inline">
                     <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.svg?style=flat-square&amp;label=leituras&amp;color=0e1420&amp;labelColor=00776e" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
                 </span>
@@ -550,7 +571,7 @@
 
             <div class="hero-stats">
                 <div class="stat">
-                    <div class="stat-number">9</div>
+                    <div class="stat-number">10</div>
                     <div class="stat-label">Seções temáticas</div>
                 </div>
                 <div class="stat">
@@ -576,7 +597,8 @@
                     <li><a href="#s6"><span class="toc-num">06</span>Riscos e Limites</a></li>
                     <li><a href="#s7"><span class="toc-num">07</span>Prompting para Comunicadores</a></li>
                     <li><a href="#s8"><span class="toc-num">08</span>Construção de Skills e Agentes Personalizados</a></li>
-                    <li><a href="#s9"><span class="toc-num">09</span>Sobre o autor</a></li>
+                    <li><a href="#s9"><span class="toc-num">09</span>Casos e Experiências</a></li>
+                    <li><a href="#s10"><span class="toc-num">10</span>Sobre o autor</a></li>
                 </ul>
             </aside>
 
@@ -615,6 +637,7 @@
                         <div class="warning-box">
                             <strong>Regra prática:</strong> quanto mais específica e verificável é uma informação (nome próprio, número, data, citação literal), maior a chance de estar errada e maior a obrigação de checar em fonte primária antes de publicar. A IA pode apontar caminhos de apuração; ela nunca encerra uma apuração.
                         </div>
+                        <p class="case-ref">No arquivo de casos: <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-falas-inventadas">especialistas e aspas inventados que chegaram a ser publicados</a>.</p>
                     </div>
 
                     <div class="method-step">
@@ -813,6 +836,26 @@
                             <div class="source-desc">Agendamento e análise de redes sociais com recursos de IA para sugestão de legenda, melhor horário de publicação e resposta a comentários. Útil para quem administra várias contas institucionais ao mesmo tempo.</div>
                         </div>
                     </div>
+
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 600;">Ferramentas abertas feitas por redações brasileiras</h3>
+                    <p style="margin-bottom: 1rem;">Ferramentas de IA criadas por redações brasileiras para uma tarefa específica do jornalismo, com código aberto que outras redações podem adaptar. Costumam ser as mais úteis: resolvem um trabalho repetitivo e bem definido, e a apuração continua humana.</p>
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://codesinfo.com.br/" class="source-url">codesinfo.com.br</a>
+                            <div class="source-name">Codesinfo (Projor)</div>
+                            <div class="source-desc">Fundo de inovação do Projor, com patrocínio da Google News Initiative, que financia ferramentas em código aberto feitas por redações brasileiras e publica todas, documentadas, no site. A edição de 2026 entregou cinco com IA, com até R$ 160 mil e mentoria por projeto: o Monitor Diário e o Mamute Político, nesta subseção, a nova versão da QuitérIA (AzMina), que monitora projetos de lei sobre gênero e raça, um plugin de geojornalismo para WordPress (InfoAmazonia) e um servidor que conecta acervos de redação a ferramentas de IA com acesso controlado (Ambiental Media).</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.monitordiario.com.br/" class="source-url">monitordiario.com.br</a>
+                            <div class="source-name">Monitor Diário (Agência Tatu)</div>
+                            <div class="source-desc">Lê os Diários Oficiais dos nove estados do Nordeste e transforma as publicações em alertas, resumos e sugestões de pauta sobre os temas que o usuário escolhe. Cadastro gratuito. Ressalva: cobre só o Nordeste, e o alerta indica onde olhar, não substitui a leitura do ato publicado.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://mamutepolitico.com.br/" class="source-url">mamutepolitico.com.br</a>
+                            <div class="source-name">Mamute Político (Correio Sabiá)</div>
+                            <div class="source-desc">Organiza projetos, votações e discursos de deputados e senadores a partir dos dados abertos do Congresso, com consulta por chatbot, para acompanhar cada parlamentar ao longo do mandato. Gratuito, com limite de uso no plano aberto.</div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Seção 3 -->
@@ -841,6 +884,7 @@
                     <div class="method-step">
                         <h4>3. Sinais clássicos de imagem gerada</h4>
                         <p>Os modelos melhoram rápido e esses sinais desaparecem aos poucos; trate-os como pistas, não como teste definitivo: mãos e dentes irregulares, texto ilegível em placas e letreiros, padrões repetidos em multidões, joias e óculos que se fundem à pele, fundos com objetos "derretidos", iluminação inconsistente entre pessoa e cenário.</p>
+                        <p class="case-ref">No arquivo de casos: <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-sbt">a placa gerada por IA que um telejornal exibiu como fato</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-tse-deepfake">a definição de deepfake fixada pelo TSE</a>.</p>
                     </div>
 
                     <div class="sources-grid">
@@ -914,6 +958,30 @@ original."</pre>
                             <li><strong>Decisão editorial:</strong> o que publicar, com que enquadramento, ouvindo quem: juízo humano, sempre.</li>
                             <li><strong>Sigilo de fonte:</strong> nenhum dado que identifique fonte protegida entra em ferramenta de terceiros. Sem exceção.</li>
                         </ul>
+                        <p class="case-ref">No arquivo de casos: <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-falas-inventadas">aspas inventadas que chegaram a ser publicadas</a>.</p>
+                    </div>
+
+                    <h3 id="politicas-editoriais" style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600; scroll-margin-top: 80px;">Políticas editoriais de IA</h3>
+                    <p style="margin-bottom: 1rem;">Uma política editorial de IA vale pelo que permite conferir. Quando lista tarefas, o que pode, o que não pode e quem revisa, dá para verificar numa matéria publicada se ela foi cumprida; quando lista só princípios, dificilmente. O roteiro abaixo serve para avaliar a política de um veículo ou para escrever a de uma disciplina ou de um jornal-laboratório (seção 05).</p>
+
+                    <div class="subsection">
+                        <h3>O que uma política precisa dizer</h3>
+                        <ul>
+                            <li>As tarefas permitidas e as proibidas, uma a uma, e não só os valores da casa.</li>
+                            <li>Quem revisa o que a IA produziu, e em que etapa, antes de publicar.</li>
+                            <li>Quando o leitor é avisado e com que texto, e quem decide, nos casos de fronteira, se o uso foi relevante a ponto de exigir o aviso.</li>
+                            <li>Regras próprias para imagem, voz e vídeo sintéticos, dizendo se sátira e reconstituição são exceção.</li>
+                            <li>O que nunca entra numa ferramenta de IA, a começar por dado que identifique fonte protegida.</li>
+                            <li>Quem responde pela política e de quanto em quanto tempo ela é revista.</li>
+                        </ul>
+                    </div>
+
+                    <div class="sources-grid" style="margin-top: 1.5rem;">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.brasildefato.com.br/politica-de-uso-de-inteligencias-artificiais/" class="source-url">brasildefato.com.br/politica-de-uso-de-inteligencias-artificiais</a>
+                            <div class="source-name">Brasil de Fato, Política de uso de IA</div>
+                            <div class="source-desc">Publicada em setembro de 2026, parte da premissa de que a IA "não apura, não entrevista, não escolhe o que é notícia" e lista, tarefa por tarefa, o que é permitido (transcrição com revisão humana, resumo de documentos, apoio em tradução, análise de dados) e o que é proibido (opinião e editorial, IA como fonte, texto sem verificação humana, deepfake fora de sátira ou reconstituição sinalizadas), com nota de transparência ao leitor. Cumpre quase todo o roteiro acima; a lacuna é não dizer quem decide quando o uso foi substancial a ponto de exigir a nota.</div>
+                        </div>
                     </div>
 
                     <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Referências e diretrizes</h3>
@@ -954,6 +1022,7 @@ original."</pre>
                     <div class="method-step">
                         <h4>1. Toda disciplina precisa de uma política explícita</h4>
                         <p>O pior cenário é o silêncio: sem regra declarada, cada aluno inventa a sua, e o professor descobre o problema na correção. A política pode variar por atividade (proibida na prova, permitida com declaração no trabalho, obrigatória num exercício de análise crítica), mas precisa estar escrita no plano da disciplina ou no enunciado, antes de a atividade começar.</p>
+                        <p class="case-ref">Um roteiro na seção 04: <a href="#politicas-editoriais">o que uma política editorial de IA precisa dizer</a>, com a do Brasil de Fato como exemplo.</p>
                     </div>
 
                     <div class="method-step">
@@ -1027,6 +1096,7 @@ e é de minha responsabilidade.</pre>
                     <div class="method-step">
                         <h4>4. Direitos autorais</h4>
                         <p>Duas frentes ainda em disputa jurídica, no Brasil e no mundo: o <strong>insumo</strong> (modelos treinados com obras protegidas sem licença, objeto de processos movidos por veículos e autores) e o <strong>produto</strong> (a proteção autoral de conteúdo gerado por IA é incerta; a tendência dominante exige contribuição criativa humana). Consequência prática: não trate imagem ou texto gerado como "livre de direitos", nem presuma que o que você gerou é automaticamente protegido como obra sua.</p>
+                        <p class="case-ref">No arquivo de casos: <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-folha-openai">a Folha, que processou a OpenAI e depois assinou com ela</a>, e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-redes-locais">as redes de notícia local por IA que fecharam por reescrever o trabalho alheio</a>.</p>
                     </div>
 
                     <div class="method-step">
@@ -1181,6 +1251,22 @@ conhecimento externo.</pre>
                 <!-- Seção 9 -->
                 <section id="s9">
                     <div class="section-number">09</div>
+                    <h2>Casos e Experiências</h2>
+
+                    <p style="margin-bottom: 1.5rem;">Os casos reais envolvendo IA no jornalismo e na comunicação, episódios com desdobramento como erros publicados, disputas e decisões, ficam num arquivo próprio, para crescer sem pesar neste guia. Cada caso é datado, conferido em fonte primária ou em mais de uma fonte independente e aponta as seções deste guia que ilustra. O foco é o processo, não a culpa: interessa entender em que ponto a cadeia falhou, ou funcionou.</p>
+
+                    <div class="sources-grid">
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html" class="source-url">araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html</a>
+                            <div class="source-name">Casos e Experiências (arquivo de casos)</div>
+                            <div class="source-desc">Página que acompanha este guia, com busca e filtro por tipo de caso. Abre com os pares que só mostram a lição inteira quando lidos lado a lado, e cada caso leva às fontes e às seções do guia que ilustra.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 10 -->
+                <section id="s10">
+                    <div class="section-number">10</div>
                     <h2>Sobre o autor</h2>
 
                     <div class="method-step">
@@ -1193,7 +1279,7 @@ conhecimento externo.</pre>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.html" class="source-url">araujofamilia.github.io/guia-fontes-digitais</a>
                             <div class="source-name">Guia de Fontes Digitais para Jornalismo</div>
-                            <div class="source-desc">150 fontes em 17 seções para apuração com dado público, com recorte de Campinas e da Região Metropolitana. Sugestões de fontes são sempre bem-vindas.</div>
+                            <div class="source-desc">Mais de 300 fontes em 23 seções para apuração com dado público, com recorte de Campinas e da Região Metropolitana. Sugestões de fontes são sempre bem-vindas.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://professorarturaraujo.wordpress.com/" class="source-url">professorarturaraujo.wordpress.com</a>
@@ -1214,7 +1300,7 @@ conhecimento externo.</pre>
         </div>
 
         <footer>
-            <p>Guia de Uso de IA na Comunicação · Artur Araújo · PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 20 de agosto de 2026</p>
+            <p>Guia de Uso de IA na Comunicação · Artur Araújo · PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 18 de setembro de 2026</p>
             <button class="back-to-top" id="back-to-top">↑</button>
         </footer>
     </div>
