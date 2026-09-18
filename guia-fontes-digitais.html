@@ -367,12 +367,14 @@
             text-align: center;
         }
 
-        .hit-counter {
-            margin-top: 1rem;
-            opacity: 0.85;
+        .hit-counter-inline {
+            margin-left: 0.4rem;
+            vertical-align: middle;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .hit-counter img {
+        .hit-counter-inline img {
             vertical-align: middle;
         }
 
@@ -437,7 +439,9 @@
             <div class="tagline">Pesquisa · Dados · Verificação</div>
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 18 de setembro de 2026 · revisão 18</div>
+            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 18 de setembro de 2026 · revisão 18
+                <span class="hit-counter-inline"><img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20"></span>
+            </div>
             <div class="revisao-nota"><strong>Nesta revisão:</strong> voltam ao guia sete fontes aprovadas em 19 de agosto a partir do radar de casos de IA. Elas foram montadas naquele dia sobre uma versão antiga do arquivo e ficaram de fora quando a revisão 9 foi publicada, então nunca chegaram ao ar; entram agora conferidas de novo, endereço por endereço. Na Seção 6, uma subseção nova, Ferramentas Abertas Feitas por Redações Brasileiras, abre com o <strong>Codesinfo</strong>, o fundo do Projor que publica em código aberto tudo o que financia; o Mamute Político, já listado em Repositórios Nacionais, é uma dessas ferramentas. Na Seção 7 entram dois acervos para achar precedente quando aparece um caso novo de erro com IA: o <strong>rastreador da Press Gazette</strong>, que reúne os episódios publicados por veículos, e o <strong>monitor de incidentes da OCDE</strong>, com a ressalva escrita no cartão de que a coleta e os resumos dele são automáticos. Na Seção 12, quatro referências para acompanhar o próprio jornalismo: <strong>Observatório da Imprensa</strong>, <strong>LatAm Journalism Review</strong>, <strong>Nieman Lab</strong> e <strong>Reuters Institute</strong>.</div>
             
             <div class="hero-stats">
@@ -3179,9 +3183,6 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
 
         <footer>
             <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 18 de setembro de 2026 · revisão 18</p>
-            <p class="hit-counter">
-                <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
-            </p>
             <button class="back-to-top" id="back-to-top">↑</button>
         </footer>
     </div>
