@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Os dois lados do boato</title>
+<meta name="description" content="Newsgame em dois atos sobre desinformação e leitura lateral, para a oficina de Fundamentos de Jornalismo.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%97%9E%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --cherry: #990011;
+  --navy: #2F3C7E;
+  --paper: #FCF6F5;
+  --bg: #FCF6F5;
+  --text: #1C2143;
+  --muted: #595F7F;
+  --line: #E6DCD9;
+  --surface: #FFFFFF;
+  --soft: #F4EAE8;
+  --accent: #2F3C7E;
+  --accent-2: #990011;
+  --bar: #990011;
+  --focus: #D98E04;
+  --serif: Cambria, Georgia, "Noto Serif", "Times New Roman", serif;
+  --sans: Calibri, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11152E;
+    --text: #EFE7E4;
+    --muted: #A9AEC8;
+    --line: #2B3260;
+    --surface: #1A2045;
+    --soft: #222A55;
+    --accent: #A3AEEF;
+    --accent-2: #F08494;
+    --bar: #E0435A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11152E;
+  --text: #EFE7E4;
+  --muted: #A9AEC8;
+  --line: #2B3260;
+  --surface: #1A2045;
+  --soft: #222A55;
+  --accent: #A3AEEF;
+  --accent-2: #F08494;
+  --bar: #E0435A;
+  color-scheme: dark;
+}
+/* Ato 1: a fábrica é sempre escura, de propósito */
+body.fabrica {
+  --bg: #141A36;
+  --text: #F2EAE8;
+  --muted: #AAB0CE;
+  --line: #2C3466;
+  --surface: #1F2652;
+  --soft: #283063;
+  --accent: #A3AEEF;
+  --accent-2: #F08494;
+  --bar: #E0435A;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .4s ease, color .4s ease;
+}
+@media (max-width: 360px) { body { font-size: 16px; } }
+
+.wrap { max-width: 36rem; margin: 0 auto; padding: 1.25rem 1rem 2.5rem; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.12; margin: 0 0 .6rem; }
+h1 { font-size: clamp(2.3rem, 9vw, 3.3rem); letter-spacing: -.01em; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.2rem; }
+p { margin: 0 0 .8rem; }
+.muted { color: var(--muted); }
+.small { font-size: .88rem; }
+h1:focus, h2:focus { outline: none; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+button { font: inherit; cursor: pointer; color: inherit; }
+.btn {
+  display: block; width: 100%;
+  padding: .95rem 1rem;
+  border: 0; border-radius: 12px;
+  background: var(--navy); color: #fff;
+  font-weight: 700; font-size: 1.02rem; text-align: center;
+  margin-top: 1rem;
+}
+.btn.cherry { background: var(--cherry); }
+.fabrica .btn.cherry { background: #B3102A; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--line); }
+.linkbtn { background: none; border: 0; padding: .4rem 0; color: var(--muted); text-decoration: underline; font-size: .88rem; }
+
+/* ---------- Capa ---------- */
+.capa h1 { margin-top: .75rem; }
+.capa .lede { font-size: 1.08rem; color: var(--muted); max-width: 30rem; }
+.diptico { display: grid; grid-template-columns: 1fr 1fr; border-radius: 16px; overflow: hidden; margin: 1.25rem 0 1.4rem; border: 1px solid var(--line); }
+.diptico > div { padding: 1rem .9rem 1.1rem; }
+.diptico .lado1 { background: #141A36; color: #F2EAE8; }
+.diptico .lado2 { background: #FCF6F5; color: #1C2143; }
+.diptico .ato { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; line-height: 1.1; margin-bottom: .4rem; }
+.diptico .lado1 .ato span { color: #F08494; }
+.diptico .lado2 .ato span { color: #990011; }
+.diptico p { font-size: .92rem; margin: 0; }
+@media (max-width: 380px) { .diptico { grid-template-columns: 1fr; } }
+.campo label { display: block; font-weight: 700; margin-bottom: .35rem; }
+.campo input {
+  width: 100%; font: inherit; padding: .8rem .9rem;
+  border-radius: 10px; border: 1.5px solid var(--line);
+  background: var(--surface); color: var(--text);
+}
+.aviso-ficcao { font-size: .88rem; color: var(--muted); margin-top: .9rem; }
+
+/* ---------- Ato 1 ---------- */
+.painel {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.painel .in { max-width: 36rem; margin: 0 auto; padding: .7rem 1rem .6rem; }
+.medidores { display: flex; gap: 1rem; align-items: flex-end; }
+.medidores > .medidor:first-child { min-width: 9rem; }
+.medidor .rot { font-size: .8rem; color: var(--muted); }
+.seg { display: inline-block; position: relative; font-family: var(--serif); font-size: 1.9rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.delta { position: absolute; left: 100%; top: -.2rem; margin-left: .4rem; font-family: var(--sans); font-size: .85rem; font-weight: 700; white-space: nowrap; animation: sobe 1.6s ease-out forwards; }
+.delta.pos { color: #7EE0A6; } .delta.neg { color: var(--accent-2); }
+@keyframes sobe { 0% { opacity: 0; transform: translateY(6px); } 15% { opacity: 1; } 100% { opacity: 0; transform: translateY(-10px); } }
+.cred { flex: 1; }
+.barra { height: 10px; border-radius: 6px; background: var(--soft); overflow: hidden; margin-top: .35rem; }
+.barra i { display: block; height: 100%; background: var(--bar); border-radius: 6px; transition: width .6s ease; }
+.insignias { display: flex; gap: .4rem; margin-top: .55rem; }
+.insignia { width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-size: 1rem; background: var(--soft); filter: grayscale(1); opacity: .45; }
+.insignia.on { filter: none; opacity: 1; background: #3A1330; box-shadow: inset 0 0 0 2px #E0435A; }
+
+.chat { display: flex; flex-direction: column; gap: .55rem; padding-top: .9rem; }
+.msg { max-width: 88%; padding: .7rem .9rem; border-radius: 16px 16px 16px 4px; background: var(--surface); }
+.msg.eu { align-self: flex-end; background: #990011; color: #fff; border-radius: 16px 16px 4px 16px; }
+.msg.atual { scroll-margin-top: 9.5rem; }
+.msg .quem { display: block; font-size: .75rem; color: var(--muted); margin-bottom: .15rem; }
+.capitulo { margin: 1.1rem 0 .1rem; font-family: var(--serif); font-size: 1.15rem; color: var(--accent-2); scroll-margin-top: 9.5rem; }
+.capitulo .num { color: var(--muted); font-family: var(--sans); font-size: .85rem; display: block; }
+.ganhou { align-self: stretch; border: 1.5px dashed #E0435A; border-radius: 14px; padding: .8rem .9rem; background: rgba(224, 67, 90, .08); }
+.ganhou strong { font-family: var(--serif); font-size: 1.05rem; }
+.opcoes { display: grid; gap: .5rem; margin-top: .35rem; }
+.opcao {
+  text-align: left; padding: .8rem .95rem;
+  border-radius: 12px; border: 1.5px solid var(--line);
+  background: transparent; line-height: 1.4;
+}
+.opcao:hover { border-color: #E0435A; }
+.novo { animation: entra .35s ease-out both; }
+@keyframes entra { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.estrago { list-style: none; padding: 0; margin: .5rem 0 1rem; }
+.estrago li { padding: .65rem 0; border-bottom: 1px solid var(--line); }
+.estrago li:last-child { font-weight: 700; color: #F4B3BD; border-bottom: 0; }
+.placar { display: flex; gap: 1.5rem; margin: .5rem 0 1rem; }
+.placar .n { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; line-height: 1; }
+
+/* ---------- Ato 2 ---------- */
+.topo { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; font-size: .85rem; color: var(--muted); }
+.caso-h { margin-top: .2rem; }
+.situacao { font-size: 1rem; }
+.aparelho { border-radius: 16px; overflow: hidden; border: 1px solid #CFCAD6; background: #fff; color: #1b1b1b; margin: .8rem 0 1rem; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+.abas { display: flex; gap: 4px; overflow-x: auto; background: #E7E4EC; padding: 6px 6px 0; scrollbar-width: none; }
+.aba { flex: 0 0 auto; max-width: 11.5rem; padding: .38rem .65rem; border-radius: 8px 8px 0 0; background: #D6D2DE; color: #33364A; font-size: .78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.aba.primeira { background: #fff; color: #1b1b1b; font-weight: 700; }
+.aba.nova { background: #2F3C7E; color: #fff; }
+.aba.nova.recente { animation: abre .45s ease-out; }
+@keyframes abre { from { transform: translateY(100%); opacity: 0; } to { transform: none; opacity: 1; } }
+.barra-end { display: flex; align-items: center; gap: .4rem; padding: .45rem .7rem; border-bottom: 1px solid #ECE9F0; font-size: .8rem; color: #444; }
+.barra-end .end { max-width: 13rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mock { position: relative; }
+.selo { position: absolute; top: .5rem; right: .5rem; z-index: 2; background: #990011; color: #fff; font-size: .68rem; font-weight: 700; padding: .2rem .5rem; border-radius: 999px; }
+
+.apuracao { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin: .2rem 0 .5rem; }
+.apuracao .rot { font-weight: 700; }
+.bolinhas { display: inline-flex; gap: .3rem; }
+.bolinhas i { width: .8rem; height: .8rem; border-radius: 50%; background: var(--accent); }
+.bolinhas i.gasta { background: transparent; box-shadow: inset 0 0 0 2px var(--line); }
+.movs { list-style: none; padding: 0; margin: 0 0 .5rem; display: grid; gap: .5rem; }
+.mov > button {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: .6rem;
+  text-align: left; padding: .8rem .9rem; border-radius: 12px;
+  border: 1.5px solid var(--line); background: var(--surface); line-height: 1.35;
+}
+.mov > button:disabled { opacity: .45; cursor: not-allowed; }
+.tag { flex: 0 0 auto; font-size: .72rem; font-weight: 700; padding: .15rem .45rem; border-radius: 999px; white-space: nowrap; }
+.tag.v { background: var(--soft); color: var(--muted); }
+.tag.l { background: var(--navy); color: #fff; }
+.carta { border-radius: 12px; padding: .75rem .9rem; background: var(--surface); border: 1.5px solid var(--line); border-left-width: 6px; }
+.carta .o-que { font-size: .8rem; color: var(--muted); display: flex; justify-content: space-between; gap: .5rem; margin-bottom: .2rem; }
+.carta.l { border-left-color: var(--navy); }
+.carta.v { border-left-color: #B9B3C2; }
+.carta.neutra { border-left-color: var(--muted); }
+.acabou { font-size: .92rem; color: var(--accent-2); font-weight: 700; margin: .2rem 0 0; }
+
+.veredicto { margin-top: 1.25rem; padding: 1rem; border-radius: 16px; background: var(--soft); scroll-margin-top: 1rem; }
+.veredicto fieldset { border: 0; padding: 0; margin: 0 0 1rem; }
+.veredicto legend { font-weight: 700; margin-bottom: .45rem; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.chip span { display: inline-block; padding: .55rem .8rem; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); line-height: 1.25; cursor: pointer; }
+.chip input:checked + span { background: var(--navy); color: #fff; border-color: var(--navy); }
+.chip input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+.evid { display: grid; gap: .45rem; }
+.evid label { display: flex; gap: .6rem; align-items: flex-start; padding: .6rem .7rem; border-radius: 10px; background: var(--surface); border: 1.5px solid var(--line); cursor: pointer; font-size: .95rem; line-height: 1.4; }
+.evid input { margin-top: .25rem; width: 1.1rem; height: 1.1rem; accent-color: #2F3C7E; flex: 0 0 auto; }
+.falta { font-size: .88rem; color: var(--muted); min-height: 1.3em; margin: 0; }
+
+.resultado { border-radius: 16px; padding: 1rem 1.05rem; margin: .5rem 0 1rem; color: #fff; }
+.resultado.sim { background: var(--navy); }
+.resultado.nao { background: var(--cherry); }
+.resultado h2 { font-size: 1.45rem; margin-bottom: .3rem; }
+.resultado p { margin: 0; }
+.bloco { margin: 0 0 1.1rem; }
+.bloco h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+.nota { border-left: 4px solid var(--accent); padding: .1rem 0 .1rem .8rem; }
+.alerta { border-left: 4px solid var(--accent-2); padding: .1rem 0 .1rem .8rem; }
+.decisiva { padding: .7rem .85rem; border-radius: 12px; background: var(--surface); border: 1.5px solid var(--line); margin-bottom: .45rem; }
+.decisiva .status { display: block; font-size: .8rem; color: var(--muted); margin-top: .3rem; }
+.caminho { display: flex; flex-wrap: wrap; gap: .4rem; }
+.pontos { list-style: none; padding: 0; margin: 0; }
+.pontos li { display: flex; justify-content: space-between; gap: 1rem; padding: .35rem 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.pontos li:last-child { border-bottom: 0; font-weight: 700; }
+
+.passos { list-style: none; padding: 0; margin: .4rem 0 1rem; counter-reset: p; }
+.passos li { position: relative; padding: .6rem 0 .6rem 2.6rem; border-bottom: 1px solid var(--line); }
+.passos li::before { counter-increment: p; content: counter(p); position: absolute; left: 0; top: .55rem; width: 1.9rem; height: 1.9rem; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #fff; font-weight: 700; font-family: var(--serif); }
+.passos strong { font-family: var(--serif); }
+.seu-caminho { font-size: 1.05rem; padding: .8rem .9rem; border-radius: 12px; background: var(--soft); }
+
+/* ---------- Cartão final ---------- */
+.cartao { border-radius: 18px; border: 1.5px solid var(--line); background: var(--surface); padding: 1.1rem 1rem; }
+.cartao .dupla { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; line-height: 1.15; margin-bottom: .2rem; }
+.cartao section { padding-top: .9rem; margin-top: .9rem; border-top: 1px solid var(--line); }
+.cartao h3 { font-size: 1.05rem; }
+.lousa { background: var(--navy); color: #fff; border-radius: 14px; padding: .85rem .95rem; }
+.lousa p { margin: 0 0 .35rem; }
+.lousa p:last-child { margin: 0; }
+.tabela { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.tabela th, .tabela td { text-align: left; padding: .4rem .3rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tabela th { font-weight: 700; color: var(--muted); font-size: .8rem; }
+.ok { color: var(--accent); font-weight: 700; }
+.nok { color: var(--accent-2); font-weight: 700; }
+.perfil-nome { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; color: var(--accent-2); }
+.fund { list-style: none; padding: 0; margin: .4rem 0 0; display: grid; gap: .35rem; }
+.fund button { width: 100%; text-align: left; padding: .55rem .7rem; border-radius: 10px; border: 1.5px solid var(--line); background: transparent; font-size: .95rem; line-height: 1.35; }
+.fund button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.fund .n { font-family: var(--serif); font-weight: 700; margin-right: .35rem; }
+.perguntas p { font-family: var(--serif); font-size: 1.05rem; }
+.refs { font-size: .8rem; color: var(--muted); }
+.refs p { margin: 0 0 .45rem; }
+.rodape { max-width: 36rem; margin: 0 auto; padding: 0 1rem 2rem; text-align: center; }
+
+/* ---------- Maquetes dos conteúdos (sempre com cara de tela, qualquer tema) ---------- */
+.m-ibpc { padding: 1rem 1rem 1.1rem; font-family: "Segoe UI", Roboto, Arial, sans-serif; background: #fff; color: #16324F; }
+.m-ibpc .topo-site { display: flex; align-items: center; gap: .6rem; padding-right: 6.5rem; }
+.m-ibpc .logo { background: #0E6BA8; color: #fff; font-weight: 800; letter-spacing: .02em; padding: .35rem .5rem; border-radius: 6px; font-size: .95rem; }
+.m-ibpc .nome { font-size: .8rem; line-height: 1.2; color: #3C5A78; }
+.m-ibpc .faixa { margin: .8rem 0 .6rem; font-size: .75rem; color: #0E6BA8; font-weight: 700; }
+.m-ibpc .tit { font-size: 1.28rem; line-height: 1.2; font-weight: 800; margin: 0 0 .5rem; color: #0B2239; font-family: "Segoe UI", Roboto, Arial, sans-serif; }
+.m-ibpc .lead { font-size: .92rem; color: #2A4460; margin: 0 0 .6rem; }
+.m-ibpc .refs-site { font-size: .72rem; color: #6A7F95; margin: .5rem 0 0; border-top: 1px solid #E3EAF1; padding-top: .45rem; }
+
+.m-blog { background: #FFF6A8; color: #111; font-family: "Comic Sans MS", "Chalkboard SE", "Segoe Print", cursive, sans-serif; }
+.m-blog .cab { background: #E3001B; color: #FFF200; font-weight: 900; padding: .65rem 7rem .65rem .8rem; font-size: .95rem; line-height: 1.2; }
+.m-blog .post { padding: .8rem; }
+.m-blog .post h4 { margin: 0 0 .45rem; font-size: 1.12rem; line-height: 1.2; color: #B00000; text-decoration: underline; }
+.m-blog .post p { font-size: .92rem; margin: 0 0 .5rem; }
+.m-blog .lateral { background: #FFE14D; padding: .5rem .8rem; font-size: .82rem; border-top: 3px dotted #E3001B; }
+.m-blog .lateral span { display: block; }
+
+.m-zap { background: #E9DFD5; font-family: "Segoe UI", Roboto, Arial, sans-serif; color: #111; }
+.m-zap .cab { background: #075E54; color: #fff; padding: .6rem .8rem; font-weight: 700; padding-right: 7rem; }
+.m-zap .cab small { display: block; font-weight: 400; opacity: .8; font-size: .72rem; }
+.m-zap .corpo { padding: .8rem .7rem 1rem; }
+.m-zap .bolha { background: #fff; border-radius: 0 10px 10px 10px; padding: .45rem .55rem .35rem; max-width: 92%; box-shadow: 0 1px 1px rgba(0,0,0,.12); }
+.m-zap .enc { font-size: .72rem; color: #667781; font-style: italic; margin-bottom: .15rem; }
+.m-zap .autor { font-size: .8rem; font-weight: 700; color: #C2185B; margin-bottom: .3rem; }
+.m-zap .bolha p { font-size: .93rem; margin: .45rem 0 .1rem; }
+.m-zap .hora { display: block; text-align: right; font-size: .68rem; color: #667781; }
+.m-zap svg { display: block; width: 100%; height: auto; border-radius: 6px; }
+
+.m-jornal { background: #fff; color: #121212; padding: .8rem 1rem 1rem; font-family: Georgia, "Times New Roman", serif; }
+.m-jornal .mast { font-size: 1.5rem; font-weight: 700; letter-spacing: -.01em; padding: .1rem 6.5rem .35rem 0; border-bottom: 3px double #121212; }
+.m-jornal .nav { display: flex; justify-content: center; gap: .8rem; font-family: Arial, sans-serif; font-size: .72rem; padding: .35rem 0; border-bottom: 1px solid #ddd; color: #444; }
+.m-jornal .tag-j { display: inline-block; margin: .7rem 0 .35rem; font-family: Arial, sans-serif; font-size: .72rem; font-weight: 700; color: #fff; background: #C4161C; padding: .1rem .4rem; }
+.m-jornal .tit { font-size: 1.28rem; line-height: 1.18; margin: 0 0 .4rem; font-family: Georgia, "Times New Roman", serif; }
+.m-jornal .linha { font-size: .92rem; color: #444; margin: 0 0 .6rem; }
+.m-jornal .foto { display: flex; gap: .7rem; align-items: center; margin-bottom: .6rem; }
+.m-jornal .foto svg { width: 4.2rem; height: 4.2rem; flex: 0 0 auto; }
+.m-jornal .foto small { font-family: Arial, sans-serif; font-size: .75rem; color: #666; }
+.m-jornal .cta { display: block; text-align: center; background: #1E9E4A; color: #fff; font-family: Arial, sans-serif; font-weight: 700; padding: .65rem; border-radius: 6px; margin: .4rem 0 .6rem; }
+.m-jornal .com { font-family: Arial, sans-serif; font-size: .8rem; color: #333; background: #F3F3F3; border-radius: 6px; padding: .45rem .55rem; margin-top: .35rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Maquetes acrescentadas na segunda rodada */
+.m-centro { background: #fff; color: #12263A; padding: 1rem; font-family: "Segoe UI", Roboto, Arial, sans-serif; }
+.m-centro .topo-uni { display: flex; gap: .6rem; align-items: center; padding-right: 6.5rem; }
+.m-centro .crista { background: #123C63; color: #fff; font-weight: 800; padding: .4rem .55rem; border-radius: 4px; letter-spacing: .06em; }
+.m-centro .uni { font-size: .78rem; line-height: 1.25; color: #39536B; }
+.m-centro .tit { font-size: 1.16rem; line-height: 1.25; font-weight: 700; margin: .9rem 0 .5rem; color: #0B2239; }
+.m-centro .lead { font-size: .92rem; color: #2A4460; margin: 0 0 .6rem; }
+.m-centro .meta { font-size: .74rem; color: #6A7F95; border-top: 1px solid #E3EAF1; padding-top: .45rem; margin: 0; }
+.m-jornal .byline { font-family: Arial, sans-serif; font-size: .74rem; color: #666; margin: 0 0 .5rem; }
+.m-zap .bolha + .bolha { margin-top: .5rem; }
+.m-zap .audio { display: flex; align-items: center; gap: .5rem; background: #F1F1F1; border-radius: 20px; padding: .35rem .6rem; margin: .3rem 0 .1rem; }
+.m-zap .audio .play { color: #075E54; font-size: .95rem; }
+.m-zap .audio svg { flex: 1; width: auto; height: 24px; border-radius: 0; }
+.m-zap .audio .dur { font-size: .7rem; color: #667781; }
+
+/* Envio do resultado */
+a.btn { text-decoration: none; }
+.entrega { padding-top: .9rem; margin-top: .9rem; border-top: 1px solid var(--line); }
+.entrega .btn { margin-top: .6rem; }
+.entrega .linkbtn { display: inline-block; margin-top: .5rem; }
+details.cru { margin-top: .7rem; }
+details.cru summary { cursor: pointer; font-size: .88rem; color: var(--muted); }
+.resumo-cru { width: 100%; min-height: 9.5rem; margin-top: .5rem; font: inherit; font-size: .82rem; line-height: 1.4; padding: .6rem; border-radius: 10px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); }
+
+/* Perguntas da plenária com resposta */
+.chips .chip-b { padding: .55rem .8rem; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); line-height: 1.25; font-size: .95rem; }
+.chips .chip-b[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.eco { margin: .6rem 0 .9rem; padding: .7rem .85rem; border-radius: 12px; background: var(--soft); border-left: 4px solid var(--accent); font-size: .95rem; }
+.rotulo { display: block; font-weight: 700; margin: .7rem 0 .35rem; font-family: var(--sans); }
+textarea.resposta { width: 100%; min-height: 5.5rem; font: inherit; font-size: .95rem; padding: .6rem .7rem; border-radius: 10px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); }
+.perguntas .fund { margin-bottom: .2rem; }
+.perguntas p.small { font-family: var(--sans); font-size: .88rem; }
+.lousa .codigo { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; letter-spacing: .02em; margin: .2rem 0 .3rem; }
+.entrega .btn.ghost { margin-top: .5rem; }
+
+</style>
+</head>
+<body>
+<main id="app"></main>
+<div class="rodape" id="rodape"></div>
+<noscript><div class="wrap"><h1>Os dois lados do boato</h1><p>Este jogo precisa de JavaScript ligado no navegador.</p></div></noscript>
+<script>
+/* Conteúdo de "Os dois lados do boato". Tudo aqui é ficção didática. */
+
+const ESCALA = [
+  { id: "verdadeiro", t: "Verdadeiro" },
+  { id: "verdadeiro-mas", t: "Verdadeiro, mas…" },
+  { id: "fora-de-contexto", t: "Fora de contexto" },
+  { id: "falso", t: "Falso" },
+  { id: "insustentavel", t: "Insustentável (não há como verificar)" }
+];
+
+const CONFIANCA = ["Baixa", "Média", "Alta"];
+
+const PASSOS = [
+  { n: 1, nome: "Pare", t: "Não compartilhe nem conclua nada ainda." },
+  { n: 2, nome: "Investigue a fonte", t: "Abra nova aba e pesquise quem está por trás: o nome do site ou do perfil, somado a “quem financia” ou “checagem”." },
+  { n: 3, nome: "Procure cobertura melhor", t: "A alegação aparece em veículos com apuração própria? Alguma agência de checagem já analisou?" },
+  { n: 4, nome: "Rastreie a origem", t: "Encontre o contexto original da foto, do vídeo ou da frase. Busca reversa de imagem ajuda." }
+];
+
+/* Formulação canônica da disciplina, conferida no documento "Fundamentos do jornalismo" (AVA). */
+const FUNDAMENTOS = [
+  { nome: "Veracidade e Apuração dos Fatos",
+    principio: "O compromisso com a verdade exige verificação rigorosa, consulta a múltiplas fontes e resistência a pressões externas." },
+  { nome: "Responsabilidade Social e Interesse Público",
+    principio: "O jornalismo cumpre uma função essencial para a sociedade ao revelar injustiças, proteger direitos e fomentar o debate público sobre temas de relevância coletiva." },
+  { nome: "Independência Editorial",
+    principio: "O jornalismo deve manter autonomia em relação a governos, partidos, empresas e interesses econômicos, resistindo a censura e coerções." },
+  { nome: "Ética Jornalística e Limites da Atuação",
+    principio: "O jornalista deve respeitar a dignidade humana, evitando espetacularização, julgamentos prévios e danos morais." },
+  { nome: "Liberdade de Imprensa e Expressão",
+    principio: "A liberdade de imprensa é pilar da democracia, garantindo o direito à informação e à crítica, mesmo diante de riscos ou pressões institucionais." },
+  { nome: "Jornalismo Investigativo como Pilar da Democracia",
+    principio: "A investigação jornalística tem a missão de trazer à luz o que está oculto, expondo práticas ilícitas e abusos de poder." },
+  { nome: "Transparência e Prestação de Contas",
+    principio: "O jornalista deve admitir erros, esclarecer procedimentos e se responsabilizar pelas informações publicadas." },
+  { nome: "Jornalismo como Memória e Testemunho",
+    principio: "O jornalismo atua como registro histórico e memorial das sociedades, dando voz a vítimas, minorias e fatos esquecidos." }
+];
+
+const ATO1 = {
+  abertura: [
+    "Bem-vindos à Fábrica. Aqui vocês não checam boato: vocês fabricam.",
+    "Vila Aurora tem 300 mil habitantes, dois jornais e pouca paciência para ler notícia até o fim. Perfeito para nós.",
+    "Vocês serão medidos por dois números. Seguidores: até onde o boato chega. Credibilidade: quanto as pessoas acreditam em vocês. Mentira óbvia demais derruba a credibilidade. Jornalismo de verdade derruba os seguidores.",
+    "São seis técnicas e seis insígnias. Vamos à primeira."
+  ],
+  capitulos: [
+    {
+      id: "personificacao", nome: "Personificação", icone: "🎭",
+      definicao: "Fingir ser uma pessoa ou instituição que o público já respeita: perfil com uma letra trocada, site que imita jornal, voz clonada por inteligência artificial.",
+      passos: [
+        {
+          fala: "Ninguém dá bola para perfil anônimo. O público confia em quem já conhece. Escolham o disfarce.",
+          opcoes: [
+            { t: "Criar @GazetaDaAur0ra: o mesmo logo do jornal da cidade, com um zero no lugar do O", seg: 800, cred: 15,
+              resp: "Perfeito. Quem rola o feed confere a foto, não a grafia. Vocês pegaram emprestada a credibilidade da Gazeta." },
+            { t: "Criar um perfil com os nossos nomes e fotos verdadeiros", seg: 20, cred: 5,
+              resp: "Honesto. E invisível: vinte seguidores, três deles da família. Na Fábrica, ninguém assina o que faz." },
+            { t: "Pedir a um repórter da Gazeta que publique a nossa história", seg: 0, cred: 0,
+              resp: "Ele vai pedir fonte, documento e o outro lado. Isso dá trabalho e não dá seguidor. Esqueçam os repórteres." }
+          ]
+        },
+        {
+          fala: "Agora um site com cara de jornal. Qual endereço?",
+          opcoes: [
+            { t: "gazetadaaurora.com.br.gz-hj9.online", seg: 600, cred: 15,
+              resp: "No celular, a barra mostra só o começo do endereço: gazetadaaurora.com.br… O resto ninguém lê. O domínio de verdade é gz-hj9.online, e ele é nosso." },
+            { t: "boatosdavila.blogspot.com", seg: 50, cred: -10,
+              resp: "Um blog grátis com “boatos” no nome? A credibilidade despencou." }
+          ]
+        },
+        {
+          fala: "Falta a peça que convence de vez: uma voz. Com meio minuto de áudio, a inteligência artificial clona a voz de quase qualquer pessoa.",
+          opcoes: [
+            { t: "Clonar a voz da âncora do telejornal da cidade e fazer ela “ler” o nosso furo", seg: 1500, cred: 10,
+              resp: "Um áudio no WhatsApp com a voz que todo mundo ouve na hora do jantar. Ninguém desconfia do próprio ouvido." },
+            { t: "Gravar o áudio com a nossa própria voz, bem séria", seg: 100, cred: 0,
+              resp: "Ficou parecendo trote de rádio. Da próxima vez, usem uma voz que o público já conhece." }
+          ]
+        }
+      ]
+    },
+    {
+      id: "emocao", nome: "Emoção", icone: "😱",
+      definicao: "Provocar medo, raiva ou indignação para que a pessoa compartilhe antes de pensar.",
+      passos: [
+        {
+          fala: "Temos disfarce; falta pauta. A operadora Conecta+ vai instalar 12 antenas 5G no centro de Vila Aurora. Escolham a manchete.",
+          opcoes: [
+            { t: "Conecta+ instala 12 antenas 5G; agência reguladora diz que as emissões seguem os limites internacionais", seg: 30, cred: 5,
+              resp: "Bocejo. Informação não viraliza; sentimento viraliza." },
+            { t: "URGENTE!!! ANTENAS 5G VÃO FRITAR O CÉREBRO DAS NOSSAS CRIANÇAS 😱 COMPARTILHEM ANTES QUE APAGUEM", seg: 2500, cred: -10,
+              resp: "Espalhou como fogo, mas muita gente achou exagerado. Medo funciona melhor quando parece possível." },
+            { t: "Mãe relata dor de cabeça no filho desde que as antenas chegaram: “ninguém explica nada”", seg: 2200, cred: 10,
+              resp: "Aí sim. Uma mãe preocupada vale mais que mil gráficos, e ninguém discute com o medo de uma mãe." }
+          ]
+        },
+        {
+          fala: "Post sem imagem não anda. O que vai junto?",
+          opcoes: [
+            { t: "Foto de uma criança chorando, gerada por inteligência artificial, com a antena ao fundo", seg: 1800, cred: 5,
+              resp: "Ninguém pergunta se a criança existe. A imagem faz o trabalho que o texto sozinho não faria." },
+            { t: "O mapa oficial com a localização das 12 antenas", seg: 40, cred: 5,
+              resp: "Mapa é informação. Informação acalma. Não queremos ninguém calmo." }
+          ]
+        },
+        {
+          fala: "Agora a legenda. O medo abre a porta; a raiva é que faz compartilhar.",
+          opcoes: [
+            { t: "E as autoridades? Caladas. Até quando vamos aceitar isso?", seg: 1200, cred: 5,
+              resp: "Medo e raiva na mesma frase. O dedo vai direto para o botão de compartilhar." },
+            { t: "Leiam o relatório técnico antes de tirar conclusões (link)", seg: -100, cred: 5,
+              resp: "Vocês pediram que as pessoas lessem um relatório? Perderam seguidores enquanto eu lia essa legenda." }
+          ]
+        }
+      ]
+    },
+    {
+      id: "polarizacao", nome: "Polarização", icone: "⚔️",
+      definicao: "Pegar uma divisão que já existe na sociedade e alargá-la, muitas vezes com perfis falsos dos dois lados.",
+      passos: [
+        {
+          fala: "Os comentários viraram briga. Ótimo. Agora transformem a briga em guerra: procurem uma divisão que já existe na cidade.",
+          opcoes: [
+            { t: "O Jardim Nobre ganhou internet 5G primeiro; a periferia só ganhou as antenas", seg: 2000, cred: 10,
+              resp: "Nós contra eles. A divisão já existia; vocês só alargaram. Ninguém mais discute antena: discute de que lado está." },
+            { t: "Explicar que as antenas são iguais em todos os bairros", seg: -200, cred: 5,
+              resp: "Vocês acabaram de apagar o incêndio que a gente acendeu. Na Fábrica, isso dá demissão." }
+          ]
+        },
+        {
+          fala: "Truque de mestre: sejam os dois lados da briga.",
+          opcoes: [
+            { t: "Criar @MoradorIndignado, contra as antenas, e @EngenheiroRealista, a favor e arrogante, para brigarem entre si", seg: 2500, cred: 5,
+              resp: "Vocês controlam as duas torcidas. Cada briga entre os perfis falsos arrasta gente de verdade, e o algoritmo adora briga." },
+            { t: "Criar um perfil só, moderado, que ouve os dois lados", seg: 100, cred: 5,
+              resp: "Moderação não engaja. O algoritmo não empurra quem pede calma." }
+          ]
+        }
+      ]
+    },
+    {
+      id: "conspiracao", nome: "Conspiração", icone: "👁️",
+      definicao: "Explicar um fato comum por um plano secreto de gente poderosa. Perguntas entram no lugar de provas, e todo desmentido vira “prova” do complô.",
+      passos: [
+        {
+          fala: "O público quer um porquê. Deem uma explicação que explique tudo.",
+          opcoes: [
+            { t: "As antenas fazem parte de um plano secreto para vigiar cada morador de Vila Aurora, e a imprensa está escondendo", seg: 2200, cred: 10,
+              resp: "Um inimigo poderoso, um segredo e uma imprensa cúmplice. A partir de agora, qualquer desmentido vira prova de que estão escondendo algo." },
+            { t: "A operadora quer vender internet mais rápida e lucrar com isso", seg: 50, cred: 5,
+              resp: "Verdadeiro e sem graça. Conspiração boa nunca tem explicação simples." },
+            { t: "Lagartos alienígenas controlam a Conecta+ a partir da Lua", seg: 300, cred: -25,
+              resp: "Exagerou. Até os seguidores mais fiéis riram. Conspiração precisa parecer plausível." }
+          ]
+        },
+        {
+          fala: "Todo segredo pede uma prova. Qual vocês apresentam?",
+          opcoes: [
+            { t: "Um documento “vazado”, borrado demais para alguém conseguir ler", seg: 1500, cred: 5,
+              resp: "Quanto menos dá para ler, mais dá para imaginar." },
+            { t: "Perguntas no ar: coincidência? Por que ninguém fala disso?", seg: 1500, cred: 10,
+              resp: "Pergunta não precisa de prova. E quem só pergunta nunca está mentindo, não é?" },
+            { t: "Admitir que não temos prova nenhuma", seg: -300, cred: -5,
+              resp: "Honestidade? Na Fábrica? Vocês acabaram de perder seguidores." }
+          ]
+        }
+      ]
+    },
+    {
+      id: "desacreditar", nome: "Desacreditar", icone: "🎯",
+      definicao: "Atacar quem desmente, a pessoa e não o argumento, e acusar jornalistas e checadores de parcialidade.",
+      passos: [
+        {
+          fala: "Problema. A agência de checagem Fato Limpo publicou: “É falso que as antenas 5G causem dano à saúde”. Os seguidores estão em dúvida. E agora?",
+          opcoes: [
+            { t: "Corrigir o post e pedir desculpas", seg: -800, cred: 5,
+              resp: "Errata? Na Fábrica, errata é palavrão. Metade dos seguidores foi embora achando que vocês se venderam." },
+            { t: "Postar: “Checadores pagos pela operadora! Quem checa os checadores?”", seg: 1800, cred: 10,
+              resp: "Vocês não precisam provar nada. Basta semear a dúvida sobre quem desmente." },
+            { t: "Fingir que não viram", seg: -200, cred: -5,
+              resp: "Silêncio parece confissão. Reajam." }
+          ]
+        },
+        {
+          fala: "Um engenheiro da universidade, Paulo Siqueira, gravou um vídeo explicando por que as antenas não fazem mal. O vídeo está bombando.",
+          opcoes: [
+            { t: "Achar uma foto antiga dele numa festa e postar: “Esse é o especialista?”", seg: 1600, cred: 5,
+              resp: "Ninguém lembra mais do argumento, só da foto. Ataquem a pessoa, nunca o argumento." },
+            { t: "Rebater os argumentos técnicos, ponto por ponto", seg: -100, cred: 0,
+              resp: "Vocês entraram no campo dele e perderam. Argumento técnico cansa o público." }
+          ]
+        }
+      ]
+    },
+    {
+      id: "trollagem", nome: "Trollagem", icone: "🔥",
+      definicao: "Provocar de propósito para arrancar reações, muitas vezes aproveitando uma tragédia ou o assunto do dia. Cada resposta irritada vira alcance.",
+      passos: [
+        {
+          fala: "Hoje à tarde, uma tempestade derrubou a internet de Vila Aurora por três horas. Isso é um presente.",
+          opcoes: [
+            { t: "Postar: “Viram? As antenas sobrecarregaram e derrubaram tudo. Nós avisamos.”", seg: 2000, cred: 5,
+              resp: "Um fato real, uma explicação falsa e um “nós avisamos”. A tempestade trabalhou para vocês." },
+            { t: "Compartilhar o alerta oficial sobre a tempestade", seg: -100, cred: 5,
+              resp: "Serviço público? Aqui? Vocês esqueceram de que lado estão." }
+          ]
+        },
+        {
+          fala: "Para fechar, provoquem. Toda resposta irritada é alcance de graça.",
+          opcoes: [
+            { t: "Fazer um meme debochado marcando a Conecta+, a Fato Limpo e o engenheiro", seg: 2500, cred: 0,
+              resp: "Eles responderam, os seguidores deles vieram brigar e o post foi parar entre os assuntos mais comentados da cidade." },
+            { t: "Não provocar ninguém", seg: 0, cred: 0,
+              resp: "Estavam tão perto. Provocação é o combustível mais barato que existe." }
+          ]
+        }
+      ]
+    }
+  ],
+  estrago: [
+    "Uma antena foi incendiada no Jardim Nobre. Ninguém se feriu, desta vez.",
+    "O engenheiro Paulo Siqueira fechou as redes depois de receber ameaças.",
+    "A Fato Limpo recebeu milhares de ataques em uma semana.",
+    "E muita gente em Vila Aurora deixou de acreditar em qualquer notícia, inclusive nas verdadeiras."
+  ]
+};
+
+/* Casos do Ato 2. Dois fixos e os demais sorteados, com mistura de verdadeiros e fabricados. */
+
+const CASO_INSTITUTO = {
+  id: "instituto", titulo: "O instituto", mock: "ibpc",
+  situacao: "Uma colega manda no grupo da turma: “gente, olha isso, vou tomar energético antes da prova!!”. O link abre esta página.",
+  aba: "IBPCog | Estudos",
+  endereco: "ibpcog.org.br/estudos/energetico-memoria",
+  orcamento: 3,
+  virada: true,
+  movimentos: [
+    { id: "estudo", t: "Ler o estudo completo", tipo: "V",
+      carta: "O estudo está publicado só no próprio site. Fala em 18 participantes e não diz se passou pela avaliação de outros cientistas." },
+    { id: "conselho", t: "Ver quem assina: o conselho científico", tipo: "V",
+      carta: "O site lista 12 doutores, com foto e título. Nenhum nome leva a um currículo ou a uma universidade." },
+    { id: "busca", t: "Pesquisar o IBPCog em outra aba", tipo: "L", passo: 2, aba: "IBPCog quem financia",
+      carta: "Reportagem da revista Pesquisa Aberta: o IBPCog é mantido pela Associação Brasileira da Indústria de Energéticos e Afins, que paga todo o orçamento do instituto.",
+      decisiva: true },
+    { id: "quemsomos", t: "Ler o “Quem somos”", tipo: "V",
+      carta: "O instituto se apresenta como “independente, sem fins lucrativos, dedicado à ciência do desempenho humano”." },
+    { id: "fora", t: "Procurar o estudo fora do site", tipo: "L", passo: 3, aba: "estudo energético memória",
+      carta: "A agência Fato Limpo não achou o estudo em nenhuma revista científica: ele só existe no site do instituto. Uma neurocientista ouvida pelo Jornal Regional diz que, com 18 pessoas e sem grupo de comparação, não dá para concluir nada.",
+      decisiva: true },
+    { id: "visual", t: "Reparar no endereço e no visual", tipo: "V",
+      carta: "Domínio .org.br, design profissional, texto sem erro de português e um gráfico caprichado." }
+  ],
+  aceitos: ["falso", "insustentavel"],
+  notaEpistemica: "Dois veredictos se sustentam aqui. Falso, se a dupla julgou a frase “energético melhora a memória em 30%”, que nenhuma evidência independente apoia. Insustentável, se julgou que não há como verificar um estudo que só existe no site de quem o financiou.",
+  porVeredicto: {
+    "verdadeiro": "Não se sustenta: o único estudo é do próprio instituto, e o instituto é bancado pela indústria de energéticos.",
+    "verdadeiro-mas": "Não se sustenta: não há evidência independente de que o efeito exista, com ou sem ressalva.",
+    "fora-de-contexto": "Não é o caso: não há um conteúdo verdadeiro tirado do lugar, e sim uma alegação sem base.",
+    "falso": "Nenhuma evidência independente sustenta a frase do título.",
+    "insustentavel": "O estudo só existe no site de quem pagou por ele; não há como verificá-lo de forma independente."
+  },
+  revelacao: "O site é bonito, o domínio é .org.br e o texto não tem erro. Nada disso diz quem paga a conta. Só uma nova aba diz.",
+  tecnica: "Personificação: um grupo de interesse disfarçado de ciência independente.",
+  passoDecisivo: 2
+};
+
+const CASO_CENTRO = {
+  id: "centro", titulo: "O outro instituto", mock: "centro", verdadeiro: true,
+  situacao: "Outra colega manda um link parecido: “então tá, se energético não resolve, e dormir?”.",
+  aba: "Centro de Estudos do Sono",
+  endereco: "uev.br/centrodosono/estudo-sono-desempenho",
+  orcamento: 4,
+  movimentos: [
+    { id: "resumo", t: "Ler o resumo do estudo", tipo: "V",
+      carta: "O texto informa 1.240 participantes acompanhados por um semestre em três universidades públicas, e diz em que revista o artigo saiu." },
+    { id: "assina", t: "Ver quem assina", tipo: "V",
+      carta: "Três pesquisadoras, cada uma com link para o currículo Lattes e para o departamento na universidade." },
+    { id: "visual", t: "Reparar no endereço e no visual", tipo: "V",
+      carta: "Domínio da universidade, página simples, sem propaganda e sem botão de cadastro." },
+    { id: "financia", t: "Pesquisar quem financia o centro", tipo: "L", passo: 2, aba: "Centro de Estudos do Sono financiamento",
+      carta: "O centro é ligado à universidade pública e o estudo aparece financiado por agência pública de fomento. Nenhuma empresa de colchão, energético ou aplicativo na lista.",
+      decisiva: true },
+    { id: "artigo", t: "Procurar o estudo fora do site", tipo: "L", passo: 3, aba: "Revista Brasileira do Sono artigo",
+      carta: "O artigo está publicado na Revista Brasileira do Sono, com revisão por pares, e o Jornal Regional entrevistou uma das autoras.",
+      decisiva: true },
+    { id: "checagem", t: "Procurar em agências de checagem", tipo: "L", passo: 3, aba: "checagem estudo sono",
+      carta: "Nenhuma agência precisou checar. O que existe são reportagens de veículos diferentes contando a mesma coisa." },
+    { id: "dados", t: "Procurar os dados abertos que o site promete", tipo: "L", passo: 4, aba: "dados abertos estudo sono",
+      carta: "O banco de dados e os questionários estão mesmo disponíveis para download, com o método descrito." }
+  ],
+  aceitos: ["verdadeiro", "verdadeiro-mas"],
+  notaEpistemica: "Verdadeiro é o veredicto central. Verdadeiro, mas… se sustenta se a ressalva for sobre o que o estudo mede: ele associa menos sono a pior desempenho, e associação não é prova de causa.",
+  porVeredicto: {
+    "verdadeiro": "O estudo existe, foi publicado com revisão por pares e a página é da própria universidade.",
+    "verdadeiro-mas": "O estudo existe, e a ressalva é boa: ele associa, não prova causa.",
+    "fora-de-contexto": "Nada foi tirado do lugar: a página é do próprio centro que fez o estudo.",
+    "falso": "Dessa vez não. O artigo está publicado, as autoras têm currículo público e há cobertura independente. Site de instituto não é sinônimo de fachada.",
+    "insustentavel": "Dava para verificar, e a verificação confirma: artigo publicado, autoras identificáveis, financiamento público e dados abertos."
+  },
+  alertaDesconfianca: "Repare no que aconteceu: depois de cair numa fachada, a tentação é recusar o próximo instituto que aparecer. Uma reanálise de estudos com jogos como o Bad News mostrou exatamente isso, jogadores respondendo “falso” para qualquer conteúdo, inclusive o verdadeiro (Modirrousta-Galian e Higham, 2023).",
+  revelacao: "Este é o irmão do primeiro caso. Um é fachada de uma indústria, o outro é centro de universidade pública com artigo publicado e dados abertos. Por fora, os dois pareciam confiáveis. Só a nova aba separa um do outro.",
+  tecnica: "Nenhuma: é pesquisa de verdade.",
+  passoDecisivo: 2
+};
+
+const CASO_TREMOR = {
+  id: "tremor", titulo: "O tremor", mock: "blog", verdadeiro: true,
+  situacao: "No grupo do condomínio, um vizinho cola este link: “alguém sentiu? acordei com a casa tremendo”.",
+  aba: "Plantão Região 24h",
+  endereco: "plantaoserradoipe24h.blogspot.com",
+  orcamento: 4,
+  movimentos: [
+    { id: "visual", t: "Reparar no visual e no endereço", tipo: "V",
+      carta: "Blog gratuito, tudo em maiúsculas, emojis e erro de português (“explozão”)." },
+    { id: "post", t: "Ler o post inteiro", tipo: "V",
+      carta: "O post fala em magnitude 2,9 “segundo especialistas”, sem dizer quais." },
+    { id: "busca", t: "Pesquisar “tremor Serra do Ipê” em nova aba", tipo: "L", passo: 4, aba: "tremor Serra do Ipê",
+      carta: "O Centro de Sismologia da Universidade Estadual registrou um tremor de magnitude 2,9 às 3h12 da madrugada, na região de Serra do Ipê.",
+      decisiva: true },
+    { id: "outros", t: "Olhar os outros posts do blog", tipo: "V",
+      carta: "O blog mistura avisos da região com correntes de oração e promoções de loja." },
+    { id: "cobertura", t: "Procurar cobertura em veículo com apuração própria", tipo: "L", passo: 3, aba: "Jornal Regional tremor",
+      carta: "O Jornal Regional ouviu moradores e um sismólogo: tremores pequenos são raros no Brasil, mas acontecem.",
+      decisiva: true },
+    { id: "checagem", t: "Procurar em agências de checagem", tipo: "L", passo: 3, aba: "checagem tremor",
+      carta: "Nenhuma agência checou o caso. Não há boato registrado sobre ele, o que, sozinho, não prova nada." },
+    { id: "autor", t: "Pesquisar quem mantém o blog", tipo: "L", passo: 2, aba: "Plantão Região 24h quem é",
+      carta: "O blog é de um morador que republica avisos da região há dez anos. Ele não aparece em nenhuma checagem de boato." }
+  ],
+  aceitos: ["verdadeiro", "verdadeiro-mas"],
+  notaEpistemica: "Verdadeiro é o veredicto central. Verdadeiro, mas… também se sustenta, se a ressalva for o tom: chamar um tremor de 2,9 de “TERREMOTO”, em maiúsculas, assusta mais do que o fato pede.",
+  porVeredicto: {
+    "verdadeiro": "O tremor aconteceu, e a magnitude confere.",
+    "verdadeiro-mas": "O fato confere, e a ressalva sobre o tom alarmista é legítima.",
+    "fora-de-contexto": "Não: o conteúdo é deste lugar e desta madrugada.",
+    "falso": "O tremor aconteceu. “No Brasil não tem terremoto” é intuição, não evidência.",
+    "insustentavel": "Dava para verificar: o registro do centro de sismologia estava a uma aba de distância."
+  },
+  alertaDesconfianca: "Se o Ato 1 deixou vocês desconfiados de tudo, vocês não estão sozinhos. Uma reanálise de estudos com jogos como o Bad News mostrou que os jogadores passavam a responder “falso” para qualquer notícia, inclusive as verdadeiras (Modirrousta-Galian e Higham, 2023).",
+  revelacao: "O blog é feio, gritado e tem erro de português. E está certo. O visual não decide a credibilidade, nem para o mal nem para o bem.",
+  tecnica: "Nenhuma: é verdade. A forma usa emoção (maiúsculas, emojis, “COMPARTILHE”), mas a informação confere.",
+  passoDecisivo: 4
+};
+
+const CASO_CORRENTE = {
+  id: "corrente", titulo: "A corrente da tia", mock: "zap", verdadeiro: true,
+  situacao: "No grupo da família, encaminhada com frequência, sem link e sem fonte:",
+  aba: "WhatsApp",
+  endereco: null,
+  orcamento: 4,
+  movimentos: [
+    { id: "quem", t: "Ver quem mandou e como chegou", tipo: "V",
+      carta: "Veio da tia Célia, marcada como encaminhada com frequência, sem autoria e sem data." },
+    { id: "texto", t: "Ler a mensagem inteira", tipo: "V",
+      carta: "O texto não cita fonte, mas também não pede dinheiro, não manda clicar em nada e não promete prêmio." },
+    { id: "respostas", t: "Ler as respostas no grupo", tipo: "V",
+      carta: "Um primo escreveu “isso é corrente, tia”. Outro respondeu “aconteceu com o meu vizinho”." },
+    { id: "checagem", t: "Procurar o golpe descrito em agências de checagem", tipo: "L", passo: 3, aba: "checagem golpe aplicativo banco",
+      carta: "A Fato Limpo já verificou mensagens parecidas: o golpe do falso aplicativo do banco existe e vem crescendo. O que costuma circular errado são os números de vítimas.",
+      decisiva: true },
+    { id: "cobertura", t: "Procurar cobertura em veículo com apuração própria", tipo: "L", passo: 3, aba: "Jornal Regional golpe banco",
+      carta: "O Jornal Regional publicou reportagem sobre o mesmo golpe, com casos registrados na delegacia especializada.",
+      decisiva: true },
+    { id: "oficial", t: "Procurar o alerta oficial do banco ou da polícia", tipo: "L", passo: 4, aba: "alerta oficial golpe",
+      carta: "A delegacia de crimes cibernéticos e os bancos mantêm alertas com a mesma recomendação: nenhuma instituição pede instalação de aplicativo por telefone.",
+      decisiva: true },
+    { id: "origem", t: "Procurar de onde vem a mensagem", tipo: "L", passo: 4, aba: "mensagem golpe origem",
+      carta: "A mesma mensagem circula desde o ano passado, em vários grupos, sempre sem autoria." }
+  ],
+  aceitos: ["verdadeiro", "verdadeiro-mas"],
+  notaEpistemica: "Verdadeiro, mas… também se sustenta: o alerta procede, e a ressalva é a mensagem sem fonte, sem data e circulando há mais de um ano.",
+  porVeredicto: {
+    "verdadeiro": "O golpe descrito existe e a recomendação confere com o que dizem polícia e bancos.",
+    "verdadeiro-mas": "O alerta procede, e a ressalva sobre a mensagem sem fonte nem data é justa.",
+    "fora-de-contexto": "Não há contexto trocado: a mensagem descreve um golpe real e atual.",
+    "falso": "Formato de corrente não é veredicto. O golpe existe, está em reportagem e em alerta oficial.",
+    "insustentavel": "Dava para verificar: agências, reportagem e alerta oficial dizem a mesma coisa."
+  },
+  alertaDesconfianca: "Cuidado com a regra automática “corrente de WhatsApp é mentira”. Ela acerta muitas vezes e erra feio nesta.",
+  revelacao: "Maiúsculas, emoji, encaminhada com frequência, e o conteúdo confere. Quem decide pelo formato erra aqui; quem verifica, acerta.",
+  tecnica: "Nenhuma: o alerta é real. O formato é de corrente, e formato não é veredicto.",
+  passoDecisivo: 3
+};
+
+const CASO_TREZENTOS = {
+  id: "trezentos", titulo: "Os 300%", mock: "jornalcerto", verdadeiro: true,
+  situacao: "Um perfil de notícias da cidade republica esta matéria, com a legenda “o centro virou terra de ninguém”.",
+  aba: "Jornal Regional",
+  endereco: "jornalregional.com.br/cidade/roubos-bicicleta",
+  orcamento: 4,
+  movimentos: [
+    { id: "materia", t: "Ler a matéria inteira", tipo: "V",
+      carta: "A matéria traz a variação percentual e ouve um comerciante. Em nenhum momento informa os números absolutos." },
+    { id: "veiculo", t: "Reparar no veículo", tipo: "V",
+      carta: "É o Jornal Regional, com expediente, endereço, repórter assinando e política de correção no rodapé." },
+    { id: "data", t: "Conferir a data e a legenda de quem republicou", tipo: "V",
+      carta: "A matéria é de hoje. A legenda “terra de ninguém” é de quem republicou, não do jornal." },
+    { id: "boletim", t: "Procurar o boletim oficial com os números", tipo: "L", passo: 3, aba: "boletim segurança roubos",
+      carta: "O boletim da segurança pública mostra 3 registros no mês passado e 12 neste mês. A variação de 300% é real, e a base é pequena.",
+      decisiva: true },
+    { id: "outra", t: "Procurar outra cobertura sobre o mesmo dado", tipo: "L", passo: 3, aba: "roubos bicicleta centro",
+      carta: "Outro veículo publicou o mesmo dado com os números absolutos no título e ouviu uma pesquisadora: em bases pequenas, a porcentagem infla.",
+      decisiva: true },
+    { id: "quemé", t: "Pesquisar quem é o Jornal Regional", tipo: "L", passo: 2, aba: "Jornal Regional quem é",
+      carta: "Jornal local com 30 anos, redação identificada e histórico de erratas publicadas." },
+    { id: "origem", t: "Procurar de onde saiu o dado", tipo: "L", passo: 4, aba: "origem do dado",
+      carta: "O dado vem do boletim mensal da segurança pública e está citado corretamente pela matéria." }
+  ],
+  aceitos: ["verdadeiro-mas", "verdadeiro"],
+  notaEpistemica: "Verdadeiro, mas… é o mais preciso: o número está certo e a moldura infla. Verdadeiro também se defende, porque a matéria não mente e cita a fonte.",
+  porVeredicto: {
+    "verdadeiro": "A conta está certa e o veículo é identificável. Falta dizer que 300% aqui são 3 casos virando 12.",
+    "verdadeiro-mas": "O dado confere, e a ressalva é a base pequena, que faz a porcentagem parecer maior do que o fenômeno.",
+    "fora-de-contexto": "Quase. O dado é desta cidade e deste mês, então não houve troca de contexto. O que falta é contexto numérico dentro da própria matéria, e isso é ressalva.",
+    "falso": "Não: a variação de 300% está no boletim oficial, e a matéria cita a fonte.",
+    "insustentavel": "Dava para verificar: o boletim com os números absolutos está publicado."
+  },
+  alertaDesconfianca: "Manchete que incomoda não é sinônimo de mentira. A escala tem um degrau exatamente para este caso.",
+  revelacao: "Jornal sério, número certo, moldura inflada. É para isso que existe o degrau “verdadeiro, mas…”: nem tudo que exagera é falso.",
+  tecnica: "Nenhuma técnica de fabricação. O que há é escolha editorial: a porcentagem no título e a base pequena fora dele.",
+  passoDecisivo: 3
+};
+
+const CASO_ENCHENTE = {
+  id: "enchente", titulo: "A enchente", mock: "zapfoto",
+  situacao: "No grupo da família, a tia Célia manda:",
+  aba: "WhatsApp",
+  endereco: null,
+  orcamento: 4,
+  movimentos: [
+    { id: "foto", t: "Olhar a foto com atenção", tipo: "V",
+      carta: "Rua alagada e ônibus parado, com água na altura das janelas. A placa ao fundo está ilegível; nada identifica o lugar." },
+    { id: "quem", t: "Ver quem mandou", tipo: "V",
+      carta: "A tia Célia “recebeu de um amigo”. A mensagem chegou marcada como encaminhada com frequência." },
+    { id: "reversa", t: "Fazer busca reversa da imagem", tipo: "L", passo: 4, aba: "busca reversa de imagem",
+      carta: "A mesma foto aparece numa reportagem de março de 2019 sobre uma enchente em Porto das Garças, outra cidade, a centenas de quilômetros daqui.",
+      decisiva: true },
+    { id: "respostas", t: "Ler as respostas no grupo", tipo: "V",
+      carta: "Três parentes responderam “Meu Deus!”. Um primo escreveu: “meu vizinho confirmou”." },
+    { id: "hoje", t: "Procurar notícias de hoje sobre a Norte-Sul", tipo: "L", passo: 3, aba: "Norte-Sul alagamento hoje",
+      carta: "Os veículos da cidade registram chuva moderada hoje, com trânsito lento, e nenhum alagamento na avenida.",
+      decisiva: true },
+    { id: "checagem", t: "Procurar em agências de checagem", tipo: "L", passo: 3, aba: "checagem foto enchente",
+      carta: "A Fato Limpo já checou essa foto circulando em outras três cidades, sempre com a legenda “agora há pouco”." }
+  ],
+  aceitos: ["fora-de-contexto", "falso"],
+  notaEpistemica: "Fora de contexto é o veredicto mais preciso: conteúdo verdadeiro, moldura falsa. Falso também se sustenta, se a dupla julgou a alegação inteira (“há alagamento agora na Norte-Sul”), e não a foto.",
+  porVeredicto: {
+    "verdadeiro": "A foto é de 2019 e de outra cidade. Hoje não houve alagamento na avenida.",
+    "verdadeiro-mas": "Não há parte verdadeira na alegação: a enchente não é daqui nem de hoje.",
+    "fora-de-contexto": "A foto é real; a legenda é que mente.",
+    "falso": "A alegação de alagamento agora na Norte-Sul é falsa; “fora de contexto” descreveria melhor a foto.",
+    "insustentavel": "Dava para verificar: a busca reversa achou a origem da foto."
+  },
+  revelacao: "A foto é verdadeira; o lugar e a data, não. É o truque mais barato da desinformação: pegar uma imagem real e trocar a legenda.",
+  tecnica: "Emoção: medo e urgência (“NÃO SAIAM DE CASA”, “avisem todo mundo”).",
+  passoDecisivo: 4
+};
+
+const CASO_GOLPE = {
+  id: "golpe", titulo: "O furo do apresentador", mock: "jornal",
+  situacao: "Um anúncio aparece no meio do seu feed. Você toca e abre esta página:",
+  aba: "Correio Nacional",
+  endereco: "correionacional.com.br.cn-hj7x.online/exclusivo/marcio-valente",
+  orcamento: 4,
+  movimentos: [
+    { id: "texto", t: "Ler a reportagem inteira", tipo: "V",
+      carta: "O texto conta que o apresentador “revelou o segredo” e termina num botão: “Cadastre-se e comece hoje”." },
+    { id: "visual", t: "Reparar no visual", tipo: "V",
+      carta: "Logo, letras e cores iguaizinhos aos do Correio Nacional. Parece mesmo o site do jornal." },
+    { id: "dominio", t: "Copiar o endereço completo e pesquisar o domínio", tipo: "L", passo: 2, aba: "cn-hj7x.online",
+      carta: "O endereço termina em cn-hj7x.online, e não em correionacional.com.br. O domínio foi registrado há quatro dias.",
+      decisiva: true },
+    { id: "comentarios", t: "Ler os comentários da página", tipo: "V",
+      carta: "Dezenas de elogios, como “já ganhei R$ 3 mil!”. Não dá para responder nem abrir o perfil de quem comentou." },
+    { id: "oficial", t: "Procurar a matéria no site oficial do jornal", tipo: "L", passo: 3, aba: "correionacional.com.br",
+      carta: "No site oficial do Correio Nacional, não há nenhuma matéria sobre o apresentador.",
+      decisiva: true },
+    { id: "perfil", t: "Ver o perfil oficial do apresentador", tipo: "L", passo: 4, aba: "@marciovalente",
+      carta: "Márcio Valente postou ontem: “É golpe! Não tenho plataforma de investimento nenhuma. Denunciem.”",
+      decisiva: true },
+    { id: "checagem", t: "Procurar em agências de checagem", tipo: "L", passo: 3, aba: "checagem Márcio Valente",
+      carta: "A Fato Limpo classificou a página como golpe: usa a marca de um jornal e o rosto de um famoso para vender investimento falso." }
+  ],
+  aceitos: ["falso"],
+  notaEpistemica: null,
+  porVeredicto: {
+    "verdadeiro": "É golpe: domínio falso, matéria inexistente e desmentido do próprio apresentador.",
+    "verdadeiro-mas": "Não há parte verdadeira: nem a matéria, nem o afastamento, nem o método.",
+    "fora-de-contexto": "Não há conteúdo verdadeiro fora do lugar: a página inteira foi fabricada.",
+    "falso": "É golpe com roupa de jornal.",
+    "insustentavel": "Dava para verificar: o endereço, o site oficial e o perfil do apresentador resolviam o caso."
+  },
+  revelacao: "É o truque do Ato 1 visto do outro lado: o endereço começa com o nome do jornal e termina num domínio qualquer. Guardem este movimento; ele serve fora do jogo.",
+  tecnica: "Personificação (marca de jornal e rosto famoso) somada a emoção (ganância e pressa).",
+  passoDecisivo: 2
+};
+
+const CASO_AUDIO = {
+  id: "audio", titulo: "O áudio da professora", mock: "zapaudio",
+  situacao: "No grupo da turma, às dez da noite, chega um áudio de doze segundos.",
+  aba: "WhatsApp",
+  endereco: null,
+  orcamento: 4,
+  movimentos: [
+    { id: "ouvir", t: "Ouvir de novo e reparar no áudio", tipo: "V",
+      carta: "Doze segundos, sem ruído nenhum de fundo, sem respiração entre as frases e com entonação que não varia." },
+    { id: "quem", t: "Ver quem mandou no grupo", tipo: "V",
+      carta: "Chegou de um colega que diz ter recebido “do grupo das quartas”. Ninguém sabe quem gravou." },
+    { id: "respostas", t: "Ler as respostas", tipo: "V",
+      carta: "Cinco pessoas já comemoraram. Duas perguntaram se alguém viu aviso no sistema da disciplina." },
+    { id: "canal", t: "Procurar o aviso no canal oficial da disciplina", tipo: "L", passo: 2, aba: "avisos da disciplina",
+      carta: "No sistema da disciplina e no e-mail da turma não há aviso nenhum. O último post é o roteiro da aula.",
+      decisiva: true },
+    { id: "fonte", t: "Perguntar direto para a professora", tipo: "L", passo: 4, aba: "mensagem para a professora",
+      carta: "A professora responde em cinco minutos: “Não gravei áudio nenhum. A prova está mantida.”",
+      decisiva: true },
+    { id: "parecido", t: "Procurar se já houve caso parecido", tipo: "L", passo: 3, aba: "áudio voz clonada alunos",
+      carta: "A coordenação do curso já tinha avisado sobre áudios com voz clonada circulando em grupos de alunos." },
+    { id: "sinais", t: "Pesquisar como se reconhece voz clonada", tipo: "L", passo: 2, aba: "como reconhecer voz clonada",
+      carta: "Guias de checagem listam os sinais: frases sem respiração, fundo limpo demais e entonação sem variação." }
+  ],
+  aceitos: ["falso"],
+  notaEpistemica: null,
+  porVeredicto: {
+    "verdadeiro": "Não: a professora desmente e não há aviso em canal nenhum.",
+    "verdadeiro-mas": "Não há parte verdadeira: a prova está mantida.",
+    "fora-de-contexto": "Não é um áudio verdadeiro fora do lugar: a voz foi fabricada.",
+    "falso": "Voz clonada, aviso inexistente e fonte desmentindo.",
+    "insustentavel": "Dava para verificar, e rápido: o canal oficial e a própria professora estavam a uma mensagem de distância."
+  },
+  revelacao: "É o Ato 1 chegando ao grupo de vocês: personificação com voz clonada, ajudada pela notícia que todo mundo queria que fosse verdade. O caminho mais curto era o mais óbvio, ir ao canal oficial e perguntar à fonte.",
+  tecnica: "Personificação com voz clonada por inteligência artificial, somada a emoção.",
+  passoDecisivo: 4
+};
+
+/* Os dois primeiros casos são sempre estes, nesta ordem. */
+const CASOS_FIXOS = [CASO_INSTITUTO, CASO_CENTRO];
+/* Destes, cada dupla recebe um sorteio. Quatro verdadeiros e três fabricados. */
+const CASOS_SORTEIO = [CASO_TREMOR, CASO_CORRENTE, CASO_TREZENTOS, CASO_ENCHENTE, CASO_GOLPE, CASO_AUDIO];
+const TODOS_CASOS = CASOS_FIXOS.concat(CASOS_SORTEIO);
+
+const PERFIS = {
+  checador: { nome: "Checadores laterais",
+    t: "Vocês saíram dos sites cedo, voltaram com evidência e separaram o que era verdade do que era fabricado. É assim que os checadores trabalham." },
+  aprendiz: { nome: "Aprendizes de checador",
+    t: "Vocês acertaram os veredictos, mas ainda gastam tempo demais dentro dos sites antes de sair. Na dúvida, saiam do site primeiro." },
+  vertical: { nome: "Sorte de principiante",
+    t: "Os veredictos fecharam, só que quase sem sair dos sites. Da próxima vez o site bonito vence, porque a aparência é controlada por quem quer enganar." },
+  desconfianca: { nome: "Desconfiados de tudo",
+    t: "Vocês recusaram conteúdo que era verdadeiro. É o efeito colateral que a pesquisa encontrou em jogos como o Bad News: depois de jogar, a pessoa passa a chamar de falso até o que é verdade (Modirrousta-Galian e Higham, 2023). Checar não é desconfiar de tudo; é descobrir em quem dá para confiar." },
+  aparencia: { nome: "Enganados pela aparência",
+    t: "Vocês aceitaram como verdadeiro algo que foi fabricado. Reparem no que enganou: foi feito exatamente para parecer confiável, e é por isso que a decisão não pode sair da aparência." },
+  escuro: { nome: "Decidindo no escuro",
+    t: "Vocês deixaram passar conteúdo fabricado e recusaram conteúdo verdadeiro. Os dois erros têm a mesma causa: decidir sem sair do site. O protocolo dos quatro passos existe para isso." }
+};
+
+const REFERENCIAS = [
+  "MODIRROUSTA-GALIAN, Ariana; HIGHAM, Philip A. Gamified inoculation interventions do not improve discrimination between true and fake news: reanalyzing existing research with receiver operating characteristic analysis. <em>Journal of Experimental Psychology: General</em>, v. 152, n. 9, p. 2411-2437, 2023.",
+  "ROOZENBEEK, Jon; VAN DER LINDEN, Sander. Fake news game confers psychological resistance against online misinformation. <em>Palgrave Communications</em>, v. 5, art. 65, 2019.",
+  "WINEBURG, Sam; McGREW, Sarah. Lateral reading and the nature of expertise: reading less and learning more when evaluating digital information. <em>Teachers College Record</em>, v. 121, n. 11, 2019."
+];
+
+</script>
+<script>
+(function () {
+  "use strict";
+
+  var KEY = "dois-lados-do-boato:v2";
+
+  /* Para onde vai o resultado da dupla. Deixe em branco para esconder o botão.
+     Dá para trocar pela barra de endereço: ?zap=5519...&form=...&campo=entry.123&email=... */
+  var ENTREGA = {
+    zap: "5519991278072",
+    form: "",
+    campo: "",
+    email: ""
+  };
+  try {
+    var qs = new URLSearchParams(location.search);
+    ["zap", "form", "campo", "email"].forEach(function (k) {
+      var v = qs.get(k);
+      if (v !== null) ENTREGA[k] = v;
+    });
+  } catch (e) {}
+  var app = document.getElementById("app");
+  var rodape = document.getElementById("rodape");
+  var semMovimento = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var PASSOS1 = [];
+  ATO1.capitulos.forEach(function (cap, ci) {
+    cap.passos.forEach(function (p, pi) {
+      PASSOS1.push({ ci: ci, pi: pi, cap: cap, p: p, ultimo: pi === cap.passos.length - 1 });
+    });
+  });
+
+  function novo() {
+    return {
+      v: 2, tela: "capa", dupla: "",
+      a1: { i: 0, seg: 0, cred: 20, escolhas: [] },
+      a2: { ordem: [], extras: [], c: 0, fase: "explorar", movs: {}, veredictos: {} },
+      fund: null, fundPor: "", tecFeed: null, concluido: null
+    };
+  }
+
+  function carregar() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return null;
+      var o = JSON.parse(raw);
+      if (!o || o.v !== 2 || !o.a1 || !o.a2) return null;
+      return o;
+    } catch (e) { return null; }
+  }
+  function salvar() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function apagar() { try { localStorage.removeItem(KEY); } catch (e) {} }
+
+  var S = novo();
+  var salvo = carregar();
+  var rascunho = { v: null, conf: null, cartas: [] };
+  var pendente = null;
+  var abaRecente = null;
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function num(n) { return Number(n).toLocaleString("pt-BR"); }
+  function casoPorId(id) {
+    for (var i = 0; i < TODOS_CASOS.length; i++) if (TODOS_CASOS[i].id === id) return TODOS_CASOS[i];
+    return null;
+  }
+  function casoAtual() { return casoPorId(S.a2.ordem[S.a2.c]); }
+  function embaralha(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), t = a[i];
+      a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  function sorteiaCasos() {
+    var verdadeiros = embaralha(CASOS_SORTEIO.filter(function (c) { return c.verdadeiro; }));
+    var fabricados = embaralha(CASOS_SORTEIO.filter(function (c) { return !c.verdadeiro; }));
+    var qv = Math.random() < 0.5 ? 1 : 2;
+    var sorteados = embaralha(verdadeiros.slice(0, qv).concat(fabricados.slice(0, 2 - qv)));
+    S.a2.ordem = CASOS_FIXOS.map(function (c) { return c.id; }).concat(sorteados.map(function (c) { return c.id; }));
+    S.a2.extras = embaralha(CASOS_SORTEIO.filter(function (c) { return S.a2.ordem.indexOf(c.id) < 0; })
+      .map(function (c) { return c.id; }));
+  }
+  function tecnicaCampea() {
+    var g = ganhosPorCapitulo(), m = 0;
+    for (var i = 1; i < g.length; i++) if (g[i] > g[m]) m = i;
+    return ATO1.capitulos[m];
+  }
+  function contas() {
+    var c = { lat: 0, ver: 0, pontos: 0, jogados: 0, vRecebidos: 0, vRecusados: 0, fRecebidos: 0, fAceitos: 0 };
+    S.a2.ordem.forEach(function (id) {
+      var caso = casoPorId(id), r = S.a2.veredictos[id];
+      (S.a2.movs[id] || []).forEach(function (mid) { movDe(caso, mid).tipo === "L" ? c.lat++ : c.ver++; });
+      if (!r) return;
+      c.jogados++;
+      c.pontos += r.pontos;
+      if (caso.verdadeiro) { c.vRecebidos++; if (!r.det.aceito) c.vRecusados++; }
+      else { c.fRecebidos++; if (r.v === "verdadeiro" || r.v === "verdadeiro-mas") c.fAceitos++; }
+    });
+    return c;
+  }
+  function movDe(caso, id) {
+    for (var i = 0; i < caso.movimentos.length; i++) if (caso.movimentos[i].id === id) return caso.movimentos[i];
+    return null;
+  }
+  function nomeVeredicto(id) {
+    for (var i = 0; i < ESCALA.length; i++) if (ESCALA[i].id === id) return ESCALA[i].t;
+    return id;
+  }
+  function plural(n, um, muitos, nenhum) {
+    if (n === 0 && nenhum) return nenhum;
+    return n + " " + (n === 1 ? um : muitos);
+  }
+  function nomePasso(n) {
+    for (var i = 0; i < PASSOS.length; i++) if (PASSOS[i].n === n) return PASSOS[i].nome;
+    return "";
+  }
+
+  /* ---------------- capa ---------------- */
+
+  function telaCapa() {
+    var temSalvo = salvo && salvo.tela && salvo.tela !== "capa";
+    var h = '<div class="wrap capa">';
+    h += '<h1 tabindex="-1">Os dois lados do boato</h1>';
+    h += '<p class="lede">Um jogo em dois atos para a oficina de desinformação de Fundamentos de Jornalismo.</p>';
+    h += '<div class="diptico">';
+    h += '<div class="lado1"><div class="ato">Ato 1<br><span>A fábrica</span></div><p>Vocês fabricam boatos e aprendem as seis técnicas por dentro.</p></div>';
+    h += '<div class="lado2"><div class="ato">Ato 2<br><span>Nova aba</span></div><p>Vocês trocam de lado e checam o que chega ao celular, com verdadeiro e falso misturados.</p></div>';
+    h += "</div>";
+    if (temSalvo) {
+      h += '<button class="btn" data-acao="continuar">Continuar de onde paramos</button>';
+      h += '<button class="btn ghost" data-acao="zerar">Começar do zero</button>';
+    } else {
+      h += '<div class="campo"><label for="dupla">Quem está jogando</label>';
+      h += '<input id="dupla" type="text" autocomplete="off" placeholder="Ex.: Ana e João" value="' + esc(S.dupla) + '"></div>';
+      h += '<p class="falta" id="falta-dupla"></p>';
+      h += '<button class="btn cherry" data-acao="comecar">Começar pela fábrica</button>';
+    }
+    h += '<p class="aviso-ficcao">Joguem em dupla, num celular só. Tudo aqui é ficção didática: cidades, empresas, sites, agências e pessoas foram inventados. As técnicas é que são reais.</p>';
+    h += "</div>";
+    return h;
+  }
+
+  /* ---------------- ato 1 ---------------- */
+
+  function medidores() {
+    var pct = Math.max(0, Math.min(100, S.a1.cred));
+    var h = '<div class="medidores">';
+    h += '<div class="medidor"><span class="rot">Seguidores</span><div class="seg" id="seg">' + num(S.a1.seg) + "</div></div>";
+    h += '<div class="medidor cred"><span class="rot">Credibilidade ' + pct + '</span><div class="barra"><i style="width:' + pct + '%"></i></div></div>';
+    return h + "</div>";
+  }
+  function insignias() {
+    var ganhas = capitulosConcluidos();
+    var h = '<div class="insignias">';
+    ATO1.capitulos.forEach(function (c, i) {
+      h += '<span class="insignia' + (i < ganhas ? " on" : "") + '" title="' + esc(c.nome) + '" aria-label="' + esc(c.nome) + (i < ganhas ? ", conquistada" : ", ainda não") + '">' + c.icone + "</span>";
+    });
+    return h + "</div>";
+  }
+  function capitulosConcluidos() {
+    var n = 0;
+    for (var j = 0; j < S.a1.i; j++) if (PASSOS1[j].ultimo) n++;
+    return n;
+  }
+  function bolha(texto, classes) {
+    return '<div class="msg' + (classes ? " " + classes : "") + '">' + texto + "</div>";
+  }
+  function telaA1() {
+    var a = S.a1;
+    var h = '<div class="painel"><div class="in">' + medidores() + insignias() + "</div></div>";
+    h += '<div class="wrap"><div class="chat">';
+    ATO1.abertura.forEach(function (m) { h += bolha(m); });
+    for (var j = 0; j < a.i; j++) {
+      var passo = PASSOS1[j];
+      var op = passo.p.opcoes[a.escolhas[j]];
+      var recente = j === a.i - 1 ? " novo" : "";
+      if (passo.pi === 0) h += capituloTit(passo, false);
+      h += bolha(passo.p.fala);
+      h += '<div class="msg eu' + recente + '">' + esc(op.t) + "</div>";
+      h += bolha(op.resp, recente.trim());
+      if (passo.ultimo) {
+        h += '<div class="ganhou' + recente + '"><strong>' + passo.cap.icone + " Insígnia: " + passo.cap.nome + "</strong><br>" + passo.cap.definicao + "</div>";
+      }
+    }
+    if (a.i < PASSOS1.length) {
+      var atual = PASSOS1[a.i];
+      if (atual.pi === 0) h += capituloTit(atual, true);
+      h += bolha(atual.p.fala, "novo" + (atual.pi === 0 ? "" : " ancora"));
+      h += '<div class="opcoes">';
+      atual.p.opcoes.forEach(function (o, k) {
+        h += '<button class="opcao" data-acao="escolher" data-i="' + k + '">' + esc(o.t) + "</button>";
+      });
+      h += "</div>";
+    } else {
+      h += '<button class="btn cherry" data-acao="fimAto1">Ver o resultado da Fábrica</button>';
+    }
+    h += "</div></div>";
+    return h;
+  }
+  function capituloTit(passo, ancora) {
+    return '<div class="capitulo' + (ancora ? " ancora" : "") + '"><span class="num">Técnica ' + (passo.ci + 1) + " de " + ATO1.capitulos.length + "</span>" + passo.cap.nome + "</div>";
+  }
+
+  function ganhosPorCapitulo() {
+    var g = ATO1.capitulos.map(function () { return 0; });
+    for (var j = 0; j < S.a1.escolhas.length; j++) {
+      var passo = PASSOS1[j];
+      if (!passo) continue;
+      var op = passo.p.opcoes[S.a1.escolhas[j]];
+      g[passo.ci] += op.seg;
+    }
+    return g;
+  }
+  function telaA1Fim() {
+    var cap = tecnicaCampea();
+    var h = '<div class="wrap">';
+    h += '<h2 tabindex="-1">Fim do expediente na Fábrica</h2>';
+    h += '<div class="placar"><div><span class="rot muted small">Seguidores</span><div class="n">' + num(S.a1.seg) + '</div></div><div><span class="rot muted small">Credibilidade</span><div class="n">' + Math.max(0, Math.min(100, S.a1.cred)) + "</div></div></div>";
+    h += "<p>A técnica que mais rendeu seguidores para vocês foi <strong>" + cap.icone + " " + esc(cap.nome) + "</strong>. Anotem: essa resposta vai para a plenária.</p>";
+    h += insignias();
+    h += '<h3 style="margin-top:1.2rem">O estrago</h3><ul class="estrago">';
+    ATO1.estrago.forEach(function (e) { h += "<li>" + e + "</li>"; });
+    h += "</ul>";
+    h += "<p>Guardem a última linha. Ela vai importar agora.</p>";
+    h += '<button class="btn cherry" data-acao="a2intro">Trocar de lado</button>';
+    h += "</div>";
+    return h;
+  }
+
+  /* ---------------- ato 2 ---------------- */
+
+  function telaA2Intro() {
+    var h = '<div class="wrap">';
+    h += '<div class="topo"><span>Ato 2</span><span>Nova aba</span></div>';
+    h += '<h2 tabindex="-1">Agora vocês checam</h2>';
+    h += "<p>Quatro conteúdos vão chegar ao celular de vocês. Alguns foram fabricados com as técnicas que vocês acabaram de praticar; outros são verdadeiros. Quantos de cada, vocês não sabem, e o sorteio muda de dupla para dupla.</p>";
+    h += "<p>Cada caso tem um tempo curto de apuração, marcado por bolinhas. Cada coisa que vocês fizerem gasta uma bolinha e rende uma carta de evidência.</p>";
+    h += "<p>No fim de cada caso vem o veredicto, na escala da disciplina, com o grau de confiança. Veredicto sem evidência não vale: vocês vão apontar pelo menos uma carta.</p>";
+    h += '<div class="bloco"><h3>A escala</h3><div class="chips">';
+    ESCALA.forEach(function (e) { h += '<span class="chip"><span>' + e.t + "</span></span>"; });
+    h += "</div></div>";
+    h += '<button class="btn" data-acao="primeiroCaso">Abrir o primeiro caso</button>';
+    h += "</div>";
+    return h;
+  }
+
+  function bolinhas(total, gastas) {
+    var h = '<span class="bolinhas" aria-label="' + (total - gastas) + " de " + total + ' movimentos disponíveis">';
+    for (var i = 0; i < total; i++) h += '<i class="' + (i < total - gastas ? "" : "gasta") + '"></i>';
+    return h + "</span>";
+  }
+
+  function svgEnchente() {
+    return '<svg viewBox="0 0 320 190" role="img" aria-label="Foto de rua alagada com ônibus parado">' +
+      '<rect width="320" height="190" fill="#97a0a9"/>' +
+      '<rect x="0" y="35" width="72" height="95" fill="#6d757e"/><rect x="76" y="14" width="58" height="116" fill="#5c646d"/>' +
+      '<rect x="248" y="28" width="72" height="102" fill="#69707a"/><rect x="140" y="52" width="40" height="78" fill="#7b838c"/>' +
+      '<rect x="196" y="46" width="5" height="84" fill="#3c4147"/><rect x="180" y="40" width="34" height="16" fill="#c6c9cd"/>' +
+      '<rect x="60" y="82" width="132" height="52" rx="7" fill="#d7d0c2"/>' +
+      '<rect x="70" y="90" width="22" height="17" fill="#5a636c"/><rect x="98" y="90" width="22" height="17" fill="#5a636c"/>' +
+      '<rect x="126" y="90" width="22" height="17" fill="#5a636c"/><rect x="154" y="90" width="28" height="17" fill="#5a636c"/>' +
+      '<rect x="0" y="112" width="320" height="78" fill="#7d6b53" opacity="0.93"/>' +
+      '<path d="M8 128 q18 -6 36 0 t36 0 t36 0" stroke="#a4927a" stroke-width="2" fill="none" opacity="0.8"/>' +
+      '<path d="M150 146 q18 -6 36 0 t36 0 t36 0" stroke="#a4927a" stroke-width="2" fill="none" opacity="0.8"/>' +
+      '<path d="M20 164 q18 -6 36 0 t36 0 t36 0" stroke="#9a8973" stroke-width="2" fill="none" opacity="0.7"/>' +
+      "</svg>";
+  }
+  function svgRetrato() {
+    return '<svg viewBox="0 0 80 80" role="img" aria-label="Foto de um apresentador de televisão">' +
+      '<rect width="80" height="80" rx="4" fill="#dcd8d2"/>' +
+      '<circle cx="40" cy="31" r="15" fill="#b9b2a8"/>' +
+      '<path d="M12 78 q28 -30 56 0 z" fill="#4a5568"/>' +
+      '<rect x="36" y="46" width="8" height="14" fill="#b9b2a8"/>' +
+      "</svg>";
+  }
+  function svgGrafico() {
+    return '<svg viewBox="0 0 300 130" role="img" aria-label="Gráfico com duas barras: sem energético 100 e com energético 130">' +
+      '<line x1="36" y1="8" x2="36" y2="104" stroke="#c7d3de" stroke-width="2"/>' +
+      '<line x1="36" y1="104" x2="290" y2="104" stroke="#c7d3de" stroke-width="2"/>' +
+      '<rect x="70" y="54" width="60" height="50" fill="#9db6cc"/>' +
+      '<rect x="180" y="24" width="60" height="80" fill="#0E6BA8"/>' +
+      '<text x="100" y="48" text-anchor="middle" font-size="13" fill="#16324F" font-family="Segoe UI, Arial">100</text>' +
+      '<text x="210" y="18" text-anchor="middle" font-size="13" fill="#0E6BA8" font-family="Segoe UI, Arial" font-weight="bold">130</text>' +
+      '<text x="100" y="120" text-anchor="middle" font-size="11" fill="#3C5A78" font-family="Segoe UI, Arial">sem energético</text>' +
+      '<text x="210" y="120" text-anchor="middle" font-size="11" fill="#3C5A78" font-family="Segoe UI, Arial">com energético</text>' +
+      "</svg>";
+  }
+
+  function svgOnda() {
+    var barras = [6, 12, 20, 9, 16, 24, 14, 8, 18, 26, 12, 7, 15, 22, 10, 6, 13, 19, 9, 5];
+    var out = '<svg viewBox="0 0 160 30" role="img" aria-label="Onda sonora do áudio">';
+    barras.forEach(function (b, i) {
+      out += '<rect x="' + (i * 8 + 1) + '" y="' + (15 - b / 2) + '" width="4" height="' + b + '" rx="2" fill="#7b8794"/>';
+    });
+    return out + "</svg>";
+  }
+  function maquete(caso) {
+    if (caso.mock === "centro") {
+      return '<div class="mock m-centro"><span class="selo">Simulação didática</span>' +
+        '<div class="topo-uni"><span class="crista">UEV</span><span class="uni">Universidade Estadual do Vale<br><strong>Centro de Estudos do Sono</strong></span></div>' +
+        '<p class="tit">Estudo com 1.240 estudantes associa noites de menos de seis horas a queda no desempenho em provas</p>' +
+        '<p class="lead">O acompanhamento durou um semestre, em três universidades públicas. O artigo saiu na Revista Brasileira do Sono e os dados estão abertos para download.</p>' +
+        '<p class="meta">Publicado em 12 de agosto de 2026. Equipe: Ana Ribeiro, Carla Menezes e Júlia Tanaka, cada uma com link para o currículo.</p></div>';
+    }
+    if (caso.mock === "zap") {
+      return '<div class="mock m-zap"><span class="selo">Simulação didática</span>' +
+        '<div class="cab">Família Unida 💛<small>14 participantes</small></div>' +
+        '<div class="corpo"><div class="bolha"><div class="enc">↪ Encaminhada com frequência</div><div class="autor">Tia Célia</div>' +
+        '<p>ATENÇÃO ⚠️ Está rolando um golpe novo: ligam dizendo que são do banco, pedem para você instalar um aplicativo de “segurança” e esvaziam a conta. NÃO INSTALE NADA POR TELEFONE. Repassem para os mais velhos 🙏</p>' +
+        '<span class="hora">08:13</span></div></div></div>';
+    }
+    if (caso.mock === "zapaudio") {
+      return '<div class="mock m-zap"><span class="selo">Simulação didática</span>' +
+        '<div class="cab">Turma de Jornalismo 🎓<small>38 participantes</small></div>' +
+        '<div class="corpo"><div class="bolha"><div class="autor">Colega do grupo</div>' +
+        '<div class="audio"><span class="play">▶</span>' + svgOnda() + '<span class="dur">0:12</span></div>' +
+        '<p>ela cancelou!!! 🎉🎉</p><span class="hora">22:07</span></div>' +
+        '<div class="bolha"><div class="autor">Outro colega</div>' +
+        '<p>transcrevi aqui: “Pessoal, aqui é a professora Helena. A prova de amanhã fica para a semana que vem.”</p>' +
+        '<span class="hora">22:09</span></div></div></div>';
+    }
+    if (caso.mock === "jornalcerto") {
+      return '<div class="mock m-jornal"><span class="selo">Simulação didática</span>' +
+        '<div class="mast">Jornal Regional</div>' +
+        '<div class="nav"><span>Cidade</span><span>Economia</span><span>Cultura</span><span>Esportes</span></div>' +
+        '<p class="tit">Roubos de bicicleta crescem 300% no centro em um mês</p>' +
+        '<p class="byline">Por Marina Dourado, repórter de Cidade. Publicado hoje, às 7h40.</p>' +
+        '<p class="linha">Comerciantes relatam medo e pedem mais policiamento na área da praça.</p>' +
+        '<div class="com">“Em 20 anos aqui, nunca vi tanta bicicleta sumir”, diz o dono da banca de jornais.</div></div>';
+    }
+    if (caso.mock === "ibpc") {
+      return '<div class="mock m-ibpc"><span class="selo">Simulação didática</span>' +
+        '<div class="topo-site"><span class="logo">IBPCog</span><span class="nome">Instituto Brasileiro<br>de Performance Cognitiva</span></div>' +
+        '<div class="faixa">Ciência independente desde 2011</div>' +
+        '<p class="tit">Estudo mostra que energético melhora a memória em 30% na véspera de provas</p>' +
+        '<p class="lead">Pesquisa conduzida pelo instituto com universitários indica que uma lata de 250 ml, tomada até duas horas antes do teste, elevou em 30% o desempenho em tarefas de memória.</p>' +
+        svgGrafico() +
+        '<p class="refs-site">Referências: IBPCog, Relatório Técnico 14/2026; IBPCog, Boletim de Desempenho 3/2025.</p></div>';
+    }
+    if (caso.mock === "blog") {
+      return '<div class="mock m-blog"><span class="selo">Simulação didática</span>' +
+        '<div class="cab">PLANTÃO REGIÃO 24H ⚡ A NOTÍCIA NA HORA!!!</div>' +
+        '<div class="post"><h4>URGENTE!!! TERREMOTO ASSUSTA MORADORES DE SERRA DO IPÊ NA MADRUGADA 😱😱</h4>' +
+        '<p>Casas tremeram e cachorros latiram muito por volta das 3h da manhã. Moradores ouviram um barulho de “explozão”. Segundo especialistas o tremor foi de magnitude 2,9. COMPARTILHE COM SEUS AMIGOS!!!</p></div>' +
+        '<div class="lateral"><span>🙏 Corrente de oração da madrugada</span><span>🔥 Promoção imperdível: colchões</span></div></div>';
+    }
+    if (caso.mock === "zapfoto") {
+      return '<div class="mock m-zap"><span class="selo">Simulação didática</span>' +
+        '<div class="cab">Família Unida 💛<small>14 participantes</small></div>' +
+        '<div class="corpo"><div class="bolha"><div class="enc">↪ Encaminhada com frequência</div><div class="autor">Tia Célia</div>' +
+        svgEnchente() +
+        '<p>URGENTE ⚠️ agora há pouco na Norte-Sul!!! A água já passou do ponto de ônibus, NÃO SAIAM DE CASA e avisem todo mundo 🙏🙏</p>' +
+        '<span class="hora">19:42</span></div></div></div>';
+    }
+    return '<div class="mock m-jornal"><span class="selo">Simulação didática</span>' +
+      '<div class="mast">Correio Nacional</div>' +
+      '<div class="nav"><span>Política</span><span>Economia</span><span>Esportes</span><span>Cultura</span></div>' +
+      '<span class="tag-j">Exclusivo</span>' +
+      '<p class="tit">Apresentador Márcio Valente é afastado da TV após revelar, ao vivo, método que rende até R$ 5 mil por dia</p>' +
+      '<p class="linha">A emissora tentou tirar o vídeo do ar. Veja o que ele disse antes de ser cortado.</p>' +
+      '<div class="foto">' + svgRetrato() + "<small>Valente durante o programa de ontem, minutos antes do corte</small></div>" +
+      '<span class="cta">Quero conhecer a plataforma</span>' +
+      '<div class="com">💬 “Já ganhei R$ 3 mil essa semana!!”</div></div>';
+  }
+
+  function aparelho(caso, feitos) {
+    var h = '<div class="aparelho">';
+    h += '<div class="abas"><span class="aba primeira">' + esc(caso.aba) + "</span>";
+    feitos.forEach(function (id) {
+      var m = movDe(caso, id);
+      if (m && m.tipo === "L") {
+        h += '<span class="aba nova' + (abaRecente === id ? " recente" : "") + '">🔎 ' + esc(m.aba) + "</span>";
+      }
+    });
+    h += "</div>";
+    if (caso.endereco) h += '<div class="barra-end"><span>🔒</span><span class="end">' + esc(caso.endereco) + "</span></div>";
+    h += maquete(caso);
+    return h + "</div>";
+  }
+
+  function rotuloVertical(caso) {
+    return caso.mock.indexOf("zap") === 0 ? "nesta conversa" : "neste site";
+  }
+  function cartaHTML(m, mostraTags, rotV) {
+    var cls = mostraTags ? (m.tipo === "L" ? "l" : "v") : "neutra";
+    var h = '<div class="carta ' + cls + '"><span class="o-que"><span>' + esc(m.t) + "</span>";
+    if (mostraTags) h += '<span class="tag ' + (m.tipo === "L" ? "l" : "v") + '">' + (m.tipo === "L" ? "nova aba" : rotV) + "</span>";
+    h += "</span>" + m.carta + "</div>";
+    return h;
+  }
+
+  function painelVeredicto(caso, feitos, mostraTags) {
+    var h = '<section class="veredicto" id="painel-veredicto">';
+    h += "<h3>Veredicto da dupla</h3>";
+    h += "<fieldset><legend>Na escala da disciplina</legend><div class=\"chips\">";
+    ESCALA.forEach(function (e) {
+      h += '<label class="chip"><input type="radio" name="ver" value="' + e.id + '"' + (rascunho.v === e.id ? " checked" : "") + '><span>' + e.t + "</span></label>";
+    });
+    h += "</div></fieldset>";
+    h += "<fieldset><legend>Com que confiança?</legend><div class=\"chips\">";
+    CONFIANCA.forEach(function (c) {
+      h += '<label class="chip"><input type="radio" name="conf" value="' + c + '"' + (rascunho.conf === c ? " checked" : "") + '><span>' + c + "</span></label>";
+    });
+    h += "</div></fieldset>";
+    h += "<fieldset><legend>Que evidência sustenta o veredicto?</legend><div class=\"evid\">";
+    feitos.forEach(function (id) {
+      var m = movDe(caso, id);
+      h += '<label><input type="checkbox" name="carta" value="' + id + '"' + (rascunho.cartas.indexOf(id) >= 0 ? " checked" : "") + '><span>' + m.carta + "</span></label>";
+    });
+    h += "</div></fieldset>";
+    h += '<p class="falta" id="falta"></p>';
+    h += '<button class="btn" id="confirmar" data-acao="confirmar" disabled>Confirmar veredicto</button>';
+    if (feitos.length < caso.orcamento) h += '<button class="linkbtn" data-acao="voltarApurar">Voltar a apurar</button>';
+    h += "</section>";
+    return h;
+  }
+
+  function telaCaso() {
+    var caso = casoAtual();
+    var feitos = S.a2.movs[caso.id] || [];
+    var resta = caso.orcamento - feitos.length;
+    var mostraTags = !caso.virada;
+    var rotV = rotuloVertical(caso);
+    var h = '<div class="wrap">';
+    h += '<div class="topo"><span>Ato 2: nova aba</span><span>Caso ' + (S.a2.c + 1) + " de " + S.a2.ordem.length + "</span></div>";
+    h += '<h2 class="caso-h" tabindex="-1">' + esc(caso.titulo) + "</h2>";
+    h += '<p class="situacao">' + caso.situacao + "</p>";
+    h += aparelho(caso, feitos);
+    h += '<div class="apuracao"><span class="rot">Tempo de apuração</span>' + bolinhas(caso.orcamento, feitos.length) + "</div>";
+    h += '<ul class="movs">';
+    caso.movimentos.forEach(function (m) {
+      var feito = feitos.indexOf(m.id) >= 0;
+      h += '<li class="mov">';
+      if (feito) {
+        h += cartaHTML(m, mostraTags);
+      } else {
+        h += '<button data-acao="mover" data-id="' + m.id + '"' + (resta <= 0 ? " disabled" : "") + "><span>" + esc(m.t) + "</span>";
+        if (mostraTags) h += '<span class="tag ' + (m.tipo === "L" ? "l" : "v") + '">' + (m.tipo === "L" ? "nova aba" : rotV) + "</span>";
+        h += "</button>";
+      }
+      h += "</li>";
+    });
+    h += "</ul>";
+    if (resta <= 0 && S.a2.fase !== "veredicto") h += '<p class="acabou">O tempo de apuração acabou. Hora do veredicto.</p>';
+    if (S.a2.fase === "veredicto") {
+      h += painelVeredicto(caso, feitos, mostraTags);
+    } else {
+      h += '<button class="btn" data-acao="abrirVeredicto"' + (feitos.length ? "" : " disabled") + ">Dar o veredicto</button>";
+      if (!feitos.length) h += '<p class="falta">Façam pelo menos um movimento antes de decidir.</p>';
+    }
+    h += "</div>";
+    return h;
+  }
+
+  function telaRetorno() {
+    var caso = casoAtual();
+    var r = S.a2.veredictos[caso.id];
+    var feitos = S.a2.movs[caso.id] || [];
+    var ultimo = S.a2.c === S.a2.ordem.length - 1;
+    var h = '<div class="wrap">';
+    h += '<div class="topo"><span>Ato 2: nova aba</span><span>Caso ' + (S.a2.c + 1) + " de " + S.a2.ordem.length + "</span></div>";
+    h += '<div class="resultado ' + (r.det.aceito ? "sim" : "nao") + '"><h2 tabindex="-1">' + (r.det.aceito ? "Veredicto que se sustenta" : "Veredicto que não se sustenta") + "</h2>";
+    h += "<p>Vocês disseram " + nomeVeredicto(r.v).toLowerCase() + ", com confiança " + r.conf.toLowerCase() + ".</p></div>";
+    h += '<div class="bloco"><p>' + caso.porVeredicto[r.v] + "</p>";
+    if (caso.notaEpistemica) h += '<p class="nota">' + caso.notaEpistemica + "</p>";
+    if (caso.alertaDesconfianca && !r.det.aceito) h += '<p class="alerta">' + caso.alertaDesconfianca + "</p>";
+    h += "</div>";
+
+    h += '<div class="bloco"><h3>O que decidia o caso</h3>';
+    caso.movimentos.filter(function (m) { return m.decisiva; }).forEach(function (m) {
+      var abriu = feitos.indexOf(m.id) >= 0;
+      var citou = r.cartas.indexOf(m.id) >= 0;
+      h += '<div class="decisiva">' + m.carta;
+      h += '<span class="status">Passo ' + m.passo + ": " + nomePasso(m.passo).toLowerCase() + ". ";
+      h += citou ? "Vocês abriram esta aba e apontaram esta carta." : (abriu ? "Vocês abriram esta aba, mas não apontaram esta carta." : "Esta aba ficou fechada.");
+      h += "</span></div>";
+    });
+    h += "</div>";
+
+    h += '<div class="bloco"><h3>O que estava em jogo</h3><p>' + caso.revelacao + "</p>";
+    h += "<p><strong>Técnica:</strong> " + caso.tecnica + "</p></div>";
+
+    h += '<div class="bloco"><h3>O caminho de vocês</h3><div class="caminho">';
+    feitos.forEach(function (id) {
+      var m = movDe(caso, id);
+      h += '<span class="tag ' + (m.tipo === "L" ? "l" : "v") + '">' + (m.tipo === "L" ? "nova aba" : rotuloVertical(caso)) + "</span>";
+    });
+    if (!feitos.length) h += '<span class="tag v">nenhum movimento</span>';
+    h += "</div></div>";
+
+    h += '<div class="bloco"><h3>Pontos neste caso</h3><ul class="pontos">';
+    h += "<li><span>" + (r.det.aceito ? "Veredicto que se sustenta" : "Veredicto que não se sustenta") + "</span><span>" + (r.det.aceito ? "2" : "0") + "</span></li>";
+    h += "<li><span>" + (r.det.citou ? "Evidência decisiva apontada" : "Evidência decisiva não apontada") + "</span><span>" + (r.det.citou ? "1" : "0") + "</span></li>";
+    h += "<li><span>" + (r.det.lateral ? "Pelo menos uma nova aba" : "Nenhuma nova aba") + "</span><span>" + (r.det.lateral ? "1" : "0") + "</span></li>";
+    if (r.det.penal) h += "<li><span>Confiança alta num veredicto que não se sustenta</span><span>perde 1</span></li>";
+    h += "<li><span>Total</span><span>" + r.pontos + " de 4</span></li>";
+    h += "</ul></div>";
+
+    if (caso.virada) h += '<button class="btn cherry" data-acao="virada">Continuar</button>';
+    else if (!ultimo) h += '<button class="btn" data-acao="proximoCaso">Próximo caso</button>';
+    else {
+      h += '<button class="btn cherry" data-acao="final">Ver o cartão da dupla</button>';
+      if (S.a2.extras.length) h += '<button class="btn ghost" data-acao="maisUm">Puxar mais um caso</button>';
+    }
+    h += "</div>";
+    return h;
+  }
+
+  function telaVirada() {
+    var caso = casoPorId("instituto");
+    var feitos = S.a2.movs[caso.id] || [];
+    var lat = 0, ver = 0;
+    feitos.forEach(function (id) { movDe(caso, id).tipo === "L" ? lat++ : ver++; });
+    var h = '<div class="wrap">';
+    h += '<h2 tabindex="-1">Isso tem nome</h2>';
+    h += "<p>Pesquisadores compararam como estudantes e checadores profissionais avaliam sites desconhecidos (Wineburg e McGrew, 2019). Os estudantes liam a página de cima para baixo e julgavam pelo visual: design caprichado, domínio confiável, texto sem erro. Os checadores faziam o contrário: saíam do site em segundos e abriam outras abas para descobrir quem estava por trás.</p>";
+    h += "<p>O primeiro jeito é a leitura vertical. O segundo é a leitura lateral. A aparência de um site é controlada por quem quer enganar; a reputação dele lá fora, não.</p>";
+    h += '<p class="seu-caminho">No caso do instituto, vocês fizeram ' + plural(ver, "movimento", "movimentos") + " dentro do site e " + plural(lat, "em nova aba", "em novas abas", "nenhum em nova aba") + ". ";
+    h += lat === 0 ? "Vocês leram como os estudantes da pesquisa, e quase todo mundo lê assim na primeira vez." : (lat >= ver ? "Vocês já fizeram o que os checadores fazem: saíram do site cedo." : "Vocês saíram do site, mas só depois de gastar tempo lá dentro.");
+    h += "</p>";
+    h += "<h3>O protocolo, em quatro passos</h3><ol class=\"passos\">";
+    PASSOS.forEach(function (p) { h += "<li><strong>" + p.nome + ".</strong> " + p.t + "</li>"; });
+    h += "</ol>";
+    h += "<p>Daqui em diante, cada movimento mostra onde vocês estão: dentro do site ou em uma nova aba. E vale o aviso do começo: nem tudo que chega é fabricado.</p>";
+    h += '<button class="btn" data-acao="proximoCaso">Próximo caso</button>';
+    h += "</div>";
+    return h;
+  }
+
+  /* ---------------- cartão final ---------------- */
+
+  function perfilAtual(c) {
+    if (c.vRecusados && c.fAceitos) return PERFIS.escuro;
+    if (c.vRecusados) return PERFIS.desconfianca;
+    if (c.fAceitos) return PERFIS.aparencia;
+    var prop = c.lat + c.ver > 0 ? c.lat / (c.lat + c.ver) : 0;
+    return prop >= 0.6 ? PERFIS.checador : (prop < 0.4 ? PERFIS.vertical : PERFIS.aprendiz);
+  }
+  function abasNoCaso1() {
+    var n = 0;
+    (S.a2.movs["instituto"] || []).forEach(function (id) { if (movDe(casoPorId("instituto"), id).tipo === "L") n++; });
+    return n;
+  }
+  function resumoTexto() {
+    var c = contas(), cap = tecnicaCampea(), perfil = perfilAtual(c);
+    var linhas = [
+      "Os dois lados do boato, Fundamentos de Jornalismo",
+      "Dupla: " + (S.dupla || "sem nome"),
+      "Ato 1: " + num(S.a1.seg) + " seguidores, credibilidade " + Math.max(0, Math.min(100, S.a1.cred)) + ", técnica campeã " + cap.nome,
+      "Caso 1, o instituto: " + plural(abasNoCaso1(), "nova aba", "novas abas", "nenhuma nova aba") + " antes de decidir",
+      "Verdadeiros recebidos: " + c.vRecebidos + ", recusados: " + c.vRecusados,
+      "Fabricados recebidos: " + c.fRecebidos + ", aceitos como verdadeiros: " + c.fAceitos,
+      "Movimentos: " + c.lat + " em nova aba, " + c.ver + " dentro dos sites",
+      "Pontos de checagem: " + c.pontos + " de " + c.jogados * 4,
+      "Perfil: " + perfil.nome,
+      "Técnica mais vista no feed: " + (S.tecFeed === null || S.tecFeed === undefined ? "não marcada" : ATO1.capitulos[S.tecFeed].nome),
+      "Fundamento apontado: " + (S.fund === null || S.fund === undefined ? "nenhum" : (S.fund + 1) + ". " + FUNDAMENTOS[S.fund].nome),
+      "Por quê: " + ((S.fundPor || "").trim() || "sem justificativa"),
+      "Resumo curto: V" + c.vRecebidos + "-" + c.vRecusados + " F" + c.fRecebidos + "-" + c.fAceitos + " A" + abasNoCaso1() + " P" + c.pontos
+    ];
+    return linhas.join("\n");
+  }
+  function detalheTexto() {
+    var linhas = [resumoTexto()];
+    if (S.concluido) linhas.push("Concluída em: " + S.concluido);
+    linhas.push("");
+    linhas.push("Detalhe por caso:");
+    S.a2.ordem.forEach(function (id, idx) {
+      var caso = casoPorId(id), r = S.a2.veredictos[id], feitos = S.a2.movs[id] || [];
+      linhas.push("");
+      linhas.push("Caso " + (idx + 1) + ", " + caso.titulo + (caso.verdadeiro ? " (verdadeiro)" : " (fabricado)"));
+      linhas.push("  Movimentos: " + (feitos.length ? feitos.map(function (mid) {
+        var m = movDe(caso, mid);
+        return (m.tipo === "L" ? "nova aba" : rotuloVertical(caso)) + ", " + m.t.toLowerCase();
+      }).join("; ") : "nenhum"));
+      if (r) {
+        linhas.push("  Evidência apontada: " + (r.cartas.length ? r.cartas.map(function (mid) {
+          return movDe(caso, mid).t.toLowerCase();
+        }).join("; ") : "nenhuma"));
+        linhas.push("  Veredicto: " + nomeVeredicto(r.v).toLowerCase() + ", confiança " + r.conf.toLowerCase() + ", " + (r.det.aceito ? "se sustenta" : "não se sustenta"));
+      } else {
+        linhas.push("  Sem veredicto");
+      }
+    });
+    return linhas.join("\n");
+  }
+  var PODE_COMPARTILHAR = (function () {
+    try {
+      return !!(navigator.canShare && navigator.canShare({ files: [new File(["x"], "a.txt", { type: "text/plain" })] }));
+    } catch (e) { return false; }
+  })();
+
+  function blocosRelatorio() {
+    var c = contas(), cap = tecnicaCampea(), perfil = perfilAtual(c);
+    var b = [];
+    b.push({ n: "h1", t: "Os dois lados do boato" });
+    b.push({ n: "p", t: "Oficina de desinformação, Fundamentos de Jornalismo, PUC-Campinas, 2026/2." });
+    b.push({ n: "p", t: "Dupla: " + (S.dupla || "sem nome") + (S.concluido ? ". Concluída em " + S.concluido + "." : ".") });
+    b.push({ n: "h2", t: "Ato 1, a fábrica" });
+    b.push({ n: "p", t: num(S.a1.seg) + " seguidores e credibilidade " + Math.max(0, Math.min(100, S.a1.cred)) + " de 100." });
+    b.push({ n: "p", t: "Técnica que mais rendeu seguidores: " + cap.nome + "." });
+    b.push({ n: "h2", t: "Ato 2, nova aba" });
+    b.push({ n: "p", t: "Casos verdadeiros recebidos: " + c.vRecebidos + ". Recusados: " + c.vRecusados + "." });
+    b.push({ n: "p", t: "Casos fabricados recebidos: " + c.fRecebidos + ". Aceitos como verdadeiros: " + c.fAceitos + "." });
+    b.push({ n: "p", t: "Movimentos: " + c.lat + " em nova aba e " + c.ver + " dentro dos sites. No caso 1, o instituto: " + abasNoCaso1() + "." });
+    b.push({ n: "p", t: "Pontos de checagem: " + c.pontos + " de " + c.jogados * 4 + ". Perfil: " + perfil.nome + "." });
+    b.push({ n: "p", t: "Resumo curto: V" + c.vRecebidos + "-" + c.vRecusados + " F" + c.fRecebidos + "-" + c.fAceitos + " A" + abasNoCaso1() + " P" + c.pontos + "." });
+    b.push({ n: "h2", t: "Para a plenária" });
+    b.push({ n: "p", t: "Técnica mais vista no feed: " + (S.tecFeed === null || S.tecFeed === undefined ? "não marcada" : ATO1.capitulos[S.tecFeed].nome) + "." });
+    b.push({ n: "p", t: "Fundamento apontado: " + (S.fund === null || S.fund === undefined ? "nenhum" : (S.fund + 1) + ". " + FUNDAMENTOS[S.fund].nome) + "." });
+    b.push({ n: "p", t: "Por quê: " + ((S.fundPor || "").trim() || "sem justificativa") });
+    b.push({ n: "h2", t: "Detalhe por caso" });
+    S.a2.ordem.forEach(function (id, idx) {
+      var caso = casoPorId(id), r = S.a2.veredictos[id], feitos = S.a2.movs[id] || [];
+      b.push({ n: "h3", t: "Caso " + (idx + 1) + ", " + caso.titulo + (caso.verdadeiro ? " (verdadeiro)" : " (fabricado)") });
+      b.push({ n: "p", t: "Movimentos: " + (feitos.length ? feitos.map(function (mid) {
+        var m = movDe(caso, mid);
+        return (m.tipo === "L" ? "nova aba" : rotuloVertical(caso)) + ", " + m.t.toLowerCase();
+      }).join("; ") : "nenhum") });
+      if (r) {
+        b.push({ n: "p", t: "Evidência apontada: " + (r.cartas.length ? r.cartas.map(function (mid) { return movDe(caso, mid).t.toLowerCase(); }).join("; ") : "nenhuma") });
+        b.push({ n: "p", t: "Veredicto: " + nomeVeredicto(r.v).toLowerCase() + ", confiança " + r.conf.toLowerCase() + ", " + (r.det.aceito ? "se sustenta" : "não se sustenta") + "." });
+      } else b.push({ n: "p", t: "Sem veredicto." });
+    });
+    return b;
+  }
+  function mdTexto() {
+    return blocosRelatorio().map(function (b) {
+      if (b.n === "h1") return "# " + b.t + "\n";
+      if (b.n === "h2") return "\n## " + b.t + "\n";
+      if (b.n === "h3") return "\n### " + b.t + "\n";
+      return b.t + "  ";
+    }).join("\n") + "\n";
+  }
+  function pdfTexto(t) {
+    var mapa = { "\u2018": "\x91", "\u2019": "\x92", "\u201C": "\x93", "\u201D": "\x94", "\u2026": "\x85", "\u2013": "\x96", "\u2014": "\x97", "\u2022": "\x95" };
+    var out = "";
+    for (var i = 0; i < t.length; i++) {
+      var ch = t.charAt(i);
+      if (mapa[ch]) ch = mapa[ch];
+      if (ch.charCodeAt(0) > 255) ch = "?";
+      if (ch === "(" || ch === ")" || ch === "\\") ch = "\\" + ch;
+      out += ch;
+    }
+    return out;
+  }
+  function quebraLinha(t, max) {
+    var palavras = t.split(" "), linhas = [], atual = "";
+    palavras.forEach(function (w) {
+      if (!atual.length) atual = w;
+      else if ((atual + " " + w).length <= max) atual += " " + w;
+      else { linhas.push(atual); atual = w; }
+    });
+    if (atual.length) linhas.push(atual);
+    return linhas.length ? linhas : [""];
+  }
+  function gerarPDF() {
+    var blocos = blocosRelatorio();
+    var linhas = [];
+    blocos.forEach(function (b) {
+      var tam = b.n === "h1" ? 15 : (b.n === "h2" ? 12 : (b.n === "h3" ? 10.5 : 10));
+      var fonte = b.n === "p" ? "F1" : "F2";
+      var max = b.n === "h1" ? 60 : (b.n === "p" ? 92 : 78);
+      if (b.n === "h2" || b.n === "h3") linhas.push({ vazio: true });
+      quebraLinha(b.t, max).forEach(function (l, i) {
+        linhas.push({ txt: l, fonte: fonte, tam: tam });
+      });
+    });
+    var paginas = [], atual = [];
+    linhas.forEach(function (l) {
+      if (atual.length >= 48) { paginas.push(atual); atual = []; }
+      atual.push(l);
+    });
+    paginas.push(atual);
+
+    var conteudos = paginas.map(function (pag) {
+      var st = "BT 50 792 Td 15 TL\n";
+      var fonteAtual = "";
+      pag.forEach(function (l) {
+        if (l.vazio) { st += "T*\n"; return; }
+        var chave = l.fonte + " " + l.tam;
+        if (chave !== fonteAtual) { st += "/" + l.fonte + " " + l.tam + " Tf\n"; fonteAtual = chave; }
+        st += "(" + pdfTexto(l.txt) + ") Tj T*\n";
+      });
+      return st + "ET";
+    });
+
+    var objs = [];
+    var nPag = paginas.length;
+    var kids = [];
+    for (var i = 0; i < nPag; i++) kids.push((5 + i * 2) + " 0 R");
+    objs[1] = "<< /Type /Catalog /Pages 2 0 R >>";
+    objs[2] = "<< /Type /Pages /Kids [" + kids.join(" ") + "] /Count " + nPag + " >>";
+    objs[3] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>";
+    objs[4] = "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>";
+    for (var j = 0; j < nPag; j++) {
+      objs[5 + j * 2] = "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents " + (6 + j * 2) + " 0 R >>";
+      objs[6 + j * 2] = "<< /Length " + conteudos[j].length + " >>\nstream\n" + conteudos[j] + "\nendstream";
+    }
+    var arq = "%PDF-1.4\n";
+    var offsets = [];
+    for (var k = 1; k < objs.length; k++) {
+      offsets[k] = arq.length;
+      arq += k + " 0 obj\n" + objs[k] + "\nendobj\n";
+    }
+    var inicioXref = arq.length;
+    arq += "xref\n0 " + objs.length + "\n0000000000 65535 f \n";
+    for (var m2 = 1; m2 < objs.length; m2++) {
+      var o = String(offsets[m2]);
+      while (o.length < 10) o = "0" + o;
+      arq += o + " 00000 n \n";
+    }
+    arq += "trailer\n<< /Size " + objs.length + " /Root 1 0 R >>\nstartxref\n" + inicioXref + "\n%%EOF";
+    var bytes = new Uint8Array(arq.length);
+    for (var n2 = 0; n2 < arq.length; n2++) bytes[n2] = arq.charCodeAt(n2) & 255;
+    return new Blob([bytes], { type: "application/pdf" });
+  }
+  function nomeArquivo(ext) {
+    var base = (S.dupla || "dupla");
+    try { base = base.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); } catch (e) {}
+    base = base.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40);
+    return "atividade-" + (base || "dupla") + "." + ext;
+  }
+  function avisa(msg) {
+    var el = document.getElementById("copiado");
+    if (el) el.textContent = msg;
+  }
+  function baixaPorLink(nome, blob) {
+    try {
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = nome; a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () {
+        try { document.body.removeChild(a); URL.revokeObjectURL(url); } catch (e) {}
+      }, 5000);
+      avisa("Arquivo gerado: " + nome + ". Procure na pasta de downloads do celular.");
+    } catch (e) {
+      avisa("O navegador não deixou salvar o arquivo. Use “Copiar a atividade”.");
+    }
+  }
+  function salvaArquivo(nome, blob) {
+    avisa("Gerando " + nome + "…");
+    var usouClaude = false;
+    try {
+      if (window.claude && window.claude.use) {
+        usouClaude = true;
+        window.claude.use("downloads").then(function (d) {
+          if (!d) return baixaPorLink(nome, blob);
+          d.save({ filename: nome, data: blob }).then(function () {
+            avisa("Arquivo salvo: " + nome + ".");
+          }, function (err) {
+            if (err && err.code === "declined") avisa("Salvamento cancelado.");
+            else baixaPorLink(nome, blob);
+          });
+        }, function () { baixaPorLink(nome, blob); });
+      }
+    } catch (e) { usouClaude = false; }
+    if (!usouClaude) baixaPorLink(nome, blob);
+  }
+  function compartilhaArquivo(nome, blob, tipo) {
+    try {
+      var f = new File([blob], nome, { type: tipo });
+      if (navigator.canShare && navigator.canShare({ files: [f] })) {
+        navigator.share({ files: [f], title: "Atividade da dupla " + (S.dupla || "") }).then(function () {
+          avisa("Arquivo compartilhado.");
+        }, function () {});
+        return true;
+      }
+    } catch (e) {}
+    return false;
+  }
+
+  function linkForm(txt) {
+    if (!ENTREGA.form) return null;
+    var sep = ENTREGA.form.indexOf("?") >= 0 ? "&" : "?";
+    return ENTREGA.form + sep + "usp=pp_url" + (ENTREGA.campo ? "&" + ENTREGA.campo + "=" + encodeURIComponent(txt) : "");
+  }
+  function linkZap(txt) {
+    return ENTREGA.zap ? "https://wa.me/" + ENTREGA.zap + "?text=" + encodeURIComponent(txt) : null;
+  }
+  function linkEmail(txt) {
+    return ENTREGA.email ? "mailto:" + ENTREGA.email + "?subject=" + encodeURIComponent("Atividade da dupla " + (S.dupla || "sem nome")) + "&body=" + encodeURIComponent(txt) : null;
+  }
+  function canalPrincipal(txt) {
+    return linkForm(txt) || linkZap(txt) || linkEmail(txt);
+  }
+  function nomeCanal() {
+    return ENTREGA.form ? "o formulário" : (ENTREGA.zap ? "o WhatsApp" : (ENTREGA.email ? "o e-mail" : null));
+  }
+  function agora() {
+    var d = new Date();
+    function dd(n) { return (n < 10 ? "0" : "") + n; }
+    return dd(d.getDate()) + "/" + dd(d.getMonth() + 1) + " às " + dd(d.getHours()) + "h" + dd(d.getMinutes());
+  }
+  function blocoEnvios(txt) {
+    var h = "";
+    var f = linkForm(txt), z = linkZap(txt), m = linkEmail(txt);
+    if (f) h += '<a class="btn ghost" id="env-form" href="' + esc(f) + '" target="_blank" rel="noopener">Enviar pelo formulário</a>';
+    if (z) h += '<a class="btn ghost" id="env-zap" href="' + esc(z) + '" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>';
+    h += '<button class="btn" data-acao="pdf">Baixar a atividade em PDF</button>';
+    if (PODE_COMPARTILHAR) h += '<button class="btn ghost" data-acao="share">Compartilhar o arquivo</button>';
+    h += '<button class="btn ghost" data-acao="md">Baixar em texto, formato .md</button>';
+    h += '<button class="btn ghost" data-acao="copiar">Copiar a atividade</button>';
+    if (m) h += '<a class="linkbtn" id="env-mail" href="' + esc(m) + '">Enviar por e-mail</a>';
+    h += '<p class="falta" id="copiado"></p>';
+    h += '<textarea class="resumo-cru" id="resumo-cru" readonly>' + esc(txt) + "</textarea>";
+    return h;
+  }
+  function blocoEntrega() {
+    var txt = detalheTexto();
+    var canal = canalPrincipal(txt);
+    var h = '<section class="entrega"><h3>Concluir a atividade</h3>';
+    h += '<p class="small muted">O botão envia a cópia da atividade para o professor' + (nomeCanal() ? " por " + nomeCanal() : "") + " e fecha o cartão da dupla.</p>";
+    h += '<p class="falta" id="falta-frase">' + (S.fund === null || S.fund === undefined || !(S.fundPor || "").trim() ? "Ainda falta a frase do fundamento. Dá para concluir assim mesmo, mas é ela que a plenária vai ouvir." : "") + "</p>";
+    if (canal) h += '<a class="btn cherry" id="btn-concluir" data-acao="concluir" href="' + esc(canal) + '" target="_blank" rel="noopener">Concluir e enviar ao professor</a>';
+    else h += '<button class="btn cherry" data-acao="concluir">Concluir e gerar o PDF</button>';
+    h += '<details class="cru"><summary>Outras saídas, se o envio não abrir</summary>' + blocoEnvios(txt) + "</details>";
+    return h + "</section>";
+  }
+
+  function telaFinal() {
+    var c = contas();
+    var cap = tecnicaCampea();
+    var perfil = perfilAtual(c);
+    var latA = abasNoCaso1();
+
+    var h = '<div class="wrap"><h2 tabindex="-1">Cartão da dupla</h2>';
+    h += '<div class="cartao"><div class="dupla">' + esc(S.dupla || "Dupla sem nome") + "</div>";
+
+    h += '<section><h3>Para a lousa</h3><div class="lousa">';
+    h += "<p>Caso 1, o instituto: " + (latA === 0 ? "não abrimos <strong>nenhuma</strong> nova aba" : "abrimos <strong>" + plural(latA, "nova aba", "novas abas") + "</strong>") + " antes de decidir.</p>";
+    h += "<p>Recebemos <strong>" + plural(c.vRecebidos, "caso verdadeiro", "casos verdadeiros") + "</strong> e recusamos <strong>" + c.vRecusados + "</strong>.</p>";
+    h += "<p>Recebemos <strong>" + plural(c.fRecebidos, "caso fabricado", "casos fabricados") + "</strong> e aceitamos <strong>" + c.fAceitos + "</strong> como verdadeiros.</p>";
+    h += "<p>Técnica que mais rendeu seguidores no Ato 1: <strong>" + esc(cap.nome) + "</strong>.</p></div></section>";
+
+    h += "<section><h3>Ato 1: a fábrica</h3><p>" + num(S.a1.seg) + " seguidores e credibilidade " + Math.max(0, Math.min(100, S.a1.cred)) + " de 100, com as seis insígnias.</p></section>";
+
+    h += '<section><h3>Ato 2: nova aba</h3><table class="tabela"><tr><th>Caso</th><th>Veredicto</th><th>Confiança</th></tr>';
+    S.a2.ordem.forEach(function (id) {
+      var caso = casoPorId(id), r = S.a2.veredictos[id];
+      h += "<tr><td>" + esc(caso.titulo) + (caso.verdadeiro ? ' <span class="muted small">(verdadeiro)</span>' : "") + "</td>";
+      h += "<td>" + (r ? '<span class="' + (r.det.aceito ? "ok" : "nok") + '">' + (r.det.aceito ? "✓ " : "✗ ") + nomeVeredicto(r.v) + "</span>" : "sem veredicto") + "</td>";
+      h += "<td>" + (r ? r.conf.toLowerCase() : "") + "</td></tr>";
+    });
+    h += "</table><p>Movimentos: " + c.lat + " em nova aba e " + c.ver + " dentro dos sites. Pontos de checagem: " + c.pontos + " de " + c.jogados * 4 + ".</p>";
+    h += '<p class="perfil-nome">' + perfil.nome + "</p><p>" + perfil.t + "</p></section>";
+
+    h += '<section class="perguntas"><h3>Para a plenária</h3>';
+
+    h += "<p>Qual das seis técnicas do Ato 1 vocês mais veem no feed real?</p>";
+    h += '<div class="chips">';
+    ATO1.capitulos.forEach(function (cap2, i) {
+      h += '<button class="chip-b" data-acao="tec" data-i="' + i + '" aria-pressed="' + (S.tecFeed === i ? "true" : "false") + '">' + cap2.icone + " " + esc(cap2.nome) + "</button>";
+    });
+    h += "</div>";
+    if (S.tecFeed !== null && S.tecFeed !== undefined) {
+      var capSel = ATO1.capitulos[S.tecFeed];
+      h += '<div class="eco"><strong>' + esc(capSel.nome) + ".</strong> " + capSel.definicao + " Anotado. Na plenária, vocês entram com um exemplo do feed de vocês.</div>";
+    }
+
+    h += "<p>Por que o design bonito engana tanto? O que isso diz sobre como julgamos credibilidade?</p>";
+    h += '<p class="small muted">Esta é para falar, não para marcar.</p>';
+
+    h += "<p>Que fundamento está em jogo aqui?</p><ul class=\"fund\">";
+    FUNDAMENTOS.forEach(function (f, i) {
+      h += '<li><button data-acao="fund" data-i="' + i + '" aria-pressed="' + (S.fund === i ? "true" : "false") + '"><span class="n">' + (i + 1) + "</span> " + esc(f.nome) + "</button></li>";
+    });
+    h += "</ul>";
+    if (S.fund !== null && S.fund !== undefined) {
+      h += '<div class="eco"><strong>Princípio, na formulação da disciplina.</strong> ' + FUNDAMENTOS[S.fund].principio + "</div>";
+      h += '<label class="rotulo" for="fund-por">Por que este fundamento está em jogo? Uma linha, apontando um dos casos.</label>';
+      h += '<textarea id="fund-por" class="resposta" maxlength="400" placeholder="Ex.: no caso do instituto, quem pagou o estudo...">' + esc(S.fundPor || "") + "</textarea>";
+      h += '<p class="small muted">Veredicto sem evidência não vale, e aqui a régua é a mesma. Esta frase vai junto no resultado que vocês enviam.</p>';
+    }
+    h += "</section>";
+
+    h += '<section class="refs"><h3>Referências</h3>';
+    REFERENCIAS.forEach(function (r) { h += "<p>" + r + "</p>"; });
+    h += "<p>Jogo feito para a oficina de desinformação de Fundamentos de Jornalismo (PUC-Campinas, 2026/2), do Prof. Artur Araujo. Nomes, lugares, empresas, sites e agências são fictícios; as técnicas são reais.</p></section></div>";
+    h += blocoEntrega();
+    if (S.a2.extras.length) h += '<button class="btn" data-acao="maisUm">Puxar mais um caso</button>';
+    h += '<button class="btn ghost" data-acao="recomecar">Jogar de novo</button></div>';
+    return h;
+  }
+
+  function telaFim() {
+    var c = contas();
+    var txt = detalheTexto();
+    var h = '<div class="wrap">';
+    h += '<div class="resultado sim"><h2 tabindex="-1">Atividade concluída</h2>';
+    h += "<p>" + esc(S.dupla || "Dupla sem nome") + ", em " + esc(S.concluido || agora()) + ".</p></div>";
+    h += '<div class="lousa" style="margin-bottom:1rem"><p>Para a lousa</p><p class="codigo">V' + c.vRecebidos + "-" + c.vRecusados + " F" + c.fRecebidos + "-" + c.fAceitos + " A" + abasNoCaso1() + " P" + c.pontos + "</p>";
+    h += "<p class=\"small\">Verdadeiros recebidos e recusados, fabricados recebidos e aceitos, abas novas no caso 1, pontos.</p></div>";
+    h += "<p>Guardem a cópia da atividade. O PDF serve para anexar no Canvas, mandar no grupo ou ficar no celular. Se a janela de envio não abriu, dá para mandar de novo por aqui.</p>";
+    h += '<section class="entrega">' + blocoEnvios(txt) + "</section>";
+    h += '<button class="btn ghost" data-acao="verCartao">Ver o cartão da dupla</button>';
+    h += '<button class="btn ghost" data-acao="recomecar">Jogar de novo</button>';
+    return h + "</div>";
+  }
+
+  /* ---------------- render ---------------- */
+
+  function render(scroll) {
+    document.body.className = S.tela === "a1" || S.tela === "a1fim" ? "fabrica" : "";
+    var h = "";
+    if (S.tela === "capa") h = telaCapa();
+    else if (S.tela === "a1") h = telaA1();
+    else if (S.tela === "a1fim") h = telaA1Fim();
+    else if (S.tela === "a2intro") h = telaA2Intro();
+    else if (S.tela === "virada") h = telaVirada();
+    else if (S.tela === "final") h = telaFinal();
+    else if (S.tela === "fim") h = telaFim();
+    else h = S.a2.fase === "retorno" ? telaRetorno() : telaCaso();
+    app.innerHTML = h;
+    rodape.innerHTML = S.tela === "capa" ? "" : '<button class="linkbtn" data-acao="recomecar">Recomeçar o jogo</button>';
+
+    if (pendente) {
+      var el = document.getElementById("seg");
+      if (el) {
+        animaNumero(el, pendente.de, pendente.para);
+        if (pendente.delta) {
+          var d = document.createElement("span");
+          d.className = "delta " + (pendente.delta > 0 ? "pos" : "neg");
+          d.textContent = (pendente.delta > 0 ? "+" : "") + num(pendente.delta);
+          el.appendChild(d);
+        }
+      }
+      pendente = null;
+    }
+    if (scroll === "topo") window.scrollTo(0, 0);
+    if (scroll === "ancora") {
+      var a = app.querySelector(".ancora") || app.querySelector(".opcoes");
+      if (a) a.scrollIntoView({ behavior: semMovimento ? "auto" : "smooth", block: "start" });
+    }
+    if (scroll === "veredicto") {
+      var p = document.getElementById("painel-veredicto");
+      if (p) p.scrollIntoView({ behavior: semMovimento ? "auto" : "smooth", block: "start" });
+    }
+    if (scroll === "topo") {
+      var foco = app.querySelector("h1[tabindex], h2[tabindex]");
+      if (foco) foco.focus({ preventScroll: true });
+    }
+    atualizaConfirmar();
+  }
+
+  function animaNumero(el, de, para) {
+    if (semMovimento || de === para) { el.firstChild && (el.firstChild.nodeValue = num(para)); return; }
+    var t0 = null, dur = 700;
+    function passo(t) {
+      if (!t0) t0 = t;
+      var k = Math.min(1, (t - t0) / dur);
+      var val = Math.round(de + (para - de) * (1 - Math.pow(1 - k, 3)));
+      if (el.firstChild) el.firstChild.nodeValue = num(val);
+      if (k < 1) requestAnimationFrame(passo);
+    }
+    requestAnimationFrame(passo);
+  }
+
+  /* ---------------- ações ---------------- */
+
+  function atualizaConfirmar() {
+    var b = document.getElementById("confirmar");
+    if (!b) return;
+    var falta = document.getElementById("falta");
+    var ok = rascunho.v && rascunho.conf && rascunho.cartas.length > 0;
+    b.disabled = !ok;
+    if (falta) {
+      if (ok) falta.textContent = "";
+      else if (!rascunho.v) falta.textContent = "Escolham um veredicto na escala.";
+      else if (!rascunho.conf) falta.textContent = "Digam com que confiança.";
+      else falta.textContent = "Apontem pelo menos uma carta de evidência: veredicto sem evidência não vale.";
+    }
+  }
+
+  function copiaAntiga(area, ok, falhou) {
+    try {
+      var d = document.querySelector("details.cru");
+      if (d) d.open = true;
+      if (!area) area = document.getElementById("resumo-cru");
+      if (!area) return falhou();
+      area.removeAttribute("readonly");
+      area.focus();
+      area.setSelectionRange(0, area.value.length);
+      var deu = document.execCommand("copy");
+      area.setAttribute("readonly", "readonly");
+      deu ? ok() : falhou();
+    } catch (e) { falhou(); }
+  }
+
+  function atualizaEntrega() {
+    var area = document.getElementById("resumo-cru");
+    var txt = detalheTexto();
+    if (area) area.value = txt;
+    var c = document.getElementById("btn-concluir");
+    if (c) c.href = canalPrincipal(txt) || "#";
+    var z = document.getElementById("env-zap");
+    if (z) z.href = linkZap(txt);
+    var m = document.getElementById("env-mail");
+    if (m) m.href = linkEmail(txt);
+    var f = document.getElementById("env-form");
+    if (f) f.href = linkForm(txt);
+    var aviso = document.getElementById("falta-frase");
+    if (aviso) aviso.textContent = (S.fund === null || S.fund === undefined || !(S.fundPor || "").trim())
+      ? "Ainda falta a frase do fundamento. Dá para concluir assim mesmo, mas é ela que a plenária vai ouvir." : "";
+  }
+
+  document.addEventListener("input", function (ev) {
+    if (ev.target && ev.target.id === "fund-por") {
+      S.fundPor = ev.target.value;
+      salvar();
+      atualizaEntrega();
+    }
+  });
+
+  document.addEventListener("change", function (ev) {
+    var t = ev.target;
+    if (!t.name) return;
+    if (t.name === "ver") rascunho.v = t.value;
+    else if (t.name === "conf") rascunho.conf = t.value;
+    else if (t.name === "carta") {
+      var i = rascunho.cartas.indexOf(t.value);
+      if (t.checked && i < 0) rascunho.cartas.push(t.value);
+      if (!t.checked && i >= 0) rascunho.cartas.splice(i, 1);
+    } else return;
+    atualizaConfirmar();
+  });
+
+  document.addEventListener("click", function (ev) {
+    if (!ev.target || !ev.target.closest) return;
+    var b = ev.target.closest("[data-acao]");
+    if (!b) return;
+    var a = b.getAttribute("data-acao");
+
+    if (a === "comecar") {
+      var inp = document.getElementById("dupla");
+      var nome = (inp.value || "").trim();
+      if (nome.length < 2) {
+        document.getElementById("falta-dupla").textContent = "Escrevam os nomes da dupla para o cartão final.";
+        inp.focus();
+        return;
+      }
+      S.dupla = nome; S.tela = "a1"; salvar(); render("topo"); return;
+    }
+    if (a === "continuar") { S = salvo; salvo = null; render("topo"); return; }
+    if (a === "zerar") { apagar(); salvo = null; S = novo(); render("topo"); return; }
+    if (a === "escolher") {
+      var k = Number(b.getAttribute("data-i"));
+      var passo = PASSOS1[S.a1.i];
+      var op = passo.p.opcoes[k];
+      var de = S.a1.seg;
+      S.a1.seg = Math.max(0, S.a1.seg + op.seg);
+      S.a1.cred = Math.max(0, Math.min(100, S.a1.cred + op.cred));
+      S.a1.escolhas.push(k);
+      S.a1.i++;
+      pendente = { de: de, para: S.a1.seg, delta: op.seg };
+      salvar(); render("ancora"); return;
+    }
+    if (a === "fimAto1") { S.tela = "a1fim"; salvar(); render("topo"); return; }
+    if (a === "a2intro") { S.tela = "a2intro"; salvar(); render("topo"); return; }
+    if (a === "primeiroCaso") {
+      sorteiaCasos();
+      S.tela = "caso"; S.a2.c = 0; S.a2.fase = "explorar";
+      rascunho = { v: null, conf: null, cartas: [] };
+      salvar(); render("topo"); return;
+    }
+    if (a === "mover") {
+      var caso = casoAtual();
+      var id = b.getAttribute("data-id");
+      var feitos = S.a2.movs[caso.id] || (S.a2.movs[caso.id] = []);
+      if (feitos.indexOf(id) >= 0 || feitos.length >= caso.orcamento) return;
+      feitos.push(id);
+      abaRecente = id;
+      salvar(); render(); abaRecente = null; return;
+    }
+    if (a === "abrirVeredicto") { S.a2.fase = "veredicto"; salvar(); render("veredicto"); return; }
+    if (a === "voltarApurar") { S.a2.fase = "explorar"; salvar(); render(); return; }
+    if (a === "confirmar") {
+      var c2 = casoAtual();
+      var feitos2 = S.a2.movs[c2.id] || [];
+      var aceito = c2.aceitos.indexOf(rascunho.v) >= 0;
+      var decisivas = c2.movimentos.filter(function (m) { return m.decisiva; }).map(function (m) { return m.id; });
+      var citou = rascunho.cartas.some(function (x) { return decisivas.indexOf(x) >= 0; });
+      var lateral = feitos2.some(function (x) { return movDe(c2, x).tipo === "L"; });
+      var penal = !aceito && rascunho.conf === "Alta";
+      var pts = (aceito ? 2 : 0) + (citou ? 1 : 0) + (lateral ? 1 : 0) - (penal ? 1 : 0);
+      S.a2.veredictos[c2.id] = {
+        v: rascunho.v, conf: rascunho.conf, cartas: rascunho.cartas.slice(),
+        pontos: Math.max(0, pts), det: { aceito: aceito, citou: citou, lateral: lateral, penal: penal }
+      };
+      S.a2.fase = "retorno"; salvar(); render("topo"); return;
+    }
+    if (a === "virada") { S.tela = "virada"; salvar(); render("topo"); return; }
+    if (a === "proximoCaso") {
+      S.a2.c = Math.min(S.a2.ordem.length - 1, S.a2.c + 1);
+      S.a2.fase = "explorar";
+      S.tela = "caso";
+      rascunho = { v: null, conf: null, cartas: [] };
+      salvar(); render("topo"); return;
+    }
+    if (a === "maisUm") {
+      if (!S.a2.extras.length) return;
+      S.a2.ordem.push(S.a2.extras.shift());
+      S.a2.c = S.a2.ordem.length - 1;
+      S.a2.fase = "explorar"; S.tela = "caso";
+      rascunho = { v: null, conf: null, cartas: [] };
+      salvar(); render("topo"); return;
+    }
+    if (a === "final") { S.tela = "final"; salvar(); render("topo"); return; }
+    if (a === "tec") {
+      var it = Number(b.getAttribute("data-i"));
+      S.tecFeed = S.tecFeed === it ? null : it;
+      salvar(); render(); return;
+    }
+    if (a === "fund") {
+      var i2 = Number(b.getAttribute("data-i"));
+      S.fund = S.fund === i2 ? null : i2;
+      salvar(); render(); return;
+    }
+    if (a === "concluir") {
+      if (!canalPrincipal("x")) salvaArquivo(nomeArquivo("pdf"), gerarPDF());
+      setTimeout(function () {
+        S.concluido = agora();
+        S.tela = "fim";
+        salvar();
+        render("topo");
+      }, 80);
+      return;
+    }
+    if (a === "pdf") { salvaArquivo(nomeArquivo("pdf"), gerarPDF()); return; }
+    if (a === "md") { salvaArquivo(nomeArquivo("md"), new Blob([mdTexto()], { type: "text/markdown" })); return; }
+    if (a === "share") {
+      if (!compartilhaArquivo(nomeArquivo("pdf"), gerarPDF(), "application/pdf")) {
+        avisa("Este navegador não abre o menu de compartilhar. Baixe o PDF e anexe onde precisar.");
+      }
+      return;
+    }
+    if (a === "verCartao") { S.tela = "final"; salvar(); render("topo"); return; }
+    if (a === "copiar") {
+      var area = document.getElementById("resumo-cru");
+      var aviso = document.getElementById("copiado");
+      var txt = area ? area.value : resumoTexto();
+      function ok() { if (aviso) aviso.textContent = "Copiado. Agora é só colar onde o professor pediu."; }
+      function falhou() {
+        if (aviso) aviso.textContent = "O navegador não deixou copiar. Abra “Ver o texto do resultado” e copie à mão.";
+        var d = document.querySelector("details.cru");
+        if (d) d.open = true;
+      }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(txt).then(ok, function () { copiaAntiga(area, ok, falhou); });
+        } else copiaAntiga(area, ok, falhou);
+      } catch (e) { copiaAntiga(area, ok, falhou); }
+      return;
+    }
+    if (a === "recomecar") {
+      if (window.confirm("Apagar o progresso e recomeçar o jogo?")) {
+        apagar(); salvo = null; S = novo(); render("topo");
+      }
+      return;
+    }
+  });
+
+  render("topo");
+})();
+
+</script>
+</body>
+</html>
