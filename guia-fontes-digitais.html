@@ -439,10 +439,10 @@
             <div class="tagline">Pesquisa · Dados · Verificação</div>
             <h1>Guia de Fontes Digitais para Jornalismo</h1>
             <p class="subtitle">Um mapa de onde encontrar dados confiáveis, verificar o que circula e transformar números em reportagem.</p>
-            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 18 de setembro de 2026 · revisão 18
+            <div class="meta" style="margin-bottom: 0.6rem;"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Atualizado em 26 de setembro de 2026 · revisão 19
                 <span class="hit-counter-inline"><img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-fontes-digitais.svg?style=flat-square&amp;label=leituras&amp;color=191a20&amp;labelColor=bf3a2b" alt="Número de leituras desta página" width="70" height="20"></span>
             </div>
-            <div class="revisao-nota"><strong>Nesta revisão:</strong> voltam ao guia sete fontes aprovadas em 19 de agosto a partir do radar de casos de IA. Elas foram montadas naquele dia sobre uma versão antiga do arquivo e ficaram de fora quando a revisão 9 foi publicada, então nunca chegaram ao ar; entram agora conferidas de novo, endereço por endereço. Na Seção 6, uma subseção nova, Ferramentas Abertas Feitas por Redações Brasileiras, abre com o <strong>Codesinfo</strong>, o fundo do Projor que publica em código aberto tudo o que financia; o Mamute Político, já listado em Repositórios Nacionais, é uma dessas ferramentas. Na Seção 7 entram dois acervos para achar precedente quando aparece um caso novo de erro com IA: o <strong>rastreador da Press Gazette</strong>, que reúne os episódios publicados por veículos, e o <strong>monitor de incidentes da OCDE</strong>, com a ressalva escrita no cartão de que a coleta e os resumos dele são automáticos. Na Seção 12, quatro referências para acompanhar o próprio jornalismo: <strong>Observatório da Imprensa</strong>, <strong>LatAm Journalism Review</strong>, <strong>Nieman Lab</strong> e <strong>Reuters Institute</strong>.</div>
+            <div class="revisao-nota"><strong>Nesta revisão:</strong> o Censo 2022 por setor censitário ganha endereço no guia. Na Seção 3 entra o cartão dos <strong>Agregados por Setores Censitários</strong>, apontado para a pasta-mãe do FTP do IBGE, e não para uma subpasta, porque parte dos conjuntos chegou fora do padrão: o rendimento do responsável pelo domicílio saiu em maio de 2026 numa pasta à parte, e o registro de nascimento por setor apareceu em fevereiro sem anúncio. Os <strong>microdados do Censo</strong> foram republicados em 14 de setembro com a variável de número de ordem da família, e quem baixou antes precisa baixar de novo. Quatro correções de texto: a Seção 17 deixa de dar a renda por setor como inexistente, a Seção 23 deixa de dizer que o recorte fino exige login, o percurso 16.4 deixa de mandar filtrar o SIDRA por setor, nível que ele não tem, e o painel do Censo de Campinas passa a ser creditado à Prefeitura, não ao IBGE. No cartão do IPCA, a ressalva que faltava: não existe índice de Campinas.</div>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -506,8 +506,8 @@
                     <div class="sources-grid">
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://campinas.sp.gov.br/sites/censo_2022/painel" class="source-url">campinas.sp.gov.br/sites/censo_2022/painel</a>
-                            <div class="source-name">IBGE — Painel Censo 2022 Campinas</div>
-                            <div class="source-desc">Painel interativo com dados populacionais do Censo 2022 para Campinas.</div>
+                            <div class="source-name">Painel do Censo 2022 de Campinas (Prefeitura)</div>
+                            <div class="source-desc">Dados do Censo 2022 organizados pela Prefeitura em painel Power BI, sem recorte por setor censitário e sem consulta automatizada: serve para número de abertura, não para recorte de bairro.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.ibge.gov.br/cidades-e-estados/sp/campinas.html" class="source-url">ibge.gov.br/cidades-e-estados/sp/campinas.html</a>
@@ -827,9 +827,14 @@
                             <div class="source-desc">Dados do Censo 2022 em células de 200 m (área urbana) e 1 km (rural), independentes de limites administrativos. Serve quando a área de interesse não coincide com nenhum setor censitário. Download por UF no geoftp.</div>
                         </div>
                         <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/" class="source-url">ftp.ibge.gov.br · Censo 2022</a>
+                            <div class="source-name">Agregados por Setores Censitários do Censo 2022 (IBGE)</div>
+                            <div class="source-desc">O recorte mais fino do Censo 2022 aberto sem login. Por setor censitário, traz 13 temas do universo (demografia, cor ou raça, alfabetização, domicílio, óbitos e outros), o rendimento do responsável pelo domicílio, o registro de nascimento das crianças de até 5 anos e as características do entorno, estas também em percentual e em GeoPackage, com a geometria dos setores no mesmo arquivo. Liste a pasta inteira, não só o que começa com "Agregados": parte desses conjuntos entrou sem anúncio e com nome fora do padrão. O rendimento é só do responsável, não renda domiciliar nem per capita, e a nota metodológica do IBGE diz que ele não serve para ranquear territórios por renda. "X" é sigilo, não zero. Método na Seção 17.</div>
+                        </div>
+                        <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://microdados.ibge.gov.br/" class="source-url">microdados.ibge.gov.br</a>
                             <div class="source-name">Microdados do Censo 2022 (IBGE)</div>
-                            <div class="source-desc">Microdados da amostra do Censo 2022, liberados em 31 de agosto de 2026 em TXT e CSV: registros de domicílio, família, pessoa e mortalidade para tabulação própria, com cruzamentos que os painéis prontos não entregam. O acesso é em três níveis, e isso decide o uso — o público sai apenas por unidade da federação; para chegar à área de ponderação, que é o recorte útil em pauta local, é preciso login gov.br e termo de confidencialidade; a base completa só na sala de acesso restrito, no Rio.</div>
+                            <div class="source-desc">Microdados da amostra do Censo 2022, liberados em 31 de agosto de 2026 em TXT e CSV: registros de domicílio, família, pessoa e mortalidade para tabulação própria, com cruzamentos que os painéis prontos não entregam. O acesso é em três níveis, e isso decide o uso: o público sai apenas por unidade da federação; para chegar à área de ponderação, que é o recorte útil em pauta local, é preciso login gov.br e termo de confidencialidade; a base completa só na sala de acesso restrito, no Rio. Republicados em 14 de setembro de 2026, com a variável P0115 (número de ordem da família) no arquivo de pessoas e os códigos de ensino superior corrigidos: quem baixou antes dessa data precisa baixar de novo.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.ibge.gov.br/estatisticas/sociais/saude/10586-pesquisa-de-informacoes-basicas-municipais.html" class="source-url">ibge.gov.br · MUNIC</a>
@@ -1051,7 +1056,7 @@
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.ibge.gov.br/explica/inflacao.php" class="source-url">ibge.gov.br/explica/inflacao.php</a>
                             <div class="source-name">IBGE — Inflação (IPCA e INPC)</div>
-                            <div class="source-desc">Página explicativa com histórico e metodologia do IPCA e do INPC.</div>
+                            <div class="source-desc">Página explicativa com histórico e metodologia do IPCA e do INPC. Não existe IPCA de Campinas: o IPCA e o INPC cobrem 16 áreas, e o IPCA-15 só 11; nos três, a referência mais próxima é a Região Metropolitana de São Paulo.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://sidra.ibge.gov.br/" class="source-url">sidra.ibge.gov.br</a>
@@ -2313,7 +2318,7 @@ print('PNG gerado.')</pre>
 
                     <div class="method-step">
                         <ul>
-                            <li>Identifique a tabela no SIDRA (Seção 4) e filtre por município ou setor censitário.</li>
+                            <li>Identifique a tabela no SIDRA (Seção 4) e filtre por município. O SIDRA não desce a setor censitário; para bairro ou setor, use os agregados por setor (Seção 3) com o método da Seção 17.</li>
                             <li>Exporte para planilha; para repetir o levantamento, use a API do SIDRA.</li>
                             <li>Anote o número da tabela e o período: é isso que vai na citação.</li>
                             <li>Para o cruzamento estadual, complemente com os painéis da Fundação Seade (Seção 13).</li>
@@ -2586,7 +2591,7 @@ print('PNG gerado.')</pre>
                     <div class="method-step">
                         <h4>3. Cruze o código territorial com os dados temáticos</h4>
                         <ul>
-                            <li>Baixe o arquivo bruto do tema desejado, organizado por unidade territorial (geralmente um CSV ou pacote de CSVs, um por tema: educação, renda, domicílio, etc.).</li>
+                            <li>Baixe o arquivo bruto do tema desejado, organizado por unidade territorial (geralmente um CSV ou pacote de CSVs, um por tema: educação, renda, domicílio, etc.). No Censo 2022, o caminho está no cartão dos Agregados por Setores Censitários, na Seção 3.</li>
                             <li>Localize a linha correspondente ao código territorial encontrado no passo 2, por exemplo via Python:</li>
                         </ul>
                         <span class="code-label">Python</span>
@@ -2618,7 +2623,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
 
                     <div class="subsection">
                         <ul>
-                            <li><strong>Nem todo indicador existe no nível fino desejado.</strong> Se, depois de checar todas as fontes disponíveis, um indicador (ex.: renda por setor censitário) simplesmente não é publicado em nenhum arquivo bruto disponível, não force uma aproximação sem deixar isso explícito — é melhor registrar a limitação do que substituir por um proxy sem dizer que é proxy.</li>
+                            <li><strong>Nem todo indicador existe no nível fino desejado.</strong> Se, depois de checar todas as fontes disponíveis, um indicador (ex.: renda domiciliar total ou per capita por setor censitário, já que o Censo 2022 publica por setor só o rendimento do responsável pelo domicílio) simplesmente não é publicado em nenhum arquivo bruto disponível, não force uma aproximação sem deixar isso explícito: é melhor registrar a limitação do que substituir por um proxy sem dizer que é proxy.</li>
                             <li><strong>Arquivos brutos costumam ser grandes</strong> (dezenas a centenas de MB). Isso pode inviabilizar processamento em ambientes com restrição de rede ou de tamanho de transferência — nesse caso, o processamento em GIS/Python pode precisar ser feito localmente, fora da ferramenta que está pesquisando.</li>
                             <li><strong>APIs oficiais nem sempre aceitam acesso automatizado.</strong> Tenha um plano B (painel manual, arquivo bruto) quando a API mais conveniente estiver bloqueada para scraping.</li>
                             <li><strong>Regiões administrativas e distritos estatísticos nem sempre coincidem.</strong> Um mesmo bairro pode pertencer a uma "região" para fins de gestão municipal e a um "distrito" diferente para fins de estatística oficial. Não presuma equivalência entre sistemas de classificação territorial sem verificar.</li>
@@ -3167,7 +3172,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://microdados.ibge.gov.br/" class="source-url">encerrado em 31/08/2026</a>
                             <div class="source-name">Censo 2022: o ciclo regular de divulgações acabou</div>
-                            <div class="source-desc">Com a liberação dos microdados da amostra em 31 de agosto de 2026, o IBGE encerrou o ciclo regular de divulgações do Censo 2022 — daqui em diante saem apenas publicações especiais. Não espere tabela nova saindo do calendário de divulgação: o que houver a cruzar agora se faz pelo microdado, e o recorte fino exige login gov.br.</div>
+                            <div class="source-desc">Com a liberação dos microdados da amostra em 31 de agosto de 2026, o IBGE encerrou o ciclo regular de divulgações do Censo 2022, e daqui em diante saem apenas publicações especiais. Isso não quer dizer que o FTP parou: o arquivo de registro de nascimento por setor entrou lá em fevereiro de 2026 sem anúncio e fora do calendário. Quem depende do Censo confere a pasta, não a agenda. O recorte mais fino continua aberto nos agregados por setor (Seção 3); o login gov.br só é exigido para chegar à área de ponderação nos microdados.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.tesourotransparente.gov.br/ckan/dataset/capag-municipios" class="source-url">desde 2023</a>
@@ -3182,7 +3187,7 @@ with open(caminho, encoding="latin-1") as f:  # confirme a codificação do arqu
         </div>
 
         <footer>
-            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 18 de setembro de 2026 · revisão 18</p>
+            <p>Guia de Fontes Digitais para Jornalismo · Artur Araújo · PUC-Campinas<br>Atualizado em 26 de setembro de 2026 · revisão 19</p>
             <button class="back-to-top" id="back-to-top">↑</button>
         </footer>
     </div>

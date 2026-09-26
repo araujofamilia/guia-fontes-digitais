@@ -559,11 +559,11 @@
             <div class="tagline">Ferramentas · Ética · Método<span class="cursor" aria-hidden="true"></span></div>
             <h1>Guia de Uso de IA na Comunicação</h1>
             <p class="subtitle">Como usar inteligência artificial no jornalismo e na comunicação com proveito e responsabilidade: o que cada ferramenta faz, onde ela erra, quando declarar o uso e o que nunca delegar.</p>
-            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 18 de setembro de 2026</div>
+            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 26 de setembro de 2026</div>
 
             <div class="changelog">
                 <span class="changelog-label">O que mudou</span>
-18 de setembro de 2026: na seção 02, ferramentas de IA em código aberto feitas por redações brasileiras (Codesinfo, Monitor Diário e Mamute Político); na seção 04, um roteiro do que uma política editorial de IA precisa dizer, com a do Brasil de Fato como exemplo; e seção 09 nova, Casos e Experiências, que leva ao arquivo de casos, página própria com erros, disputas e decisões envolvendo IA no jornalismo, com remissões a partir das seções 01, 03, 04 e 06. Sobre o autor passou a ser a seção 10. O contador ao lado é real: conta cada carregamento da página desde a publicação em 09/08/2026.
+26 de setembro de 2026: a seção 03 ganhou os números dos testes independentes de 2026 com detectores de texto, imagem e vídeo, um roteiro para quando se usa mais de um detector e as ferramentas de procedência que chegaram ao público neste ano (o SynthID na Busca do Google e o verificador da OpenAI), além do VigIA, da Lupa com a Unicamp; a seção 04, o Artigo 50 do regulamento europeu de IA e a lista de veículos verificados do IPTC; a seção 05, o caso Turnitin; e a seção 06, a dúvida como arma, quando o vídeo verdadeiro é chamado de deepfake. O arquivo de casos ganhou o do vice-reitor de Dartmouth. O contador ao lado é real: conta cada carregamento da página desde a publicação em 09/08/2026.
                 <span class="hit-counter-inline">
                     <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/guia-ia-comunicacao.svg?style=flat-square&amp;label=leituras&amp;color=0e1420&amp;labelColor=00776e" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
                 </span>
@@ -867,7 +867,15 @@
 
                     <div class="method-step">
                         <h4>1. Detectores não são prova</h4>
-                        <p>Ferramentas que prometem dizer se um texto, imagem ou áudio "foi feito por IA" erram nos dois sentidos: acusam material autêntico (falso positivo) e liberam material sintético (falso negativo). Textos de falantes não nativos e fotos editadas de forma legítima são vítimas frequentes de falso positivo. Use detectores, no máximo, como <em>um</em> indício entre vários, nunca como base única de uma acusação ou de um desmentido.</p>
+                        <p>Ferramentas que prometem dizer se um texto, imagem ou áudio "foi feito por IA" erram nos dois sentidos: acusam material autêntico (falso positivo) e liberam material sintético (falso negativo). Fotos editadas de forma legítima são vítimas frequentes de falso positivo. Use detectores, no máximo, como <em>um</em> indício entre vários, nunca como base única de uma acusação ou de um desmentido. Os testes independentes mais recentes mostram por quê:</p>
+                        <ul>
+                            <li><strong>A própria fabricante desistiu.</strong> A OpenAI lançou um classificador de texto em janeiro de 2023 e o tirou do ar em julho, por baixa precisão: nos testes da empresa, ele reconhecia só 26% dos textos escritos por IA e marcava como IA 9% dos textos humanos.</li>
+                            <li><strong>Texto.</strong> Em estudo revisado por pares da Vrije Universiteit Brussel (junho de 2026), com 160 trabalhos acadêmicos de autoria conhecida, o Turnitin não reconheceu nenhum dos 40 textos inteiramente gerados por IA, e GPTZero e Copyleaks também falharam. Só o Pangram foi bem, e os próprios autores recomendam usá-lo como alerta para investigar, nunca como prova única.</li>
+                            <li><strong>Imagem.</strong> Numa comparação de 16 detectores abertos, com 2,6 milhões de imagens de 291 geradores (pré-publicação de fevereiro de 2026), o melhor acertou 75% em média; diante de Flux Dev, Firefly v4 e Midjourney v7, geradores comerciais atuais, a média caiu para 18% a 30%.</li>
+                            <li><strong>Vídeo.</strong> No benchmark DF26 (setembro de 2026), nove detectores de ponta, treinados com bases antigas de manipulação de rosto, ficaram perto do cara ou coroa diante de vídeos de sete geradores recentes, e as pessoas testadas reconheceram só 52,6% dos vídeos falsos. Retreinado com vídeos de um gerador novo, o melhor deles voltou a funcionar em parte dos casos: o detector envelhece junto com o gerador que conhece.</li>
+                        </ul>
+                        <p>O viés contra quem escreve em segunda língua, medido com força em 2023 em detectores da primeira geração, não apareceu no estudo belga, cujos textos humanos eram de estudantes que escrevem em inglês como segunda língua. Nenhum desses testes, porém, usou texto em português: para nós, a pergunta segue sem resposta medida.</p>
+                        <p class="case-ref">No arquivo de casos: <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-dartmouth">o vice-reitor cujos textos um detector marcou como escritos por IA</a>.</p>
                     </div>
 
                     <div class="method-step">
@@ -877,8 +885,11 @@
                             <li><strong>Quem publicou primeiro?</strong> Busque a origem da peça (busca reversa de imagem, busca pelo texto entre aspas, data de publicação mais antiga).</li>
                             <li><strong>O contexto confere?</strong> Local, clima, vestimenta, idioma dos letreiros, sombras compatíveis com o horário alegado.</li>
                             <li><strong>Alguém confiável confirma?</strong> Agências, veículos locais, autoridades, testemunhas identificáveis.</li>
-                            <li><strong>Há credenciais de conteúdo?</strong> Verifique metadados e rótulos de procedência (padrão C2PA) quando existirem.</li>
+                            <li><strong>Há credenciais de conteúdo ou marca d'água?</strong> Verifique metadados e rótulos de procedência (padrão C2PA) e marcas d'água invisíveis, como o SynthID, do Google, também adotado pela OpenAI. Desde maio de 2026 dá para perguntar à Busca do Google se uma imagem foi feita com IA, e a OpenAI mantém um verificador público (cartões abaixo).</li>
                         </ol>
+                        <div class="warning-box">
+                            <strong>Regra de leitura:</strong> a procedência funciona em mão única. Credencial presente e válida diz muito sobre a origem de um arquivo, desde que a chave de quem assinou seja confiável; credencial ausente não prova nada, porque metadado se perde em captura de tela e em reenvio por aplicativo, e cada marca d'água só é encontrada pelo verificador de quem a adotou. "Não encontrei sinal" nunca vira "não foi feito com IA".
+                        </div>
                     </div>
 
                     <div class="method-step">
@@ -887,11 +898,23 @@
                         <p class="case-ref">No arquivo de casos: <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-sbt">a placa gerada por IA que um telejornal exibiu como fato</a> e <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-tse-deepfake">a definição de deepfake fixada pelo TSE</a>.</p>
                     </div>
 
+                    <div class="method-step">
+                        <h4>4. Se usar detector, use mais de um e escreva a dúvida</h4>
+                        <p>Ferramentas diferentes dão respostas diferentes para o mesmo arquivo. Num monitoramento feito com estudantes da FAAP e publicado em agosto de 2026, o Observatório Lupa registrou 20 conflitos entre detectores gratuitos; num deles, duas ferramentas classificaram como autêntico um deepfake de Lula e Bolsonaro dançando vestidos de líderes de torcida. O procedimento que a Lupa adotou no VigIA, com o Recod.ai, laboratório de IA da Unicamp, serve de modelo para qualquer redação:</p>
+                        <ol>
+                            <li>preservar o arquivo original e registrar onde e como ele circulou;</li>
+                            <li>passar o material por mais de uma ferramenta, de abordagens diferentes;</li>
+                            <li>decidir pelo conjunto das evidências, com análise humana no fim;</li>
+                            <li>comunicar o resultado em faixas: sem evidência técnica suficiente de manipulação, indícios de manipulação ou geração por IA, forte evidência de mídia sintética.</li>
+                        </ol>
+                        <p>A primeira faixa é a mais difícil de escrever e a mais necessária: "não encontramos evidência de manipulação" é diferente de "é verdadeiro".</p>
+                    </div>
+
                     <div class="sources-grid">
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://weverify.eu/verification-plugin/" class="source-url">weverify.eu/verification-plugin</a>
                             <div class="source-name">InVID-WeVerify (plugin)</div>
-                            <div class="source-desc">Extensão de navegador padrão das redações de checagem: análise de vídeo quadro a quadro, busca reversa em vários buscadores, metadados e lupa forense.</div>
+                            <div class="source-desc">Extensão de navegador padrão das redações de checagem, mantida pelo AFP Medialab: análise de vídeo quadro a quadro, busca reversa em vários buscadores, metadados e lupa forense. Usuários cadastrados testam ainda um detector de imagem sintética e um de voz clonada, sem taxa de acerto publicada: a extensão vale pelo que comprova sobre origem e contexto, não por veredicto.</div>
                         </div>
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://contentcredentials.org/" class="source-url">contentcredentials.org</a>
@@ -899,9 +922,34 @@
                             <div class="source-desc">Ferramenta de inspeção do padrão aberto de procedência de mídia: mostra, quando presentes, as credenciais de origem e edição embutidas em um arquivo.</div>
                         </div>
                         <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://deepmind.google/models/synthid/" class="source-url">deepmind.google/models/synthid</a>
+                            <div class="source-name">SynthID (Google DeepMind)</div>
+                            <div class="source-desc">Marca d'água invisível que o Google embute no que seus modelos geram, e que a OpenAI passou a usar em 2026. Para conferir, basta perguntar "isto foi feito com IA?" no app Gemini ou, desde maio de 2026, no Lens, no Modo IA e no Circule para Pesquisar da Busca do Google. Confirma origem quando acha a marca; não serve para negar origem, porque só reconhece conteúdo de quem adotou o padrão.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://openai.com/verify/" class="source-url">openai.com/verify</a>
+                            <div class="source-name">OpenAI Verify</div>
+                            <div class="source-desc">Verificador público em prévia desde maio de 2026: recebe uma imagem ou um áudio e procura as credenciais C2PA e a marca SynthID que o ChatGPT, o Codex e a API da OpenAI aplicam. Só confirma origem OpenAI; quando não encontra sinal, não conclui nada, e a própria empresa avisa que o metadado pode ter sido removido no caminho.</div>
+                        </div>
+                        <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://hivemoderation.com/" class="source-url">hivemoderation.com</a>
                             <div class="source-name">Hive Moderation</div>
                             <div class="source-desc">Classificador comercial de conteúdo sintético (imagem, vídeo, áudio), com demonstração gratuita. Útil como indício complementar; vale a ressalva do passo 1.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://zinc.cse.buffalo.edu/ubmdfl/deep-o-meter/" class="source-url">zinc.cse.buffalo.edu/ubmdfl/deep-o-meter</a>
+                            <div class="source-name">DeepFake-o-Meter (Universidade de Buffalo)</div>
+                            <div class="source-desc">Plataforma gratuita e de código aberto do laboratório de perícia de mídia de Siwei Lyu: roda vários algoritmos de detecção sobre a mesma imagem, vídeo ou áudio e mostra o resultado de cada um. Exige cadastro gratuito. Não publica taxa de acerto; a utilidade está em expor a divergência entre métodos, não em entregar um veredicto.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.agencialupa.org/observatorio-lupa/projeto-vigia/" class="source-url">agencialupa.org/observatorio-lupa/projeto-vigia</a>
+                            <div class="source-name">VigIA (Observatório Lupa)</div>
+                            <div class="source-desc">Monitoramento diário de conteúdo eleitoral feito ou alterado com IA, de 16 de agosto a 25 de outubro de 2026, pelo Observatório Lupa com o Recod.ai (Unicamp, em Campinas), a FAAP e a Meedan; recebe material pelo WhatsApp da Lupa. No primeiro balanço, dos 11 dias iniciais de campanha, 282 das 314 peças suspeitas tiveram uso de IA confirmado, e 64,1% delas omitiam o uso da tecnologia, inclusive publicações de candidatos e partidos, que pela regra do TSE são obrigados a avisar.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://gijn.org/resource/guide-detecting-ai-generated-content/" class="source-url">gijn.org/resource/guide-detecting-ai-generated-content</a>
+                            <div class="source-name">GIJN, Reporter's Guide to Detecting AI-Generated Content</div>
+                            <div class="source-desc">Guia de Henk van Ess para a rede global de jornalismo investigativo, publicado em setembro de 2025 e atualizado em webinar de março de 2026, com sete categorias de sinais e ferramentas para verificar sob prazo. Vale pela premissa: confiança em teste de detecção desatualizado é mais perigosa do que a incerteza assumida. Em inglês.</div>
                         </div>
                     </div>
                 </section>
@@ -920,6 +968,7 @@
                         <h4>2. Quando declarar o uso</h4>
                         <p>Nem todo uso exige declaração: ninguém declara o corretor ortográfico. O critério que atravessa as boas diretrizes é o do <strong>uso substantivo</strong>: declare quando a IA participou da produção do conteúdo em si (geração de texto ou imagem, resumo que virou parágrafo, análise de dados que virou número publicado, tradução integral). Não é preciso declarar apoio trivial de bastidor (correção gramatical, sugestão de sinônimo, formatação).</p>
                         <p>Na dúvida, declare: transparência em excesso nunca constrangeu ninguém; a descoberta posterior de uso omitido, sim.</p>
+                        <p class="case-ref">No arquivo de casos: <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-dartmouth">o vice-reitor que usou IA sem declarar e só explicou depois que um detector apontou</a>.</p>
                     </div>
 
                     <div class="method-step">
@@ -1011,6 +1060,16 @@ original."</pre>
                             <div class="source-name">IAB, AI Transparency & Disclosure Framework</div>
                             <div class="source-desc">Referência do setor publicitário para decidir quando rotular peça gerada por IA: rotula imagem, voz e avatar sintéticos e "gêmeos digitais"; dispensa pós-produção rotineira e texto comum. Central para quem produz publicidade e propaganda.</div>
                         </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations" class="source-url">digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations</a>
+                            <div class="source-name">União Europeia, Artigo 50 do AI Act</div>
+                            <div class="source-desc">Regra de transparência em vigor desde 2 de agosto de 2026, com diretrizes finais da Comissão Europeia publicadas em julho: aviso a quem conversa com uma IA; marcação legível por máquina em conteúdo gerado (sistemas já no mercado têm até 2 de dezembro); aviso em deepfake; e aviso em texto de interesse público gerado por IA, dispensado quando há revisão humana e alguém com responsabilidade editorial. Não impõe formato técnico, portanto não obriga C2PA. No Brasil, o rótulo obrigatório mais próximo disso é o da propaganda eleitoral, fixado pelo TSE em 2026.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://iptc.org/media-provenance" class="source-url">iptc.org/media-provenance</a>
+                            <div class="source-name">IPTC, Proveniência de mídia para veículos</div>
+                            <div class="source-desc">Explica como uma redação assina o que publica com credenciais C2PA e entra na lista de publicadores verificados do IPTC, que teve BBC, CBC/Radio-Canada, WDR, DW e AFP entre os primeiros. A lista atesta a identidade do veículo, não a verdade do conteúdo: prova que a imagem saiu daquela redação e não foi alterada depois.</div>
+                        </div>
                     </div>
                 </section>
 
@@ -1051,7 +1110,8 @@ e é de minha responsabilidade.</pre>
 
                     <div class="method-step">
                         <h4>4. Detecção não é o caminho: o desenho da avaliação é</h4>
-                        <p>Pelas razões da seção 03, detectores de texto gerado erram demais para fundamentar acusação de fraude acadêmica. A resposta docente mais eficaz é desenhar avaliações difíceis de terceirizar: produção em sala, defesa oral do trabalho, exigência de dados e entrevistas originais, versões intermediárias com histórico, análise de material visto em aula. Avaliação boa à prova de IA costuma ser, simplesmente, avaliação boa.</p>
+                        <p>Pelas razões da seção 03, detectores de texto gerado erram demais para fundamentar acusação de fraude acadêmica. A própria Turnitin escreve na documentação que o índice de IA pode errar e não deve ser base única de punição a um estudante; no estudo belga de 2026 citado na seção 03, ele não reconheceu nenhum dos trabalhos inteiramente gerados por IA. A resposta docente mais eficaz é desenhar avaliações difíceis de terceirizar: produção em sala, defesa oral do trabalho, exigência de dados e entrevistas originais, versões intermediárias com histórico, análise de material visto em aula. Avaliação boa à prova de IA costuma ser, simplesmente, avaliação boa.</p>
+                        <p class="case-ref">No arquivo de casos: <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-ia-comunicacao.html#caso-dartmouth">o vice-reitor que escrevia sobre cola com IA e teve os próprios textos marcados pelo detector</a>.</p>
                     </div>
 
                     <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">Referências para docência</h3>
@@ -1109,6 +1169,12 @@ e é de minha responsabilidade.</pre>
                         <p>Habilidade que não se exercita, atrofia. Se a IA escreve todos os primeiros rascunhos, resume todas as leituras e responde todas as dúvidas, o profissional em formação perde exatamente o treino que o tornaria capaz de avaliar o que a IA produz. Regra de bolso para estudantes e redações: <strong>use IA para ir além do que você já sabe fazer, não para evitar aprender o básico.</strong></p>
                     </div>
 
+                    <div class="method-step">
+                        <h4>7. A dúvida como arma</h4>
+                        <p>O efeito colateral de uma detecção falível não é só o deepfake que passa; é o registro verdadeiro que perde valor de prova. Na eleição de 2024 em Gana, o candidato a vice-presidente descartou como deepfake um vídeo em que fazia promessas polêmicas. O vídeo era real (vários ângulos de câmera, multidão, intérprete de língua de sinais), e especialistas da força-tarefa da WITNESS o confirmaram. Os juristas Robert Chesney e Danielle Citron deram nome ao fenômeno em 2019: "dividendo do mentiroso". Quanto mais o público ouve falar de deepfake, mais fácil fica negar o que é verdadeiro.</p>
+                        <p>Para quem cobre política, a consequência é dupla: verificar a peça suspeita e, com o mesmo rigor, a alegação de que uma peça é falsa. A WITNESS chama atenção ainda para a desigualdade das próprias ferramentas, desenhadas para conexão rápida e língua inglesa; até setembro de 2026, não localizamos avaliação independente de detectores em português.</p>
+                    </div>
+
                     <div class="sources-grid">
                         <div class="source-card">
                             <a target="_blank" rel="noopener noreferrer" href="https://www.gov.br/anpd/" class="source-url">gov.br/anpd</a>
@@ -1124,6 +1190,11 @@ e é de minha responsabilidade.</pre>
                             <a target="_blank" rel="noopener noreferrer" href="https://mittechreview.com.br/" class="source-url">mittechreview.com.br</a>
                             <div class="source-name">MIT Technology Review Brasil</div>
                             <div class="source-desc">Edição brasileira da revista do MIT, útil para acompanhar avanços e controvérsias da IA em linguagem acessível a não especialistas.</div>
+                        </div>
+                        <div class="source-card">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.gen-ai.witness.org/" class="source-url">gen-ai.witness.org</a>
+                            <div class="source-name">WITNESS, IA generativa e detecção</div>
+                            <div class="source-desc">Organização de direitos humanos que mantém uma força-tarefa de resposta rápida a deepfakes, ligando jornalistas e checadores a peritos (acesso por formulário), e propôs o TRIED, critério para avaliar detectores também por transparência, equidade entre idiomas e utilidade para quem verifica, não só por taxa de acerto.</div>
                         </div>
                     </div>
                 </section>
@@ -1300,7 +1371,7 @@ conhecimento externo.</pre>
         </div>
 
         <footer>
-            <p>Guia de Uso de IA na Comunicação · Artur Araújo · PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 18 de setembro de 2026</p>
+            <p>Guia de Uso de IA na Comunicação · Artur Araújo · PUC-Campinas<br>Publicado em agosto de 2026 · primeira edição · Atualizado em 26 de setembro de 2026</p>
             <button class="back-to-top" id="back-to-top">↑</button>
         </footer>
     </div>
