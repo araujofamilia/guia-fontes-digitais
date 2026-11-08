@@ -374,6 +374,15 @@
                 font-size: 1.5rem;
             }
         }
+        .leia-tambem, .autor { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .leia-tambem { border-left: 3px solid var(--accent); }
+        .leia-tambem .rotulo, .autor .rotulo { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-strong); margin-bottom: 0.5rem; }
+        .leia-tambem h3, .autor h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.6rem; }
+        .leia-tambem p, .autor p { margin-bottom: 0.8rem; }
+        .leia-tambem p:last-child, .autor p:last-child { margin-bottom: 0; }
+        .leia-tambem a, .autor a, .meta a { color: var(--accent-strong); text-underline-offset: 2px; }
+        .leia-tambem a:hover, .autor a:hover, .meta a:hover { color: var(--accent); }
+
     </style>
 </head>
 <body>
@@ -382,7 +391,7 @@
             <div class="tagline">Referências · gestão de crise<span class="cursor" aria-hidden="true"></span></div>
             <h1>Referências de gestão de crise</h1>
             <p class="subtitle">Livros, artigos e revisões recentes sobre prevenção, enfrentamento e pós-crise, com os dados conferidos em página de editora, de periódico ou de catálogo. Acompanha o <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-gestao-crise.html">arquivo de casos de gestão de crise</a>.</p>
-            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em 8 de novembro de 2026 · edição piloto · Atualizado em 8 de novembro de 2026</div>
+            <div class="meta"><strong><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/professorarturaraujo/">Artur Araújo</a></strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em 8 de novembro de 2026 · edição piloto · Atualizado em 8 de novembro de 2026</div>
             <div class="changelog">
                 <span class="changelog-label">O que mudou</span>
                 8 de novembro de 2026: primeira edição, com 15 referências entre livros de teoria, artigos centrais e pesquisa recente de 2024 a 2026.
@@ -505,6 +514,21 @@
                     <p>Defende protocolos prévios que identifiquem públicos e definam o modo de relacionamento com a mídia, e retoma a SCCT para ligar resposta a tipo de crise e responsabilidade.</p>
                     <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://eproceedings.epublishing.ekt.gr/index.php/JMCRCEU/article/download/8195/7621/20518">Texto do artigo</a></p>
                 </article>
+            </section>
+
+
+            <aside class="leia-tambem" aria-label="Leia também">
+                <div class="rotulo">Leia também</div>
+                <h3>Casos reais para ler com estas referências</h3>
+                <p>As obras desta lista são postas à prova no arquivo de casos: cada caso é lido à luz de uma teoria, com fato, hipótese e recomendação separados.</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-gestao-crise.html">Ver o arquivo de casos de gestão de crise</a></p>
+            </aside>
+
+            <section class="autor" id="sobre-o-autor">
+                <div class="rotulo">Sobre o autor</div>
+                <h2>Artur Araújo</h2>
+                <p>Jornalista desde 1986 e professor de Jornalismo na PUC-Campinas desde 2004. Mestre em Ciências da Comunicação pela USP, formado em Comunicação Social pela PUC-Rio. Trabalha com comunicação pública e com a pergunta que estas páginas tentam responder: o que dizer, e em que ordem, quando a notícia é ruim. O material alimenta o curso de extensão &ldquo;Quando a notícia é ruim&rdquo;.</p>
+                <p><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/professorarturaraujo/">Conversar no LinkedIn</a></p>
             </section>
 
             <p class="fecho">Sugestões de referência, sempre com os dados bibliográficos, são bem-vindas.</p>
