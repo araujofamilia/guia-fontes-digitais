@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos de gestão de crise | Quando a notícia é ruim</title>
+    <meta name="description" content="Arquivo de casos reais de crise de imagem e comunicação de crise, datados e conferidos em fonte, lidos à luz de teorias, com foco em prevenção, enfrentamento e pós-crise.">
+    <link rel="canonical" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-gestao-crise.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Artur Araujo">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://araujofamilia.github.io/guia-fontes-digitais/casos-gestao-crise.html">
+    <meta property="og:title" content="Casos de gestão de crise | Quando a notícia é ruim">
+    <meta property="og:description" content="Arquivo de casos reais de crise de imagem e comunicação de crise, datados e conferidos em fonte, lidos à luz de teorias, com foco em prevenção, enfrentamento e pós-crise.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Casos de gestão de crise | Quando a notícia é ruim">
+    <meta name="twitter:description" content="Arquivo de casos reais de crise de imagem e comunicação de crise, datados e conferidos em fonte, lidos à luz de teorias, com foco em prevenção, enfrentamento e pós-crise.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #EEEEEE;
+            --card: #FFFFFF;
+            --ink: #12141C;
+            --muted: #5A6474;
+            --accent: #00776E;
+            --accent-strong: #005B54;
+            --accent-soft: #E7F2F0;
+            --line: #D6D6D6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+            background-size: 22px 22px;
+            color: var(--ink);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+        }
+
+        .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 0.55em;
+            height: 1em;
+            background: var(--accent);
+            margin-left: 0.35em;
+            vertical-align: text-bottom;
+            animation: blink 1.1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cursor { animation: none; }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 660px;
+        }
+
+        .subtitle a, .intro a, footer a {
+            color: var(--accent-strong);
+            text-underline-offset: 2px;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .changelog {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            background: var(--accent-soft);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.82rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .changelog-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-strong);
+            background: var(--card);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .hit-counter-inline {
+            margin-left: 0.4rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .hit-counter-inline img {
+            vertical-align: middle;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            max-width: 200px;
+        }
+
+        .intro {
+            margin-bottom: 1.5rem;
+            max-width: 720px;
+        }
+
+        .toolbar {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--bg);
+        }
+
+        #search-input::placeholder {
+            color: #9AA5B1;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 119, 110, 0.15);
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .chip {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        .chip:hover {
+            border-color: var(--accent);
+        }
+
+        .chip[aria-pressed="true"] {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #FFFFFF;
+        }
+
+        .chip:focus-visible, a:focus-visible, .back-to-top:focus-visible {
+            outline: 3px solid rgba(0, 119, 110, 0.4);
+            outline-offset: 2px;
+        }
+
+        .grupo {
+            margin-bottom: 3rem;
+        }
+
+        .grupo h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .grupo-desc {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .caso {
+            background: var(--card);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+            scroll-margin-top: 1rem;
+        }
+
+        .caso:target {
+            box-shadow: 0 0 0 3px rgba(0, 119, 110, 0.28);
+        }
+
+        .caso h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.12rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 0.8rem;
+        }
+
+        .caso p {
+            margin-bottom: 0.8rem;
+        }
+
+        .case-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .case-meta a, .case-sources a, .caso p a {
+            color: var(--accent-strong);
+            text-underline-offset: 2px;
+        }
+
+        .case-meta a:hover, .case-sources a:hover, .caso p a:hover, .subtitle a:hover, .intro a:hover, footer a:hover {
+            color: var(--accent);
+        }
+
+        .caso .case-sources {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+        }
+
+        .fecho {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top:hover {
+            opacity: 0.85;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="tagline">Arquivo de casos · gestão de crise<span class="cursor" aria-hidden="true"></span></div>
+            <h1>Casos de gestão de crise</h1>
+            <p class="subtitle">Casos reais de crise de imagem e de comunicação de crise, datados e conferidos em fonte, lidos à luz de teorias e organizados pelas três fases do ciclo: prevenção, enfrentamento e pós-crise. Acompanha as <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/referencias-gestao-crise.html">referências de gestão de crise</a>.</p>
+            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em 8 de novembro de 2026 · edição piloto · Atualizado em 8 de novembro de 2026</div>
+            <div class="changelog">
+                <span class="changelog-label">O que mudou</span>
+                8 de novembro de 2026: primeira edição, em caráter piloto, com 3 casos em 2 entradas, para testar o formato antes de ampliar o arquivo.
+                <span class="hit-counter-inline">
+                    <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/casos-gestao-crise.svg?style=flat-square&amp;label=leituras&amp;color=0e1420&amp;labelColor=00776e" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
+                </span>
+            </div>
+            <div class="hero-stats"><div class="stat"><div class="stat-number" id="stat-casos">...</div><div class="stat-label">Casos no arquivo</div></div><div class="stat"><div class="stat-number" id="stat-pares">...</div><div class="stat-label">Pares para ler lado a lado</div></div><div class="stat"><div class="stat-number" id="stat-fases">...</div><div class="stat-label">Fases do ciclo ilustradas</div></div></div>
+        </header>
+
+        <main>
+            <p class="intro">Cada caso traz o que aconteceu, uma leitura à luz de teoria, o que ensina, dois cuidados e as fontes. Fato, hipótese e recomendação aparecem separados e rotulados. O foco é o processo, não a culpa: interessa ver em que ponto a comunicação abriu ou fechou caminho. Um caso só entra depois de conferido em fonte primária ou em mais de uma fonte independente, e só entram organizações sem vínculo com o autor nem com seus locais de trabalho. Esta é uma edição piloto, e por isso os padrões que aparecem são impressões, não regras.</p>
+
+            <div class="toolbar" role="search">
+                <input type="text" id="search-input" placeholder="Buscar por organização, teoria ou palavra" aria-label="Buscar">
+                <div class="chips" id="chips" aria-label="Filtrar por tipo de caso"></div>
+            </div>
+            <div id="no-results" class="no-results hidden">Nada corresponde à busca e ao filtro escolhidos. Apague a busca ou escolha Todos.</div>
+
+            <section class="grupo" id="pares">
+                <h2>Pares para ler lado a lado</h2>
+                <p class="grupo-desc">Cada par só mostra a lição inteira quando os dois casos são lidos juntos.</p>
+                <article class="caso" id="caso-primeira-resposta" data-tipo="Primeira resposta" data-casos="2" data-fases="enfrentamento">
+                    <div class="case-meta">Primeira resposta · 1982 e 2023 · fase: enfrentamento (com lição de prevenção)</div>
+                    <h3>O que se diz primeiro: a Americanas em 2023 e a Johnson &amp; Johnson em 1982</h3>
+                    <p><strong>Fatos (Americanas).</strong> Em 11 de janeiro de 2023, a Americanas S.A. divulgou fato relevante informando a detecção de inconsistências em lançamentos contábeis redutores da conta fornecedores, da dimensão de R$ 20 bilhões na data-base de 30 de setembro de 2022, e estimou que o efeito caixa fosse imaterial. A empresa entrou em recuperação judicial. Em 13 de junho de 2023, novo fato relevante, baseado em relatório de assessores jurídicos apresentado ao conselho em 12 de junho, disse que as demonstrações financeiras vinham sendo fraudadas pela diretoria anterior e anunciou o envio do relatório às autoridades, a avaliação de medidas de ressarcimento e a republicação das demonstrações auditadas. Em comunicado posterior, divulgado em 2024 (data exata a conferir no fato relevante), a empresa informou que investigação de comitê independente concluiu que foi vítima de fraude contábil, com contratos fictícios de verbas de propaganda cooperada e operações de risco sacado.</p>
+                    <p><strong>Fatos (Johnson &amp; Johnson).</strong> Em 1982, depois de mortes ligadas a cápsulas de Tylenol adulteradas, a J&amp;J gastou US$ 100 milhões para recolher 31 milhões de frascos e relançou o produto dois meses depois em embalagem inviolável. A participação de mercado, que caiu a 7% após as mortes, é citada pela Wharton; o então presidente, James Burke, atribuiu a decisão ao Credo da empresa, que põe o consumidor em primeiro lugar.</p>
+                    <p><strong>Leitura (hipóteses, não conclusões).</strong> A primeira mensagem define a moldura. A J&amp;J abriu pelo dano ao consumidor e por uma ação concreta; a Americanas abriu por um número e por uma qualificação do efeito caixa, e só cinco meses depois passou a usar a palavra fraude. Pela teoria situacional (Coombs), a resposta deve acompanhar a responsabilidade que o público atribui à organização; a leitura aqui é que o recolhimento voluntário foi além do mínimo que a teoria pediria a uma organização vítima de ação de terceiro, e que esse excesso pode ter comprado credibilidade. Na linha da reparação de imagem (Benoit), a Americanas passou de &ldquo;inconsistência&rdquo; a &ldquo;fraude&rdquo; e deslocou a responsabilidade para ex-dirigentes, estratégia que depende de prova independente para ser aceita, como a que o comitê depois apresentou. Quanto à antecipação (<em>stealing thunder</em>), a revelação partiu da própria empresa nos dois casos; a literatura costuma associar isso a menor dano de credibilidade, efeito que depende do que se diz em seguida.</p>
+                    <p><strong>O que ensina:</strong> no enfrentamento, número sem causa e sem plano de ação deixa à imprensa e ao mercado o trabalho de explicar; e o que se decide em segundos na crise costuma ter sido preparado antes, como no caso do Credo, que fixava de antemão a ordem de quem a empresa serve. Recomendação para o curso: pedir aos alunos que escrevam a primeira frase de cada comunicado e comparem o que ela promete fazer.</p>
+                    <p><strong>Dois cuidados:</strong> as duas crises são de natureza diferente (fraude interna de grande porte e ameaça externa à segurança do consumidor), então o par não mede qual resposta foi melhor, só mostra o que cada primeira frase deixou aberto; e o quadro do caso Americanas ainda se move na Justiça e na CVM, de modo que a atribuição de responsabilidades pode mudar. A leitura do caso Tylenol vem em boa parte de estudos de caso secundários.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://repositorio.ufu.br/bitstream/123456789/41698/1/EstudoCasoEsc%c3%a2ndalo.pdf">Americanas: estudo de caso (UFU)</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.tnh1.com.br/noticia/nid/americanas-aponta-fraude-em-resultados-por-diretoria-anterior-pela-primeira-vez/">Americanas: comunicado de 13 de junho de 2023 (TNH1)</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.contabeis.com.br/noticias/66185/caso-americanas-comite-confirma-que-empresa-foi-vitima-de-fraude-contabil/">Americanas: conclusão do comitê independente (Contábeis)</a> · <a target="_blank" rel="noopener noreferrer" href="https://knowledge.wharton.upenn.edu/article/tylenol-and-the-legacy-of-jjs-james-burke/">Tylenol: Wharton Knowledge</a></p>
+                </article>
+            </section>
+
+            <section class="grupo" id="casos-isolados">
+                <h2>Casos isolados</h2>
+                <p class="grupo-desc">Casos que se sustentam sozinhos, com a leitura de pesquisa publicada.</p>
+                <article class="caso" id="caso-samarco" data-tipo="Desastre" data-casos="1" data-fases="prevenção enfrentamento pós-crise">
+                    <div class="case-meta">Desastre · nov. de 2015 em diante · fases: prevenção, enfrentamento e pós-crise</div>
+                    <h3>Quando o alarme é parte da comunicação: o rompimento da barragem de Fundão e a resposta da Samarco</h3>
+                    <p><strong>Fatos.</strong> Em 5 de novembro de 2015 ocorreu o rompimento da barragem de Fundão, da Samarco, controlada pela Vale e pela BHP Billiton, em Mariana (MG). Um estudo sobre a cobertura jornalística dos rompimentos de Mariana e de Brumadinho registra que, em Mariana, não havia sirenes, ao passo que em Brumadinho (25 de janeiro de 2019) elas existiam e foram atingidas pela lama. Pesquisadores que analisaram a comunicação institucional da Samarco tomaram como ponto de partida o vídeo que a empresa publicou no YouTube no próprio dia 5 de novembro de 2015.</p>
+                    <p><strong>Leitura (hipóteses, com a autoria indicada).</strong> Os autores do estudo sobre a comunicação da empresa concluem que o material divulgado, no enfrentamento e no pós-crise, procurou filtrar informações de modo a afastar a mineradora de suas responsabilidades; trata-se de interpretação deles, a partir do corpus que escolheram. Lida junto com o dado das sirenes, a hipótese é que a comunicação de crise começa antes da crise: sistema de alerta, protocolo e treino são o que torna crível, ou não, o que se diz depois. A fase pós-crise, aqui, se mede em anos, e a narrativa que a organização sustenta nesse tempo é julgada contra o que foi feito.</p>
+                    <p><strong>O que ensina:</strong> a prevenção é a primeira peça de comunicação, porque o alarme e o plano determinam o que a organização consegue afirmar com credibilidade no primeiro dia; e a resposta do primeiro dia, depois, entra na memória do caso e é relida a cada nova fase.</p>
+                    <p><strong>Dois cuidados:</strong> os dois estudos citados são qualitativos e trabalham com materiais selecionados, então valem como leitura fundamentada e não como medida de efeito; e a responsabilidade jurídica pelo desastre é matéria de processos próprios, que este arquivo não decide.</p>
+                    <p class="case-sources">Fontes: <a target="_blank" rel="noopener noreferrer" href="https://lexcultccjf.trf2.jus.br/index.php/LexCult/article/download/35/22">Coitinho, Bicalho e Martins, LexCult</a> · <a target="_blank" rel="noopener noreferrer" href="https://core.ac.uk/download/478016822.pdf">Estudo sobre a cobertura de Mariana e Brumadinho (CORE)</a></p>
+                </article>
+            </section>
+
+            <p class="fecho">O arquivo cresce à medida que novos casos são conferidos. Sugestões de caso, sempre com fonte, são bem-vindas.</p>
+        </main>
+
+        <footer>
+            <p>Casos de gestão de crise · par das <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/referencias-gestao-crise.html">referências</a> · Artur Araújo</p>
+            <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+        </footer>
+    </div>
+
+    <script>
+        const items = Array.from(document.querySelectorAll('.caso'));
+        document.getElementById('stat-casos').textContent =
+            items.reduce((t, c) => t + Number(c.dataset.casos || 1), 0);
+        document.getElementById('stat-pares').textContent = document.querySelectorAll('#pares .caso').length;
+        const fases = new Set();
+        items.forEach(c => (c.dataset.fases || '').split(' ').filter(Boolean).forEach(f => fases.add(f)));
+        document.getElementById('stat-fases').textContent = fases.size;
+
+        const normaliza = t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        items.forEach(c => { c.dataset.texto = normaliza(c.textContent); });
+        const busca = document.getElementById('search-input');
+        const vazio = document.getElementById('no-results');
+        let tipoAtivo = 'Todos';
+        function filtrar() {
+            const q = normaliza(busca.value.trim());
+            let visiveis = 0;
+            items.forEach(c => {
+                const passa = (tipoAtivo === 'Todos' || c.dataset.tipo === tipoAtivo) && (!q || c.dataset.texto.includes(q));
+                c.classList.toggle('hidden', !passa);
+                if (passa) visiveis++;
+            });
+            document.querySelectorAll('.grupo').forEach(g => {
+                g.classList.toggle('hidden', !g.querySelector('.caso:not(.hidden)'));
+            });
+            vazio.classList.toggle('hidden', visiveis > 0);
+        }
+        const chips = document.getElementById('chips');
+        ['Todos', ...new Set(items.map(c => c.dataset.tipo))].forEach(tipo => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'chip';
+            b.textContent = tipo;
+            b.setAttribute('aria-pressed', tipo === 'Todos' ? 'true' : 'false');
+            b.addEventListener('click', () => {
+                tipoAtivo = tipo;
+                chips.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+                filtrar();
+            });
+            chips.appendChild(b);
+        });
+        busca.addEventListener('input', filtrar);
+        const topo = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => { topo.classList.toggle('show', window.pageYOffset > 300); });
+        topo.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>

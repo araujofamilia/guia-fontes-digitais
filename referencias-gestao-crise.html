@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referências de gestão de crise | Quando a notícia é ruim</title>
+    <meta name="description" content="Livros, artigos e revisões recentes sobre gestão e comunicação de crise, com dados bibliográficos conferidos. Complemento do arquivo de casos de gestão de crise.">
+    <link rel="canonical" href="https://araujofamilia.github.io/guia-fontes-digitais/referencias-gestao-crise.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Artur Araujo">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://araujofamilia.github.io/guia-fontes-digitais/referencias-gestao-crise.html">
+    <meta property="og:title" content="Referências de gestão de crise | Quando a notícia é ruim">
+    <meta property="og:description" content="Livros, artigos e revisões recentes sobre gestão e comunicação de crise, com dados bibliográficos conferidos. Complemento do arquivo de casos de gestão de crise.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Referências de gestão de crise | Quando a notícia é ruim">
+    <meta name="twitter:description" content="Livros, artigos e revisões recentes sobre gestão e comunicação de crise, com dados bibliográficos conferidos. Complemento do arquivo de casos de gestão de crise.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #EEEEEE;
+            --card: #FFFFFF;
+            --ink: #12141C;
+            --muted: #5A6474;
+            --accent: #00776E;
+            --accent-strong: #005B54;
+            --accent-soft: #E7F2F0;
+            --line: #D6D6D6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+            background-size: 22px 22px;
+            color: var(--ink);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+        }
+
+        .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 0.55em;
+            height: 1em;
+            background: var(--accent);
+            margin-left: 0.35em;
+            vertical-align: text-bottom;
+            animation: blink 1.1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cursor { animation: none; }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 660px;
+        }
+
+        .subtitle a, .intro a, footer a {
+            color: var(--accent-strong);
+            text-underline-offset: 2px;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .changelog {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            background: var(--accent-soft);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.82rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .changelog-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-strong);
+            background: var(--card);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .hit-counter-inline {
+            margin-left: 0.4rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .hit-counter-inline img {
+            vertical-align: middle;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            max-width: 200px;
+        }
+
+        .intro {
+            margin-bottom: 1.5rem;
+            max-width: 720px;
+        }
+
+        .toolbar {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--bg);
+        }
+
+        #search-input::placeholder {
+            color: #9AA5B1;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 119, 110, 0.15);
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .chip {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        .chip:hover {
+            border-color: var(--accent);
+        }
+
+        .chip[aria-pressed="true"] {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #FFFFFF;
+        }
+
+        .chip:focus-visible, a:focus-visible, .back-to-top:focus-visible {
+            outline: 3px solid rgba(0, 119, 110, 0.4);
+            outline-offset: 2px;
+        }
+
+        .grupo {
+            margin-bottom: 3rem;
+        }
+
+        .grupo h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .grupo-desc {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .caso {
+            background: var(--card);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+            scroll-margin-top: 1rem;
+        }
+
+        .caso:target {
+            box-shadow: 0 0 0 3px rgba(0, 119, 110, 0.28);
+        }
+
+        .caso h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.12rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 0.8rem;
+        }
+
+        .caso p {
+            margin-bottom: 0.8rem;
+        }
+
+        .case-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .case-meta a, .case-sources a, .caso p a {
+            color: var(--accent-strong);
+            text-underline-offset: 2px;
+        }
+
+        .case-meta a:hover, .case-sources a:hover, .caso p a:hover, .subtitle a:hover, .intro a:hover, footer a:hover {
+            color: var(--accent);
+        }
+
+        .caso .case-sources {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+        }
+
+        .fecho {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: #FFFFFF;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top:hover {
+            opacity: 0.85;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="tagline">Referências · gestão de crise<span class="cursor" aria-hidden="true"></span></div>
+            <h1>Referências de gestão de crise</h1>
+            <p class="subtitle">Livros, artigos e revisões recentes sobre prevenção, enfrentamento e pós-crise, com os dados conferidos em página de editora, de periódico ou de catálogo. Acompanha o <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-gestao-crise.html">arquivo de casos de gestão de crise</a>.</p>
+            <div class="meta"><strong>Artur Araújo</strong> · Jornalismo e Mídia Digital, PUC-Campinas<br>Publicado em 8 de novembro de 2026 · edição piloto · Atualizado em 8 de novembro de 2026</div>
+            <div class="changelog">
+                <span class="changelog-label">O que mudou</span>
+                8 de novembro de 2026: primeira edição, com 15 referências entre livros de teoria, artigos centrais e pesquisa recente de 2024 a 2026.
+                <span class="hit-counter-inline">
+                    <img src="https://hits.sh/araujofamilia.github.io/guia-fontes-digitais/referencias-gestao-crise.svg?style=flat-square&amp;label=leituras&amp;color=0e1420&amp;labelColor=00776e" alt="Número de leituras desta página" width="70" height="20" loading="lazy">
+                </span>
+            </div>
+            <div class="hero-stats"><div class="stat"><div class="stat-number" id="stat-refs">...</div><div class="stat-label">Referências</div></div><div class="stat"><div class="stat-number" id="stat-livros">...</div><div class="stat-label">Livros</div></div><div class="stat"><div class="stat-number" id="stat-recentes">...</div><div class="stat-label">Publicadas desde 2024</div></div></div>
+        </header>
+
+        <main>
+            <p class="intro">Seleção feita a partir de busca em bases abertas e em páginas de editoras. Uma obra só entra com título, autoria e edição conferidos; o que não foi possível confirmar vem sinalizado na própria entrada. Os livros foram listados, não reproduzidos: a leitura é na edição original ou em biblioteca. A lista é uma edição piloto e cresce à medida que novas obras são verificadas.</p>
+
+            <div class="toolbar" role="search">
+                <input type="text" id="search-input" placeholder="Buscar por autor, teoria ou palavra" aria-label="Buscar">
+                <div class="chips" id="chips" aria-label="Filtrar por tipo"></div>
+            </div>
+            <div id="no-results" class="no-results hidden">Nada corresponde à busca e ao filtro escolhidos. Apague a busca ou escolha Todos.</div>
+
+            <section class="grupo">
+                <h2>Livros de referência</h2>
+                <p class="grupo-desc">Obras para consulta de quem planeja, responde e avalia crises. Dados bibliográficos conferidos em páginas de editora ou de catálogo em 8 de novembro de 2026.</p>
+                <article class="caso" id="ref-coombs-ongoing" data-tipo="Livro" data-ano="2022">
+                    <div class="case-meta">Livro · 6ª edição · gestão e comunicação nas três fases</div>
+                    <h3>COOMBS, W. Timothy. <em>Ongoing Crisis Communication: Planning, Managing, and Responding</em>. 6. ed. Thousand Oaks: SAGE. ISBN 978-1-0718-1664-6.</h3>
+                    <p>Manual que organiza a crise em pré-crise, crise e pós-crise e liga a comunicação ao gerenciamento de risco. A sexta edição acrescenta inteligência artificial, redes sociais e treinamento de resiliência para a comunidade. Os catálogos divergem quanto ao ano da edição (2021 a 2023); vale conferir a capa do exemplar.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://collegepublishing.sagepub.com/products/270207">Página da editora (SAGE)</a></p>
+                </article>
+                <article class="caso" id="ref-handbook" data-tipo="Livro" data-ano="2022">
+                    <div class="case-meta">Livro · coletânea · teorias, métodos e novos temas</div>
+                    <h3>COOMBS, W. Timothy; HOLLADAY, Sherry J. (org.). <em>The Handbook of Crisis Communication</em>. 2. ed. Hoboken: Wiley.</h3>
+                    <p>Coletânea em três partes: fundamentos teóricos, revisão e adaptação das teorias (SCCT, <em>stealing thunder</em>, comunicação mediada por redes sociais, arena retórica, discurso de renovação) e novas frentes, como pandemias, mídia digital e inteligência artificial. O ano de capa varia entre fontes (2022 e 2023).</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://comfilm.usv.ro/wp-content/uploads/sites/67/2025/02/05.Madalina-TOMA.pdf">Resenha na revista Communication and Society (2024)</a></p>
+                </article>
+                <article class="caso" id="ref-primer" data-tipo="Livro" data-ano="2025">
+                    <div class="case-meta">Livro · 2025 · teoria aplicada</div>
+                    <h3>FRANDSEN, Finn; COOMBS, W. Timothy; JOHANSEN, Winni. <em>A Primer for Crisis Communication Theory: The Fusion of Theory and Practice</em>. Abingdon: Routledge, 2025. 218 p. ISBN 978-1-0327-4579-4 (brochura).</h3>
+                    <p>Percorre 19 teorias, das de comunicação de risco (modelo de decisão de ação protetora, amplificação social do risco) às de crise (apologia corporativa, reparação de imagem, SCCT, <em>stealing thunder</em>, comunicação mediada por redes sociais, paracrise, arena retórica), sempre com a pergunta do que a teoria muda na prática. É a porta de entrada mais atual para quem quer comparar teorias.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://www.routledge.com/A-Primer-for-Crisis-Communication-Theory-The-Fusion-of-Theory-and-Practice/Frandsen-Coombs-Johansen/p/book/9781032745794">Página da editora (Routledge)</a></p>
+                </article>
+                <article class="caso" id="ref-media-crisis" data-tipo="Livro" data-ano="2025">
+                    <div class="case-meta">Livro · 2025 · mídia, enquadramento e IA</div>
+                    <h3>COOMBS, W. Timothy (org.). <em>Media and Crisis Communication</em>. Abingdon: Routledge, 2025. 256 p.</h3>
+                    <p>Reúne estudos sobre o papel da mídia na comunicação de crise, com capítulos sobre enquadramento, o efeito de meio, mensagem e pedido de desculpas, inteligência artificial e o uso da comunicação de crise para esconder informação incômoda.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://www.routledge.com/Media-and-Crisis-Communication/Coombs/p/book/9781032619149">Página da editora (Routledge)</a></p>
+                </article>
+                <article class="caso" id="ref-benoit-livro" data-tipo="Livro" data-ano="1995">
+                    <div class="case-meta">Livro · clássico · reparação de imagem</div>
+                    <h3>BENOIT, William L. <em>Accounts, Excuses, and Apologies: A Theory of Image Restoration Strategies</em>. Albany: SUNY Press, 1995.</h3>
+                    <p>Base da teoria da reparação de imagem. Costuma ser lida com o artigo de 1997 (abaixo), que a aplica à comunicação de crise.</p>
+                    
+                </article>
+                <article class="caso" id="ref-forni" data-tipo="Livro" data-ano="2019">
+                    <div class="case-meta">Livro · em português · prática brasileira</div>
+                    <h3>FORNI, João José. <em>Gestão de crises e comunicação: o que gestores e profissionais de comunicação precisam saber para enfrentar crises corporativas</em>. 3. ed. São Paulo: Atlas/GEN, 2019. 312 p. ISBN 978-85-970-2223-0.</h3>
+                    <p>Principal manual brasileiro do tema: papel do líder, comitê de crise, porta-voz, entrevistas e respostas, internet e checklists, com apêndices de notas e comunicados. A terceira edição traz casos brasileiros recentes à época.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://www.martinsfontespaulista.com.br/gestao-de-crises-e-comunicacao-889623/p">Ficha na Martins Fontes</a></p>
+                </article>
+                <article class="caso" id="ref-glossario" data-tipo="Livro" data-ano="2025">
+                    <div class="case-meta">E-book aberto · em português · 2025</div>
+                    <h3>OBSERVATÓRIO BRASILEIRO DE COMUNICAÇÃO E CRISES (OBCC/UFSM). <em>Glossário de Crise: uma perspectiva comunicacional</em>. FACOS-UFSM, 2025. 77 p. ISBN 978-65-5773-103-1.</h3>
+                    <p>Glossário com verbetes de especialistas de seis países e de várias áreas (saúde, administração, educação, segurança, comunicação), com prefácio de João José Forni. Serve para alinhar vocabulário antes de discutir caso.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://www.ufsm.br/projetos/institucional/observatorio-crise/2025/11/06/obcc-lanca-e-book-glossario-de-crise-uma-perspectiva-comunicacional">Lançamento no site do OBCC</a></p>
+                </article>
+            </section>
+
+            <section class="grupo">
+                <h2>Artigos das teorias centrais</h2>
+                <p class="grupo-desc">Os textos em que se apoiam as duas teorias mais usadas na pesquisa: reparação de imagem e comunicação situacional de crise.</p>
+                <article class="caso" id="ref-benoit97" data-tipo="Artigo" data-ano="1997">
+                    <div class="case-meta">Artigo · teoria da reparação de imagem</div>
+                    <h3>BENOIT, William L. Image repair discourse and crisis communication. <em>Public Relations Review</em>, v. 23, n. 2, p. 177-186, 1997. DOI 10.1016/S0363-8111(97)90023-0.</h3>
+                    <p>Aplica a tipologia de estratégias (negação, esquiva de responsabilidade, redução da ofensividade, ação corretiva, mortificação) ao discurso de crise.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/S0363-8111(97)90023-0">DOI</a></p>
+                </article>
+                <article class="caso" id="ref-coombs07" data-tipo="Artigo" data-ano="2007">
+                    <div class="case-meta">Artigo · SCCT</div>
+                    <h3>COOMBS, W. Timothy. Protecting organization reputations during a crisis: the development and application of situational crisis communication theory. <em>Corporate Reputation Review</em>, v. 10, n. 3, p. 163-176, 2007.</h3>
+                    <p>Formulação da teoria situacional: a resposta deve ser escolhida conforme o tipo de crise e o grau de responsabilidade que o público atribui à organização.</p>
+                    
+                </article>
+                <article class="caso" id="ref-coombs02" data-tipo="Artigo" data-ano="2002">
+                    <div class="case-meta">Artigo · primeiros testes da SCCT</div>
+                    <h3>COOMBS, W. Timothy; HOLLADAY, Sherry J. Helping crisis managers protect reputational assets: initial tests of the situational crisis communication theory. <em>Management Communication Quarterly</em>, v. 16, n. 2, p. 165-186, 2002.</h3>
+                    <p>Primeiros testes empíricos da teoria situacional. Útil para ver de onde vêm os agrupamentos de crise (vítima, acidente, evitável).</p>
+                    
+                </article>
+            </section>
+
+            <section class="grupo">
+                <h2>Pesquisa recente (2024 a 2026)</h2>
+                <p class="grupo-desc">Revisões e artigos que mapeiam o que a pesquisa descobriu e onde há lacuna. Nenhum substitui a leitura da fonte; servem para localizar a literatura.</p>
+                <article class="caso" id="ref-prr2026" data-tipo="Revisão" data-ano="2026">
+                    <div class="case-meta">Revisão sistemática · 2026 · tendências longitudinais</div>
+                    <h3><em>Public Relations Review</em>, v. 52, 102685, 2026. DOI 10.1016/j.pubrev.2026.102685 (autoria e título a confirmar na página da revista).</h3>
+                    <p>Examina tendências de teoria e pesquisa em comunicação de crise organizacional ao longo de duas décadas. O texto registra que a reparação de imagem (Benoit, 1997) e a SCCT (Coombs, 2007) seguem como as duas teorias dominantes e pergunta o que a pesquisa produziu além delas. Recebido em março de 2025, aceito em março de 2026.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://ubibliorum.ubi.pt/bitstreams/c7009c92-6c87-4b8f-83c8-479355e46f52/download">Texto em repositório</a></p>
+                </article>
+                <article class="caso" id="ref-dominic25" data-tipo="Revisão" data-ano="2025">
+                    <div class="case-meta">Revisão crítica · 2025 · síntese das teorias</div>
+                    <h3>DOMINIC, Egede Dominion. Crisis communication revisited: theoretical evolution, limitations, and integrative insights. <em>International Journal of Research and Innovation in Social Science</em>, v. 9, n. 10, p. 9735-9752, 2025. DOI 10.47772/IJRISS.2025.910000796.</h3>
+                    <p>Revisão e síntese de SCCT, reparação de imagem, apologia, discurso de renovação, <em>stealing thunder</em> e o modelo de comunicação de crise mediada por redes sociais. A tese central é que nenhuma isolada dá conta da crise contemporânea, multidimensional e multimídia.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://rsisinternational.org/journals/ijriss/view/crisis-communication-revisited-theoretical-evolution-limitations-and-integrative-insights">Página do artigo</a></p>
+                </article>
+                <article class="caso" id="ref-otuya25" data-tipo="Revisão" data-ano="2025">
+                    <div class="case-meta">Revisão sistemática · 2025 · comunicação corporativa e SCCT</div>
+                    <h3>OTUYA-ASOHRO, Edith Oghenechovwe. The synergistic relationship between corporate communication and crisis management practices. <em>Journal of Communication and Public Relations</em>, v. 5, n. 1, p. 18-38, 2025. DOI 10.37535/105005120262.</h3>
+                    <p>Revisão de 42 artigos revisados por pares, indexados na Scopus e publicados entre 2015 e 2025, sobre comunicação corporativa, comunicação de crise e SCCT.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://journal.lspr.ac.id/index.php/jcpr/article/download/986/409/3351">Texto do artigo</a></p>
+                </article>
+                <article class="caso" id="ref-jiang24" data-tipo="Revisão" data-ano="2024">
+                    <div class="case-meta">Revisão sistemática · 2024 · estratégia de resposta e comportamento</div>
+                    <h3>JIANG, X.; KAMARUDIN, S.; CAI, Y.; MIAO, P.; HUANG, W. The relationship between crisis response strategies and behavioral intentions: a systematic literature review. <em>Review of Communication Research</em>, v. 12, p. 220-236, 2024. DOI 10.52152/RCR.V12.13.</h3>
+                    <p>Pergunta como as estratégias de resposta afetam intenções de comportamento do público (compra, boca a boca, apoio), com protocolo PRISMA.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://rcommunicationr.org/index.php/rcr/article/download/124/62">Texto do artigo</a></p>
+                </article>
+                <article class="caso" id="ref-matias25" data-tipo="Artigo" data-ano="2025">
+                    <div class="case-meta">Artigo · 2025 · redes sociais e protocolos prévios</div>
+                    <h3>MATIAS, Ana; TÜRK, Ezel; LOPES, Ana. Organizational resilience in the digital era: leveraging social media platforms for crisis communication. <em>Jean Monnet Chair Conference Proceedings in Risk and Crisis Communication in the EU</em>, v. 1, n. 1, 2025. DOI 10.12681/jmcrceu.8195.</h3>
+                    <p>Defende protocolos prévios que identifiquem públicos e definam o modo de relacionamento com a mídia, e retoma a SCCT para ligar resposta a tipo de crise e responsabilidade.</p>
+                    <p class="case-sources">Onde ver: <a target="_blank" rel="noopener noreferrer" href="https://eproceedings.epublishing.ekt.gr/index.php/JMCRCEU/article/download/8195/7621/20518">Texto do artigo</a></p>
+                </article>
+            </section>
+
+            <p class="fecho">Sugestões de referência, sempre com os dados bibliográficos, são bem-vindas.</p>
+        </main>
+
+        <footer>
+            <p>Referências de gestão de crise · par do <a target="_blank" rel="noopener noreferrer" href="https://araujofamilia.github.io/guia-fontes-digitais/casos-gestao-crise.html">arquivo de casos</a> · Artur Araújo</p>
+            <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+        </footer>
+    </div>
+
+    <script>
+        const items = Array.from(document.querySelectorAll('.caso'));
+        document.getElementById('stat-refs').textContent = items.length;
+        document.getElementById('stat-livros').textContent = items.filter(c => c.dataset.tipo === 'Livro').length;
+        document.getElementById('stat-recentes').textContent = items.filter(c => Number(c.dataset.ano) >= 2024).length;
+
+        const normaliza = t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        items.forEach(c => { c.dataset.texto = normaliza(c.textContent); });
+        const busca = document.getElementById('search-input');
+        const vazio = document.getElementById('no-results');
+        let tipoAtivo = 'Todos';
+        function filtrar() {
+            const q = normaliza(busca.value.trim());
+            let visiveis = 0;
+            items.forEach(c => {
+                const passa = (tipoAtivo === 'Todos' || c.dataset.tipo === tipoAtivo) && (!q || c.dataset.texto.includes(q));
+                c.classList.toggle('hidden', !passa);
+                if (passa) visiveis++;
+            });
+            document.querySelectorAll('.grupo').forEach(g => {
+                g.classList.toggle('hidden', !g.querySelector('.caso:not(.hidden)'));
+            });
+            vazio.classList.toggle('hidden', visiveis > 0);
+        }
+        const chips = document.getElementById('chips');
+        ['Todos', ...new Set(items.map(c => c.dataset.tipo))].forEach(tipo => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'chip';
+            b.textContent = tipo;
+            b.setAttribute('aria-pressed', tipo === 'Todos' ? 'true' : 'false');
+            b.addEventListener('click', () => {
+                tipoAtivo = tipo;
+                chips.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+                filtrar();
+            });
+            chips.appendChild(b);
+        });
+        busca.addEventListener('input', filtrar);
+        const topo = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => { topo.classList.toggle('show', window.pageYOffset > 300); });
+        topo.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
+</body>
+</html>
